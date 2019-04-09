@@ -9,18 +9,21 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href={{url("css/bootstrap.min.css")}} rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href={{url("css/mdb.min.css")}} rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/addons-pro/stepper.css" rel="stylesheet">
+    <link href={{url("css/style.css")}} rel="stylesheet">
+
 </head>
 
 <style>
-    .mt-5{
-    margin-top: 10rem!important;
-}
+    .mt-5 {
+        margin-top: 7rem !important;
+    }
+
+
+
 </style>
 
 <body>
@@ -68,51 +71,42 @@
 
     <!--Main Layout-->
     <main>
-        <div class="container text-center p-4 mt-5" style="height:1100px;">
-            <h1 class="text-center mb-5">Register</h1>
-            <ul class="stepper horizontal" id="horizontal-stepper">
-                <li class="step active">
-                    <div class="step-title waves-effect waves-dark">Step 1</div>
-                    <div class="step-new-content">
-                        <div class="row">
-                            <div class="md-form col-12 ml-auto">
-                                <input id="email-horizontal" type="email" class="validate form-control" required>
-                                <label for="email-horizontal">Email</label>
-                            </div>
+        <div class="container p-4 mt-5 mb-5" style="height:750px;">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <form class="registerclass border border-light p-5 mt-5">
+
+                        <p class="h4 mb-4 text-center">Register</p>
+
+                        <input type="email" id="email" class="form-control mb-4" placeholder="E-mail">
+
+                        <button class="btn btn-info btn-block my-4" type="submit">Register</button>
+
+                        <div class="text-center">
+                            <p>or sign in with:</p>
+                            <a type="button" class="light-blue-text mx-2">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a type="button" class="light-blue-text mx-2">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a type="button" class="light-blue-text mx-2">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a type="button" class="light-blue-text mx-2">
+                                <i class="fab fa-github"></i>
+                            </a>
                         </div>
-                        <div class="step-actions">
-                            <button class="waves-effect waves-dark btn btn-sm btn-primary next-step"
-                                data-feedback="someFunction21">CONTINUE</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="step">
-                    <div class="step-title waves-effect waves-dark">Step 2</div>
-                    <div class="step-new-content">
-                        <div class="row">
-                            <div class="md-form col-12 ml-auto">
-                                <input id="password-horizontal" type="password" class="validate form-control" required>
-                                <label for="password-horizontal">Your password</label>
-                            </div>
-                        </div>
-                        <div class="step-actions">
-                            <button class="waves-effect waves-dark btn btn-sm btn-primary next-step"
-                                data-feedback="someFunction21">CONTINUE</button>
-                            <button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">BACK</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="step">
-                    <div class="step-title waves-effect waves-dark">Step 3</div>
-                    <div class="step-new-content">
-                        Finish!
-                        <div class="step-actions">
-                            <button class="waves-effect waves-dark btn-sm btn btn-primary m-0 mt-4"
-                                type="button">SUBMIT</button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+                    </form>
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
         </div>
     </main>
     <!--Main Layout-->
@@ -167,28 +161,16 @@
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src={{url("js/jquery-3.3.1.min.js")}}></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src={{url("js/popper.min.js")}}></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src={{url("js/bootstrap.min.js")}}></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <script type="text/javascript" src="js/addons-pro/stepper.min.js"></script>
+    <script type="text/javascript" src={{url("js/mdb.min.js")}}></script>
+    <script type="text/javascript" src={{url("js/addons-pro/stepper.min.js")}}></script>
 
 
-    <script>
-        $(document).ready(function () {
-            $('.stepper').mdbStepper();
-        })
-
-        function someFunction21() {
-            setTimeout(function () {
-                $('#horizontal-stepper').nextStep();
-            }, 2000);
-        }
-
-    </script>
 
 </body>
 
