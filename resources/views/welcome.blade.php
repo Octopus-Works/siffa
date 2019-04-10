@@ -19,10 +19,14 @@
 
 <style>
     .mt-5 {
-        margin-top: 7rem !important;
+        margin-top: 6rem !important;
     }
-    
-
+    ul.stepper.horizontal .step.active .step-title:before {
+        background-color: #ffc107!important;
+    }
+    ul.stepper.horizontal .step-actions {
+        position:relative!important;
+    }
 </style>
 
 <body>
@@ -70,13 +74,13 @@
 
     <!--Main Layout-->
     <main>
-        <div class="container p-4 mt-5 mb-5">
+        <div class="container p-5 mt-5 mb-2">
            
             <div class="card p-5">
                     <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
-                <ul class="stepper horizontal" id="horizontal-stepper" style="height:1000px;">
+                <ul class="stepper horizontal" id="horizontal-stepper" style="height:1050px;">
                     <li class="step active">
-                        <div class="step-title waves-effect waves-dark">Step 1</div>
+                        <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
                         <div class="step-new-content">
                             <h5 class="text-center font-weight-bolder">Personal Information <i
                                     class="fas fa-user m-1"></i></h5>
@@ -122,14 +126,14 @@
                                     <label for="address">Address</label>
                                 </div>
                             </div>
-                            <div class="step-actions">
-                                <button class="waves-effect waves-dark btn btn-sm btn-amber next-step"
+                            <div class="step-actions d-flex justify-content-center">
+                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
                                     data-feedback="someFunction21">CONTINUE</button>
                             </div>
                         </div>
                     </li>
                     <li class="step">
-                        <div class="step-title waves-effect waves-dark">Step 2</div>
+                        <div id="step2" class="step-title waves-effect waves-dark">Step 2</div>
                         <div class="step-new-content">
                             <h5 class="text-center font-weight-bolder">Shipping Company Information <i
                                     class="fas fa-briefcase m-1"></i></h5>
@@ -164,14 +168,14 @@
                                     <label for="regist-num">Commercial Registration Number</label>
                                 </div>
                             </div>
-                            <div>
-                                <button class="waves-effect waves-dark btn btn-sm btn-amber next-step"
+                            <div class="step-actions d-flex justify-content-center">
+                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
                                     data-feedback="someFunction21">CONTINUE</button>
                             </div>
                         </div>
                     </li>
                     <li class="step">
-                        <div class="step-title waves-effect waves-dark">Step 3</div>
+                        <div id="step3" class="step-title waves-effect waves-dark">Step 3</div>
                         <div class="step-new-content">
                             <h5 class="text-center font-weight-bolder">Shipping Services Information <i
                                     class="fas fa-info-circle m-1"></i></h5>
@@ -210,14 +214,14 @@
                                         Company</label>
                                 </div>
                             </div>
-                            <div>
-                                <button class="waves-effect waves-dark btn btn-sm btn-amber next-step"
+                            <div class="step-actions d-flex justify-content-center">
+                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
                                     data-feedback="someFunction21">CONTINUE</button>
                             </div>
                         </div>
                     </li>
                     <li class="step">
-                        <div class="step-title waves-effect waves-dark">Step 4</div>
+                        <div id="step4" class="step-title waves-effect waves-dark">Step 4</div>
                         <div class="step-new-content">
                             <h5 class="text-center font-weight-bolder">Financial Information <i
                                     class="fas fa-money-check-alt m-1"></i></h5>
@@ -231,7 +235,7 @@
                                     <form class="md-form">
                                         <div class="file-field">
                                             <h6>Photo of the Financial Assignment:</h6>
-                                            <div class="btn btn-primary btn-sm float-left">
+                                            <div class="btn btn-elegant btn-sm float-left">
                                                 <span>Choose file</span>
                                                 <input type="file">
                                             </div>
@@ -243,14 +247,14 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div>
-                                    <button class="waves-effect waves-dark btn btn-sm btn-amber next-step"
+                                <div class="step-actions d-flex justify-content-center">
+                                    <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
                                         data-feedback="someFunction21">CONTINUE</button>
                                 </div>
                             </div>
                     </li>
                     <li class="step">
-                        <div class="step-title waves-effect waves-dark">Step 5</div>
+                        <div id="step5" class="step-title waves-effect waves-dark">Step 5</div>
                         <div class="step-new-content">
                             <h5 class="text-center font-weight-bolder">Application Information <i
                                     class="fas fa-edit ml-1"></i></h5>
@@ -260,7 +264,7 @@
                                     <form class="md-form">
                                         <div class="file-field">
                                             <h6>Photo of Signature and Fingerprint:</h6>
-                                            <div class="btn btn-primary btn-sm float-left">
+                                            <div class="btn btn-elegant btn-sm float-left">
                                                 <span>Choose file</span>
                                                 <input type="file">
                                             </div>
@@ -276,8 +280,8 @@
                                     <input placeholder="Date of Application" type="text" id="date-picker-example2"
                                         class="form-control datepicker">
                                 </div>
-                                <div>
-                                    <button class="waves-effect waves-dark btn btn-sm btn-amber next-step"
+                                <div class="step-actions d-flex justify-content-center">
+                                    <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
                                         data-feedback="someFunction21">CONTINUE</button>
                                 </div>
                             </div>
@@ -285,7 +289,7 @@
                         </div>
                     </li>
                     <li class="step">
-                        <div class="step-title waves-effect waves-dark">Step 6</div>
+                        <div id="step6" class="step-title waves-effect waves-dark">Step 6</div>
                         <div class="step-new-content">
                             <h5 class="text-center font-weight-bolder">Resume Information <i
                                     class="fas fa-user-edit ml-1"></i></h5>
@@ -296,8 +300,8 @@
                                     <label for="resume-info">Resume Inofrmation (As Mentioned in the Application
                                         Document)</label>
                                 </div>
-                                <div>
-                                    <button class="waves-effect waves-dark btn btn-sm btn-amber next-step"
+                                <div class="step-actions d-flex justify-content-center">
+                                    <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
                                         data-feedback="someFunction21">CONTINUE</button>
                                 </div>
                             </div>
@@ -305,7 +309,7 @@
                         </div>
                     </li>
                     <li class="step">
-                        <div class="step-title waves-effect waves-dark">Step 7</div>
+                        <div id="step7" class="step-title waves-effect waves-dark">Step 7</div>
                         <div class="step-new-content">
                             <h5 class="text-center font-weight-bolder">Hard Copy <i class="far fa-clipboard m-1"></i>
                             </h5>
@@ -314,7 +318,7 @@
                                     <form class="md-form">
                                         <div class="file-field">
                                             <h6>Hard Copy of the Application Form:</h6>
-                                            <div class="btn btn-primary btn-sm float-left">
+                                            <div class="btn btn-elegant btn-sm float-left">
                                                 <span>Choose file</span>
                                                 <input type="file">
                                             </div>
@@ -325,8 +329,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div>
-                                    <button class="waves-effect waves-dark btn-sm btn btn-amber m-0 mt-4"
+                                <div class="step-actions d-flex justify-content-center">
+                                    <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
                                         type="button">SUBMIT</button>
                                 </div>
                             </div>
@@ -418,6 +422,7 @@
         $('.datepicker').pickadate();
 
     </script>
+
 
 </body>
 
