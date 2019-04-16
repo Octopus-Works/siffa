@@ -77,11 +77,11 @@
 
                 <!--Grid column-->
                 <div class="col-md-6">
-                    <form class="registerclass border border-light p-5 mt-5">
-
+                    <form class="registerclass border border-light p-5 mt-5" action="{{ route('verification') }}" method="POST">
+                        @csrf 
                         <p class="h4 mb-4 text-center">Register</p>
 
-                        <input type="email" id="email" class="form-control mb-4" placeholder="E-mail">
+                        <input type="email" id="email" name="email" class="form-control mb-4" placeholder="E-mail">
 
                         <button class="btn btn-info btn-block my-4" type="submit">Register</button>
 
