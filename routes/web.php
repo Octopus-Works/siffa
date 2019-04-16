@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/verification', function (){
+    return view('register'); 
+});
+
+Route::post('/verification', 'Auth\MailSendingController@mail')->name('verification'); 
