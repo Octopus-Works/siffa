@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Register</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -75,12 +76,11 @@
     <!--Main Layout-->
     <main>
         <div class="container p-5 mt-5 mb-2">
-           
+           <form id="app_form" >
             <div class="card p-5">
                     <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
                 <ul class="stepper horizontal" id="horizontal-stepper" style="height:1050px;">
                     <li class="step active">
-                        <form method="POST" action="{{ route('ApplicationSubmit') }}">
                             <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
                             <div class="step-new-content">
                                 <h5 class="text-center font-weight-bolder">Personal Information <i
@@ -132,7 +132,7 @@
                                         data-feedback="someFunction21">CONTINUE</button>
                                 </div>
                             </div>
-                        </form>
+
                     </li>
                     <li class="step">
                         <div id="step2" class="step-title waves-effect waves-dark">Step 2</div>
@@ -234,7 +234,7 @@
                                     <label for="financial-status">Financial Assignment Status</label>
                                 </div>
                                 <div class="md-form col-12 ml-auto">
-                                    <form class="md-form">
+
                                         <div class="file-field">
                                             <h6>Photo of the Financial Assignment:</h6>
                                             <div class="btn btn-elegant btn-sm float-left">
@@ -247,7 +247,7 @@
                                                     placeholder="Upload your file">
                                             </div>
                                         </div>
-                                    </form>
+
                                 </div>
                                 <div class="step-actions d-flex justify-content-center">
                                     <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
@@ -263,7 +263,7 @@
                             <div class="row">
 
                                 <div class="md-form col-12 ml-auto">
-                                    <form class="md-form">
+ 
                                         <div class="file-field">
                                             <h6>Photo of Signature and Fingerprint:</h6>
                                             <div class="btn btn-elegant btn-sm float-left">
@@ -276,7 +276,7 @@
                                                     placeholder="Upload your file">
                                             </div>
                                         </div>
-                                    </form>
+
                                 </div>
                                 <div class="md-form col-12 ml-auto">
                                     <input placeholder="Date of Application" name="date_of_application"type="text" id="date-picker-example2"
@@ -317,7 +317,6 @@
                             </h5>
                             <div class="row">
                                 <div class="md-form col-12 ml-auto">
-                                    <form class="md-form">
                                         <div class="file-field">
                                             <h6>Hard Copy of the Application Form:</h6>
                                             <div class="btn btn-elegant btn-sm float-left">
@@ -329,11 +328,10 @@
                                                     type="text" placeholder="Upload your file">
                                             </div>
                                         </div>
-                                    </form>
                                 </div>
                                 <div class="step-actions d-flex justify-content-center">
                                     <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
-                                        type="button">SUBMIT</button>
+                                    onclick="ajax();" type="button">SUBMIT</button>
                                 </div>
                             </div>
 
@@ -342,6 +340,7 @@
 
                 </ul>
             </div>
+        </form>
         </div>
     </main>
     <!--Main Layout-->
@@ -404,6 +403,9 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src={{url("js/mdb.min.js")}}></script>
     <script type="text/javascript" src={{url("js/addons-pro/stepper.min.js")}}></script>
+    <script>
+        src = "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js";
+    </script>
 
 
     <script>
@@ -417,11 +419,50 @@
             }, 2000);
         }
 
-    </script>
-
-    <script>
         // Data Picker Initialization
         $('.datepicker').pickadate();
+
+        //ajax 
+        function ajax() {
+                   var test = JSON.stringify(jQuery('#app_form').serializeArray());
+                    console.log(JSON.parse(test));
+                    var dataa = $('#formen').serializeArray();
+                    var formData = new FormData();
+                    $.each(dataa, function (key, el) {
+                        formData.append(el.name, el.value);
+                    });
+
+
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        type: 'POST',
+                        url: '/',
+                        data: dataa,
+                        contentType: "application/json;",
+                        dataType: "json",
+                        statusCode: {
+                            401: function () {
+                                window.location = '/login';
+                            },
+                            500: function () {
+                                alert('500 status code! server error');
+                            },
+                            200: function (msg) {
+                                alert("sucess");
+                             //   toastr["success"](name + " added to cart", "Success");
+                                //  $('#cart_table tr:last').after();
+                              //  $("#cart_table").find('tbody').append('<tr id=row_' + array.id + '>' + '<th scope="row" >' + (rows_cont + 1) + '</th>' + '<td>' + name + '</td>' + '<td>' + array.price + '</td>' + '<td onclick="remove_cart(' + array.id + ', name);"><a><i  class="fas fa-eraser"></i></a></td>' + '</tr>');
+                            },
+                        },
+
+                    });
+
+
+        }
+  
+
 
     </script>
 
