@@ -426,7 +426,7 @@
         function ajax() {
                    var test = JSON.stringify(jQuery('#app_form').serializeArray());
                     console.log(JSON.parse(test));
-                    var dataa = $('#formen').serializeArray();
+                    var dataa = JSON.parse(test);
                     var formData = new FormData();
                     $.each(dataa, function (key, el) {
                         formData.append(el.name, el.value);
@@ -439,9 +439,8 @@
                         },
                         type: 'POST',
                         url: '/',
-                        data: dataa,
-                        contentType: "application/json;",
-                        dataType: "json",
+                        dataType : 'json', // data type
+                        data :dataa , // post data || get data
                         statusCode: {
                             401: function () {
                                 window.location = '/login';
