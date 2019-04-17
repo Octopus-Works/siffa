@@ -22,11 +22,11 @@ class CreateUsersTable extends Migration
 
             // Attributes
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('username');
             $table->string('fullname')->nullable(); 
             $table->string('father_name')->nullable(); 
             $table->string('mother_name')->nullable();
-            $table->date('date_of_birth')->nullable();
+            $table->string('date_of_birth')->nullable();
             $table->string('place_of_birth')->nullable();
             $table->string('record')->nullable();
             $table->string('nationality')->nullable(); 

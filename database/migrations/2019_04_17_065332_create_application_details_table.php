@@ -21,10 +21,10 @@ class CreateApplicationDetailsTable extends Migration
             $table->collation = 'utf8_unicode_ci'; 
 
             // Attributes 
-            $table->string('Financial_assignment_status'); 
-            $table->date('Date_of_application'); 
-            $table->textarea('Resume_information'); 
             $table->bigIncrements('id');
+            $table->string('Financial_assignment_status'); 
+            $table->string('Date_of_application'); 
+            $table->string('Resume_information'); 
             $table->timestamps();
         });
     }

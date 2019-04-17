@@ -87,10 +87,6 @@
                                         class="fas fa-user m-1"></i></h5>
                                 <div class="row">
                                     <div class="md-form col-12 ml-auto">
-                                        <input id="name" name="name" type="text" class="validate form-control" required>
-                                        <label for="name">Username</label>
-                                    </div>
-                                    <div class="md-form col-12 ml-auto">
                                         <input id="fullname" name="fullname" type="text" class="validate form-control"
                                             required>
                                         <label for="fullname">Full Name</label>
@@ -103,6 +99,12 @@
                                         <input id="mother" name="mother" type="text" class="validate form-control" required>
                                         <label for="mother">Mother's Name</label>
                                     </div>
+
+                                    <div class="md-form col-12 ml-auto">
+                                            <input id="email" name="email" type="email" class="validate form-control" required>
+                                            <label for="email">E-mail</label>
+                                    </div>
+
                                     <div class="md-form col-12 ml-auto">
                                         <input placeholder="Date of Birth" name="date_of_birth" type="text" id="date-picker-example"
                                             class="form-control datepicker">
@@ -155,7 +157,7 @@
                                     <label for="type">Type of Shipping Service Provided</label>
                                 </div>
                                 <div class="md-form col-12 ml-auto">
-                                    <input id="position" name="position" type="text" class="validate form-control"
+                                    <input id="position" name="position_title" type="text" class="validate form-control"
                                         required>
                                     <label for="position">Workplace Position</label>
                                 </div>
@@ -185,12 +187,12 @@
                                 <div class="md-form col-12 ml-auto">
                                     <h6 class="font-weight-bold">Available Shipping Methods:</h6>
                                     <div class="custom-control custom-checkbox ml-4">
-                                        <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods">
+                                        <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods" value="LTL">
                                         <label class="custom-control-label" for="method1">Less Than Track
                                             Load(LTL)</label>
                                     </div>
                                     <div class="custom-control custom-checkbox ml-4">
-                                        <input type="checkbox" class="custom-control-input" id="method2" name="shipping_methods">
+                                        <input type="checkbox" class="custom-control-input" id="method2" name="shipping_methods" value="FTL">
                                         <label class="custom-control-label" for="method2">Full Track Load(FTL)</label>
                                     </div>
                                 </div>

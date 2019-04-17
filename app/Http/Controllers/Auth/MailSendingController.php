@@ -10,8 +10,12 @@ use App\Mail\GenerateCredentials;
 class MailSendingController extends Controller
 {
     public function mail(Request $request){
-      Mail::to($request->email)->send(new GenerateCredentials());
 
-      return 'Email was sent!'; 
+      $request->session()->put('email', $request->email);
+
+      return redirect('/');
+      // Mail::to($request->email)->send(new GenerateCredentials());
+
+      // return 'Email was sent!'; 
     }
 }

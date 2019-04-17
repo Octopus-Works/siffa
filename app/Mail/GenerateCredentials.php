@@ -11,15 +11,17 @@ class GenerateCredentials extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $credentials = array(); 
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
     
-    public function __construct()
+    public function __construct(array $data)
     {
-        //
+        $this->credentials = $data;
     }
 
     /**
@@ -29,12 +31,10 @@ class GenerateCredentials extends Mailable
      */
     public function build()
     {
-        $username = str_random(10); 
-        $password = str_random(10);
         return $this->view('vendor.notifications.verificationemail')
                     ->with([
-                        'username' => $username,
-                        'password' => $password,
+                        'username' => $this->credentials['username'],
+                        'password' => $this->credentials['password'],
                     ]);
     }
 }
