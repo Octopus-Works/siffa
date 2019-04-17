@@ -80,57 +80,59 @@
                     <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
                 <ul class="stepper horizontal" id="horizontal-stepper" style="height:1050px;">
                     <li class="step active">
-                        <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
-                        <div class="step-new-content">
-                            <h5 class="text-center font-weight-bolder">Personal Information <i
-                                    class="fas fa-user m-1"></i></h5>
-                            <div class="row">
-                                <div class="md-form col-12 ml-auto">
-                                    <input id="name" name="name" type="text" class="validate form-control" required>
-                                    <label for="name">Username</label>
+                        <form method="POST" action="{{ route('ApplicationSubmit') }}">
+                            <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
+                            <div class="step-new-content">
+                                <h5 class="text-center font-weight-bolder">Personal Information <i
+                                        class="fas fa-user m-1"></i></h5>
+                                <div class="row">
+                                    <div class="md-form col-12 ml-auto">
+                                        <input id="name" name="name" type="text" class="validate form-control" required>
+                                        <label for="name">Username</label>
+                                    </div>
+                                    <div class="md-form col-12 ml-auto">
+                                        <input id="fullname" name="fullname" type="text" class="validate form-control"
+                                            required>
+                                        <label for="fullname">Full Name</label>
+                                    </div>
+                                    <div class="md-form col-12 ml-auto">
+                                        <input id="father" name="father" type="text" class="validate form-control" required>
+                                        <label for="father">Father's Name</label>
+                                    </div>
+                                    <div class="md-form col-12 ml-auto">
+                                        <input id="mother" name="mother" type="text" class="validate form-control" required>
+                                        <label for="mother">Mother's Name</label>
+                                    </div>
+                                    <div class="md-form col-12 ml-auto">
+                                        <input placeholder="Date of Birth" name="date_of_birth" type="text" id="date-picker-example"
+                                            class="form-control datepicker">
+                                    </div>
+                                    <div class="md-form col-12 ml-auto">
+                                        <input id="place-of-birth" name="place_of_birth" type="text"
+                                            class="validate form-control" required>
+                                        <label for="place-of-birth">Place of Birth</label>
+                                    </div>
+                                    <div class="md-form col-12 ml-auto">
+                                        <input id="record" name="record" type="text" class="validate form-control" required>
+                                        <label for="record">Individual Civil Registry Record</label>
+                                    </div>
+                                    <div class="md-form col-12 ml-auto">
+                                        <input id="nationality" name="nationality" type="text" class="validate form-control"
+                                            required>
+                                        <label for="nationality">Nationality</label>
+                                    </div>
+                                    <div class="md-form col-12 ml-auto">
+                                        <input id="address" name="address" type="text" class="validate form-control"
+                                            required>
+                                        <label for="address">Address</label>
+                                    </div>
                                 </div>
-                                <div class="md-form col-12 ml-auto">
-                                    <input id="fullname" name="fullname" type="text" class="validate form-control"
-                                        required>
-                                    <label for="fullname">Full Name</label>
-                                </div>
-                                <div class="md-form col-12 ml-auto">
-                                    <input id="father" name="father" type="text" class="validate form-control" required>
-                                    <label for="father">Father's Name</label>
-                                </div>
-                                <div class="md-form col-12 ml-auto">
-                                    <input id="mother" name="mother" type="text" class="validate form-control" required>
-                                    <label for="mother">Mother's Name</label>
-                                </div>
-                                <div class="md-form col-12 ml-auto">
-                                    <input placeholder="Date of Birth" type="text" id="date-picker-example"
-                                        class="form-control datepicker">
-                                </div>
-                                <div class="md-form col-12 ml-auto">
-                                    <input id="place-of-birth" name="place-of-birth" type="text"
-                                        class="validate form-control" required>
-                                    <label for="place-of-birth">Place of Birth</label>
-                                </div>
-                                <div class="md-form col-12 ml-auto">
-                                    <input id="record" name="record" type="text" class="validate form-control" required>
-                                    <label for="record">Individual Civil Registry Record</label>
-                                </div>
-                                <div class="md-form col-12 ml-auto">
-                                    <input id="nationality" name="nationality" type="text" class="validate form-control"
-                                        required>
-                                    <label for="nationality">Nationality</label>
-                                </div>
-                                <div class="md-form col-12 ml-auto">
-                                    <input id="address" name="address" type="text" class="validate form-control"
-                                        required>
-                                    <label for="address">Address</label>
+                                <div class="step-actions d-flex justify-content-center">
+                                    <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber next-step"
+                                        data-feedback="someFunction21">CONTINUE</button>
                                 </div>
                             </div>
-                            <div class="step-actions d-flex justify-content-center">
-                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                    data-feedback="someFunction21">CONTINUE</button>
-                            </div>
-                        </div>
+                        </form>
                     </li>
                     <li class="step">
                         <div id="step2" class="step-title waves-effect waves-dark">Step 2</div>
@@ -139,17 +141,17 @@
                                     class="fas fa-briefcase m-1"></i></h5>
                             <div class="row">
                                 <div class="md-form col-12 ml-auto">
-                                    <input id="company-name" name="company-name" type="text"
+                                    <input id="company-name" name="company_name" type="text"
                                         class="validate form-control" required>
                                     <label for="company-name">Shipping Company Name</label>
                                 </div>
                                 <div class="md-form col-12 ml-auto">
-                                    <textarea id="branches-address" name="branches-address"
+                                    <textarea id="branches-address" name="branches_address"
                                         class="md-textarea form-control" rows="3"></textarea>
                                     <label for="branches-address">Addresses of Branches</label>
                                 </div>
                                 <div class="md-form col-12 ml-auto">
-                                    <input id="type" name="type" type="text" class="validate form-control" required>
+                                    <input id="type" name="shipping_services" type="text" class="validate form-control" required>
                                     <label for="type">Type of Shipping Service Provided</label>
                                 </div>
                                 <div class="md-form col-12 ml-auto">
@@ -158,12 +160,12 @@
                                     <label for="position">Workplace Position</label>
                                 </div>
                                 <div class="md-form col-12 ml-auto">
-                                    <input id="chamber" name="position" type="text" class="validate form-control"
+                                    <input id="chamber" name="chamber_of_commerce" type="text" class="validate form-control"
                                         required>
                                     <label for="chamber">Chamber of Commerce</label>
                                 </div>
                                 <div class="md-form col-12 ml-auto">
-                                    <input id="regist-num" name="regist-num" type="text" class="validate form-control"
+                                    <input id="regist-num" name="commercial_registry" type="text" class="validate form-control"
                                         required>
                                     <label for="regist-num">Commercial Registration Number</label>
                                 </div>
@@ -183,32 +185,32 @@
                                 <div class="md-form col-12 ml-auto">
                                     <h6 class="font-weight-bold">Available Shipping Methods:</h6>
                                     <div class="custom-control custom-checkbox ml-4">
-                                        <input type="checkbox" class="custom-control-input" id="method1" name="method1">
+                                        <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods">
                                         <label class="custom-control-label" for="method1">Less Than Track
                                             Load(LTL)</label>
                                     </div>
                                     <div class="custom-control custom-checkbox ml-4">
-                                        <input type="checkbox" class="custom-control-input" id="method2" name="method2">
+                                        <input type="checkbox" class="custom-control-input" id="method2" name="shipping_methods">
                                         <label class="custom-control-label" for="method2">Full Track Load(FTL)</label>
                                     </div>
                                 </div>
                                 <div class="md-form col-12 ml-auto">
                                     <h6 class="font-weight-bold">External Shipping Modes:</h6>
                                     <div class="custom-control custom-checkbox ml-4">
-                                        <input type="checkbox" class="custom-control-input" id="mode1" name="mode1">
+                                        <input type="checkbox" class="custom-control-input" id="mode1" name="shipping_modes" value="Wild">
                                         <label class="custom-control-label" for="mode1">Land Transport</label>
                                     </div>
                                     <div class="custom-control custom-checkbox ml-4">
-                                        <input type="checkbox" class="custom-control-input" id="mode2" name="mode2">
+                                        <input type="checkbox" class="custom-control-input" id="mode2" name="shipping_modes" value="Aerial">
                                         <label class="custom-control-label" for="mode2">Air Transport</label>
                                     </div>
                                     <div class="custom-control custom-checkbox ml-4">
-                                        <input type="checkbox" class="custom-control-input" id="mode3" name="mode3">
+                                        <input type="checkbox" class="custom-control-input" id="mode3" name="shipping_modes" value="Nautical">
                                         <label class="custom-control-label" for="mode3">Water Transport</label>
                                     </div>
                                 </div>
                                 <div class="md-form col-12 ml-auto">
-                                    <input id="src-dest" name="src-dest" type="text" class="validate form-control"
+                                    <input id="src-dest" name="src_dest" type="text" class="validate form-control"
                                         required>
                                     <label for="src-dest">Sources and Destinations Served By the Shipping
                                         Company</label>
@@ -227,7 +229,7 @@
                                     class="fas fa-money-check-alt m-1"></i></h5>
                             <div class="row">
                                 <div class="md-form col-12 ml-auto">
-                                    <input id="financial-status" name="financial-status" type="text"
+                                    <input id="financial-status" name="financial_status" type="text"
                                         class="validate form-control" required>
                                     <label for="financial-status">Financial Assignment Status</label>
                                 </div>
@@ -240,7 +242,7 @@
                                                 <input type="file">
                                             </div>
                                             <div class="file-path-wrapper">
-                                                <input id="financial-photo" name="financial-photo"
+                                                <input id="financial-photo" name="financial_photo"
                                                     class="file-path validate" type="text"
                                                     placeholder="Upload your file">
                                             </div>
@@ -269,7 +271,7 @@
                                                 <input type="file">
                                             </div>
                                             <div class="file-path-wrapper">
-                                                <input id="signature-photo" name="signature-photo"
+                                                <input id="signature-photo" name="signature_photo"
                                                     class="file-path validate" type="text"
                                                     placeholder="Upload your file">
                                             </div>
@@ -277,7 +279,7 @@
                                     </form>
                                 </div>
                                 <div class="md-form col-12 ml-auto">
-                                    <input placeholder="Date of Application" type="text" id="date-picker-example2"
+                                    <input placeholder="Date of Application" name="date_of_application"type="text" id="date-picker-example2"
                                         class="form-control datepicker">
                                 </div>
                                 <div class="step-actions d-flex justify-content-center">
@@ -295,7 +297,7 @@
                                     class="fas fa-user-edit ml-1"></i></h5>
                             <div class="row">
                                 <div class="md-form col-12 ml-auto">
-                                    <textarea id="resume-info" name="resume-info" class="md-textarea form-control"
+                                    <textarea id="resume-info" name="resume_info" class="md-textarea form-control"
                                         rows="3"></textarea>
                                     <label for="resume-info">Resume Inofrmation (As Mentioned in the Application
                                         Document)</label>
@@ -323,7 +325,7 @@
                                                 <input type="file">
                                             </div>
                                             <div class="file-path-wrapper">
-                                                <input id="hard-copy" name="hard-copy" class="file-path validate"
+                                                <input id="hard-copy" name="hard_copy" class="file-path validate"
                                                     type="text" placeholder="Upload your file">
                                             </div>
                                         </div>
