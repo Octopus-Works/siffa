@@ -1,6 +1,9 @@
 You received a message from : {{ $name }}
 <p>
-Name: {{ $name }}
+name: {{ $name }}
+</p>
+<p>
+nationality: {{ $nationality }}
 </p>
 <p>
 Email: {{ $email }}

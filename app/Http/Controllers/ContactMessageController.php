@@ -19,6 +19,7 @@ class ContactMessageController extends Controller
             'message' => 'required',
             'subject' => 'required', 
             'email' => 'required|email',
+            'nationality' => 'required', 
         ]);     
         $email = $request->get('email');
         $subject = $request->get('subject');
@@ -27,6 +28,7 @@ class ContactMessageController extends Controller
           array(
             'name' => $request->get('name'),
             'email' => $request->get('email'),
+            'nationality' => $request->get('nationality'),
             'user_message' => $request->get('message')
               ), function($message) use($email,$subject) 
          {

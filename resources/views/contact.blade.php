@@ -61,18 +61,27 @@
                                                 </div>
                                             </div>
                                             <!-- Grid column -->
-                                
-                                            <!-- Grid column -->
                                             <div class="col-md-6">
-                                                <div class="md-form mb-0">
-                                                <input type="text" id="form-contact-email" name="email" class="form-control">
-                                                <label for="form-contact-email" class="">Your email</label>
+                                                    <div class="md-form mb-0">
+                                                    <input type="text" id="form-contact-nationality" name="nationality" class="form-control">
+                                                    <label for="form-contact-nationality" class="">Your nationality</label>
+                                                    </div>
                                                 </div>
+
                                             </div>
-                                            <!-- Grid column -->
-                                
-                                            </div>
+
                                             <!-- Grid row -->
+                                     
+                                            <div class="row">
+                                                    <!-- Grid column -->
+                                                     <!-- Grid column -->
+                                                     <div class="col-md-12">
+                                                            <div class="md-form mb-0">
+                                                            <input type="text" id="form-contact-email" name="email" class="form-control">
+                                                            <label for="form-contact-email" class="">Your email</label>
+                                                            </div>
+                                                    </div>
+                                                </div>
                                             <div class="row">
                                                     <!-- Grid column -->
                                                     <div class="col-md-12">
@@ -184,6 +193,15 @@
                     document.getElementById('status').innerHTML = "Name cannot be empty";
                     return false;
                 }
+
+
+                var nationality =  document.getElementById('form-contact-nationality').value;
+                if (nationality == "") {
+                    $('#status').css("color", "red");
+                    document.getElementById('status').innerHTML = "Nationality cannot be empty";
+                    return false;
+                }
+
                 var email =  document.getElementById('form-contact-email').value;
                 if (email == "") {
                     $('#status').css("color", "red");
