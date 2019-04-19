@@ -25,3 +25,10 @@ Route::get('/verification', function (){
 });
 
 Route::post('/verification', 'Auth\MailSendingController@mail')->name('verification'); 
+//contact us route
+Route::get('/contact', [
+'uses' => 'ContactMessageController@create'
+]);
+Route::post('/contact', [
+    'uses' => 'ContactMessageController@send'
+]);
