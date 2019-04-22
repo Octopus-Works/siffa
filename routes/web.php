@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/reports', function () {
+    return view('pages/reports&publications');
+});
+
 Route::post('/', 'ApplicationController@mail')->name('ApplicationSubmit'); 
 Auth::routes(['verify' => true]);
 
