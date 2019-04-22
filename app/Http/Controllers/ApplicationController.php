@@ -5,50 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\UserStoreRequest;
 use App\Mail\GenerateCredentials;
 use Session; 
-use App\User; 
+use App\User;
+use App\Image; 
 use App\ShippingOffice; 
 use App\ShippingService;
-use App\ApplicationDetail; 
+use App\ApplicationDetail;
 
 class ApplicationController extends Controller
 {
-    public function mail(Request $request){
-
-        $this->validate($request, [
-            'fullname' =>'bail|required',
-            'father' => 'bail|required',
-            'mother' => 'required', 
-            'email' => 'required|email',
-            'date_of_birth' => 'required',
-            'place_of_birth' =>'required',
-            'record' => 'required',
-            'nationality' =>'required',
-            'address' => 'required',
-
-            'company_name' => 'required',
-            'branches_address' => 'required', 
-            'shipping_services' => 'required', 
-            'position_title' => 'required', 
-            'chamber_of_commerce' => 'required', 
-            'commercial_registry' => 'bail|required', 
-
-            'shipping_methods' => 'required',
-            'shipping_modes' => 'required',
-            'src_dest' => 'required',
-
-            'financial_status' => 'required',
-            // 'financial_photo' => 'required', 
-
-            'date_of_application' => 'required', 
-            // 'signature_photo' => 'required',
-
-            // 'resume_info' => 'required',
-            // 'hard_copy' => 'required'
-
-        ]);
-
+    public function mail(UserStoreRequest $request){
+        
+        // Will return only validated data
+        $validated = $request->validated(); 
         $username = str_random(10); 
         $password = str_random(10);
 
@@ -86,6 +57,34 @@ class ApplicationController extends Controller
         $application->Date_of_application = $request->date_of_application; 
         $application->Resume_information = $request->resume_info;
         $application->save();
+
+  
+
+        // if ($counter == 0) 
+        //     $folder = "financial_assignment"; 
+        // elseif ($counter == 1)
+        //     $folder = "signature_fingerprint";
+        // elseif ($counter == 2) 
+        //     $folder = "application_form";
+        error_log($request->file('financial_photo'));
+        error_log($request->file('signature_photo'));
+        error_log($request->file('hard_copy'));
+
+        $filenameWithExt = $request->file('financial_photo')->getClientOriginalName();
+        // Get just filename
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        // Get just ext
+        $extension = $$request->file('financial_photo')->getClientOriginalExtension();
+        // Filename to store
+        $fileNameToStore= $filename.'_'.time().'.'.$extension;
+        $path = $request->file('financial_photo')->storeAs('public/financial_assignment', $fileNameToStore);
+        $Image = new Image;  
+        $Image->imageable_id = $user->id;
+        $Image->imageable_type = 'App\ApplicationDetail';
+        $Image->url = '/storage/financial_assignment/'. $fileNameToStore;
+        $Image->save();
+
+
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
         Session::flash('Success', 'Registeration is completed');

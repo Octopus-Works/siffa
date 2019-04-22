@@ -14,16 +14,17 @@ class CreateImagesTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
+            
             // init 
             $table->engine = 'InnoDB';
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
 
             // Attributes
+            $table->increments('id');
             $table->uuid('uuid');
             $table->string('url')->nullable(true); 
             $table->morphs('imageable');
-            $table->bigIncrements('id');
             $table->timestamps();
         });
     }
