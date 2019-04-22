@@ -23,6 +23,9 @@ Route::get('/reports', function () {
     return view('pages/reports&publications');
 });
 
+Route::get('/shippingclients', function () {
+    return view('pages/shippingclients');
+});
 Route::post('/', 'ApplicationController@mail')->name('ApplicationSubmit'); 
 Auth::routes(['verify' => true]);
 
