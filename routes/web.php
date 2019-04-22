@@ -23,8 +23,8 @@ Route::get('/reports', function () {
     return view('pages/reports&publications');
 });
 
-Route::get('/shippingclients', function () {
-    return view('pages/shippingclients');
+Route::get('/shippingoffices', function () {
+    return view('pages/shippingoffices');
 });
 Route::post('/', 'ApplicationController@mail')->name('ApplicationSubmit'); 
 Auth::routes(['verify' => true]);
