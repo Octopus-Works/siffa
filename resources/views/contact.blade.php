@@ -13,13 +13,13 @@
         <header>
             @include('incs.nav')
             <div class="view jarallax" style="height: 100vh;">
-                    <img class="jarallax-img" src="https://mdbootstrap.com/img/Photos/Others/img%20%2844%29.jpg" alt="">
+                    <img class="jarallax-img" src="img/7.jpg" alt="">
                     <div class="mask rgba-blue-slight">
                       <div class="container flex-center text-center">
                         <div class="row mt-5">
                           <div class="col-md-12 wow fadeIn mb-3">
-                            <h1 class="display-3 mb-2 wow fadeInDown" data-wow-delay="0.3s">NATALIE <a class="indigo-text font-weight-bold">SMITH</a></h1>
-                            <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">Web developer & graphic designer</h5>
+                            <h1 class="display-3 mb-2 wow fadeInDown" data-wow-delay="0.3s">CONTACT <a class="indigo-text font-weight-bold">US</a></h1>
+                            <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">SIFFA</h5>
                             <a class="btn btn-light-blue btn-lg wow fadeIn" data-wow-delay="0.4s">portfolio</a> <a class="btn btn-indigo btn-lg wow fadeIn" data-wow-delay="0.4s">About me</a>
                           </div>
                         </div>
@@ -105,7 +105,7 @@
                                                 <textarea id="form-contact-message" class="form-control md-textarea" name="message"  rows="3"></textarea>
                                                 <label for="form-contact-message">Your message</label>
                                                 <a class="btn-floating btn-lg blue"  onclick="validateForm()" >
-                                                    <i class="far fa-paper-plane"></i>
+                                                    <i class="far fa-paper-plane amber"></i>
                                                 </a>
                                                 <div id="status"></div>
                                                 </div>
@@ -128,13 +128,13 @@
                                             <h3 class="my-4 pb-2">Contact information</h3>
                                             <ul class="text-lg-left list-unstyled ml-4">
                                             <li>
-                                                <p><i class="fas fa-map-marker-alt pr-2"></i>New York, 94126, USA</p>
+                                                <p><i class="fas fa-map-marker-alt pr-2 amber-text"></i>New York, 94126, USA</p>
                                             </li>
                                             <li>
-                                                <p><i class="fas fa-phone pr-2"></i>+ 01 234 567 89</p>
+                                                <p><i class="fas fa-phone pr-2 amber-text"></i>+ 01 234 567 89</p>
                                             </li>
                                             <li>
-                                                <p><i class="fas fa-envelope pr-2"></i>contact@example.com</p>
+                                                <p><i class="fas fa-envelope pr-2 amber-text"></i>contact@example.com</p>
                                             </li>
                                             </ul>
                                             <hr class="hr-light my-4">

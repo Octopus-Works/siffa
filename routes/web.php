@@ -23,6 +23,10 @@ Route::get('/reports', function () {
     return view('pages/reports&publications');
 });
 
+Route::get('/officeinfo', function () {
+    return view('pages/officeinfo');
+});
+
 Route::get('/shippingoffices', function () {
     return view('pages/shippingoffices');
 });
