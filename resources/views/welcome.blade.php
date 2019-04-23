@@ -274,10 +274,10 @@
                                             <h6>Hard Copy of the Application Form:</h6>
                                             <div class="btn btn-elegant btn-sm float-left">
                                                 <span>Choose file</span>
-                                                <input type="file">
+                                                <input type="file" name="hard_copy">
                                             </div>
                                             <div class="file-path-wrapper">
-                                                <input id="hard-copy" name="hard_copy" class="file-path validate"
+                                                <input id="hard-copy"  class="file-path validate"
                                                     type="text" placeholder="Upload your file">
                                             </div>
                                         </div>
@@ -319,13 +319,14 @@
 
         //ajax 
         function ajax() {
-                   var test = JSON.stringify(jQuery('#app_form').serializeArray());
+                    var test = JSON.stringify(jQuery('#app_form').serializeArray());
                     var dataa = JSON.parse(test);
                     var formData = new FormData();
                     $.each(dataa, function (key, el) {
                         formData.append(el.name, el.value);
+                        
                     });
-
+                    console.log(formData);
 
                     $.ajax({
                         headers: {
