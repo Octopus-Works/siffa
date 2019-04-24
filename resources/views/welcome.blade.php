@@ -3,8 +3,18 @@
     <head>
         @include('incs.head')
         <style>
+            @media only screen and (min-width: 993px){
+            ul.stepper.horizontal .step-title {
+                padding: 0 1.5625rem 0 3.5rem!important;
+                white-space: normal!important;
+            }
+            }
+
                 .mt-5 {
                     margin-top: 6rem !important;
+                }
+                ul.stepper .step.active:before {
+                    background-color: #ffc107!important;
                 }
                 ul.stepper.horizontal .step.active .step-title:before {
                     background-color: #ffc107!important;

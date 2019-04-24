@@ -54,7 +54,7 @@
                 <div class="container text-center" style="height:900px">
                     <div class="mask flex-center rgba-black-slight">
                         <!-- Card Light -->
-                        <div class="card container p-5">
+                        <div class="card container p-5 mt-5">
 
                             <!-- Card image -->
                             <div class="view overlay p-5">
