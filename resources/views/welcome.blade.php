@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         @include('incs.head')
+        <title>Register</title>
         <style>
             @media only screen and (min-width: 993px){
             ul.stepper.horizontal .step-title {

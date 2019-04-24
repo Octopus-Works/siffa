@@ -6,7 +6,7 @@
 <head>
     <!-- Required meta tags always come first -->
     @include('incs.head')
-
+    <title>Shipping Offices</title>
     <link href={{url("../css/addons/datatables.min.css")}} rel="stylesheet">
     <!-- DataTables Select CSS -->
     <link href={{url("../css/addons/datatables-select.min.css")}} rel="stylesheet">

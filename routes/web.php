@@ -23,12 +23,16 @@ Route::get('/reports', function () {
     return view('pages/reports&publications');
 });
 
-Route::get('/officeinfo', function () {
-    return view('pages/officeinfo');
+Route::get('/office_info', function () {
+    return view('pages/office_info');
 });
 
-Route::get('/shippingoffices', function () {
-    return view('pages/shippingoffices');
+Route::get('/personal_info', function () {
+    return view('pages/personal_info');
+});
+
+Route::get('/shipping_offices', function () {
+    return view('pages/shipping_offices');
 });
 Route::post('/', 'ApplicationController@mail')->name('ApplicationSubmit'); 
 Auth::routes(['verify' => true]);
