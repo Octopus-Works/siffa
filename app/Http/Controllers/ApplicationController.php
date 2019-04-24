@@ -58,7 +58,6 @@ class ApplicationController extends Controller
         $application->Resume_information = $request->resume_info;
         $application->save();
 
-  
 
         // if ($counter == 0) 
         //     $folder = "financial_assignment"; 
@@ -74,7 +73,7 @@ class ApplicationController extends Controller
         // Get just filename
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
         // Get just ext
-        $extension = $$request->file('financial_photo')->getClientOriginalExtension();
+        $extension = $request->file('financial_photo')->getClientOriginalExtension();
         // Filename to store
         $fileNameToStore= $filename.'_'.time().'.'.$extension;
         $path = $request->file('financial_photo')->storeAs('public/financial_assignment', $fileNameToStore);
@@ -91,4 +90,5 @@ class ApplicationController extends Controller
         return redirect('/');
 
     }
+
 }
