@@ -34,7 +34,7 @@ Route::get('/personal_info', function () {
 
 Route::get('/shipping_offices', function () {
     $users = User::all();
-    return view('pages/shippingoffices')->withusers($users);
+    return view('pages/shipping_offices')->withusers($users);
 });
 //Route::post('/', 'ApplicationController@mail')->name('ApplicationSubmit'); 
 
