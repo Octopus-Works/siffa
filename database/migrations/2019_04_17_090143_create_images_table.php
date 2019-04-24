@@ -22,7 +22,6 @@ class CreateImagesTable extends Migration
 
             // Attributes
             $table->increments('id');
-            $table->uuid('uuid');
             $table->string('url')->nullable(true); 
             $table->morphs('imageable');
             $table->timestamps();

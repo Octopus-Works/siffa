@@ -1,5 +1,6 @@
 <?php
 
+Use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,17 +18,20 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return view('pages/about');
-});
+})->name('about');
 
 Route::get('/reports', function () {
     return view('pages/reports&publications');
 });
 
 Route::get('/shippingoffices', function () {
-    return view('pages/shippingoffices');
+    $users = User::all();
+    return view('pages/shippingoffices')->withusers($users);
 });
-Route::post('/', 'ApplicationController@mail')->name('ApplicationSubmit'); 
+//Route::post('/', 'ApplicationController@mail')->name('ApplicationSubmit'); 
+
 Auth::routes(['verify' => true]);
+Route::post('/register', 'Auth\RegisterController@mail')->name('register');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
