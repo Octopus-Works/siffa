@@ -26,7 +26,9 @@
         ul.stepper.horizontal .step-actions {
             position: relative !important;
         }
-
+        body {
+            background-color: #1c2331f5 !important;
+        }
     </style>
 </head>
 
@@ -41,11 +43,7 @@
 
     <!--Main Layout-->
     <main>
-        <div class="view jarallax shadow-lg" style="height: 65vh;">
-            <img class="jarallax-img" src={{url('img/3.jpg')}} alt="">
-            <div class="mask rgba-black-slight">
-            </div>
-        </div>
+
         <div class="container">
             <!--Grid row-->
             <div class="row mb-5 mt-5 p-3">
@@ -342,11 +340,7 @@
                 </div>
             </div>
         </div>
-        <div class="view jarallax">
-            <img class="jarallax-img" src={{url('img/7.jpg')}} alt="">
-            <div class="mask rgba-black-slight">
-            </div>
-        </div>
+
         @include('incs.footer')
     </main>
     <!--Main Layout-->
@@ -422,18 +416,7 @@
 
     </script>
 
-    <script>
-        // object-fit polyfill run
-        objectFitImages();
 
-        /* init Jarallax */
-        jarallax(document.querySelectorAll('.jarallax'));
-
-        jarallax(document.querySelectorAll('.jarallax-keep-img'), {
-            keepImg: true,
-        });
-
-    </script>
 
 
 </body>

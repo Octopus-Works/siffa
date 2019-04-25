@@ -33,6 +33,11 @@
         .mt-5{
             margin-top: 5rem!important;
         }
+
+        body{
+            color:#fff!important;
+            background-color: #1c2331f5!important;
+        }
     </style>
 
 
@@ -52,7 +57,7 @@
         <!--Main Navigation-->
 
         <main>
-                <div class="container-fluid white" style="height:900px">
+                <div class="container-fluid" style="height:900px">
                     <hr class="mb-5 mt-0">
                     <div class="container">
 

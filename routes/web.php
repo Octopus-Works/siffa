@@ -28,8 +28,12 @@ Route::get('/office_info', function () {
     return view('pages/office_info');
 });
 
-Route::get('/personal_info', function () {
-    return view('pages/personal_info');
+Route::get('/account_info', function () {
+    return view('pages/account_info');
+});
+
+Route::get('/application', function () {
+    return view('pages/application');
 });
 
 Route::get('/shipping_offices', function () {
