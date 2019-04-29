@@ -36,8 +36,11 @@ class CreateShippingOfficesTable extends Migration
             $table->string('position_title'); 
             $table->integer('chamber_of_commerce'); 
             $table->integer('commerical_registry'); 
-
             $table->timestamps();
+
+            // Foreign Keys
+            $table->unsignedInteger('user_id');
+            
         });
     }
 

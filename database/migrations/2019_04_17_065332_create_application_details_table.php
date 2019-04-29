@@ -26,6 +26,9 @@ class CreateApplicationDetailsTable extends Migration
             $table->string('Date_of_application'); 
             $table->string('Resume_information'); 
             $table->timestamps();
+
+            // Foreign Keys
+            $table->unsignedInteger('user_id');
         });
     }
 

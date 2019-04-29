@@ -164,50 +164,38 @@
                                 <li class="step">
                                     <div id="step3" class="step-title waves-effect waves-dark">Step 3</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Services Information <i
-                                                class="fas fa-info-circle m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Shipping Services Information <i class="fas fa-info-circle m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">Available Shipping Methods:</h6>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="method1"
-                                                        name="shipping_methods" value="LTL">
-                                                    <label class="custom-control-label" for="method1">Less Than Track
-                                                        Load(LTL)</label>
+                                                <div class="custom-control custom-checkbox ml-4"> 
+                                                    <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods[]" value="LTL">
+                                                    <label class="custom-control-label" for="method1">Less Than Track Load(LTL)</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="method2"
-                                                        name="shipping_methods" value="FTL">
-                                                    <label class="custom-control-label" for="method2">Full Track
-                                                        Load(FTL)</label>
+                                                    <input type="checkbox" class="custom-control-input" id="method2" name="shipping_methods[]" value="FTL">
+                                                    <label class="custom-control-label" for="method2">Full Track Load(FTL)</label>
                                                 </div>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">External Shipping Modes:</h6>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode1"
-                                                        name="shipping_modes" value="Wild">
-                                                    <label class="custom-control-label" for="mode1">Land
-                                                        Transport</label>
+                                                        
+                                                    <input type="checkbox" class="custom-control-input" id="mode1" name="shipping_modes[]" value="Wild">
+                                                    <label class="custom-control-label" for="mode1">Land Transport</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode2"
-                                                        name="shipping_modes" value="Aerial">
-                                                    <label class="custom-control-label" for="mode2">Air
-                                                        Transport</label>
+                                                    <input type="checkbox" class="custom-control-input" id="mode2" name="shipping_modes[]" value="Aerial">
+                                                    <label class="custom-control-label" for="mode2">Air Transport</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode3"
-                                                        name="shipping_modes" value="Nautical">
-                                                    <label class="custom-control-label" for="mode3">Water
-                                                        Transport</label>
+                                                    <input type="checkbox" class="custom-control-input" id="mode3" name="shipping_modes[]" value="Nautical">
+                                                    <label class="custom-control-label" for="mode3">Water Transport</label>
                                                 </div>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="src-dest" name="src_dest" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="src-dest">Sources and Destinations Served By the Shipping
-                                                    Company</label>
+                                                <input id="src-dest" name="src_dest" type="text" class="validate form-control" required>
+                                                <label for="src-dest">Sources and Destinations Served By the Shipping Company</label>
                                             </div>
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
