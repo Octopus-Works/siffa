@@ -1,5 +1,5 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark unique-color-dark scrolling-navbar">
-    <a class="navbar-brand amber-text" href="#"><strong>SIFFA</strong></a>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark custom-dark scrolling-navbar">
+    <a class="navbar-brand custom-yellow-text" href="#"><strong>SIFFA</strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,13 +21,13 @@
         </ul>
         <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item">
-                <a class="nav-link"><i class="fab fa-facebook-f amber-text"></i></a>
+                <a class="nav-link"><i class="fab fa-facebook-f custom-yellow-text"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"><i class="fab fa-twitter amber-text"></i></a>
+                <a class="nav-link"><i class="fab fa-twitter custom-yellow-text"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"><i class="fab fa-instagram amber-text"></i></a>
+                <a class="nav-link"><i class="fab fa-instagram custom-yellow-text"></i></a>
             </li>
         </ul>
     </div>

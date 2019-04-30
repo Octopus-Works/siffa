@@ -32,6 +32,10 @@ Route::get('/account_info', function () {
     return view('pages/account_info');
 });
 
+Route::get('/app_status', function () {
+    return view('pages/app_status');
+});
+
 Route::get('/application_info', 'ApplicationController@edit');
 Route::post('/application_info', 'ApplicationController@update')->name('application_edit');
 

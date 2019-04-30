@@ -16,17 +16,17 @@
 		<li class="nav-item dropdown ml-5">
 			<a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
 			   aria-haspopup="true" aria-expanded="false">
-				<i class="fas fa-user"></i>
+				<i class="fas custom-yellow-text fa-user"></i>
 				<span class="d-lg-inline-block d-md-inline-block">user name</span>
 			</a>
 			{{--TODO --}}
 			<div class="dropdown-menu dropdown-primary " aria-labelledby="navbarDropdownMenuLink">
 				<a class="dropdown-item" href="{{url("/cms/admins/profile/")}}">
-					<i class="fas fa-user-md mr-2" aria-hidden="true"></i>
+					<i class="fas custom-yellow-text fa-user-md mr-2" aria-hidden="true"></i>
 					<span>My Account</span>
 				</a>
 				<a class="dropdown-item" href="{{ url('/logout') }}">
-					<i class="fas fa-sign-out-alt mr-2" aria-hidden="true"></i>
+					<i class="fas custom-yellow-text fa-sign-out-alt mr-2" aria-hidden="true"></i>
 					<span>Log out</span>
 				</a>
 			</div>
