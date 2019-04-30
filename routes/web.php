@@ -58,3 +58,8 @@ Route::get('/contact', [
 Route::post('/contact', [
     'uses' => 'ContactMessageController@send'
 ]);
+
+
+Route::get('/view_messges', function () {
+    return view('pages/view_messges');
+});
