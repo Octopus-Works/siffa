@@ -32,9 +32,8 @@ Route::get('/account_info', function () {
     return view('pages/account_info');
 });
 
-Route::get('/application', function () {
-    return view('pages/application');
-});
+Route::get('/application_info', 'ApplicationController@edit');
+Route::post('/application_info', 'ApplicationController@update')->name('application_edit');
 
 Route::get('/shipping_offices', function () {
     $users = User::all();
@@ -59,3 +58,8 @@ Route::get('/contact', [
 Route::post('/contact', [
     'uses' => 'ContactMessageController@send'
 ]);
+
+
+Route::get('/view_messges', function () {
+    return view('pages/view_messges');
+});

@@ -31,10 +31,14 @@ class CreateShippingServicesTable extends Migration
 
             // Attributes
             $table->bigIncrements('id');
-            $table->enum('shipping_methods', ['LTL', 'FTL']); 
-            $table->enum('shipping_modes', ['wild', 'nautical', 'aerial']); 
+            $table->string('shipping_methods');  // ['LTL', 'FTL'] 
+            $table->string('shipping_modes');  // ['wild', 'nautical', 'aerial'] 
             $table->string('sources_destinations'); 
             $table->timestamps();
+
+            // Foreign Keys
+            $table->unsignedInteger('user_id');
+            
         });
     }
 

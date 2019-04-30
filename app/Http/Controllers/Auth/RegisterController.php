@@ -71,6 +71,7 @@ class RegisterController extends Controller
      */
     protected function mail(UserStoreRequest $request){
         
+        error_log($request);
         // Will return only validated data
         $validated = $request->validated(); 
         $username = str_random(10); 
@@ -90,7 +91,8 @@ class RegisterController extends Controller
         $user->address = $request->address; 
         $user->save(); 
 
-        $office = new ShippingOffice; 
+        $office = new ShippingOffice;
+        $office->user_id = $user->id;
         $office->name = $request->company_name;
         $office->addresses = $request->branches_address;
         $office->shipping_services = $request->shipping_services; 
@@ -98,14 +100,18 @@ class RegisterController extends Controller
         $office->chamber_of_commerce = $request->chamber_of_commerce; 
         $office->commerical_registry = $request->commercial_registry; 
         $office->save();
-
+ 
         $services = new ShippingService; 
-        $services->shipping_methods = $request->shipping_methods; 
-        $services->shipping_modes = $request->shipping_modes; 
+        $services->user_id = $user->id;
+        $chk = implode(' ', $request->shipping_methods);
+        $chk1 = implode(' ', $request->shipping_modes);
+        $services->shipping_methods = $chk;
+        $services->shipping_modes = $chk1;
         $services->sources_destinations = $request->src_dest;
         $services->save(); 
 
         $application = new ApplicationDetail; 
+        $application->user_id = $user->id;
         $application->Financial_assignment_status = $request->financial_status;
         $application->Date_of_application = $request->date_of_application; 
         $application->Resume_information = $request->resume_info;
@@ -130,7 +136,8 @@ class RegisterController extends Controller
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
         Session::flash('Success', 'Registeration is completed');
-        return redirect()->route('about');
+        return response('Success');
+        // return redirect()->route('about');
 
     }
 }

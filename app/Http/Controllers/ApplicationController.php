@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\UserStoreRequest;
 use App\Mail\GenerateCredentials;
+use Auth; 
 use Session; 
 use App\User;
 use App\Image; 
@@ -89,6 +90,78 @@ class ApplicationController extends Controller
         Session::flash('Success', 'Registeration is completed');
         return redirect('/');
 
+    }
+
+
+    public function show(){
+
+    }
+
+    public function edit(){
+        // Return the edit form 
+        if ( Auth::check())
+        {
+            $user = User::find(Auth::user()->id); 
+     
+            return view('pages.application_info')->withuser($user); 
+        }
+
+        return view('pages.application_info');
+        
+    }
+
+    public function update(Request $request){
+        
+        // $validated = $request->validated(); 
+        $user = User::find(Auth::user()->id); 
+
+        $user->fullname = $request->fullname;
+        $user->email = $request->email; 
+        $user->father_name = $request->father; 
+        $user->mother_name = $request->mother;
+        $user->date_of_birth = $request->date_of_birth; 
+        $user->place_of_birth = $request->place_of_birth; 
+        $user->record = $request->record; 
+        $user->nationality = $request->nationality; 
+        $user->address = $request->address; 
+
+        $user->shippingOffice->name = $request->company_name;
+        $user->shippingOffice->addresses = $request->branches_address;
+        $user->shippingOffice->shipping_services = $request->shipping_services; 
+        $user->shippingOffice->position_title = $request->position_title;
+        $user->shippingOffice->chamber_of_commerce = $request->chamber_of_commerce; 
+        $user->shippingOffice->commerical_registry = $request->commercial_registry; 
+
+        
+        $user->shippingService->shipping_methods = $request->shipping_methods; 
+        $user->shippingService->shipping_modes = $request->shipping_modes; 
+        $user->shippingService->sources_destinations = $request->src_dest;
+
+        $user->applicationDetail->Financial_assignment_status = $request->financial_status;
+        $user->applicationDetail->Date_of_application = $request->date_of_application; 
+        $user->applicationDetail->Resume_information = $request->resume_info;
+        $user->save();
+
+        // done until here.
+        if($request->has('financial_photo')){
+            $filenameWithExt = $request->file('financial_photo')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('financial_photo')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            $path = $request->file('financial_photo')->storeAs('public/financial_assignment', $fileNameToStore);
+            $Image = new Image;  
+            $Image->imageable_id = $user->id;
+            $Image->imageable_type = 'App\ApplicationDetail';
+            $Image->url = '/storage/financial_assignment/'. $fileNameToStore;
+            $Image->save();
+        }
+        
+        Session::flash('Success', 'Registeration is completed');
+        return response('Success');
+        // return redirect()->route('about');
     }
 
 }
