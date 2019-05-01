@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('incs.head')
+    @include('partials.head')
 
 <style>
 
@@ -23,7 +23,7 @@
 
     <!--Main Navigation-->
     <header>
-        @include('incs.nav')
+        @include('partials.nav')
         <div class="view jarallax" style="height: 100vh;">
             <img class="jarallax-img" src="https://mdbootstrap.com/img/Photos/Others/img%20%2844%29.jpg" alt="">
             <div class="mask rgba-blue-slight">
@@ -397,7 +397,7 @@
 
 
 
-@include('incs.footer')
+@include('partials.footer')
 
 </body>
 

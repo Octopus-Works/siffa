@@ -98,15 +98,15 @@ class ApplicationController extends Controller
     }
 
     public function edit(){
-        // Return the edit form 
+        
         if ( Auth::check())
         {
             $user = User::find(Auth::user()->id); 
      
-            return view('pages.application_info')->withuser($user); 
+            return view('user.application_info')->withuser($user); 
         }
 
-        return view('pages.application_info');
+        return view('user.application_info');
         
     }
 

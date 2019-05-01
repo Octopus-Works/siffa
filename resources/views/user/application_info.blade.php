@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('incs.head')
+    @include('partials.head')
     <style>
         @media only screen and (min-width: 993px) {
             ul.stepper.horizontal .step-title {
@@ -45,7 +45,7 @@
 
     <!--Main Navigation-->
     <header>
-        @include('incs.nav')
+        @include('partials.nav')
     </header>
     <!--Main Navigation-->
 
@@ -154,8 +154,8 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">Available Shipping Methods:</h6>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                        <?php $chk = "" ?>
-                                                        <?php $chk = explode(",",$user->shippingService->shipping_methods) ?>
+                                                    <?php $chk = "" ?>
+                                                    <?php $chk = explode(" ",$user->shippingService->shipping_methods) ?>
                                                     <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods[]" value="LTL"
                                                     @if(in_array("LTL", $chk)) checked @endif>
                                                     <label class="custom-control-label" for="method1">Less Than Track Load(LTL)</label>
@@ -169,8 +169,8 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">External Shipping Modes:</h6>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                        <?php $chk1 = "" ?>
-                                                        <?php $chk1 = explode(",",$user->shippingService->shipping_modes) ?>
+                                                    <?php $chk1 = "" ?>
+                                                    <?php $chk1 = explode(" ",$user->shippingService->shipping_modes) ?>
                                                     <input type="checkbox" class="custom-control-input" id="mode1" name="shipping_modes[]" value="Wild"
                                                     @if(in_array("Wild", $chk1)) checked @endif>
                                                     <label class="custom-control-label" for="mode1">LandTransport</label>
@@ -312,7 +312,7 @@
             </div>
         </div>
 
-        @include('incs.footer')
+        @include('partials.footer')
     </main>
     <!--Main Layout-->
 
