@@ -5,7 +5,7 @@
 
 <head>
     <!-- Required meta tags always come first -->
-    @include('incs.head')
+    @include('partials.head')
     <title>Shipping Offices</title>
     <link href={{url("../css/addons/datatables.min.css")}} rel="stylesheet">
     <!-- DataTables Select CSS -->
@@ -17,13 +17,6 @@
             margin-top: 6rem !important;
         }
 
-        body {
-            color: #fff !important;
-        }
-
-        .card {
-            background-color: #1c2331bf !important;
-        }
 
         .btn.btn-sm {
             padding: .7rem !important;
@@ -50,30 +43,6 @@
             background-color: #3d5e9e !important;
         }
 
-        .red-text {
-            color: #DD2428 !important;
-        }
-
-        .red {
-            background-color: #DD2428 !important;
-        }
-
-        .black {
-            background-color: #231F20 !important;
-        }
-
-        .white {
-            background-color: #ffffff !important;
-        }
-
-        .btn-black {
-            background: #646464 !important;
-        }
-
-        .btn-primary {
-            background: #55acee !important;
-            color: #fff !important;
-        }
 
     </style>
 
@@ -89,7 +58,7 @@
 
         <!--Main Navigation-->
         <header>
-            @include('incs.nav')
+            @include('partials.nav')
         </header>
         <!--Main Navigation-->
 
@@ -102,13 +71,13 @@
 
 
                             <!--Card-->
-                            <div class="card card-cascade narrower mt-5 mb-5">
+                            <div class="card card-cascade narrower custom-primary-light mt-5 mb-5">
 
                                 <!--Card header-->
                                 <div
-                                    class="view view-cascade py-3 gradient-card-header unique-color-dark mx-4 d-flex justify-content-between align-items-center">
+                                    class="view view-cascade py-3 gradient-card-header custom-primary mx-4 d-flex justify-content-between align-items-center">
 
-                                    <a href="" class="amber-text mx-3 h3-responsive">Shipping Offices</a>
+                                    <a href="" class="custom-secondary-text mx-3 h3-responsive">Shipping Offices</a>
 
 
                                 </div>
@@ -141,7 +110,7 @@
         <!-- Main layout -->
 
         <!-- Footer -->
-        @include('incs.footer')
+        @include('partials.footer')
 
         <!-- Footer -->
 
@@ -158,30 +127,30 @@
 
                 var dataSet = [
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
                     ],
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
                     ],
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
                     ],
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
                     ],
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
                     ],
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
                     ],
                 ];
 
                 var columnDefs = [{
-                        title: "<h5 class='font-weight-bold amber-text'>Title</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold amber-text'>Working Location</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Working Location</h5>"
                     },
                     {
 
@@ -239,7 +208,7 @@
         </script>
         <!-- Search form -->
         <form id="temp" class="form-inline md-form form-sm active-cyan active-cyan-2 mt-2">
-            <i class="fas fa-search ml-auto" aria-hidden="true"></i>
+            <i class="fas custom-secondary-text fa-search ml-auto" aria-hidden="true"></i>
             <input class="form-control form-control-sm ml-2 w-35" type="text" placeholder="Search" aria-label="Search">
         </form>
 

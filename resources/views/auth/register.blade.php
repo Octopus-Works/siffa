@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('incs.head')
+    @include('partials.head')
     <style>
         @media only screen and (min-width: 993px) {
             ul.stepper.horizontal .step-title {
@@ -35,7 +35,7 @@
 
     <!--Main Navigation-->
     <header>
-        @include('incs.nav')
+        @include('partials.nav')
     </header>
     <!--Main Navigation-->
 
@@ -55,7 +55,7 @@
                     <form id="app_form" action="{{ route('register')}} " enctype="multipart/form-data" method="POST">
                         <div class="card p-5 mt-3 mb-3 shadow-lg">
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i
-                                    class="fas fa-clipboard amber-text ml-3"></i></h1>
+                                    class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1050px;">
                                 <li class="step active">
                                     <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
@@ -335,7 +335,7 @@
             <div class="mask rgba-black-slight">
             </div>
         </div>
-        @include('incs.footer')
+        @include('partials.footer')
     </main>
     <!--Main Layout-->
 

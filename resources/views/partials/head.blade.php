@@ -12,3 +12,4 @@
     <!-- Your custom styles (optional) -->
     <link href={{url("css/style.css")}} rel="stylesheet">
     <link href={{url("css/addons-pro/stepper.css")}} rel="stylesheet">
+    <link href={{url("css/octopus_custom/layout.css")}} rel="stylesheet">

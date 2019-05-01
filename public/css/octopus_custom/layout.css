@@ -1,0 +1,26 @@
+.custom-secondary{
+    background-color: #ffc107;
+    color:#fff
+}
+
+.custom-secondary-text{
+    color: #ffc107;
+}
+
+.custom-primary{
+    background-color:#1c2331;
+    color:#fff;
+}
+
+.custom-primary-light{
+    background-color:#1c2331f5;
+    color:#fff;
+}
+
+.custom-tertiary{
+    background-color: #3d5e9e;
+}
+
+.custom-tertiary-text{
+    color: #3d5e9e;
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('incs.head')
+    @include('partials.head')
     <style>
         @media only screen and (min-width: 993px) {
             ul.stepper.horizontal .step-title {
@@ -27,8 +27,16 @@
             position: relative !important;
         }
         body {
-            background-color: #1c2331f5 !important;
+            background-color: #373f4e !important;
         }
+
+        .grey-text{
+            color:#b7b9bd!important;
+        }
+        .md-form label{
+            color:#b7b9bd!important;
+        }
+
     </style>
 </head>
 
@@ -37,7 +45,7 @@
 
     <!--Main Navigation-->
     <header>
-        @include('incs.nav')
+        @include('partials.nav')
     </header>
     <!--Main Navigation-->
 
@@ -52,7 +60,7 @@
                 <div class="col-md-12">
                     <form id="app_form" action="{{ route('application_edit')}} " enctype="multipart/form-data" method="POST">
                         <div class="card p-5 mt-3 mb-3 shadow-lg">
-                            <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
+                            <h1 class="text-center mb-5 font-weight-bolder grey-text">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1050px;">
                                 <li class="step active">
                                     <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
@@ -146,8 +154,8 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">Available Shipping Methods:</h6>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                        <?php $chk = "" ?>
-                                                        <?php $chk = explode(",",$user->shippingService->shipping_methods) ?>
+                                                    <?php $chk = "" ?>
+                                                    <?php $chk = explode(" ",$user->shippingService->shipping_methods) ?>
                                                     <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods[]" value="LTL"
                                                     @if(in_array("LTL", $chk)) checked @endif>
                                                     <label class="custom-control-label" for="method1">Less Than Track Load(LTL)</label>
@@ -161,8 +169,8 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">External Shipping Modes:</h6>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                        <?php $chk1 = "" ?>
-                                                        <?php $chk1 = explode(",",$user->shippingService->shipping_modes) ?>
+                                                    <?php $chk1 = "" ?>
+                                                    <?php $chk1 = explode(" ",$user->shippingService->shipping_modes) ?>
                                                     <input type="checkbox" class="custom-control-input" id="mode1" name="shipping_modes[]" value="Wild"
                                                     @if(in_array("Wild", $chk1)) checked @endif>
                                                     <label class="custom-control-label" for="mode1">LandTransport</label>
@@ -304,7 +312,7 @@
             </div>
         </div>
 
-        @include('incs.footer')
+        @include('partials.footer')
     </main>
     <!--Main Layout-->
 

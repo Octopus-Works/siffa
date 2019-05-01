@@ -5,22 +5,15 @@
 
 <head>
     <!-- Required meta tags always come first -->
-    @include('incs.head')
+    @include('partials.head')
     <title>Account Information</title>
 
     <style>
-        .card {
-            background-color: #1c2331bf !important;
-        }
 
         body {
-            color: #000 !important;
             line-height: 2rem !important;
         }
 
-        .card .card-body .card-text {
-            color: #cccccc !important;
-        }
 
         hr {
             border-top: 1px solid rgba(255, 191, 0, 0.51);
@@ -34,17 +27,13 @@
             margin-top: 9rem;
         }
 
-        body {
-            color: #fff !important;
-            background-color: #1c2331f5 !important;
-        }
 
     </style>
 
 
 </head>
 
-<body class="">
+<body class="custom-primary-light">
 
     <!-- Navigation -->
     <header>
@@ -53,7 +42,7 @@
 
         <!--Main Navigation-->
         <header>
-            @include('incs.nav')
+            @include('partials.nav')
         </header>
         <!--Main Navigation-->
 
@@ -62,8 +51,8 @@
 
             <div class="container-fluid" style="height:850px">
                 <div class="container mt-9">
-                    <h1 class="text-center  font-weight-bolder amber-text">Account Information<i
-                            class="fas fa-user amber-text ml-3"></i></h1>
+                    <h1 class="text-center  font-weight-bolder custom-secondary-text">Account Information<i
+                            class="fas fa-user custom-secondary-text ml-3"></i></h1>
                     <div class="section extra-margins  py-5 text-center text-lg-left">
 
                         <!--Grid row-->
@@ -87,8 +76,8 @@
 
 
                                 <!-- Title -->
-                                <h1 style="color:#3d5e9e">Company Name</h1>
-                                <hr class="amber-text">
+                                <h1 class="custom-tertiary-text">Company Name</h1>
+                                <hr class="custom-secondary-text">
                                 <!-- Text -->
                                 <p>Full Name: John Doe</p>
                                 <p>Username: companyname</p>
@@ -112,7 +101,7 @@
         <!-- Main layout -->
 
         <!-- Footer -->
-        @include('incs.footer')
+        @include('partials.footer')
 
         <!-- Footer -->
 

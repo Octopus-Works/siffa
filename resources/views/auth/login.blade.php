@@ -3,7 +3,7 @@
 
 <head>
 
-    @include('incs.head')
+    @include('partials.head')
     <style>
         .pink {
             background-color: #ffb6c1 !important;
@@ -117,7 +117,7 @@
 
 <body>
 
-    @include('incs.nav')
+    @include('partials.nav')
 
     <section class="view ">
         <div class="carousel-item active">
@@ -211,7 +211,7 @@
 
 
 
-    @include('incs.footer')
+    @include('partials.footer')
 
 
 

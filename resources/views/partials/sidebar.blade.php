@@ -1,4 +1,4 @@
-<div id="slide-out" class="side-nav fixed" style="background:  #1c2331f5">
+<div id="slide-out" class="side-nav fixed custom-primary">
 	<ul class="custom-scrollbar">
 		<!-- Logo -->
 		<li class="logo-sn waves-effect">
@@ -27,8 +27,8 @@
 		<!-- Side navigation links -->
 		<li>
 			<ul class="collapsible collapsible-accordion">
-				<li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-th-list"></i>
-						<i class="fas fa-angle-down rotate-icon"></i>Content Management</a>
+				<li><a class="collapsible-header waves-effect arrow-r"><i class="fas custom-secondary-text fa-th-list"></i>
+						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>Content Management</a>
 					<div class="collapsible-body">
 						<ul>
 							{{--TODO --}}
@@ -65,8 +65,8 @@
 						</ul>
 					</div>
 				</li >
-				<li ><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-users"></i>
-						<i class="fas fa-angle-down rotate-icon"></i>User Management</a>
+				<li ><a class="collapsible-header waves-effect arrow-r"><i class="fas custom-secondary-text fa-users"></i>
+						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>User Management</a>
 					<div class="collapsible-body">
 						<ul>
 							<li>
@@ -77,8 +77,8 @@
 						</ul>
 					</div>
 				</li>
-				<li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-marker"></i>
-						<i class="fas fa-angle-down rotate-icon"></i>Requests Management</a>
+				<li><a class="collapsible-header waves-effect arrow-r"><i class="fas custom-secondary-text fa-marker"></i>
+						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>Requests Management</a>
 					<div class="collapsible-body">
 						<ul>
 							<li>

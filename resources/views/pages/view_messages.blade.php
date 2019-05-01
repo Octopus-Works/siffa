@@ -4,24 +4,12 @@
 
 
 <head>
-    <!-- Required meta tags always come first -->
-    @include('incs.head')
-    <title>Account Information</title>
+  <!-- Required meta tags always come first -->
+  @include('partials.head')
+  <title>Account Information</title>
 
-    <style>
-        .card {
-            background-color: #1c2331bf !important;        }
+  <style>
 
-        body {
-            color: #fff !important;
-            background-color: #1c2331f5 !important;
-        }
-
-
-
-    </style>
-
-<style>
 
         .pagination .page-item.active .page-link {
           background-color: #3d5e9e!important;
@@ -87,9 +75,6 @@
           font-weight: 400;
         }
         
-        .fas{
-            color: #ffc107!important;
-        }
         .cascading-admin-card .admin-up .fab, .cascading-admin-card .admin-up .far, .cascading-admin-card .admin-up .fas {
           padding: 1.7rem;
           font-size: 2rem;
@@ -153,22 +138,93 @@
             text-align: center!important;
         }
     
+    .fas{
+        color: #ffc107!important;
+    }
+    .cascading-admin-card .admin-up .fab, .cascading-admin-card .admin-up .far, .cascading-admin-card .admin-up .fas {
+      padding: 1.7rem;
+      font-size: 2rem;
+      color: #ffc107 !important
+      text-align: left;
+      margin-right: 1rem;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+    }
+    .cascading-admin-card .admin-up .fab, .cascading-admin-card .admin-up .far, .cascading-admin-card .admin-up .fas, .z-depth-2 {
+      -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)!important;
+      box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)!important;
+    }
+    .info-color {
+      background-color: #33b5e5!important;
+    }
+    .pb-4, .py-4 {
+      padding-bottom: 1.5rem!important;
+    }
+    .pt-4, .py-4 {
+      padding-top: 1.5rem!important;
+    }
+    .fa, .fas {
+      font-weight: 900;
+    }
+    .fa, .far, .fas {
+      font-family: "Font Awesome 5 Free";
+    }
+    .fa, .fab, .fal, .far, .fas {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+    i, cite, em, var, address, dfn {
+      font-style: italic;
+    }
+    .blockquote .bq-title, .card, .card .card-body h1, .card .card-body h2, .card .card-body h3, .card .card-body h4, .card .card-body h5, .card .card-body h6 {
+      font-weight: 400;
+    }
+    .card {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
 
-      
-        
+      background-clip: border-box;
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+    }
+    .text-center {
+        text-align: center!important;
+    }
 
+
+  
     
+
+
 
     
       
           
   
-      </style>
+  </style>
 </head>
 
-<body class="fixed-sn ">
+<body class="fixed-sn custom-primary-light ">
 
-
+        <form id="temp" class="form-inline md-form form-sm active-cyan active-cyan-2 mt-2">
+    
+            <i class="fas custom-secondary-text fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-sm ml-3 w-25" type="text" placeholder="Search" aria-label="Search">
+    
+        </form>
 
     <!-- Navigation -->
     <header>
@@ -177,8 +233,8 @@
 
         <!--Main Navigation-->
         <header>
-            @include('incs.nav_dash_board')
-            @include('incs.sidebar')
+            @include('partials.nav_dashboard')
+            @include('partials.sidebar')
         </header>
         <!--Main Navigation-->
 
@@ -207,10 +263,10 @@
     
                     <div>
                       <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                        <i class="fas fa-th-large mt-0"></i>
+                        <i class="fas custom-secondary-text fa-th-large mt-0"></i>
                       </button>
                       <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                        <i class="fas fa-columns mt-0"></i>
+                        <i class="fas custom-secondary-text fa-columns mt-0"></i>
                       </button>
                     </div>
     
@@ -219,12 +275,12 @@
                     <div>
                       <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2"
                       data-toggle="modal"
-                        data-target="#modal_new_messge">
+                        data-target="#modal_new_message">
                         <span>new</span>
                         <i class="fas fa-plus mt-0"></i>
                       </button>
                       <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal"
-                        data-target="#modal_edit_messge">
+                        data-target="#modal_edit_message">
                         <span>edit</span>
                         <i class="fas fa-edit mt-0"></i>
                       </button>
@@ -238,7 +294,7 @@
                   <!--Card content-->
                   <!--Body-->
                   <div class="modal-body">
-                      <div class="card">
+                      <div class="card custom-primary">
                           <div class="card-body">
                               <div class="table-responsive">
                                   <table id="example" class="table table-striped" cellspacing="0"
@@ -324,10 +380,10 @@ var dataSet = [
 ];
 
 var columnDefs = [{
-        title: "<h5 class='font-weight-bold amber-text'>From</h5>"
+        title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
     },
     {
-        title: "<h5 class='font-weight-bold amber-text'>Title</h5>"
+        title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
     },
     {
 
