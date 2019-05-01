@@ -79,9 +79,9 @@
                                 <h1 class="custom-tertiary-text">Company Name</h1>
                                 <hr class="custom-secondary-text">
                                 <!-- Text -->
-                                <p>Full Name: John Doe</p>
-                                <p>Username: companyname</p>
-                                <p>Password: t42#bVmQ</p>
+                                <p>Full Name: {{ $user->fullname }}</p>
+                                <p>Username: {{ $user->shippingoffice->name }}</p>
+                                {{-- <p>Password: {{ $user->password }}</p> --}}
                             </div>
                             <!--Grid column-->
 

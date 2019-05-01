@@ -61,7 +61,7 @@
 
                                     <!--Image-->
                                     <div class="view overlay">
-                                        <img src="img/custom4.jpg" style="min-height:383px; min-width:400px" class="img-fluid z-depth-1" alt="">
+                                        <img src="{{ $user->applicationdetail->images[0]->url}}" style="min-height:383px; min-width:400px" class="img-fluid z-depth-1" alt="">
                                         <div class="mask rgba-white-slight"></div>
                                     </div>
                                     <!--/.Image-->
@@ -74,16 +74,16 @@
 
 
                                     <!-- Title -->
-                                    <h1 class="custom-tertiary-text">Company Name</h1>
+                                    <h1 class="custom-tertiary-text">{{ $user->shippingoffice->name }}</h1>
                                     <hr class="custom-secondary-text">
                                     <!-- Text -->
-                                    <p>Office Owner Name</p>
-                                    <p>Phone Number: +963 011 1234567</p>
-                                    <p>Mobile Number: +963 991 123456</p>
-                                    <p>Main Branch Address: Mazzeh</p>
-                                    <p>Services: Types of services provided </p>
-                                    <p>E-mail: shipping@shippingcompany.com</p>
-                                    <p>Website: www.shippingcompany.com</p>
+                                    <p>Office Owner Name: {{ $user->fullname }} </p>
+                                    {{-- <p>Phone Number: {{ $user->phone_number}}</p>
+                                    <p>Mobile Number: {{$user->mobile_number }}</p> --}}
+                                    <p>Main Branch Address: {{ $user->shippingoffice->addresses}}</p>
+                                    <p>Services: {{ $user->shippingoffice->shipping_services}} </p>
+                                    <p>E-mail: {{ $user->email }}</p>
+                                    {{-- <p>Website: {{ $user->website }}</p> --}}
                                 </div>
                                 <!--Grid column-->
 
