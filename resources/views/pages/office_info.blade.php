@@ -9,18 +9,12 @@
     <title>Office Information</title>
 
     <style>
-        .card {
-            background-color: #1c2331bf !important;
-        }
+
 
         body {
-            color: #000 !important;
             line-height: 2rem !important;
         }
 
-        .card .card-body .card-text {
-            color: #cccccc !important;
-        }
 
         hr {
             border-top: 1px solid rgba(255, 191, 0, 0.51);
@@ -34,16 +28,12 @@
             margin-top: 5rem!important;
         }
 
-        body{
-            color:#fff!important;
-            background-color: #1c2331f5!important;
-        }
     </style>
 
 
 </head>
 
-<body class="">
+<body class="custom-primary-light">
 
     <!-- Navigation -->
     <header>
@@ -84,8 +74,8 @@
 
 
                                     <!-- Title -->
-                                    <h1>Office Name</h1>
-                                    <hr class="amber-text">
+                                    <h1 class="custom-tertiary-text">Office Name</h1>
+                                    <hr class="custom-secondary-text">
                                     <!-- Text -->
                                     <p>Office Owner Name</p>
                                     <p>Phone Number: +963 011 1234567</p>

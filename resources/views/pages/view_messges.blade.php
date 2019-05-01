@@ -9,19 +9,7 @@
     <title>Account Information</title>
 
     <style>
-        .card {
-            background-color: #1c2331bf !important;        }
 
-        body {
-            color: #fff !important;
-            background-color: #1c2331f5 !important;
-        }
-
-
-
-    </style>
-
-<style>
 
         .pagination .page-item.active .page-link {
           background-color: #3d5e9e!important;
@@ -87,9 +75,6 @@
           font-weight: 400;
         }
         
-        .fas{
-            color: #ffc107!important;
-        }
         .cascading-admin-card .admin-up .fab, .cascading-admin-card .admin-up .far, .cascading-admin-card .admin-up .fas {
           padding: 1.7rem;
           font-size: 2rem;
@@ -166,11 +151,11 @@
       </style>
 </head>
 
-<body class="fixed-sn ">
+<body class="fixed-sn custom-primary-light ">
 
         <form id="temp" class="form-inline md-form form-sm active-cyan active-cyan-2 mt-2">
     
-            <i class="fas fa-search" aria-hidden="true"></i>
+            <i class="fas custom-secondary-text fa-search" aria-hidden="true"></i>
             <input class="form-control form-control-sm ml-3 w-25" type="text" placeholder="Search" aria-label="Search">
     
         </form>
@@ -205,17 +190,17 @@
     
     
                 <!--Card-->
-                <div class="card card-cascade narrower">
+                <div class="card card-cascade narrower  custom-primary mb-4">
     
                   <!--Card header-->
-                  <div class="view view-cascade py-3 gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center">
+                  <div class="view view-cascade py-3 gradient-card-header  custom-tertiary mx-4 d-flex justify-content-between align-items-center">
     
                     <div>
                       <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                        <i class="fas fa-th-large mt-0"></i>
+                        <i class="fas custom-secondary-text fa-th-large mt-0"></i>
                       </button>
                       <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                        <i class="fas fa-columns mt-0"></i>
+                        <i class="fas custom-secondary-text fa-columns mt-0"></i>
                       </button>
                     </div>
     
@@ -226,12 +211,12 @@
                       data-toggle="modal"
                         data-target="#modal_new_messge">
                         <span>new</span>
-                        <i class="fas fa-ban mt-0"></i>
+                        <i class="fas custom-secondary-text fa-ban mt-0"></i>
                       </button>
                       <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal"
                         data-target="#modal_edit_messge">
                         <span>edit</span>
-                        <i class="fas fa-unlock-alt mt-0"></i>
+                        <i class="fas custom-secondary-text fa-unlock-alt mt-0"></i>
                       </button>
     
                     </div>
@@ -243,7 +228,7 @@
                   <!--Card content-->
                   <!--Body-->
                   <div class="modal-body">
-                      <div class="card">
+                      <div class="card custom-primary">
                           <div class="card-body">
                               <div class="table-responsive">
                                   <table id="example" class="table table-striped" cellspacing="0"
@@ -304,30 +289,30 @@ $(document).ready(function () {
 
 var dataSet = [
     ["Tiger Nixon", "test",
-        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
     ],
 ];
 
 var columnDefs = [{
-        title: "<h5 class='font-weight-bold amber-text'>From</h5>"
+        title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
     },
     {
-        title: "<h5 class='font-weight-bold amber-text'>Title</h5>"
+        title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
     },
     {
 

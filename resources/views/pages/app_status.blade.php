@@ -10,10 +10,7 @@
 
     <style>
 
-        body {
-            color: #fff !important;
-            background-color: #1c2331f5 !important;
-        }
+
 
         .badge-success {
             background-color: #05a245 !important;
@@ -224,11 +221,11 @@
     </style>
 </head>
 
-<body class="fixed-sn ">
+<body class="fixed-sn custom-primary-light">
 
     <form id="temp" class="form-inline md-form form-sm active-cyan active-cyan-2 mt-2">
 
-        <i class="fas fa-search custom-yellow-text" aria-hidden="true"></i>
+        <i class="fas fa-search custom-secondary-text" aria-hidden="true"></i>
         <input class="form-control form-control-sm ml-3 w-25" type="text" placeholder="Search" aria-label="Search">
 
     </form>
@@ -246,7 +243,7 @@
         <!--Main Navigation-->
 
         <!--Main layout-->
-        <main class="">
+        <main>
 
 
 
@@ -263,18 +260,18 @@
 
 
                             <!--Card-->
-                            <div class="card card-cascade narrower custom-dark">
+                            <div class="card card-cascade narrower custom-primary mb-4">
 
                                 <!--Card header-->
                                 <div
-                                    class="view view-cascade py-3 gradient-card-header custom-blue mx-4 d-flex justify-content-between align-items-center">
+                                    class="view view-cascade py-3 gradient-card-header custom-tertiary mx-4 d-flex justify-content-between align-items-center">
 
                                     <div>
                                         <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                            <i class="fas custom-yellow-text fa-th-large mt-0"></i>
+                                            <i class="fas custom-secondary-text fa-th-large mt-0"></i>
                                         </button>
                                         <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                            <i class="fas custom-yellow-text fa-columns mt-0"></i>
+                                            <i class="fas custom-secondary-text fa-columns mt-0"></i>
                                         </button>
                                     </div>
 
@@ -284,12 +281,12 @@
                                         <button type="button" id="new"
                                             class="btn btn-outline-white btn-rounded btn-sm px-2">
                                             <span>new</span>
-                                            <i class="fas custom-yellow-text fa-ban mt-0"></i>
+                                            <i class="fas custom-secondary-text fa-ban mt-0"></i>
                                         </button>
                                         <button id="delete" type="button"
                                             class="btn btn-outline-white btn-rounded btn-sm px-2">
                                             <span>edit</span>
-                                            <i class="fas custom-yellow-text fa-unlock-alt mt-0"></i>
+                                            <i class="fas custom-secondary-text fa-unlock-alt mt-0"></i>
                                         </button>
 
                                     </div>
@@ -301,7 +298,7 @@
                                 <!--Card content-->
                                 <!--Body-->
                                 <div class="modal-body">
-                                    <div class="card custom-dark">
+                                    <div class="card custom-primary">
                                         <div class="card-body">
                                             <div class="table-responsive">
                                                 <table id="example" class="table table-striped" cellspacing="0"
@@ -360,37 +357,35 @@
 
 
                 var dataSet = [
-                    ["Application 1",
-                        "<h5><span class='badge badge-success rounded-pill p-2'>Established</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-yellow waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                    ["Application 1", "<h5><span class='badge badge-success rounded-pill p-2'>Established</span></h5>", "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
                     ],
                     ["Application 2",
                         "<h5><span class='badge badge-warning rounded-pill p-2'>In Progress</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-yellow waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
                     ],
                     ["Application 3",
                         "<h5><span class='badge badge-danger rounded-pill p-2'>Rejected</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-yellow waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
                     ],
                     ["Application 4",
                         "<h5><span class='badge badge-info rounded-pill p-2'>Approved Under Payment</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-yellow waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
                     ],
                     ["Application 5",
                         "<h5><span class='badge badge-primary rounded-pill p-2'>Paid Under Registration</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-yellow waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
                     ],
                     ["Application 6",
                         "<h5><span class='badge badge-success rounded-pill p-2'>Established</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-yellow waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
                     ],
                 ];
 
                 var columnDefs = [{
-                        title: "<h5 class='font-weight-bold custom-yellow-text'>Application</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Application</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-yellow-text'>Status</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Status</h5>"
                     },
                     {
 

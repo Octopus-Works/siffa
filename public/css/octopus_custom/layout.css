@@ -1,15 +1,26 @@
-.custom-yellow{
+.custom-secondary{
     background-color: #ffc107;
+    color:#fff
 }
 
-.custom-yellow-text{
+.custom-secondary-text{
     color: #ffc107;
 }
 
-.custom-dark{
+.custom-primary{
     background-color:#1c2331;
+    color:#fff;
 }
 
-.custom-blue{
+.custom-primary-light{
+    background-color:#1c2331f5;
+    color:#fff;
+}
+
+.custom-tertiary{
     background-color: #3d5e9e;
+}
+
+.custom-tertiary-text{
+    color: #3d5e9e;
 }
