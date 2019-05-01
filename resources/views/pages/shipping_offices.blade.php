@@ -126,24 +126,15 @@
 
 
                 var dataSet = [
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
-                    ],
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
-                    ],
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
-                    ],
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
-                    ],
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
-                    ],
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
-                    ],
+                    @if ( @isset($users))
+                        @foreach($users as $user)[
+                            "{{ $user->shippingoffice->name }}",
+                            "{{ $user->shippingoffice->addresses }}",
+                            "<button onclick='location.href = "{{url('company_info/') . $user->id}}";' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
+                        ],
+                        @endforeach
+                    @endif
+
                 ];
 
                 var columnDefs = [{

@@ -13,18 +13,14 @@ Use App\User;
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about', 'PagesController@about')->name('about');
+Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/reports', 'PagesController@reports')->name('reports');
+Route::get('/shipping_offices', 'PagesController@shipping_offices')->name('shipping_offices');
 
-Route::get('/about', function () {
-    return view('pages/about');
-})->name('about');
-
-Route::get('/contact', function () {
-    return view('pages/contact');
-})->name('about');
-
-
-Route::get('/reports', function () {
-    return view('pages/reports&publications');
+Route::get('/company_info/{id}', function(){
+    $user = User::find($id); 
+    return view('user/company_info')->withuser($user); 
 });
 
 Route::get('/account_info', function () {
@@ -42,10 +38,6 @@ Route::get('/app_status', function () {
 Route::get('/application_info', 'ApplicationController@edit');
 Route::post('/application_info', 'ApplicationController@update')->name('application_edit');
 
-Route::get('/shipping_offices', function () {
-    $users = User::all();
-    return view('pages/shipping_offices')->withusers($users);
-});
 
 Auth::routes(['verify' => true]);
 Route::post('/register', 'Auth\RegisterController@mail')->name('register');
@@ -56,13 +48,12 @@ Route::post('/register', 'Auth\RegisterController@mail')->name('register');
 
 // Route::post('/verification', 'Auth\MailSendingController@mail')->name('verification'); 
 //contact us route
-Route::get('/contact', [
-'uses' => 'ContactMessageController@create'
-]);
-Route::post('/contact', [
-    'uses' => 'ContactMessageController@send'
-]);
-
+// Route::get('/contact', [
+// 'uses' => 'ContactMessageController@create'
+// ]);
+// Route::post('/contact', [
+//     'uses' => 'ContactMessageController@send'
+// ]);
 
 Route::get('/view_messages', function () {
     return view('pages/view_messages');

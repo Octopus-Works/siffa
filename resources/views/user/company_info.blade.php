@@ -74,7 +74,7 @@
 
 
                                     <!-- Title -->
-                                    <h1 class="custom-tertiary-text">Office Name</h1>
+                                    <h1 class="custom-tertiary-text">Company Name</h1>
                                     <hr class="custom-secondary-text">
                                     <!-- Text -->
                                     <p>Office Owner Name</p>
