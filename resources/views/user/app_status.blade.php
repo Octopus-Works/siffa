@@ -10,31 +10,7 @@
 
     <style>
 
-        main{
-            height: -webkit-fill-available;
-        }
 
-
-        .badge-success {
-            background-color: #05a245 !important;
-        }
-
-        .badge-warning {
-            background-color: #ffbb33de !important;
-        }
-
-        .badge-danger {
-            background-color: #ff2438bf !important;
-        }
-
-
-        .badge-info {
-            background-color: #33b5e5de !important;
-        }
-
-        .badge-primary {
-            background-color: #4285f4b5 !important;
-        }
 
 
 
@@ -217,16 +193,9 @@
 
 <body class="fixed-sn custom-primary-light">
 
-    <form id="temp" class="form-inline md-form form-sm active-cyan active-cyan-2 mt-2">
 
-        <i class="fas fa-search custom-secondary-text" aria-hidden="true"></i>
-        <input class="form-control form-control-sm ml-3 w-25" type="text" placeholder="Search" aria-label="Search">
-
-    </form>
 
     <!-- Navigation -->
-    <header>
-
 
 
         <!--Main Navigation-->
@@ -295,7 +264,7 @@
                                     <div class="card custom-primary" style="height:600px">
                                         <div class="card-body p-5 mt-5">
                                             <img class="mb-5" src="img/folder.png" alt="file" height="200px" width="200px">
-                                            <h3>Application Status: <span class="badge badge-success rounded-pill ml-3">Established</span> </h3>
+                                            <h3 class="h3-responsive">Application Status: <span class="badge badge-success rounded-pill ml-3">Established</span> </h3>
                                         </div>
                                     </div>
                                 </div>
