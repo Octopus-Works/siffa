@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Session; 
 use App\User;
+use App\UserDetail; 
 use App\Image; 
 use App\ShippingOffice; 
 use App\ShippingService;
@@ -71,25 +72,30 @@ class RegisterController extends Controller
      */
     protected function mail(UserStoreRequest $request){
         
-        error_log($request);
-        // Will return only validated data
         $validated = $request->validated(); 
         $username = str_random(10); 
         $password = str_random(10);
 
         $user = new User; 
         $user->username = $username; 
-        $user->password = Hash::make($password);     
-        $user->fullname = $request->fullname;
+        $user->password = Hash::make($password);
         $user->email = $request->email; 
-        $user->father_name = $request->father; 
-        $user->mother_name = $request->mother;
-        $user->date_of_birth = $request->date_of_birth; 
-        $user->place_of_birth = $request->place_of_birth; 
-        $user->record = $request->record; 
-        $user->nationality = $request->nationality; 
-        $user->address = $request->address; 
         $user->save(); 
+
+        $details = new UserDetail; 
+        $details->user_id = $user->id; 
+        $details->fullname = $request->fullname;
+        $details->father_name = $request->father; 
+        $details->mother_name = $request->mother;
+        $details->date_of_birth = $request->date_of_birth; 
+        $details->place_of_birth = $request->place_of_birth;
+        $details->mobile_number = $request->mobile_number;
+        $details->phone_number = $request->phone_number;
+        $details->website = $request->website; 
+        $details->record = $request->record; 
+        $details->nationality = $request->nationality; 
+        $details->address = $request->address; 
+        $details->save(); 
 
         $office = new ShippingOffice;
         $office->user_id = $user->id;

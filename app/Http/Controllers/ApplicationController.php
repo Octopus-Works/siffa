@@ -113,17 +113,20 @@ class ApplicationController extends Controller
     public function update(Request $request){
         
         // $validated = $request->validated(); 
-        $user = User::find(Auth::user()->id); 
-
-        $user->fullname = $request->fullname;
+        $user = User::find(Auth::user()->id);
         $user->email = $request->email; 
-        $user->father_name = $request->father; 
-        $user->mother_name = $request->mother;
-        $user->date_of_birth = $request->date_of_birth; 
-        $user->place_of_birth = $request->place_of_birth; 
-        $user->record = $request->record; 
-        $user->nationality = $request->nationality; 
-        $user->address = $request->address; 
+
+        $user->userdetail->fullname = $request->fullname;
+        $user->userdetail->father_name = $request->father; 
+        $user->userdetail->mother_name = $request->mother;
+        $user->userdetail->date_of_birth = $request->date_of_birth; 
+        $user->userdetail->place_of_birth = $request->place_of_birth; 
+        $user->userdetail->mobile_number = $request->mobile_number;
+        $user->userdetail->phone_number = $request->phone_number;
+        $user->userdetail->website = $request->website; 
+        $user->userdetail->record = $request->record; 
+        $user->userdetail->nationality = $request->nationality; 
+        $user->userdetail->address = $request->address; 
 
         $user->shippingOffice->name = $request->company_name;
         $user->shippingOffice->addresses = $request->branches_address;
