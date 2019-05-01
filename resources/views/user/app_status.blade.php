@@ -10,6 +10,9 @@
 
     <style>
 
+        main{
+            height: -webkit-fill-available;
+        }
 
 
         .badge-success {
@@ -34,9 +37,6 @@
         }
 
 
-        .pagination .page-item.active .page-link {
-            background-color: #3d5e9e !important;
-        }
 
         @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
@@ -51,9 +51,6 @@
             color: #757575;
         }
 
-        td {
-            color: white !important;
-        }
 
         .mb-4,
         .my-4 {
@@ -66,10 +63,7 @@
             box-sizing: border-box;
         }
 
-        .elegant-color-dark {
-            background-color: #3d5e9e !important;
-        }
-
+ 
 
         .cascading-admin-card .admin-up .data {
             float: right;
@@ -297,14 +291,11 @@
 
                                 <!--Card content-->
                                 <!--Body-->
-                                <div class="modal-body">
-                                    <div class="card custom-primary">
-                                        <div class="card-body">
-                                            <div class="table-responsive">
-                                                <table id="example" class="table table-striped" cellspacing="0"
-                                                    width="100%">
-                                                </table>
-                                            </div>
+                                <div class="modal-body" style="height:600px">
+                                    <div class="card custom-primary" style="height:600px">
+                                        <div class="card-body p-5 mt-5">
+                                            <img class="mb-5" src="img/folder.png" alt="file" height="200px" width="200px">
+                                            <h3>Application Status: <span class="badge badge-success rounded-pill ml-3">Established</span> </h3>
                                         </div>
                                     </div>
                                 </div>
@@ -331,8 +322,6 @@
 
         <!-- Footer -->
         @include('partials.footer')
-        <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>
-        <script type="text/javascript" src={{url("../js/addons/datatables-select.min.js")}}></script>
         <!-- Footer -->
 
         <!-- SCRIPTS -->
@@ -348,97 +337,6 @@
                 minScrollbarLength: 20
             });
 
-
-
-
-            $(document).ready(function () {
-
-
-
-
-                var dataSet = [
-                    ["Application 1", "<h5><span class='badge badge-success rounded-pill p-2'>Established</span></h5>", "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
-                    ],
-                    ["Application 2",
-                        "<h5><span class='badge badge-warning rounded-pill p-2'>In Progress</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
-                    ],
-                    ["Application 3",
-                        "<h5><span class='badge badge-danger rounded-pill p-2'>Rejected</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
-                    ],
-                    ["Application 4",
-                        "<h5><span class='badge badge-info rounded-pill p-2'>Approved Under Payment</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
-                    ],
-                    ["Application 5",
-                        "<h5><span class='badge badge-primary rounded-pill p-2'>Paid Under Registration</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
-                    ],
-                    ["Application 6",
-                        "<h5><span class='badge badge-success rounded-pill p-2'>Established</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
-                    ],
-                ];
-
-                var columnDefs = [{
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Application</h5>"
-                    },
-                    {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Status</h5>"
-                    },
-                    {
-
-                    }
-                ];
-
-                var myTable;
-
-                myTable = $('#example').DataTable({
-
-                    "sPaginationType": "full_numbers",
-                    data: dataSet,
-                    columns: columnDefs,
-                    dom: 'Bfrtip', // Needs button container
-                    select: 'single',
-                    responsive: true,
-                    altEditor: true, // Enable altEditor
-
-
-                });
-
-                $("button span:contains('Copy')").parent().removeClass('dt-button ');
-                $("button span:contains('Excel')").parent().removeClass('dt-button ');
-                $("button span:contains('CSV')").parent().removeClass('dt-button ');
-                $("button span:contains('PDF')").parent().removeClass('dt-button ');
-                $("button span:contains('Print')").parent().removeClass('dt-button ');
-
-
-
-
-                $("button span:contains('Copy')").parent().addClass('btn btn-rounded waves-effect ');
-                $("button span:contains('Excel')").parent().addClass('btn btn-rounded  waves-effect ');
-                $("button span:contains('CSV')").parent().addClass('btn  btn-rounded waves-effect ');
-                $("button span:contains('PDF')").parent().addClass('btn  btn-rounded waves-effect ');
-                $("button span:contains('Print')").parent().addClass('btn btn-rounded  waves-effect ');
-
-
-                $("button span:contains('Copy')").parent().css('background', '#3d5e9e');
-                $("button span:contains('Excel')").parent().css('background', '#3d5e9e ');
-                $("button span:contains('CSV')").parent().css('background', '#3d5e9e ');
-                $("button span:contains('PDF')").parent().css('background', '#3d5e9e');
-                $("button span:contains('Print')").parent().css('background', '#3d5e9e');
-
-                $("button span:contains('Copy')").addClass(' white-text');
-                $("button span:contains('Excel')").addClass(' white-text');
-                $("button span:contains('CSV')").addClass(' white-text');
-
-                $("button span:contains('PDF')").addClass(' white-text');
-                $("button span:contains('Print')").addClass(' white-text');
-
-                //   $(".dt-buttons").css({display: "none"});
-
-            });
 
         </script>
 </body>

@@ -3,6 +3,7 @@
 
 <head>
     @include('partials.head')
+    <title>Register</title>
     <style>
         @media only screen and (min-width: 993px) {
             ul.stepper.horizontal .step-title {
@@ -145,7 +146,7 @@
                                                 <label for="position">Workplace Position</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="chamber" name="chamber_of_commerce" type="text"
+                                                <input id="chamber" name="chamber_of_commerce" type="number"
                                                     class="validate form-control" required>
                                                 <label for="chamber">Chamber of Commerce</label>
                                             </div>
@@ -404,7 +405,11 @@
                 contentType: false,
                 success: function (data) {
                     window.location = "http://www.yoururl.com";
+                    toastr.success('Registered!')
                 },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    toastr.error('Failed')
+                }
             });
         });
 
