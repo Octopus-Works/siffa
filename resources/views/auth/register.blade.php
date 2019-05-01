@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('incs.head')
+    @include('partials.head')
     <style>
         @media only screen and (min-width: 993px) {
             ul.stepper.horizontal .step-title {
@@ -35,7 +35,7 @@
 
     <!--Main Navigation-->
     <header>
-        @include('incs.nav')
+        @include('partials.nav')
     </header>
     <!--Main Navigation-->
 
@@ -335,7 +335,7 @@
             <div class="mask rgba-black-slight">
             </div>
         </div>
-        @include('incs.footer')
+        @include('partials.footer')
     </main>
     <!--Main Layout-->
 

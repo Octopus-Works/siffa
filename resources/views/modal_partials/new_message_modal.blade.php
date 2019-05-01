@@ -31,7 +31,7 @@
     color:whitesmoke !important;
 }
     </style>
-<div class="modal fade" id="modal_new_messge" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_new_message" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
 
@@ -44,24 +44,42 @@
         </button>
       </div>
       <div class="modal-body mx-3">
+            <form id="app_form" action="{{ route('register')}} " enctype="multipart/form-data" method="POST">
+                @csrf
         <div class="md-form mb-5">
           <i class="fas fa-tag prefix grey-text"></i>
-    
+          <input type="text" id="form32" name="subject" class="form-control validate">
           <label data-error="wrong" data-success="right" for="form32">Subject</label>
         </div>
 
         <div class="md-form">
           <i class="fas fa-pencil prefix grey-text"></i>
+          <textarea type="text" name="message" id="form8" class="md-textarea form-control" rows="4"></textarea>
+          <label data-error="wrong" data-success="right"  for="form8">Your message</label>
         </div>
 
 
         <h5 class="text-center amber-text">Upload attachement</h5>
-  
+    
+        <div class="md-form col-12 ml-auto">
+
+                <div class="file-field">
+                    <div class="btn btn-amber btn-sm float-left">
+                        <span>Choose file</span>
+                        <input type="file" name="attachment">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input id="attachment" class="file-path validate"
+                            type="text" placeholder="Upload your file">
+                    </div>
+                </div>
+
+            </div>
 
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button  type="submit" class="btn btn-rounded btn-amber">  <i class="fas fa-paper-plane-o ml-1"></i></button>
+        <button  type="submit" class="btn btn-rounded btn-amber">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
       </div>
     </form>
     </div>
@@ -77,3 +95,22 @@
     
     
     
+    <script>
+             $('#app_form').submit(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: $(this).attr('action'),
+                dataType: 'json', // data type
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+
+            });
+        });
+        
+        </script>

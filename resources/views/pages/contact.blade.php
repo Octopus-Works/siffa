@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        @include('incs.head')
+        @include('partials.head')
         <style>
 
         </style>        
@@ -11,7 +11,7 @@
     <body>
         <!--Main Navigation-->
         <header>
-            @include('incs.nav')
+            @include('partials.nav')
             <div class="view jarallax" style="height: 100vh;">
                     <img class="jarallax-img" src="img/7.jpg" alt="">
                     <div class="mask rgba-blue-slight">
@@ -172,7 +172,7 @@
                     </div>            
  
         </main>
-        @include('incs.footer')
+        @include('partials.footer')
         <script>
             //parllax
             // object-fit polyfill run

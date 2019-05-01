@@ -275,12 +275,12 @@
                     <div>
                       <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2"
                       data-toggle="modal"
-                        data-target="#modal_new_messge">
+                        data-target="#modal_new_message">
                         <span>new</span>
                         <i class="fas custom-secondary-text fa-ban mt-0"></i>
                       </button>
                       <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal"
-                        data-target="#modal_edit_messge">
+                        data-target="#modal_edit_message">
                         <span>edit</span>
                         <i class="fas custom-secondary-text fa-unlock-alt mt-0"></i>
                       </button>
@@ -327,7 +327,7 @@
 
         <!-- Footer -->
         @include('partials.footer')
-        @include('modal_incs.new_messge_modal')
+        @include('modal_partials.new_message_modal')
         <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>
         <script type="text/javascript" src={{url("../js/addons/datatables-select.min.js")}}></script>
         <!-- Footer -->
@@ -355,22 +355,22 @@ $(document).ready(function () {
 
 var dataSet = [
     ["Tiger Nixon", "test",
-        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
     ],
 ];
 

@@ -357,27 +357,27 @@
 
 
                 var dataSet = [
-                    ["Application 1", "<h5><span class='badge badge-success rounded-pill p-2'>Established</span></h5>", "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                    ["Application 1", "<h5><span class='badge badge-success rounded-pill p-2'>Established</span></h5>", "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
                     ],
                     ["Application 2",
                         "<h5><span class='badge badge-warning rounded-pill p-2'>In Progress</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
                     ],
                     ["Application 3",
                         "<h5><span class='badge badge-danger rounded-pill p-2'>Rejected</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
                     ],
                     ["Application 4",
                         "<h5><span class='badge badge-info rounded-pill p-2'>Approved Under Payment</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
                     ],
                     ["Application 5",
                         "<h5><span class='badge badge-primary rounded-pill p-2'>Paid Under Registration</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
                     ],
                     ["Application 6",
                         "<h5><span class='badge badge-success rounded-pill p-2'>Established</span></h5>",
-                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+                        "<button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>>View</button>"
                     ],
                 ];
 

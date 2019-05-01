@@ -64,6 +64,6 @@ Route::post('/contact', [
 ]);
 
 
-Route::get('/view_messges', function () {
-    return view('pages/view_messges');
+Route::get('/view_messages', function () {
+    return view('pages/view_messages');
 });
