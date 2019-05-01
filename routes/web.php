@@ -12,15 +12,20 @@ Use App\User;
 |
 */
 
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/reports', 'PagesController@reports')->name('reports');
 Route::get('/shipping_offices', 'PagesController@shipping_offices')->name('shipping_offices');
 
-Route::get('/company_info/{id}', function(){
-    $user = User::find($id); 
-    return view('user/company_info')->withuser($user); 
+Route::get('/company_info/{id}', function($id){
+    if ( auth::check()){
+        $user = User::find(auth::user()->id); 
+        $app = ApplicationDetail::find($id); 
+        return view('user/company_info')->withuser($user);
+    }
+
 });
 
 Route::get('/account_info', function () {
