@@ -168,12 +168,7 @@
 
 <body class="fixed-sn ">
 
-        <form id="temp" class="form-inline md-form form-sm active-cyan active-cyan-2 mt-2">
-    
-            <i class="fas fa-search" aria-hidden="true"></i>
-            <input class="form-control form-control-sm ml-3 w-25" type="text" placeholder="Search" aria-label="Search">
-    
-        </form>
+
 
     <!-- Navigation -->
     <header>
@@ -205,10 +200,10 @@
     
     
                 <!--Card-->
-                <div class="card card-cascade narrower">
+                <div class="card card-cascade narrower mb-5">
     
                   <!--Card header-->
-                  <div class="view view-cascade py-3 gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center">
+                  <div class="view view-cascade py-3 gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
     
                     <div>
                       <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
@@ -219,19 +214,19 @@
                       </button>
                     </div>
     
-                    <a href="" class="white-text mx-3">Staff</a>
+                    <a href="" class="white-text mx-3">Messges</a>
     
                     <div>
                       <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2"
                       data-toggle="modal"
                         data-target="#modal_new_messge">
                         <span>new</span>
-                        <i class="fas fa-ban mt-0"></i>
+                        <i class="fas fa-plus mt-0"></i>
                       </button>
                       <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal"
                         data-target="#modal_edit_messge">
                         <span>edit</span>
-                        <i class="fas fa-unlock-alt mt-0"></i>
+                        <i class="fas fa-edit mt-0"></i>
                       </button>
     
                     </div>
@@ -277,6 +272,11 @@
         <!-- Footer -->
         @include('incs.footer')
         @include('modal_incs.new_messge_modal')
+        @include('modal_incs.view_messge_modal')
+        <form id="temp" class="form-inline md-form form-sm active-cyan active-cyan-2 mt-2">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input class="form-control form-control-sm ml-3 w-25" type="text" placeholder="Search" aria-label="Search">
+            </form>
         <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>
         <script type="text/javascript" src={{url("../js/addons/datatables-select.min.js")}}></script>
         <!-- Footer -->
@@ -304,22 +304,22 @@ $(document).ready(function () {
 
 var dataSet = [
     ["Tiger Nixon", "test",
-        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
     ],
     ["Tiger Nixon", "test",
-    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>>View</button>"
+    "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
     ],
 ];
 
