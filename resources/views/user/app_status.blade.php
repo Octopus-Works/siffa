@@ -5,7 +5,7 @@
 
 <head>
     <!-- Required meta tags always come first -->
-    @include('incs.head')
+    @include('partials.head')
     <title>Application Status</title>
 
     <style>
@@ -237,8 +237,8 @@
 
         <!--Main Navigation-->
         <header>
-            @include('incs.nav_dash_board')
-            @include('incs.sidebar')
+            @include('partials.nav_dashboard')
+            @include('partials.sidebar')
         </header>
         <!--Main Navigation-->
 
@@ -330,7 +330,7 @@
         <!-- Main layout -->
 
         <!-- Footer -->
-        @include('incs.footer')
+        @include('partials.footer')
         <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>
         <script type="text/javascript" src={{url("../js/addons/datatables-select.min.js")}}></script>
         <!-- Footer -->

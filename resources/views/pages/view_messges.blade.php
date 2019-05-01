@@ -4,11 +4,11 @@
 
 
 <head>
-    <!-- Required meta tags always come first -->
-    @include('incs.head')
-    <title>Account Information</title>
+  <!-- Required meta tags always come first -->
+  @include('partials.head')
+  <title>Account Information</title>
 
-    <style>
+  <style>
 
 
         .pagination .page-item.active .page-link {
@@ -138,17 +138,83 @@
             text-align: center!important;
         }
     
+    .fas{
+        color: #ffc107!important;
+    }
+    .cascading-admin-card .admin-up .fab, .cascading-admin-card .admin-up .far, .cascading-admin-card .admin-up .fas {
+      padding: 1.7rem;
+      font-size: 2rem;
+      color: #ffc107 !important
+      text-align: left;
+      margin-right: 1rem;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+    }
+    .cascading-admin-card .admin-up .fab, .cascading-admin-card .admin-up .far, .cascading-admin-card .admin-up .fas, .z-depth-2 {
+      -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)!important;
+      box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)!important;
+    }
+    .info-color {
+      background-color: #33b5e5!important;
+    }
+    .pb-4, .py-4 {
+      padding-bottom: 1.5rem!important;
+    }
+    .pt-4, .py-4 {
+      padding-top: 1.5rem!important;
+    }
+    .fa, .fas {
+      font-weight: 900;
+    }
+    .fa, .far, .fas {
+      font-family: "Font Awesome 5 Free";
+    }
+    .fa, .fab, .fal, .far, .fas {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+    i, cite, em, var, address, dfn {
+      font-style: italic;
+    }
+    .blockquote .bq-title, .card, .card .card-body h1, .card .card-body h2, .card .card-body h3, .card .card-body h4, .card .card-body h5, .card .card-body h6 {
+      font-weight: 400;
+    }
+    .card {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
 
-      
-        
+      background-clip: border-box;
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+    }
+    .text-center {
+        text-align: center!important;
+    }
 
+
+  
     
+
+
 
     
       
           
   
-      </style>
+  </style>
 </head>
 
 <body class="fixed-sn custom-primary-light ">
@@ -167,8 +233,8 @@
 
         <!--Main Navigation-->
         <header>
-            @include('incs.nav_dash_board')
-            @include('incs.sidebar')
+            @include('partials.nav_dashboard')
+            @include('partials.sidebar')
         </header>
         <!--Main Navigation-->
 
@@ -260,7 +326,7 @@
         <!-- Main layout -->
 
         <!-- Footer -->
-        @include('incs.footer')
+        @include('partials.footer')
         @include('modal_incs.new_messge_modal')
         <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>
         <script type="text/javascript" src={{url("../js/addons/datatables-select.min.js")}}></script>

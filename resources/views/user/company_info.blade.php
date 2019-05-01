@@ -5,7 +5,7 @@
 
 <head>
     <!-- Required meta tags always come first -->
-    @include('incs.head')
+    @include('partials.head')
     <title>Office Information</title>
 
     <style>
@@ -42,7 +42,7 @@
 
         <!--Main Navigation-->
         <header>
-            @include('incs.nav')
+            @include('partials.nav')
         </header>
         <!--Main Navigation-->
 
@@ -104,7 +104,7 @@
         <!-- Main layout -->
 
         <!-- Footer -->
-        @include('incs.footer')
+        @include('partials.footer')
 
         <!-- Footer -->
 

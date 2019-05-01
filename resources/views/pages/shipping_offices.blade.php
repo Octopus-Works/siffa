@@ -5,7 +5,7 @@
 
 <head>
     <!-- Required meta tags always come first -->
-    @include('incs.head')
+    @include('partials.head')
     <title>Shipping Offices</title>
     <link href={{url("../css/addons/datatables.min.css")}} rel="stylesheet">
     <!-- DataTables Select CSS -->
@@ -58,7 +58,7 @@
 
         <!--Main Navigation-->
         <header>
-            @include('incs.nav')
+            @include('partials.nav')
         </header>
         <!--Main Navigation-->
 
@@ -110,7 +110,7 @@
         <!-- Main layout -->
 
         <!-- Footer -->
-        @include('incs.footer')
+        @include('partials.footer')
 
         <!-- Footer -->
 
