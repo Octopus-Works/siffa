@@ -33,7 +33,8 @@
             color: #b7b9bd !important;
         }
 
-        .md-form input, .md-form textarea {
+        .md-form input,
+        .md-form textarea {
             color: #fff !important;
         }
 
@@ -41,7 +42,8 @@
             background-color: #868788 !important;
         }
 
-        .md-form input[type=text]:focus:not([readonly])+label, .md-form textarea.md-textarea:focus:not([readonly])+label  {
+        .md-form input[type=text]:focus:not([readonly])+label,
+        .md-form textarea.md-textarea:focus:not([readonly])+label {
             color: #3d5e9e !important;
         }
 
@@ -285,15 +287,20 @@
                                                     <h6>Photo of the Financial Assignment:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="financial_photo">
+                                                        <input type="file" name="financial_photo"
+                                                            onchange="readURL(this);">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="financial-photo" class="file-path validate"
                                                             type="text" placeholder="Upload your file">
                                                     </div>
+
                                                 </div>
 
                                             </div>
+                                            <div class="col-md-12">
+                                                    <img id="financial" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
+                                                </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
                                                     class="waves-effect waves-dark btn btn-large btn-amber next-step"
@@ -314,7 +321,7 @@
                                                     <h6>Photo of Signature and Fingerprint:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="signature_photo">
+                                                        <input type="file" name="signature_photo" onchange="readURL(this)">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="signature-photo" class="file-path validate"
@@ -323,6 +330,9 @@
                                                 </div>
 
                                             </div>
+                                            <div class="col-md-12">
+                                                    <img id="signature" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
+                                                </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input placeholder="Date of Application" name="date_of_application"
                                                     value="{{$user->applicationDetail->Date_of_application}}"
@@ -372,7 +382,7 @@
                                                     <h6>Hard Copy of the Application Form:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="hard_copy">
+                                                        <input type="file" name="hard_copy" onchange="readURL(this)">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="hard-copy" class="file-path validate" type="text"
@@ -380,6 +390,9 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-12">
+                                                    <img id="application" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
+                                                </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
                                                     type="submit">SUBMIT</button>
@@ -472,7 +485,21 @@
     </script>
 
 
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
+                reader.onload = function (e) {
+                    $('#financial')
+                        .attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+    </script>
+    
 
 </body>
 
