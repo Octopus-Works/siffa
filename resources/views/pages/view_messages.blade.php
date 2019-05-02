@@ -329,10 +329,6 @@
         @include('partials.footer')
         @include('modal_partials.new_message_modal')
         @include('modal_partials.view_message_modal')
-        <form id="temp" class="form-inline md-form form-sm active-cyan active-cyan-2 mt-2">
-                <i class="fas fa-search" aria-hidden="true"></i>
-                <input class="form-control form-control-sm ml-3 w-25" type="text" placeholder="Search" aria-label="Search">
-            </form>
         <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>
         <script type="text/javascript" src={{url("../js/addons/datatables-select.min.js")}}></script>
         <!-- Footer -->
