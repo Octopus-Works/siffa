@@ -30,9 +30,6 @@ Route::get('/account_info', function () {
     }
 });
 
-Route::get('/company_info', function () {
-    return view('user/company_info');
-});
 
 Route::get('/app_status', function () {
     return view('user/app_status');
@@ -61,3 +58,11 @@ Route::post('/register', 'Auth\RegisterController@mail')->name('register');
 Route::get('/view_messages', function () {
     return view('pages/view_messages');
 });
+
+Route::get('/cms', function() {
+    return view('cms.index'); 
+})->name('cms'); 
+
+Route::get('/rms', function() {
+    return view('rms.index'); 
+})->name('rms');

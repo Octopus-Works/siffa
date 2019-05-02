@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Auth; 
 class LoginController extends Controller
 {
     /*
@@ -36,4 +36,14 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    protected function authenticated() {
+        if ( auth::user()->role == 'user') {
+            return redirect('/home');
+        } else if ( auth::user()->role == 'CMS') {
+            return redirect('/cms');
+        } else {
+            return redirect('/rms');
+        }
+   }
 }

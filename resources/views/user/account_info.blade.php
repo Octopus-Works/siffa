@@ -79,7 +79,7 @@
                                 <h1 class="custom-tertiary-text">Company Name</h1>
                                 <hr class="custom-secondary-text">
                                 <!-- Text -->
-                                <p>Full Name: {{ $user->fullname }}</p>
+                                <p>Full Name: {{ $user->userdetail->fullname }}</p>
                                 <p>Username: {{ $user->shippingoffice->name }}</p>
                                 {{-- <p>Password: {{ $user->password }}</p> --}}
                             </div>
