@@ -55,65 +55,81 @@
                 <div class="col-md-12">
                     <form id="app_form" action="{{ route('register')}} " enctype="multipart/form-data" method="POST">
                         <div class="card p-5 mt-3 mb-3 shadow-lg">
-                            <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
+                            <h1 class="text-center mb-5 font-weight-bolder">Register<i
+                                    class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1300px;">
                                 <li class="step active">
                                     <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Personal Information <i class="fas fa-user m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Personal Information <i
+                                                class="fas fa-user m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="fullname" name="fullname" type="text" class="validate form-control" required>
+                                                <input id="fullname" name="fullname" type="text"
+                                                    class="validate form-control" required>
                                                 <label for="fullname">{{ __('Full name') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="father" name="father" type="text" class="validate form-control" required>
+                                                <input id="father" name="father" type="text"
+                                                    class="validate form-control" required>
                                                 <label for="father">{{ __("Father's name") }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="mother" name="mother" type="text" class="validate form-control" required>
+                                                <input id="mother" name="mother" type="text"
+                                                    class="validate form-control" required>
                                                 <label for="mother">{{ __("Mother's name") }}</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="email" name="email" type="email" class="validate form-control" required>
+                                                <input id="email" name="email" type="email"
+                                                    class="validate form-control" required>
                                                 <label for="email">{{ __('E-mail') }}</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
-                                                <input placeholder="Date of Birth" name="date_of_birth" type="text" id="date-picker-example" class="form-control datepicker" required>
+                                                <input placeholder="Date of Birth" name="date_of_birth" type="text"
+                                                    id="date-picker-example" class="form-control datepicker" required>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="place-of-birth" name="place_of_birth" type="text" class="validate form-control" required>
+                                                <input id="place-of-birth" name="place_of_birth" type="text"
+                                                    class="validate form-control" required>
                                                 <label for="place-of-birth">Place of Birth</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="record" name="record" type="text" class="validate form-control" required>
+                                                <input id="record" name="record" type="text"
+                                                    class="validate form-control" required>
                                                 <label for="record">Individual Civil Registry Record</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="nationality" name="nationality" type="text" class="validate form-control" required>
+                                                <input id="nationality" name="nationality" type="text"
+                                                    class="validate form-control" required>
                                                 <label for="nationality">Nationality</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="address" name="address" type="text" class="validate form-control" required>
+                                                <input id="address" name="address" type="text"
+                                                    class="validate form-control" required>
                                                 <label for="address">Address</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="phonenumber" name="phone_number" type="text" class="validate form-control" required>
+                                                <input id="phonenumber" name="phone_number" type="text"
+                                                    class="validate form-control" required>
                                                 <label for="phonenumber">Phone Number</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="mobilenumber" name="mobile_number" type="text" class="validate form-control" required>
+                                                <input id="mobilenumber" name="mobile_number" type="text"
+                                                    class="validate form-control" required>
                                                 <label for="mobilenumber">Mobile Number</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="website" name="website" type="text" class="validate form-control" required>
+                                                <input id="website" name="website" type="text"
+                                                    class="validate form-control" required>
                                                 <label for="website">Website</label>
                                             </div>
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
-                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">CONTINUE</button>
+                                            <button type="submit"
+                                                class="waves-effect waves-dark btn btn-large btn-amber next-step"
+                                                data-feedback="someFunction21">CONTINUE</button>
                                         </div>
                                     </div>
 
@@ -295,7 +311,7 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <textarea id="resume-info" name="resume_info"
                                                     class="md-textarea form-control" rows="3"></textarea>
-                                                <label for="resume-info">Resume Inofrmation (As Mentioned in the
+                                                <label for="resume-info">Resume Information (As Mentioned in the
                                                     Application
                                                     Document)</label>
                                             </div>
@@ -415,12 +431,16 @@
                 data: new FormData(this),
                 processData: false,
                 contentType: false,
-                success: function (data) {
-                    window.location = "http://www.yoururl.com";
-                    toastr.success('Registered!')
+                statusCode: {
+                    200: function () {
+                        toastr.success('Registered!');
+                    }
+
                 },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    toastr.error('Failed')
+                error: function(xhr, textStatus, errorThrown) {
+                    var string = xhr.responseText;
+                    var obj = JSON.parse(string);
+                    toastr.error(obj.message);
                 }
             });
         });
@@ -441,7 +461,7 @@
     </script>
 
     <script>
-        
+
     </script>
 
 </body>
