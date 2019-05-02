@@ -60,7 +60,7 @@
         <main>
 
 
-            <div class="container-fluid" style="height:850px">
+            <div class="container-fluid" style="height:100%">
                 <div class="container mt-9">
                     <h1 class="text-center  font-weight-bolder custom-secondary-text">Account Information<i
                             class="fas fa-user custom-secondary-text ml-3"></i></h1>
@@ -71,7 +71,7 @@
 
                             <!--Grid column-->
                             <div class="col-sm-12 col-md-5 col-xl-5">
-                                <div class="card card-cascade narrower custom-primary">
+                                <div class="card card-cascade narrower custom-primary mb-4">
 
                                     <!-- Card image -->
                                     <div class="view view-cascade gradient-card-header custom-tertiary">

@@ -210,7 +210,7 @@
 
 
 
-            <div class="container-fluid  ">
+            <div class="container-fluid  " style="height:100%">
 
                 <!--Section: Team v.1-->
                 <section class="section team-section">
@@ -260,8 +260,8 @@
 
                                 <!--Card content-->
                                 <!--Body-->
-                                <div class="modal-body" style="height:600px">
-                                    <div class="card custom-primary" style="height:600px">
+                                <div class="modal-body" style="height:800px">
+                                    <div class="card custom-primary" style="height:800px">
                                         <div class="card-body p-5 mt-5">
                                             <img class="mb-5" src="img/folder.png" alt="file" height="200px" width="200px">
                                             <h3 class="h3-responsive">Application Status: <span class="badge badge-success rounded-pill ml-3">Established</span> </h3>
