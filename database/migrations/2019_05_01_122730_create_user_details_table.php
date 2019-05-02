@@ -21,7 +21,7 @@ class CreateUserDetailsTable extends Migration
             $table->collation = 'utf8_unicode_ci';
 
             // Attributes
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('fullname')->nullable(); 
             $table->string('father_name')->nullable(); 
             $table->string('mother_name')->nullable();
@@ -37,6 +37,9 @@ class CreateUserDetailsTable extends Migration
 
             // Foreign Keys
             $table->unsignedInteger('user_id');
+
+            // Indexes 
+            $table->index('user_id');
         });
     }
 
