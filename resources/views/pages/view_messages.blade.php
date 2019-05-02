@@ -195,7 +195,7 @@
       flex-direction: column;
       min-width: 0;
       word-wrap: break-word;
-
+      background: center;
       background-clip: border-box;
       border: 1px solid rgba(0,0,0,.125);
       border-radius: .25rem;
@@ -206,9 +206,20 @@
 
 
   
-    
+    .btn-amber {
+    background-color: #ffa000d4!important;
+    color: #fff;
+}
 
-
+    .close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #FFA000 !important;
+    text-shadow: 0 0px 0 #fff !important; 
+     opacity: .9 !important;
+}
 
     
       
