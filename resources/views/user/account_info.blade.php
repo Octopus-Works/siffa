@@ -9,7 +9,6 @@
     <title>Account Information</title>
 
     <style>
-
         body {
             line-height: 2rem !important;
         }
@@ -27,6 +26,17 @@
             margin-top: 9rem;
         }
 
+        .md-form label {
+            color: #b7b9bd !important;
+        }
+
+        .md-form input {
+            color: #fff !important;
+        }
+
+        .md-form input[type=text]:focus:not([readonly])+label {
+            color: #3d5e9e !important;
+        }
 
     </style>
 
@@ -42,7 +52,8 @@
 
         <!--Main Navigation-->
         <header>
-            @include('partials.nav')
+            @include('partials.nav_dashboard')
+            @include('partials.sidebar')
         </header>
         <!--Main Navigation-->
 
@@ -56,17 +67,36 @@
                     <div class="section extra-margins  py-5 text-center text-lg-left">
 
                         <!--Grid row-->
-                        <div class="row my-xl-5 py-xl-4">
+                        <div class="row">
 
                             <!--Grid column-->
                             <div class="col-sm-12 col-md-5 col-xl-5">
+                                <div class="card card-cascade narrower custom-primary">
 
-                                <!--Image-->
-                                <div class="view overlay">
-                                    <img src="img/2.jpg" class="img-fluid z-depth-1 shadow-lg" alt="">
-                                    <div class="mask rgba-white-slight"></div>
+                                    <!-- Card image -->
+                                    <div class="view view-cascade gradient-card-header custom-tertiary">
+                                        <h5 class="mb-0 font-weight-bold">Edit Photo</h5>
+                                    </div>
+                                    <!-- Card image -->
+
+                                    <!-- Card content -->
+                                    <div class="card-body card-body-cascade text-center">
+                                        <div class="view overlay">
+                                            <img src="img/7.jpg" class="img-fluid z-depth-1 shadow-lg" alt="">
+                                            <div class="mask rgba-white-slight"></div>
+                                        </div>
+
+                                        <p class="text-muted"><small>Profile photo will be changed automatically</small>
+                                        </p>
+                                        <div class="row flex-center">
+                                            <button class="btn custom-secondary black-text btn-rounded">Upload New
+                                                Photo</button><br>
+                                            <button class="btn btn-danger btn-rounded">Delete</button>
+                                        </div>
+                                    </div>
+                                    <!-- Card content -->
+
                                 </div>
-                                <!--/.Image-->
 
                             </div>
                             <!--Grid column-->
@@ -74,14 +104,112 @@
                             <!--Grid column-->
                             <div class="col-sm-12 col-md-6 col-xl-6">
 
+                                <div class="card card-cascade narrower custom-primary">
 
-                                <!-- Title -->
-                                <h1 class="custom-tertiary-text">Company Name</h1>
-                                <hr class="custom-secondary-text">
-                                <!-- Text -->
-                                <p>Full Name: {{ $user->fullname }}</p>
-                                <p>Username: {{ $user->shippingoffice->name }}</p>
-                                {{-- <p>Password: {{ $user->password }}</p> --}}
+                                    <!-- Card image -->
+                                    <div class="view view-cascade gradient-card-header custom-tertiary">
+                                        <h5 class="mb-0 font-weight-bold">Edit Account</h5>
+                                    </div>
+                                    <!-- Card image -->
+
+                                    <!-- Card content -->
+                                    <div class="card-body card-body-cascade text-center">
+
+                                        <!-- Edit Form -->
+                                        <form>
+                                            <!-- First row -->
+
+                                            <div class="row">
+
+                                                <!-- First column -->
+                                                <div class="col-md-6">
+                                                    <div class="md-form mb-0">
+                                                        <input id="fullname" name="fullname" type="text"
+                                                            value="{{$user->fullname}}" class="validate form-control">
+                                                        <label for="fullname">{{ __('Full name') }}</label>
+                                                    </div>
+                                                </div>
+                                                <!-- Second column -->
+                                                <div class="col-md-6">
+                                                    <div class="md-form mb-0">
+                                                        <input id="website" name="website" value="{{$user->website}}"
+                                                            type="text" class="validate form-control">
+                                                        <label for="website">Website Address</label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- First row -->
+
+                                            <!-- First row -->
+                                            <div class="row">
+                                                <!-- First column -->
+                                                <div class="col-md-6">
+                                                    <div class="md-form mb-0">
+                                                        <input id="father" name="father" type="text"
+                                                            value="{{$user->father_name}}"
+                                                            class="validate form-control">
+                                                        <label for="father">{{ __("Father's name") }}</label>
+
+                                                    </div>
+                                                </div>
+
+                                                <!-- Second column -->
+                                                <div class="col-md-6">
+                                                    <div class="md-form mb-0">
+                                                        <input id="mother" name="mother" type="text"
+                                                            value="{{$user->mother_name}}"
+                                                            class="validate form-control">
+                                                        <label for="mother">{{ __("Mother's name") }}</label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- First row -->
+
+                                            <!-- Second row -->
+                                            <div class="row">
+
+                                                <!-- First column -->
+                                                <div class="col-md-6">
+                                                    <div class="md-form mb-0">
+                                                        <input id="email" name="email" type="email"
+                                                            value="{{$user->email}}" class="validate form-control">
+                                                        <label for="email">{{ __('E-mail') }}</label>
+                                                    </div>
+                                                </div>
+                                                <!-- Second column -->
+
+                                                <div class="col-md-6">
+                                                    <div class="md-form mb-0">
+                                                        <input id="password" name="password" value="" type="text"
+                                                            class="validate form-control">
+                                                        <label for="password">Password</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Second row -->
+
+
+                                            <!-- Third row -->
+                                            <div class="row">
+                                                <div class="col-md-12 text-center my-4">
+                                                    <input type="submit" value="Update Account"
+                                                        class="btn custom-secondary black-text btn-rounded">
+                                                </div>
+                                            </div>
+                                            <!-- Third row -->
+
+                                        </form>
+                                        <!-- Edit Form -->
+
+                                    </div>
+                                    <!-- Card content -->
+
+                                </div>
+                                <!-- Card -->
+
+
                             </div>
                             <!--Grid column-->
 
@@ -111,3 +239,8 @@
 </body>
 
 </html>
+<!-- Text 
+                                <p>Full Name: {{ $user->fullname }}</p>
+                                <p>Username: {{ $user->shippingoffice->name }}</p>
+                                {{-- <p>Password: {{ $user->password }}</p> --}}
+                                -->
