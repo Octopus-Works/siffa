@@ -130,7 +130,7 @@
                         @foreach($users as $user)[
                             "{{ $user->shippingoffice->name }}",
                             "{{ $user->shippingoffice->addresses }}",
-                            "<button onclick='location.href = "{{url('company_info/') . $user->id}}";' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</button>"
+                            `<a href='{{url('company_info').'/'.$user->id}}' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
                         ],
                         @endforeach
                     @endif
