@@ -20,8 +20,9 @@ class CreateUsersTable extends Migration
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
 
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('username');
+            $table->enum('role', ['user', 'CMS', 'RMS']); 
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

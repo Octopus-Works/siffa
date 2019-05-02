@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use Session; 
 use App\User;
-use App\UserDetail; 
 use App\Image; 
+use App\UserDetail; 
+use App\OfficeService; 
 use App\ShippingOffice; 
 use App\ShippingService;
 use App\ApplicationDetail;
@@ -115,6 +116,12 @@ class RegisterController extends Controller
         $services->shipping_modes = $chk1;
         $services->sources_destinations = $request->src_dest;
         $services->save(); 
+
+        $officeservice = new OfficeService;
+        $officeservice->shipping_office_id = $office->id;
+        $officeservice->shipping_service_id = $services->id;
+        $officeservice->save();
+        
 
         $application = new ApplicationDetail; 
         $application->user_id = $user->id;

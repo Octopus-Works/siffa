@@ -125,16 +125,17 @@
                                                 <div class="col-md-6">
                                                     <div class="md-form mb-0">
                                                         <input id="fullname" name="fullname" type="text"
-                                                            value="{{$user->fullname}}" class="validate form-control">
+                                                            value="{{ $user->userdetail->fullname }}"
+                                                            class="validate form-control">
                                                         <label for="fullname">{{ __('Full name') }}</label>
                                                     </div>
                                                 </div>
                                                 <!-- Second column -->
                                                 <div class="col-md-6">
                                                     <div class="md-form mb-0">
-                                                        <input id="website" name="website" value="{{$user->website}}"
-                                                            type="text" class="validate form-control">
-                                                        <label for="website">Website Address</label>
+                                                            <input id="username" name="username" type="text" value="{{ $user->shippingoffice->name }}"
+                                                            class="validate form-control">
+                                                        <label for="username">{{ __('Username') }}</label>
 
                                                     </div>
                                                 </div>
@@ -190,35 +191,46 @@
                                             </div>
                                             <!-- Second row -->
 
-
-                                            <!-- Third row -->
-                                            <div class="row">
-                                                <div class="col-md-12 text-center my-4">
-                                                    <input type="submit" value="Update Account"
-                                                        class="btn custom-secondary black-text btn-rounded">
+                                            <!-- First column -->
+                                            <div class="col-md-12">
+                                                <div class="md-form mb-0">
+                                                    <input id="website" name="website" value="{{$user->website}}"
+                                                        type="text" class="validate form-control">
+                                                    <label for="website">Website Address</label>
                                                 </div>
                                             </div>
-                                            <!-- Third row -->
-
-                                        </form>
-                                        <!-- Edit Form -->
-
                                     </div>
-                                    <!-- Card content -->
+                                    <!-- Third row -->
+
+                                    <!-- Fourth row -->
+                                    <div class="row">
+                                        <div class="col-md-12 text-center my-4">
+                                            <input type="submit" value="Update Account"
+                                                class="btn custom-secondary black-text btn-rounded">
+                                        </div>
+                                    </div>
+                                    <!-- Fourth row -->
+
+                                    </form>
+                                    <!-- Edit Form -->
 
                                 </div>
-                                <!-- Card -->
-
+                                <!-- Card content -->
 
                             </div>
-                            <!--Grid column-->
+                            <!-- Card -->
 
+
+                           
                         </div>
-                        <!--/Grid row-->
+                        <!--Grid column-->
 
                     </div>
+                    <!--/Grid row-->
 
                 </div>
+
+            </div>
 
             </div>
 
@@ -239,8 +251,3 @@
 </body>
 
 </html>
-<!-- Text 
-                                <p>Full Name: {{ $user->fullname }}</p>
-                                <p>Username: {{ $user->shippingoffice->name }}</p>
-                                {{-- <p>Password: {{ $user->password }}</p> --}}
-                                -->

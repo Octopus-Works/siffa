@@ -29,7 +29,7 @@ class CreateShippingOfficesTable extends Migration
             $table->collation = 'utf8_unicode_ci';
 
             // Attributes 
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name');
             $table->string('addresses'); 
             $table->string('shipping_services');
@@ -40,6 +40,9 @@ class CreateShippingOfficesTable extends Migration
 
             // Foreign Keys
             $table->unsignedInteger('user_id');
+
+            // Indexes 
+            $table->index('user_id');
             
         });
     }

@@ -77,13 +77,13 @@
                                     <h1 class="custom-tertiary-text">{{ $user->shippingoffice->name }}</h1>
                                     <hr class="custom-secondary-text">
                                     <!-- Text -->
-                                    <p>Office Owner Name: {{ $user->fullname }} </p>
-                                    {{-- <p>Phone Number: {{ $user->phone_number}}</p>
-                                    <p>Mobile Number: {{$user->mobile_number }}</p> --}}
+                                    <p>Office Owner Name: {{ $user->userdetail->fullname }} </p>
+                                    <p>Phone Number: {{ $user->userdetail->phone_number}}</p>
+                                    <p>Mobile Number: {{$user->userdetail->mobile_number }}</p>
                                     <p>Main Branch Address: {{ $user->shippingoffice->addresses}}</p>
                                     <p>Services: {{ $user->shippingoffice->shipping_services}} </p>
                                     <p>E-mail: {{ $user->email }}</p>
-                                    {{-- <p>Website: {{ $user->website }}</p> --}}
+                                    <p>Website: {{ $user->userdetail->website }}</p>
                                 </div>
                                 <!--Grid column-->
 
