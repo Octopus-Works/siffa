@@ -56,7 +56,15 @@ Route::post('/register', 'Auth\RegisterController@mail')->name('register');
 // ]);
 
 Route::get('/view_messages', function () {
-    return view('pages/view_messages');
+    return view('user/view_messages');
+});
+
+Route::get('/rms/view_messages', function () {
+    return view('rms/view_messages');
+});
+
+Route::get('/rms/account_details', function(){
+    return view('rms/account_details'); 
 });
 
 Route::get('/cms', function() {
