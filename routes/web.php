@@ -65,7 +65,11 @@ Route::get('/rms/view_messages', function () {
 
 Route::get('/rms/account_info', function(){
     
-    return view('rms/account_info'); 
+    if ( auth::check()){
+        $user = User::find(auth::user()->id); 
+        return view('rms/account_info')->withuser($user);
+    }
+    
 });
 
 Route::get('/cms', function() {
