@@ -371,7 +371,13 @@
               title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
           },
           {
-
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+          },
+          {
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+          },
+          {
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
           }
       ];
 
@@ -388,6 +394,8 @@
 
 
       });
+      myTable.column(3).visible(false);
+      myTable.column(4).visible(false);
 
       $("button span:contains('Copy')").parent().removeClass('dt-button ');
       $("button span:contains('Excel')").parent().removeClass('dt-button ');

@@ -55,9 +55,9 @@ Route::post('/register', 'Auth\RegisterController@mail')->name('register');
 //     'uses' => 'ContactMessageController@send'
 // ]);
 
-Route::get('/view_messages', function () {
-    return view('user/view_messages');
-});
+// Route::get('/view_messages', function () {
+//     return view('user/view_messages');
+// });
 
 Route::get('/rms/view_messages', function () {
     return view('rms/view_messages');
@@ -71,6 +71,7 @@ Route::get('/rms/account_info', function(){
     }
     
 });
+Route::resource('messages', 'MessageController');
 
 Route::get('/cms', function() {
     return view('cms.index'); 
