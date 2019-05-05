@@ -235,7 +235,7 @@
 
 
 
-    ~<!--Main Navigation-->
+    <!--Main Navigation-->
     <header>
       @include('partials.nav_dashboard')
       @include('partials.sidebar')
@@ -362,6 +362,9 @@
             ],
             @endforeach
           @endif
+
+ 
+
         ];
 
       var columnDefs = [{
@@ -396,6 +399,19 @@
       });
       myTable.column(3).visible(false);
       myTable.column(4).visible(false);
+      var table = $('#example').DataTable();
+
+
+      $('#example tbody').on('click', 'tr', function () {
+       console.log("test")
+        var subject = table.row(this).data()[1];
+        var body = table.row(this).data()[4];
+        console.log(subject)
+        console.log(body)
+        $('#subjetc').text(subject);
+        $('#body').text(body);
+
+    });
 
       $("button span:contains('Copy')").parent().removeClass('dt-button ');
       $("button span:contains('Excel')").parent().removeClass('dt-button ');

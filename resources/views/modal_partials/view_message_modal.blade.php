@@ -48,7 +48,8 @@
 
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
-
+          <p id="subjetc"> </p>
+          <p id="body"> </p>
         </div>
 
 
