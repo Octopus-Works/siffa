@@ -287,8 +287,7 @@
                                                     <h6>Photo of the Financial Assignment:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="financial_photo"
-                                                            onchange="readURL(this);">
+                                                        <input id="financial_photo" type="file" name="financial_photo" onchange="FinancialImage()">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="financial-photo" class="file-path validate"
@@ -299,8 +298,9 @@
 
                                             </div>
                                             <div class="col-md-12">
-                                                    <img id="financial" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
-                                                </div>
+                                                <img id="financial" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                            </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
                                                     class="waves-effect waves-dark btn btn-large btn-amber next-step"
@@ -321,7 +321,8 @@
                                                     <h6>Photo of Signature and Fingerprint:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="signature_photo" onchange="readURL(this)">
+                                                        <input id="signature_photo" type="file" name="signature_photo"
+                                                            onchange="SignatureImage()">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="signature-photo" class="file-path validate"
@@ -331,8 +332,9 @@
 
                                             </div>
                                             <div class="col-md-12">
-                                                    <img id="signature" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
-                                                </div>
+                                                <img id="signature" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                            </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input placeholder="Date of Application" name="date_of_application"
                                                     value="{{$user->applicationDetail->Date_of_application}}"
@@ -382,7 +384,7 @@
                                                     <h6>Hard Copy of the Application Form:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="hard_copy" onchange="readURL(this)">
+                                                        <input id="application_photo" type="file" name="hard_copy" onchange="ApplicationImage()">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="hard-copy" class="file-path validate" type="text"
@@ -391,8 +393,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                    <img id="application" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
-                                                </div>
+                                                <img id="application" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                            </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
                                                     type="submit">SUBMIT</button>
@@ -486,20 +489,39 @@
 
 
     <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('#financial')
-                        .attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
+    function FinancialImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("financial_photo").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("financial").src = oFREvent.target.result;
+        };
+    };
+
+    function SignatureImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("signature_photo").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("signature").src = oFREvent.target.result;
+        };
+    };
+
+
+    function ApplicationImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("application_photo").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("application").src = oFREvent.target.result;
+        };
+    };
+
+
 
     </script>
-    
+
 
 </body>
 
