@@ -31,14 +31,14 @@
     color:whitesmoke !important;
 }
     </style>
-<div class="modal fade" id="modal_view_messge" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_view_message" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
 
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold amber-text">Massage</h4>
+        <h4 class="modal-title w-100 font-weight-bold amber-text">Message</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -62,7 +62,7 @@
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button  type="submit" class="btn btn-rounded btn-amber black-text">  <i class="fas fa-paper-plane-o ml-1"></i> close </button>
+        <button  type="submit" class="btn btn-rounded btn-amber black-text" data-dismiss="modal">  <i class="fas fa-paper-plane-o ml-1"></i> close </button>
       </div>
     </form>
     </div>

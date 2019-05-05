@@ -274,7 +274,7 @@
                     </button>
                   </div>
 
-                  <a href="" class="white-text mx-3">Messges</a>
+                  <a href="" class="white-text mx-3">messages</a>
 
                   <div>
                     <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_new_message">
@@ -356,7 +356,7 @@
             @foreach($mail as $message)[
                 "{{ $message->sender_id }}",
                 "{{ $message->subject }}",
-                `<a data-toggle='modal' data-target='#modal_view_messge' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
+                `<a data-toggle='modal' data-target='#modal_view_message' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
                 "{{ $message->body }}",
                 "{{ $message->attachement }}",
             ],

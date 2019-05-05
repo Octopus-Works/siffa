@@ -193,22 +193,22 @@
 
                 var dataSet = [
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>View</button>"
                     ],
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>View</button>"
                     ],
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>View</button>"
                     ],
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>View</button>"
                     ],
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>View</button>"
                     ],
                     ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_message'>View</button>"
                     ],
                 ];
 

@@ -164,8 +164,6 @@
 
         <!-- Footer -->
         @include('partials.footer')
-        @include('modal_partials.new_message_modal')
-        @include('modal_partials.view_message_modal')
         <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>
         <script type="text/javascript" src={{url("../js/addons/datatables-select.min.js")}}></script>
         <!-- Footer -->
@@ -196,16 +194,16 @@
                         "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
                     ],
                     ["Application2","<h5><span class='badge badge-pill badge-success'>Established</span></h5>",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  >View</button>"
                     ],
                     ["Application3", "<h5><span class='badge badge-pill badge-warning'>In Progress</span></h5>",
                         "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
                     ],
                     ["Application4", "<h5><span class='badge badge-pill badge-primary'>Approved Under Payment</span></h5>",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'>View</button>"
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  >View</button>"
                     ],
                     ["Application5", "<h5><span class='badge badge-pill badge-danger'>Rejected</span></h5>",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'>View</button>"
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
                     ],
                     ["Application6","<h5><span class='badge badge-pill badge-success'>Established</span></h5>",
                         "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
