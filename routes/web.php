@@ -63,6 +63,10 @@ Route::get('/rms/view_messages', function () {
     return view('rms/view_messages');
 });
 
+Route::get('/rms/view_applications', function () {
+    return view('rms/view_applications');
+});
+
 Route::get('/rms/account_info', function(){
     
     if ( auth::check()){

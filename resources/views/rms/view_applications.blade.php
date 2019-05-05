@@ -6,7 +6,7 @@
 <head>
     <!-- Required meta tags always come first -->
     @include('partials.head')
-    <title>Messages</title>
+    <title>Applications</title>
 
     <style>
         .pagination .page-item.active .page-link {
@@ -106,7 +106,7 @@
                                         </button>
                                     </div>
 
-                                    <a href="" class="white-text mx-3">Messages</a>
+                                    <a href="" class="white-text mx-3">Applications</a>
 
                                     <div>
                                         <button type="button" id="new"
@@ -192,31 +192,31 @@
 
 
                 var dataSet = [
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                    ["Application1","<h5><span class='badge badge-pill badge-danger'>Rejected</span></h5>",
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
                     ],
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                    ["Application2","<h5><span class='badge badge-pill badge-success'>Established</span></h5>",
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
                     ],
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                    ["Application3", "<h5><span class='badge badge-pill badge-warning'>In Progress</span></h5>",
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
                     ],
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                    ["Application4", "<h5><span class='badge badge-pill badge-primary'>Approved Under Payment</span></h5>",
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'>View</button>"
                     ],
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                    ["Application5", "<h5><span class='badge badge-pill badge-danger'>Rejected</span></h5>",
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'>View</button>"
                     ],
-                    ["Tiger Nixon", "test",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
+                    ["Application6","<h5><span class='badge badge-pill badge-success'>Established</span></h5>",
+                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
                     ],
                 ];
 
                 var columnDefs = [{
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Application</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Status</h5>"
                     },
                     {
 
