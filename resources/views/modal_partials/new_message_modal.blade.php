@@ -91,7 +91,7 @@
                 </button>
             </div>
             <div class="modal-body mx-3">
-                <form id="app_form" action="{{ route('messages.store')}} " enctype="multipart/form-data" method="POST">
+                <form id="app_form" action="{{ route('register')}} " enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="md-form mb-5">
                         <i class="fas fa-tag prefix grey-text"></i>
