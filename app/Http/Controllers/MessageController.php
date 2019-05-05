@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use InternalMessaging;
+use App\InternalMessaging;
 use Auth; 
 
 class MessageController extends Controller
