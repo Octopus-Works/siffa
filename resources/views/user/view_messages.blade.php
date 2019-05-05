@@ -357,6 +357,8 @@
                 "{{ $message->sender_id }}",
                 "{{ $message->subject }}",
                 `<a data-toggle='modal' data-target='#modal_view_messge' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
+                "{{ $message->body }}",
+                "{{ $message->attachement }}",
             ],
             @endforeach
           @endif
