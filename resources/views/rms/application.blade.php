@@ -67,7 +67,7 @@
 
     <!--Main Layout-->
     <main>
-        
+
 
         <div class="container">
             <!--Grid row-->
@@ -75,8 +75,17 @@
 
                 <!--Grid column-->
                 <div class="col-md-12">
-                    <form id="app_form" action="{{ route('register')}} " enctype="multipart/form-data" method="POST">
+                    <div id="app_form">
                         <div class="card p-5 mt-3 mb-3 shadow-lg custom-primary">
+                            <div>
+
+
+                                <button type="button" id="new" class="btn custom-tertiary btn-rounded  px-2">Change Status
+                                </button>
+
+                            </div>
+
+
                             <h1 class="text-center mb-5 font-weight-bolder">Application<i
                                     class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1300px;">
@@ -147,7 +156,7 @@
                                         <div class="step-actions d-flex justify-content-center">
                                             <button type="submit"
                                                 class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                data-feedback="someFunction21">CONTINUE</button>
+                                                data-feedback="someFunction21">NEXT</button>
                                         </div>
                                     </div>
 
@@ -191,7 +200,7 @@
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
                                             <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                data-feedback="someFunction21">CONTINUE</button>
+                                                data-feedback="someFunction21">NEXT</button>
                                         </div>
                                     </div>
                                 </li>
@@ -246,7 +255,7 @@
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
                                             <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                data-feedback="someFunction21">CONTINUE</button>
+                                                data-feedback="someFunction21">NEXT</button>
                                         </div>
                                     </div>
                                 </li>
@@ -279,7 +288,7 @@
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
                                                     class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">CONTINUE</button>
+                                                    data-feedback="someFunction21">NEXT</button>
                                             </div>
                                         </div>
                                 </li>
@@ -313,7 +322,7 @@
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
                                                     class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">CONTINUE</button>
+                                                    data-feedback="someFunction21">NEXT</button>
                                             </div>
                                         </div>
 
@@ -336,7 +345,7 @@
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
                                                     class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">CONTINUE</button>
+                                                    data-feedback="someFunction21">NEXT</button>
                                             </div>
                                         </div>
 
@@ -362,10 +371,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="step-actions d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
-                                                    type="submit">SUBMIT</button>
-                                            </div>
+
                                         </div>
 
                                     </div>
@@ -373,7 +379,7 @@
 
                             </ul>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
