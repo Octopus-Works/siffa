@@ -356,7 +356,7 @@
             @foreach($mail as $message)[
                 "{{ $message->sender_id }}",
                 "{{ $message->subject }}",
-                `<a data-toggle='modal' data-target='#modal_view_messge' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
+                `<a data-toggle='modal' data-target='#modal_view_messge' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`,
                 "{{ $message->body }}",
                 "{{ $message->attachement }}",
             ],
@@ -405,7 +405,7 @@
       $('#example tbody').on('click', 'tr', function () {
        console.log("test")
         var subject = table.row(this).data()[1];
-        var body = table.row(this).data()[4];
+        var body = table.row(this).data()[3];
         console.log(subject)
         console.log(body)
         $('#subjetc').text(subject);
