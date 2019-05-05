@@ -63,8 +63,9 @@ Route::get('/rms/view_messages', function () {
     return view('rms/view_messages');
 });
 
-Route::get('/rms/account_details', function(){
-    return view('rms/account_details'); 
+Route::get('/rms/account_info', function(){
+    
+    return view('rms/account_info'); 
 });
 
 Route::get('/cms', function() {
