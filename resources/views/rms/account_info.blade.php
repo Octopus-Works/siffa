@@ -148,7 +148,7 @@
                                                 <div class="col-md-6">
                                                     <div class="md-form mb-0">
                                                         <input id="father" name="father" type="text"
-                                                            value="{{$user->father_name}}"
+                                                             value="{{ $user->userdetail->father_name }}"
                                                             class="validate form-control">
                                                         <label for="father">{{ __("Father's name") }}</label>
 
@@ -159,7 +159,7 @@
                                                 <div class="col-md-6">
                                                     <div class="md-form mb-0">
                                                         <input id="mother" name="mother" type="text"
-                                                            value="{{$user->mother_name}}"
+                                                          value="{{ $user->userdetail->mother_name }}"
                                                             class="validate form-control">
                                                         <label for="mother">{{ __("Mother's name") }}</label>
 
@@ -194,7 +194,7 @@
                                             <!-- First column -->
                                             <div class="col-md-12">
                                                 <div class="md-form mb-0">
-                                                    <input id="website" name="website" value="{{$user->website}}"
+                                                    <input id="website" name="website" value="{{ $user->userdetail->website }}"
                                                         type="text" class="validate form-control">
                                                     <label for="website">Website Address</label>
                                                 </div>
