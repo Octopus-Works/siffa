@@ -235,7 +235,7 @@
 
 
 
-    ~<!--Main Navigation-->
+    <!--Main Navigation-->
     <header>
       @include('partials.nav_dashboard')
       @include('partials.sidebar')
@@ -351,26 +351,21 @@
 
 
 
-      var dataSet = [
-          ["Tiger Nixon", "test",
-              "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-          ["Tiger Nixon", "test",
-          "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-          ["Tiger Nixon", "test",
-          "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-          ["Tiger Nixon", "test",
-          "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-          ["Tiger Nixon", "test",
-          "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-          ["Tiger Nixon", "test",
-          "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-      ];
+        var dataSet = [
+          @if ( @isset($mail))
+            @foreach($mail as $message)[
+                "{{ $message->sender_id }}",
+                "{{ $message->subject }}",
+                `<a data-toggle='modal' data-target='#modal_view_messge' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
+                "{{ $message->body }}",
+                "{{ $message->attachement }}",
+            ],
+            @endforeach
+          @endif
+
+ 
+
+        ];
 
       var columnDefs = [{
         title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
@@ -379,7 +374,13 @@
               title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
           },
           {
-
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+          },
+          {
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+          },
+          {
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
           }
       ];
 
@@ -396,6 +397,21 @@
 
 
       });
+      myTable.column(3).visible(false);
+      myTable.column(4).visible(false);
+      var table = $('#example').DataTable();
+
+
+      $('#example tbody').on('click', 'tr', function () {
+       console.log("test")
+        var subject = table.row(this).data()[1];
+        var body = table.row(this).data()[4];
+        console.log(subject)
+        console.log(body)
+        $('#subjetc').text(subject);
+        $('#body').text(body);
+
+    });
 
       $("button span:contains('Copy')").parent().removeClass('dt-button ');
       $("button span:contains('Excel')").parent().removeClass('dt-button ');

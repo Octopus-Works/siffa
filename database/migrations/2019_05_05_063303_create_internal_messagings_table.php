@@ -29,7 +29,7 @@ class CreateInternalMessagingsTable extends Migration
 
             // Foreign keys
             $table->unsignedInteger('sender_id');
-            $table->unsignedInteger('receiver_id');
+            $table->unsignedInteger('receiver_id')->nullable(true); 
 
             // Index 
             $table->index('sender_id');
