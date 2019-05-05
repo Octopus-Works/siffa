@@ -15,9 +15,10 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $mail = InternalMessaging::where('sender_id', '=', auth::user()->id)
-                                    ->where('receiver_id', '=', auth::user()->id)
+        $mail = InternalMessaging::where('sender_id', auth::user()->id)
+                                    // ->where('receiver_id', auth::user()->id)
                                     ->get();
+        error_log($mail);
         return view('user/view_messages')->withmail($mail); 
     }
 
@@ -44,7 +45,14 @@ class MessageController extends Controller
         $mail->body = $request->message; 
         $mail->attachement = $request->attachement;
         $mail->sender_id = auth::user()->id;
+        $mail->body = $request->message; 
+        $mail->attachement = $request->attachement;
+        $mail->sender_id = auth::user()->id;
+
+        if ( auth::user()->role == 'CMS')
+            $mail->sender_id = auth::user()->id; 
         $mail->save();
+        return response('success'); 
 
     }
 
@@ -56,8 +64,10 @@ class MessageController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        if ( auth::check()){
+            $mail = InternalMessaging::find(Auth::user()->id);
+            return view('user/view_messages')->withmail($mail); 
+        }    }
 
     /**
      * Show the form for editing the specified resource.

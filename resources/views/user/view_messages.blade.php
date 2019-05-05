@@ -351,26 +351,16 @@
 
 
 
-      var dataSet = [
-          ["Tiger Nixon", "test",
-              "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-          ["Tiger Nixon", "test",
-          "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-          ["Tiger Nixon", "test",
-          "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-          ["Tiger Nixon", "test",
-          "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-          ["Tiger Nixon", "test",
-          "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-          ["Tiger Nixon", "test",
-          "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  data-toggle='modal' data-target='#modal_view_messge'>View</button>"
-          ],
-      ];
+        var dataSet = [
+          @if ( @isset($mail))
+            @foreach($mail as $message)[
+                "{{ $message->sender_id }}",
+                "{{ $message->subject }}",
+                `<a data-toggle='modal' data-target='#modal_view_messge' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
+            ],
+            @endforeach
+          @endif
+        ];
 
       var columnDefs = [{
         title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
