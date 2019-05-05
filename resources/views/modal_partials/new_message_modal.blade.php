@@ -101,11 +101,9 @@
 
                     <div class="md-form">
                         <i class="fas fa-pencil prefix grey-text"></i>
-                        <textarea type="text" name="message" id="form8" class="md-textarea form-control"
-                            rows="4"></textarea>
+                        <textarea type="text" name="message" id="form8" class="md-textarea form-control" rows="4"></textarea>
                         <label data-error="wrong" data-success="right" for="form8">Your message</label>
                     </div>
-
 
                     <h5 class="text-center amber-text">Upload attachement</h5>
 
@@ -117,8 +115,7 @@
                                 <input type="file" name="attachment">
                             </div>
                             <div class="file-path-wrapper">
-                                <input id="attachment" class="file-path validate" type="text"
-                                    placeholder="Upload your file">
+                                <input id="attachment" class="file-path validate" type="text" placeholder="Upload your file">
                             </div>
                         </div>
 
