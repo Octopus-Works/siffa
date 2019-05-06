@@ -70,7 +70,7 @@
                         <div class="row">
 
                             <!--Grid column-->
-                            <div class="col-sm-12 col-md-5 col-xl-5">
+                            <div class="ml-auto col-sm-12 col-md-5 col-xl-5">
                                 <div class="card card-cascade narrower custom-primary mb-4">
 
                                     <!-- Card image -->
