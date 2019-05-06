@@ -93,6 +93,9 @@
             <div class="modal-body mx-3">
                 <form id="app_form" action="{{ route('messages.store')}} " enctype="multipart/form-data" method="POST">
                     @csrf
+                    <div id="id">
+
+                    </div>
                     <div class="md-form mb-5">
                         <i class="fas fa-tag prefix grey-text"></i>
                         <input type="text" id="form32" name="subject" class="form-control validate">

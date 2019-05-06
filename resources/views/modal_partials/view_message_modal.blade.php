@@ -5,6 +5,15 @@
     color: whitesmoke;
 }
 
+img {
+    vertical-align: middle;
+    border-style: dashed !important;
+    border-color: whitesmoke !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
 .md-form input[type=date], .md-form input[type=datetime-local], .md-form input[type=email], .md-form input[type=number], .md-form input[type=password], .md-form input[type=search-md], .md-form input[type=search], .md-form input[type=tel], .md-form input[type=text], .md-form input[type=time], .md-form input[type=url], .md-form textarea.md-textarea {
     color: snow !important
@@ -35,7 +44,7 @@
 
 
 
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold amber-text">Message</h4>
@@ -48,29 +57,39 @@
 
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
-          <p id="subjetc"> </p>
-          <p id="body"> </p>
+
+ 
+
+            <div class="md-form mb-5">
+                <i class="fas fa-tag prefix grey-text"></i>
+                <input type="text" id="subjetc" name="subject" class="form-control validate">
+            </div>
+
+            <div class="md-form">
+                <i class="fas fa-pen prefix grey-text"></i>
+                <textarea type="text" id="body" name="message" class="md-textarea form-control" rows="4"></textarea>
+            </div>
+
+          <div>
+            <h5 class="text-center amber-text">Attachements</h5>
+          </div>
+          <hr class="mt-3 mb-3 w-75" style="background: whitesmoke !important;">
+          <div class="align-content-center" id="att_render">
+
+          </div>
+
         </div>
-
-
-
-
-
-        <h5 class="text-center amber-text">Upload attachement</h5>
-  
-
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button  type="submit" class="btn btn-rounded btn-amber black-text" data-dismiss="modal">  <i class="fas fa-paper-plane-o ml-1"></i> close </button>
+        <button  type="" class="btn btn-rounded btn-amber black-text" data-dismiss="modal">close </button>
+        <button  type="" id="replay" class="btn btn-rounded btn-amber black-text"   data-dismiss="modal">replay </button>
+
       </div>
     </form>
     </div>
   </div>
-       
-    
-
-    </div>
+</div>
     
     
 

@@ -359,6 +359,8 @@
                 `<a data-toggle='modal' data-target='#modal_view_message' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`,
                 "{{ $message->body }}",
                 "{{ $message->attachement }}",
+                "{{ $message->sender_id }}",
+                "{{ $message->receiver_id }}",
             ],
             @endforeach
           @endif
@@ -381,6 +383,12 @@
           },
           {
               title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+          },
+          {
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+          },    
+          {
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
           }
       ];
 
@@ -399,20 +407,39 @@
       });
       myTable.column(3).visible(false);
       myTable.column(4).visible(false);
+      myTable.column(5).visible(false);
+      myTable.column(6).visible(false);
       var table = $('#example').DataTable();
 
 
       $('#example tbody').on('click', 'tr', function () {
-       console.log("test")
+
         var subject = table.row(this).data()[1];
         var body = table.row(this).data()[3];
-        console.log(subject)
-        console.log(body)
-        $('#subjetc').text(subject);
+        var attachment = table.row(this).data()[4];
+        var sender = table.row(this).data()[5];
+        var reciver = table.row(this).data()[6];
+        $('#subjetc').val(subject);
         $('#body').text(body);
+        $('#id').html("<input type='hidden' id='reciver' name='reciver' value=''><input type='hidden' id='sender' name='sender' value=''>");
+        $('#sender').val(sender);
+        $('#reciver').val(reciver);
+
+        $('#att_render').html("<a  href="+attachment+" download><img src="+attachment+" class='ml-auto '  width='50%' height='50%'> </a>");
 
     });
 
+    $( "#replay" ).click(function() {
+      $('#modal_new_message').modal('show');
+    });
+
+    $( "#new" ).click(function() {
+      $( "#sender" ).remove();
+      $( "#reciver" ).remove();
+    });
+
+
+ 
       $("button span:contains('Copy')").parent().removeClass('dt-button ');
       $("button span:contains('Excel')").parent().removeClass('dt-button ');
       $("button span:contains('CSV')").parent().removeClass('dt-button ');
