@@ -1,9 +1,6 @@
 <style>
 
-.modal-content {
-    background-color: #1c2331b8 !important;  
-    color: whitesmoke;
-}
+
 
 img {
     vertical-align: middle;
@@ -44,7 +41,7 @@ img {
 
 
 
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-lg  custom-primary" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold amber-text">Message</h4>
