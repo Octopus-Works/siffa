@@ -191,7 +191,7 @@
     </style>
 </head>
 
-<body class="fixed-sn custom-primary-light">
+<body class="fixed-sn custom-primary-transparent">
 
 
 

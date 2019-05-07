@@ -33,7 +33,7 @@
 
 </head>
 
-<body class="custom-primary-light">
+<body class="custom-primary-transparent">
 
     <!-- Navigation -->
     <header>

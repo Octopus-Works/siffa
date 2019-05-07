@@ -71,7 +71,7 @@
 
 
                             <!--Card-->
-                            <div class="card card-cascade narrower custom-primary-light mt-5 mb-5">
+                            <div class="card card-cascade narrower custom-primary-transparent mt-5 mb-5">
 
                                 <!--Card header-->
                                 <div

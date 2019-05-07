@@ -52,7 +52,7 @@
     </style>
 </head>
 
-<body class="fixed-sn custom-primary-light ">
+<body class="fixed-sn custom-primary-transparent ">
 
     <form id="temp" class="form-inline md-form form-sm active-cyan active-cyan-2 mt-2">
 

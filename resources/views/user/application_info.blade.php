@@ -51,7 +51,7 @@
 </head>
 
 
-<body class="custom-primary-light">
+<body class="fixed-sn custom-primary-transparent">
 
     <!--Main Navigation-->
     <header>
@@ -65,7 +65,7 @@
 
         <div class="container">
             <!--Grid row-->
-            <div class="row mb-5 mt-5 p-3">
+            <div class="row mb-5 mt-5 ">
 
                 <!--Grid column-->
                 <div class="col-md-12">
@@ -409,11 +409,11 @@
             </div>
         </div>
 
-        @include('partials.footer')
+   
     </main>
     <!--Main Layout-->
 
-
+    @include('partials.footer')
 
 
     <script>

@@ -56,7 +56,7 @@
 </head>
 
 
-<body class="custom-primary-light">
+<body class="custom-primary-transparent">
 
     <!--Main Navigation-->
     <header>

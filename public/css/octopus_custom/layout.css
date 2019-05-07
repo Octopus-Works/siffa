@@ -1,31 +1,39 @@
-/* Dark */
-.custom-primary{
-    background-color:#1c2331;
-    color:#fff;
+:root{
+    --primary:#1c2331;
+    --primary-transparent:#1c2331e3;
+    --secondary:#ffc107;
+    --tertiary:#3d5e9e;
+    --text-color:#fff;
 }
 
-.custom-primary-light{
-    background-color:#1c2331e3;
-    color:#fff;
+/* Dark */
+.custom-primary{
+    background-color:var(--primary)!important;
+    color:var(--text-color)!important;
+}
+
+.custom-primary-transparent{
+    background-color:var(--primary-transparent)!important;
+    color:var(--text-color)!important;
 }
 
 /* Yellow */
 .custom-secondary{
-    background-color: #ffc107;
-    color:#fff
+    background-color: var(--secondary)!important;
+    color:var(--text-color)!important;
 }
 
 .custom-secondary-text{
-    color: #ffc107;
+    color: var(--secondary)!important;
 }
 
 
 /* Blue */
 .custom-tertiary{
-    background-color: #3d5e9e;
+    background-color: var(--tertiary)!important;
 }
 
 .custom-tertiary-text{
-    color: #3d5e9e;
+    color: var(--tertiary)!important;
 }
 
