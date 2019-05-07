@@ -497,11 +497,6 @@
 
 
 
-    <script>
-
-    </script>
-
-
 
 </body>
 
