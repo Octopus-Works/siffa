@@ -51,7 +51,7 @@
 </head>
 
 
-<body class="custom-primary-light">
+<body class="fixed-sn custom-primary-light">
 
     <!--Main Navigation-->
     <header>
@@ -65,13 +65,13 @@
 
         <div class="container">
             <!--Grid row-->
-            <div class="row mb-5 mt-5 p-3">
+            <div class="row mb-5">
 
                 <!--Grid column-->
-                <div class="col-md-12">
+                <div class="col-md-12 ">
                     <form id="app_form" action="{{ route('application_edit')}} " enctype="multipart/form-data"
                         method="POST">
-                        <div class="card p-5 mt-3 mb-3 shadow-lg custom-primary">
+                        <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i
                                     class="fas fa-clipboard amber-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1300px;">
@@ -409,10 +409,10 @@
             </div>
         </div>
 
-        @include('partials.footer')
     </main>
     <!--Main Layout-->
 
+    @include('partials.footer')
 
 
 

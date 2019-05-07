@@ -185,27 +185,12 @@
       .blockquote .bq-title, .card, .card .card-body h1, .card .card-body h2, .card .card-body h3, .card .card-body h4, .card .card-body h5, .card .card-body h6 {
         font-weight: 400;
       }
-      .card {
-        position: relative;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background: center;
-        background-clip: border-box;
-        border: 1px solid rgba(0,0,0,.125);
-        border-radius: .25rem;
-      }
+
       .text-center {
           text-align: center!important;
       }
     
-      .btn-amber {
-      background-color: #ffa000d4!important;
-      color: #fff;
-      }
+ 
 
       .close {
       float: right;
@@ -247,10 +232,10 @@
 
 
       
-      <div class="container-fluid  ">
+      <div class="container-fluid   ">
 
         <!--Section: Team v.1-->
-        <section class="section team-section">
+        <section class="section team-section ">
 
           <!--Grid row-->
           <div class="row text-center">
@@ -260,10 +245,10 @@
 
 
               <!--Card-->
-              <div class="card card-cascade narrower mb-5">
+              <div class="card card-cascade narrower custom-primary mb-5">
 
                 <!--Card header-->
-                <div class="view view-cascade py-3 gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
+                <div class="view view-cascade py-3 custom-primary gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
 
                   <div>
                     <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
