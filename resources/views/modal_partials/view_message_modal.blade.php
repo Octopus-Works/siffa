@@ -44,7 +44,7 @@ img {
   <div class="modal-dialog modal-lg  custom-primary" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold amber-text">Message</h4>
+        <h4 class="modal-title w-100 font-weight-bold custom-secondary-text">Message</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -68,7 +68,7 @@ img {
             </div>
 
           <div>
-            <h5 class="text-center amber-text">Attachements</h5>
+            <h5 class="text-center custom-secondary-text">Attachements</h5>
           </div>
           <hr class="mt-3 mb-3 w-75" style="background: whitesmoke !important;">
           <div class="align-content-center" id="att_render">
@@ -79,8 +79,8 @@ img {
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button  type="" class="btn btn-rounded btn-amber black-text" data-dismiss="modal">close </button>
-        <button  type="" id="replay" class="btn btn-rounded btn-amber black-text"   data-dismiss="modal">replay </button>
+        <button  type="" class="btn btn-rounded custom-secondary black-text" data-dismiss="modal">close </button>
+        <button  type="" id="replay" class="btn btn-rounded custom-secondary black-text"   data-dismiss="modal">replay </button>
 
       </div>
     </form>
