@@ -43,7 +43,7 @@
 
 </head>
 
-<body class="custom-primary-transparent">
+<body class="fixed-sn custom-primary-transparent">
 
     <!-- Navigation -->
     <header>
@@ -61,8 +61,8 @@
 
 
             <div class="container-fluid" style="height:100%">
-                <div class="container mt-9">
-                    <h1 class="text-center  font-weight-bolder custom-secondary-text">Account Information<i
+                <div class="container ">
+                    <h1 class="text-center  font-weight-bolder custom-secondary-text mt-3">Account Information<i
                             class="fas fa-user custom-secondary-text ml-3"></i></h1>
                     <div class="section extra-margins  py-5 text-center text-lg-left">
 
@@ -70,7 +70,7 @@
                         <div class="row">
 
                             <!--Grid column-->
-                            <div class="ml-auto col-sm-12 col-md-5 col-xl-5">
+                            <div class="ml-auto mr-auto col-sm-12 col-md-5 col-xl-5">
                                 <div class="card card-cascade narrower custom-primary mb-4">
 
                                     <!-- Card image -->
@@ -133,7 +133,8 @@
                                                 <!-- Second column -->
                                                 <div class="col-md-6">
                                                     <div class="md-form mb-0">
-                                                            <input id="username" name="username" type="text" value="{{ $user->shippingoffice->name }}"
+                                                        <input id="username" name="username" type="text"
+                                                            value="{{ $user->shippingoffice->name }}"
                                                             class="validate form-control">
                                                         <label for="username">{{ __('Username') }}</label>
 
@@ -221,7 +222,7 @@
                             <!-- Card -->
 
 
-                           
+
                         </div>
                         <!--Grid column-->
 
@@ -246,6 +247,17 @@
         <!-- Footer -->
 
         <!-- SCRIPTS -->
+        <script>
+            $(".button-collapse").sideNav();
+
+            var container = document.querySelector('.custom-scrollbar');
+            Ps.initialize(container, {
+                wheelSpeed: 2,
+                wheelPropagation: true,
+                minScrollbarLength: 20
+            });
+
+        </script>
 
 
 </body>

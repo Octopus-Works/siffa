@@ -56,7 +56,7 @@
 </head>
 
 
-<body class="custom-primary-transparent">
+<body class="fixed-sn custom-primary-transparent">
 
     <!--Main Navigation-->
     <header>
@@ -71,7 +71,7 @@
 
         <div class="container">
             <!--Grid row-->
-            <div class="row mb-5 mt-5 p-3">
+            <div class="row mb-4 p-3">
 
                 <!--Grid column-->
                 <div class="col-md-12">
@@ -80,7 +80,8 @@
                             <div>
 
 
-                                <button type="button" id="new" class="btn custom-tertiary btn-rounded  px-2">Change Status
+                                <button type="button" id="new" class="btn custom-tertiary btn-rounded  px-2">Change
+                                    Status
                                 </button>
 
                             </div>
@@ -384,14 +385,23 @@
             </div>
         </div>
 
-        @include('partials.footer')
     </main>
     <!--Main Layout-->
 
 
 
+    @include('partials.footer')
 
     <script>
+        $(".button-collapse").sideNav();
+
+        var container = document.querySelector('.custom-scrollbar');
+        Ps.initialize(container, {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        });
+
         $(document).ready(function () {
             $('.stepper').mdbStepper();
         })

@@ -299,8 +299,9 @@
 
                                             </div>
                                             <div class="col-md-12">
-                                                    <img id="financial" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
-                                                </div>
+                                                <img id="financial" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                            </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
                                                     class="waves-effect waves-dark btn btn-large btn-amber next-step"
@@ -321,7 +322,8 @@
                                                     <h6>Photo of Signature and Fingerprint:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="signature_photo" onchange="readURL(this)">
+                                                        <input type="file" name="signature_photo"
+                                                            onchange="readURL(this)">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="signature-photo" class="file-path validate"
@@ -331,8 +333,9 @@
 
                                             </div>
                                             <div class="col-md-12">
-                                                    <img id="signature" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
-                                                </div>
+                                                <img id="signature" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                            </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input placeholder="Date of Application" name="date_of_application"
                                                     value="{{$user->applicationDetail->Date_of_application}}"
@@ -391,8 +394,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                    <img id="application" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
-                                                </div>
+                                                <img id="application" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                            </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
                                                     type="submit">SUBMIT</button>
@@ -409,7 +413,7 @@
             </div>
         </div>
 
-   
+
     </main>
     <!--Main Layout-->
 
@@ -417,6 +421,15 @@
 
 
     <script>
+        $(".button-collapse").sideNav();
+
+        var container = document.querySelector('.custom-scrollbar');
+        Ps.initialize(container, {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        });
+
         $(document).ready(function () {
             $('.stepper').mdbStepper();
         })
@@ -499,7 +512,7 @@
         }
 
     </script>
-    
+
 
 </body>
 
