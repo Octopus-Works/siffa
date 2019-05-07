@@ -80,7 +80,7 @@
                             <div>
 
 
-                                <button type="button" id="new" class="btn custom-tertiary btn-rounded  px-2">Change
+                                <button type="button" id="new" class="btn custom-tertiary btn-rounded  px-2" data-toggle='modal' data-target='#change_status_modal'>Change
                                     Status
                                 </button>
 
@@ -391,6 +391,7 @@
 
 
     @include('partials.footer')
+    @include('modal_partials.change_status_modal')
 
     <script>
         $(".button-collapse").sideNav();
