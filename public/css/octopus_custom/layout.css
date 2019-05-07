@@ -3,18 +3,19 @@
     --primary-transparent:#1c2331e3;
     --secondary:#ffc107;
     --tertiary:#3d5e9e;
-    --text-color:#fff;
+    --text-color:black;
+    --test:snow;
 }
 
 /* Dark */
 .custom-primary{
     background-color:var(--primary)!important;
-    color:var(--text-color)!important;
+    color:var(--test)!important;
 }
 
 .custom-primary-transparent{
     background-color:var(--primary-transparent)!important;
-    color:var(--text-color)!important;
+    color:var(--test)!important;
 }
 
 /* Yellow */
