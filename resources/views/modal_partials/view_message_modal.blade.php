@@ -37,7 +37,7 @@ img {
     color:whitesmoke !important;
 }
     </style>
-<div class="modal fade" id="modal_view_message" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade mt-5" id="modal_view_message" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
 
@@ -80,7 +80,7 @@ img {
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <button  type="" class="btn btn-rounded custom-secondary black-text" data-dismiss="modal">close </button>
-        <button  type="" id="replay" class="btn btn-rounded custom-secondary black-text"   data-dismiss="modal">replay </button>
+        <button  type="" id="replay" class="btn btn-rounded custom-secondary black-text" data-dismiss="modal">replay </button>
 
       </div>
     </form>

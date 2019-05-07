@@ -38,3 +38,12 @@
     color: var(--tertiary)!important;
 }
 
+/* .table-striped tbody tr:nth-of-type(odd) {
+
+    background-color:rgba(61, 94, 158,0.3) !important;
+   } */
+
+.selected{
+    background-color:rgba(61, 94, 158,0.3) !important;
+
+}

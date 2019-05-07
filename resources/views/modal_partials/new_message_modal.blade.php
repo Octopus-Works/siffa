@@ -78,7 +78,7 @@
     }
 
 </style>
-<div class="modal fade" id="modal_new_message" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade  mt-5" id="modal_new_message" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
 
