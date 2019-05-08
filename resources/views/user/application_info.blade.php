@@ -287,8 +287,7 @@
                                                     <h6>Photo of the Financial Assignment:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="financial_photo"
-                                                            onchange="readURL(this);">
+                                                        <input id="financial_photo" type="file" name="financial_photo" onchange="document.getElementById('financial').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="financial-photo" class="file-path validate"
@@ -322,8 +321,7 @@
                                                     <h6>Photo of Signature and Fingerprint:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="signature_photo"
-                                                            onchange="readURL(this)">
+                                                        <input id="signature_photo" type="file" name="signature_photo" onchange="document.getElementById('signature').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="signature-photo" class="file-path validate"
@@ -385,7 +383,7 @@
                                                     <h6>Hard Copy of the Application Form:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="hard_copy" onchange="readURL(this)">
+                                                        <input id="application_photo" type="file" name="hard_copy" onchange="document.getElementById('application').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="hard-copy" class="file-path validate" type="text"
@@ -498,20 +496,6 @@
     </script>
 
 
-    <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#financial')
-                        .attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-    </script>
 
 
 </body>

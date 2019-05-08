@@ -39,3 +39,23 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('#app_form').submit(function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST',
+            url: $(this).attr('action'),
+            dataType: 'json', // data type
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
+
+        });
+    });
+
+</script>

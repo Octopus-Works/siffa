@@ -9,11 +9,6 @@
     <title>Application Status</title>
 
     <style>
-
-
-
-
-
         @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
         .md-form label {
@@ -39,7 +34,7 @@
             box-sizing: border-box;
         }
 
- 
+
 
         .cascading-admin-card .admin-up .data {
             float: right;
@@ -198,116 +193,127 @@
     <!-- Navigation -->
 
 
-        <!--Main Navigation-->
-        <header>
-            @include('partials.nav_dashboard')
-            @include('partials.sidebar')
-        </header>
-        <!--Main Navigation-->
+    <!--Main Navigation-->
+    <header>
+        @include('partials.nav_dashboard')
+        @include('partials.sidebar')
+    </header>
+    <!--Main Navigation-->
 
-        <!--Main layout-->
-        <main>
-
-
-
-            <div class="container-fluid  " style="height:100%">
-
-                <!--Section: Team v.1-->
-                <section class="section team-section">
-
-                    <!--Grid row-->
-                    <div class="row text-center">
-
-                        <!-- Grid column -->
-                        <div class="col-md-12 mb-12">
+    <!--Main layout-->
+    <main>
 
 
-                            <!--Card-->
-                            <div class="card card-cascade narrower custom-primary mb-4">
 
-                                <!--Card header-->
-                                <div
-                                    class="view view-cascade py-3 gradient-card-header custom-tertiary mx-4 d-flex justify-content-between align-items-center">
+        <div class="container-fluid  " style="height:100%">
 
-                                    <div>
-                                        <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                            <i class="fas custom-secondary-text fa-th-large mt-0"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                            <i class="fas custom-secondary-text fa-columns mt-0"></i>
-                                        </button>
-                                    </div>
+            <!--Section: Team v.1-->
+            <section class="section team-section">
 
-                                    <a href="" class="white-text mx-3">Staff</a>
+                <!--Grid row-->
+                <div class="row text-center">
 
-                                    <div>
-                                        <button type="button" id="new"
-                                            class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                            <span>new</span>
-                                            <i class="fas custom-secondary-text fa-ban mt-0"></i>
-                                        </button>
-                                        <button id="delete" type="button"
-                                            class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                            <span>edit</span>
-                                            <i class="fas custom-secondary-text fa-unlock-alt mt-0"></i>
-                                        </button>
+                    <!-- Grid column -->
+                    <div class="col-md-12 mb-12">
 
-                                    </div>
 
+                        <!--Card-->
+                        <div class="card card-cascade narrower custom-primary mb-4">
+
+                            <!--Card header-->
+                            <div
+                                class="view view-cascade py-3 gradient-card-header custom-tertiary mx-4 d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                        <i class="fas custom-secondary-text fa-th-large mt-0"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                        <i class="fas custom-secondary-text fa-columns mt-0"></i>
+                                    </button>
+                                </div>
+
+                                <a href="" class="white-text mx-3">Staff</a>
+
+                                <div>
+                                    <button type="button" id="new"
+                                        class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                        <span>new</span>
+                                        <i class="fas custom-secondary-text fa-ban mt-0"></i>
+                                    </button>
+                                    <button id="delete" type="button"
+                                        class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                        <span>edit</span>
+                                        <i class="fas custom-secondary-text fa-unlock-alt mt-0"></i>
+                                    </button>
 
                                 </div>
-                                <!--/Card header-->
 
-                                <!--Card content-->
-                                <!--Body-->
-                                <div class="modal-body" style="height:800px">
-                                    <div class="card custom-primary" style="height:800px">
-                                        <div class="card-body p-5 mt-5">
-                                            <img class="mb-5" src="img/folder.png" alt="file" height="200px" width="200px">
-                                            <h3 class="h3-responsive">Application Status: <span class="badge badge-success rounded-pill ml-3">Established</span> </h3>
+
+                            </div>
+                            <!--/Card header-->
+
+                            <!--Card content-->
+                            <!--Body-->
+                            <div class="modal-body" style="height:800px">
+                                <div class="card custom-primary" style="height:800px">
+                                    <div class="card-body p-5 mt-5 text-center">
+                                        <img class="mb-5" src="img/folder.png" alt="file" height="200px" width="200px">
+                                        <h3 class="h3-responsive">Application Status: <span
+                                                class="badge badge-primary rounded-pill ml-3">Approved Under Payment</span> </h3>
+                                    
+                                    <div>
+                                        <div class="m-5">
+                                            <i class="fas fa-angle-double-down fa-2x custom-tertiary-text"></i>
+                                        </div>
+                                        <div>
+                                            <button type="button" id="new" class="btn custom-secondary btn-rounded  p-3" data-toggle='modal' data-target='#payment_details'>Send Payment Details<i class="fas fa-paper-plane ml-2"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                                <!--/.Card content-->
-
+                                </div>
                             </div>
-                            <!--/.Card-->
+                            <!--/.Card content-->
 
                         </div>
-                        <!-- Grid column -->
-
-
+                        <!--/.Card-->
 
                     </div>
-                    <!--Grid row-->
-
-                </section>
-                <!--Section: Team v.1-->
-
-            </div>
-        </main>
-        <!--Main layout-->
-        <!-- Main layout -->
-
-        <!-- Footer -->
-        @include('partials.footer')
-        <!-- Footer -->
-
-        <!-- SCRIPTS -->
-
-        <script>
-            // SideNav Initialization
-            $(".button-collapse").sideNav();
-
-            var container = document.querySelector('.custom-scrollbar');
-            Ps.initialize(container, {
-                wheelSpeed: 2,
-                wheelPropagation: true,
-                minScrollbarLength: 20
-            });
+                    <!-- Grid column -->
 
 
-        </script>
+
+                </div>
+                <!--Grid row-->
+
+            </section>
+            <!--Section: Team v.1-->
+
+        </div>
+    </main>
+    <!--Main layout-->
+    <!-- Main layout -->
+
+    <!-- Footer -->
+    @include('partials.footer')
+    @include('modal_partials.payment_details')
+    <!-- Footer -->
+
+    <!-- SCRIPTS -->
+
+    <script>
+        // SideNav Initialization
+        $(".button-collapse").sideNav();
+
+        var container = document.querySelector('.custom-scrollbar');
+        Ps.initialize(container, {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        });
+
+    </script>
 </body>
 
 </html>
