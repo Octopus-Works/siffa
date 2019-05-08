@@ -4,6 +4,7 @@
 <head>
     @include('partials.head')
     <title>Register</title>
+    <link rel="stylesheet" href={{url("css/intlTelInput.css")}}>
     <style>
         @media only screen and (min-width: 993px) {
             ul.stepper.horizontal .step-title {
@@ -11,6 +12,7 @@
                 white-space: normal !important;
             }
         }
+
 
         .mt-5 {
             margin-top: 6rem !important;
@@ -26,6 +28,21 @@
 
         ul.stepper.horizontal .step-actions {
             position: relative !important;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        form .error {
+            color: red;
+
+        }
+
+        .intl-tel-input {
+            width: 93% !important;
+            position: relative;
+            display: inline-block;
         }
 
     </style>
@@ -57,7 +74,7 @@
                         <div class="card p-5 mt-3 mb-3 shadow-lg">
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i
                                     class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
-                            <ul class="stepper horizontal" id="horizontal-stepper" style="height:1300px;">
+                            <ul class="stepper horizontal" id="horizontal-stepper" style="height:1560px;">
                                 <li class="step active">
                                     <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
                                     <div class="step-new-content">
@@ -111,14 +128,16 @@
                                                 <label for="address">Address</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="phonenumber" name="phone_number" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="phonenumber">Phone Number</label>
+                                                <input type="text" id="phone" type="tel" class="validate form-control"
+                                                    name="phone" required>
+                                                <span id="valid-msg" class="hide">✓</span>
+                                                <span id="error-msg" class="hide"></span>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="mobilenumber" name="mobile_number" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="mobilenumber">Mobile Number</label>
+                                                <input type="text" id="mobile" type="tel" class="validate form-control"
+                                                    name="mobile" required>
+                                                <span id="valid-msg" class="hide">✓</span>
+                                                <span id="error-msg" class="hide"></span>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="website" name="website" type="text"
@@ -147,7 +166,7 @@
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <textarea id="branches-address" name="branches_address"
-                                                    class="md-textarea form-control" rows="3"></textarea>
+                                                    class="md-textarea form-control " required rows="3"></textarea>
                                                 <label for="branches-address">Addresses of Branches</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
@@ -371,6 +390,16 @@
 
 
 
+
+
+    <script type="text/javascript"
+        src={{url("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js")}}></script>
+    <script type="text/javascript"
+        src={{url("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js")}}></script>
+    <script src={{url("js/validate.js")}}></script>
+    <script src={{url("js/intlTelInput.js")}}></script>
+
+
     <script>
         $(document).ready(function () {
             $('.stepper').mdbStepper();
@@ -437,7 +466,7 @@
                     }
 
                 },
-                error: function(xhr, textStatus, errorThrown) {
+                error: function (xhr, textStatus, errorThrown) {
                     var string = xhr.responseText;
                     var obj = JSON.parse(string);
                     toastr.error(obj.message);
@@ -460,9 +489,161 @@
 
     </script>
 
+
+
     <script>
+        $(document).ready(function () {
+            $(function () {
+                // Initialize form validation on the registration form.
+                // It has the name attribute "app_form"
+                $("#app_form").validate({
+                    // Specify validation rules
+                    rules: {
+                        // The key name on the left side is the name attribute
+                        // of an input field. Validation rules are defined
+                        // on the right side
+
+                        chamber_of_commerce: {
+                            required: true,
+                            digits: true,
+                            minlength: 4
+                        },
+                        commercial_registry: {
+                            required: true,
+                            digits: true,
+                            minlength: 4
+                        }
+                    },
+
+
+
+
+                    // Specify validation error messages
+                    messages: {
+                        minlength: "Please enter at least 4 characters"
+                    },
+
+
+                    // Make sure the form is submitted to the destination defined
+                    // in the "action" attribute of the form when valid
+                    submitHandler: function (form) {
+                        form.submit();
+                    }
+                });
+            });
+
+
+            /**
+             * Custom validator for contains at least one upper-case letter.
+             */
+
+            /**
+             * Custom validator for contains at least one number.
+             */
+            $.validator.addMethod("atLeastOneNumber", function (value, element) {
+                return this.optional(element) || /[0-9]+/.test(value);
+            }, "Must have at least one number");
+
+            /**
+             * Custom validator for contains at least one symbol.
+             */
+        });
 
     </script>
+
+    <script>
+        $(document).ready(function () {
+
+            var input_selector = 'input[type=tel]';
+            $(input_selector).each(function (index, element) {
+                if (true) {
+                    $(this).siblings('label').addClass('active');
+                } else {
+                    $(this).siblings('label').removeClass('active');
+                }
+            });
+        });
+        var input1 = document.querySelector("#phone"),
+            input2 = document.querySelector("#mobile"),
+            errorMsg = document.querySelector("#error-msg"),
+            validMsg = document.querySelector("#valid-msg");
+        var flag = false;
+        // here, the index maps to the error code returned from getValidationError - see readme
+        var errorMap = ["Invalid number", "Too short", "Too long",
+            "Invalid number"
+        ];
+
+        // initialise plugin
+        var iti1 = window.intlTelInput(input1, {
+            utilsScript: '{{url("js/utils.js")}}',
+        });
+
+        var iti2 = window.intlTelInput(input2, {
+            utilsScript: '{{url("js/utils.js")}}',
+        });
+
+
+        var reset = function () {
+            input1.classList.remove("error");
+
+            errorMsg.classList.add("hide");
+            validMsg.classList.add("hide");
+
+        };
+
+        var reset = function () {
+            input2.classList.remove("error");
+
+            errorMsg.classList.add("hide");
+            validMsg.classList.add("hide");
+
+        };
+
+        // on blur: validate
+        input1.addEventListener('blur', function () {
+            reset();
+            if (input1.value.trim()) {
+                if (iti1.isValidNumber()) {
+                    validMsg.classList.remove("hide");
+                } else {
+                    input1.classList.add("error");
+                    var errorCode = iti1.getValidationError();
+                    $('#phone').val(errorMap[errorCode]);
+                    errorMsg.classList.remove("hide");
+
+                }
+            }
+        });
+
+        input2.addEventListener('blur', function () {
+            reset();
+            if (input2.value.trim()) {
+                if (iti2.isValidNumber()) {
+                    validMsg.classList.remove("hide");
+                } else {
+                    input2.classList.add("error");
+                    var errorCode = iti2.getValidationError();
+                    $('#mobile').val(errorMap[errorCode]);
+                    errorMsg.classList.remove("hide");
+
+                }
+            }
+        });
+
+
+        // on keyup / change flag: reset
+        input1.addEventListener('change', reset);
+        input1.addEventListener('keyup', reset);
+        new WOW().init();
+
+        input2.addEventListener('change', reset);
+        input2.addEventListener('keyup', reset);
+        new WOW().init();
+
+    </script>
+
+
+
 
 </body>
 
