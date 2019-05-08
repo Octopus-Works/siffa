@@ -57,7 +57,10 @@
             <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas custom-secondary-text fa-user"></i>
-                <span class="d-lg-inline-block d-md-inline-block">Username</span>
+                @if (Auth::check())
+
+                <span class="d-lg-inline-block d-md-inline-block">{{ Auth::getUser()->userdetail->fullname}}</span>
+                @endif
             </a>
             {{--TODO --}}
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
