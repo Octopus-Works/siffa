@@ -269,7 +269,9 @@
                                                     <h6>Photo of the Financial Assignment:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="financial_photo">
+                                                        <input id="financial_photo" type="file" name="financial_photo"
+                                                            accept="image/*"
+                                                            onchange="document.getElementById('financial').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="financial-photo" class="file-path validate"
@@ -277,6 +279,10 @@
                                                     </div>
                                                 </div>
 
+                                            </div>
+                                            <div class="col-md-12">
+                                                <img id="financial" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
@@ -298,7 +304,9 @@
                                                     <h6>Photo of Signature and Fingerprint:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="signature_photo">
+                                                        <input id="signature_photo" type="file" name="signature_photo"
+                                                            accept="image/*"
+                                                            onchange="document.getElementById('signature').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="signature-photo" class="file-path validate"
@@ -306,6 +314,10 @@
                                                     </div>
                                                 </div>
 
+                                            </div>
+                                            <div class="col-md-12">
+                                                <img id="signature" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input placeholder="Date of Application" name="date_of_application"
@@ -355,13 +367,18 @@
                                                     <h6>Hard Copy of the Application Form:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="hard_copy">
+                                                        <input id="application_photo" type="file" name="hard_copy"
+                                                            onchange="document.getElementById('application').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="hard-copy" class="file-path validate" type="text"
                                                             placeholder="Upload your file">
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <img id="application" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"

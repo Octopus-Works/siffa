@@ -305,7 +305,7 @@
                                                     <h6>Photo of the Financial Assignment:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input id="financial_photo" type="file" name="financial_photo"
+                                                        <input id="financial_photo" type="file" name="financial_photo" accept="image/*"
                                                             onchange="document.getElementById('financial').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
@@ -340,7 +340,7 @@
                                                     <h6>Photo of Signature and Fingerprint:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input id="signature_photo" type="file" name="signature_photo"
+                                                        <input id="signature_photo" type="file" name="signature_photo" accept="image/*"
                                                             onchange="document.getElementById('signature').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
