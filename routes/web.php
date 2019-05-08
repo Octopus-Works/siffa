@@ -88,3 +88,13 @@ Route::get('/cms', function() {
 Route::get('/rms', function() {
     return view('rms.index'); 
 })->name('rms');
+
+
+Route::get('/rms/user_mangment', function(){
+    
+
+        $user = User::all(); 
+        return view('rms/user_mangment')->withuser($user);
+
+    
+});
