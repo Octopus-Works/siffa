@@ -1,3 +1,15 @@
+<style>
+	.side-nav .collapsible a{
+		font-size:1rem!important;
+		line-height: 2rem!important;
+	}
+
+	.side-nav{
+		width:18rem!important;
+	}
+
+</style>
+
 <div id="slide-out" class="side-nav fixed custom-primary">
 	<ul class="custom-scrollbar">
 		<!-- Logo -->
@@ -27,8 +39,8 @@
 		<!-- Side navigation links -->
 		<li>
 			<ul class="collapsible collapsible-accordion">
-				<li><a class="collapsible-header waves-effect arrow-r"><i class="fas custom-secondary-text fa-th-list"></i>
-						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>Content Management</a>
+				<li class="pt-2 pb-2"><a class="collapsible-header waves-effect arrow-r"><i class="fas custom-secondary-text fa-th-list"></i>
+						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>My Account</a>
 					<div class="collapsible-body">
 						<ul>
 							{{--TODO --}}
@@ -65,8 +77,8 @@
 						</ul>
 					</div>
 				</li >
-				<li ><a class="collapsible-header waves-effect arrow-r"><i class="fas custom-secondary-text fa-users"></i>
-						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>User Management</a>
+				<li class="pt-2 pb-2"><a class="collapsible-header waves-effect arrow-r"><i class="fas custom-secondary-text fa-clipboard"></i>
+						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>Application</a>
 					<div class="collapsible-body">
 						<ul>
 							<li>
@@ -77,8 +89,8 @@
 						</ul>
 					</div>
 				</li>
-				<li><a class="collapsible-header waves-effect arrow-r"><i class="fas custom-secondary-text fa-marker"></i>
-						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>Requests Management</a>
+				<li class="pt-2 pb-2"><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-envelope custom-secondary-text"></i>
+						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>Messages</a>
 					<div class="collapsible-body">
 						<ul>
 							<li>
