@@ -4,6 +4,7 @@
 <head>
     @include('partials.head')
     <title>Edit Application</title>
+    <link rel="stylesheet" href={{url("css/intlTelInput.css")}}>
     <style>
         @media only screen and (min-width: 993px) {
             ul.stepper.horizontal .step-title {
@@ -47,11 +48,26 @@
             color: #3d5e9e !important;
         }
 
+        .hide {
+            display: none;
+        }
+
+        form .error {
+            color: red;
+
+        }
+
+        .intl-tel-input {
+            width: 93% !important;
+            position: relative;
+            display: inline-block;
+        }
+
     </style>
 </head>
 
 
-<body class="custom-primary-light">
+<body class="fixed-sn custom-primary-transparent">
 
     <!--Main Navigation-->
     <header>
@@ -65,13 +81,13 @@
 
         <div class="container">
             <!--Grid row-->
-            <div class="row mb-5 mt-5 p-3">
+            <div class="row mb-5 ">
 
                 <!--Grid column-->
-                <div class="col-md-12">
+                <div class="col-md-12 ">
                     <form id="app_form" action="{{ route('application_edit')}} " enctype="multipart/form-data"
                         method="POST">
-                        <div class="card p-5 mt-3 mb-3 shadow-lg custom-primary">
+                        <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i
                                     class="fas fa-clipboard amber-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1300px;">
@@ -133,14 +149,16 @@
                                                 <label for="address">Address</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="phonenumber" name="phone_number" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="phonenumber">Phone Number</label>
+                                                <input type="text" id="phone" type="tel" class="validate form-control"
+                                                    name="phone" required>
+                                                <span id="valid-msg" class="hide">✓</span>
+                                                <span id="error-msg" class="hide"></span>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="mobilenumber" name="mobile_number" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="mobilenumber">Mobile Number</label>
+                                                <input type="text" id="mobile" type="tel" class="validate form-control"
+                                                    name="mobile" required>
+                                                <span id="valid-msg" class="hide">✓</span>
+                                                <span id="error-msg" class="hide"></span>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="website" name="website" type="text"
@@ -287,8 +305,8 @@
                                                     <h6>Photo of the Financial Assignment:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="financial_photo"
-                                                            onchange="readURL(this);">
+                                                        <input id="financial_photo" type="file" name="financial_photo" accept="image/*"
+                                                            onchange="document.getElementById('financial').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="financial-photo" class="file-path validate"
@@ -299,8 +317,9 @@
 
                                             </div>
                                             <div class="col-md-12">
-                                                    <img id="financial" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
-                                                </div>
+                                                <img id="financial" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                            </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
                                                     class="waves-effect waves-dark btn btn-large btn-amber next-step"
@@ -321,7 +340,8 @@
                                                     <h6>Photo of Signature and Fingerprint:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="signature_photo" onchange="readURL(this)">
+                                                        <input id="signature_photo" type="file" name="signature_photo" accept="image/*"
+                                                            onchange="document.getElementById('signature').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="signature-photo" class="file-path validate"
@@ -331,8 +351,9 @@
 
                                             </div>
                                             <div class="col-md-12">
-                                                    <img id="signature" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
-                                                </div>
+                                                <img id="signature" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                            </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input placeholder="Date of Application" name="date_of_application"
                                                     value="{{$user->applicationDetail->Date_of_application}}"
@@ -382,7 +403,8 @@
                                                     <h6>Hard Copy of the Application Form:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input type="file" name="hard_copy" onchange="readURL(this)">
+                                                        <input id="application_photo" type="file" name="hard_copy"
+                                                            onchange="document.getElementById('application').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="hard-copy" class="file-path validate" type="text"
@@ -391,8 +413,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                    <img id="application" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px"/>
-                                                </div>
+                                                <img id="application" src="" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                            </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
                                                     type="submit">SUBMIT</button>
@@ -409,14 +432,29 @@
             </div>
         </div>
 
-        @include('partials.footer')
+
     </main>
     <!--Main Layout-->
 
+    @include('partials.footer')
 
-
+    <script type="text/javascript"
+        src={{url("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js")}}></script>
+    <script type="text/javascript"
+        src={{url("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js")}}></script>
+    <script src={{url("js/validate.js")}}></script>
+    <script src={{url("js/intlTelInput.js")}}></script>
 
     <script>
+        $(".button-collapse").sideNav();
+
+        var container = document.querySelector('.custom-scrollbar');
+        Ps.initialize(container, {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        });
+
         $(document).ready(function () {
             $('.stepper').mdbStepper();
         })
@@ -484,22 +522,160 @@
 
     </script>
 
-
     <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+        $(document).ready(function () {
+            $(function () {
+                // Initialize form validation on the registration form.
+                // It has the name attribute "app_form"
+                $("#app_form").validate({
+                    // Specify validation rules
+                    rules: {
+                        // The key name on the left side is the name attribute
+                        // of an input field. Validation rules are defined
+                        // on the right side
 
-                reader.onload = function (e) {
-                    $('#financial')
-                        .attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
+                        chamber_of_commerce: {
+                            required: true,
+                            digits: true,
+                            minlength: 4
+                        },
+                        commercial_registry: {
+                            required: true,
+                            digits: true,
+                            minlength: 4
+                        }
+                    },
+
+
+
+
+                    // Specify validation error messages
+                    messages: {
+                        minlength: "Please enter at least 4 characters"
+                    },
+
+
+                    // Make sure the form is submitted to the destination defined
+                    // in the "action" attribute of the form when valid
+                    submitHandler: function (form) {
+                        form.submit();
+                    }
+                });
+            });
+
+
+            /**
+             * Custom validator for contains at least one upper-case letter.
+             */
+
+            /**
+             * Custom validator for contains at least one number.
+             */
+            $.validator.addMethod("atLeastOneNumber", function (value, element) {
+                return this.optional(element) || /[0-9]+/.test(value);
+            }, "Must have at least one number");
+
+            /**
+             * Custom validator for contains at least one symbol.
+             */
+        });
 
     </script>
-    
+
+    <script>
+        $(document).ready(function () {
+
+            var input_selector = 'input[type=tel]';
+            $(input_selector).each(function (index, element) {
+                if (true) {
+                    $(this).siblings('label').addClass('active');
+                } else {
+                    $(this).siblings('label').removeClass('active');
+                }
+            });
+        });
+        var input1 = document.querySelector("#phone"),
+            input2 = document.querySelector("#mobile"),
+            errorMsg = document.querySelector("#error-msg"),
+            validMsg = document.querySelector("#valid-msg");
+        var flag = false;
+        // here, the index maps to the error code returned from getValidationError - see readme
+        var errorMap = ["Invalid number", "Too short", "Too long",
+            "Invalid number"
+        ];
+
+        // initialise plugin
+        var iti1 = window.intlTelInput(input1, {
+            utilsScript: '{{url("js/utils.js")}}',
+        });
+
+        var iti2 = window.intlTelInput(input2, {
+            utilsScript: '{{url("js/utils.js")}}',
+        });
+
+
+        var reset = function () {
+            input1.classList.remove("error");
+
+            errorMsg.classList.add("hide");
+            validMsg.classList.add("hide");
+
+        };
+
+        var reset = function () {
+            input2.classList.remove("error");
+
+            errorMsg.classList.add("hide");
+            validMsg.classList.add("hide");
+
+        };
+
+        // on blur: validate
+        input1.addEventListener('blur', function () {
+            reset();
+            if (input1.value.trim()) {
+                if (iti1.isValidNumber()) {
+                    validMsg.classList.remove("hide");
+                } else {
+                    input1.classList.add("error");
+                    var errorCode = iti1.getValidationError();
+                    $('#phone').val(errorMap[errorCode]);
+                    errorMsg.classList.remove("hide");
+
+                }
+            }
+        });
+
+        input2.addEventListener('blur', function () {
+            reset();
+            if (input2.value.trim()) {
+                if (iti2.isValidNumber()) {
+                    validMsg.classList.remove("hide");
+                } else {
+                    input2.classList.add("error");
+                    var errorCode = iti2.getValidationError();
+                    $('#mobile').val(errorMap[errorCode]);
+                    errorMsg.classList.remove("hide");
+
+                }
+            }
+        });
+
+
+        // on keyup / change flag: reset
+        input1.addEventListener('change', reset);
+        input1.addEventListener('keyup', reset);
+        new WOW().init();
+
+        input2.addEventListener('change', reset);
+        input2.addEventListener('keyup', reset);
+        new WOW().init();
+
+    </script>
+
+
+
+
 
 </body>
 

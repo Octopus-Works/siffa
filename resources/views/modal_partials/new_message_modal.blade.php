@@ -78,14 +78,14 @@
     }
 
 </style>
-<div class="modal fade" id="modal_new_message" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade  mt-5" id="modal_new_message" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
 
 
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg  custom-primary" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold amber-text">Write to us</h4>
+                <h4 class="modal-title w-100 font-weight-bold custom-secondary-text">Write to us</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -93,6 +93,9 @@
             <div class="modal-body mx-3">
                 <form id="app_form" action="{{ route('messages.store')}} " enctype="multipart/form-data" method="POST">
                     @csrf
+                    <div id="id">
+
+                    </div>
                     <div class="md-form mb-5">
                         <i class="fas fa-tag prefix grey-text"></i>
                         <input type="text" id="form32" name="subject" class="form-control validate">
@@ -105,12 +108,12 @@
                         <label data-error="wrong" data-success="right" for="form8">Your message</label>
                     </div>
 
-                    <h5 class="text-center amber-text">Upload attachement</h5>
+                    <h5 class="text-center custom-secondary-text">Upload attachement</h5>
 
                     <div class="md-form col-12 ml-auto">
 
                         <div class="file-field">
-                            <div class="btn btn-amber btn-sm float-left">
+                            <div class="btn custom-secondary btn-sm float-left">
                                 <span>Choose file</span>
                                 <input type="file" name="attachement">
                             </div>
@@ -124,7 +127,7 @@
 
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <button type="submit" class="btn btn-rounded btn-amber">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+                <button type="submit" class="btn btn-rounded custom-secondary">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
             </div>
             </form>
         </div>
@@ -146,7 +149,18 @@
             data: new FormData(this),
             processData: false,
             contentType: false,
+            statusCode: {
+                        401: function () {
+                            window.location = '/login';
+                        },
+                        500: function () {
+                            console.log('500 status code! server error');
+                        },
+                        200: function (msg) {
 
+                            location.reload();
+                        },
+                    },
         });
     });
 

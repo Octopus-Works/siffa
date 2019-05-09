@@ -58,6 +58,10 @@ Route::get('/rms/view_applications', function () {
     return view('rms/view_applications');
 });
 
+Route::get('/rms/application', function () {
+    return view('rms/application');
+});
+
 Route::get('/rms/account_info', function(){
     
     if ( auth::check()){
@@ -75,3 +79,13 @@ Route::get('/cms', function() {
 Route::get('/rms', function() {
     return view('rms.index'); 
 })->name('rms');
+
+
+Route::get('/rms/user_mangment', function(){
+    
+
+        $user = User::all(); 
+        return view('rms/user_mangment')->withuser($user);
+
+    
+});
