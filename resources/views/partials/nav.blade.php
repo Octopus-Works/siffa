@@ -1,40 +1,136 @@
 <style>
-    .navbar-dark .navbar-brand{
-        color:#ffc107!important;
+    .navbar-dark .navbar-brand {
+        color: #ffc107 !important;
     }
+
+    .dropdown-menu {
+        background-color: #242b39 !important;
+    }
+
+    .navbar .dropdown-menu a {
+        color: #fff !important;
+    }
+
+    .dropdown .dropdown-menu .dropdown-item:hover {
+        background-color: #3d5e9e !important;
+    }
+
+    .dropdown .dropdown-menu.dropdown-primary .dropdown-item:hover {
+        background-color: #3d5e9e !important;
+    }
+
+    .padding-sides {
+        padding-left: 0.3rem !important;
+        padding-right: 0.9rem !important;
+    }
+
+    .waves-effect{
+        cursor: pointer!important;
+    }
+
+    @media screen and (min-width: 768px) {
+
+        .dropdown:hover .dropdown-menu,
+        .btn-group:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            margin-top: 0;
+        }
+
+        .dropdown-toggle {
+            margin-bottom: 2px;
+        }
+
+        .navbar .dropdown-toggle,
+        .nav-tabs .dropdown-toggle {
+            margin-bottom: 0;
+        }
+    }
+
 </style>
 
-<nav class="navbar fixed-top navbar-expand-lg custom-primary navbar-dark scrolling-navbar">
-    <a class="navbar-brand" href="#"><strong>SIFFA</strong></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Opinions</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item">
-                <a class="nav-link"><i class="fab fa-facebook-f custom-secondary-text"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link"><i class="fab fa-twitter custom-secondary-text"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link"><i class="fab fa-instagram custom-secondary-text"></i></a>
-            </li>
-        </ul>
+<nav class="navbar fixed-top navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar p-4">
+    <div class="container">
+        <a class="navbar-brand" href="#"><strong>SIFFA</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item padding-sides">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown padding-sides">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">About Us</a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Mission Statement</a>
+                        <a class="dropdown-item" href="#">By-Laws</a>
+                        <a class="dropdown-item" href="#">Standard Trading Conditions</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown padding-sides">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Members</a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Member List</a>
+                        <a class="dropdown-item" href="#">Become a Member</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown padding-sides">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">News & Events</a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Our Events</a>
+                        <a class="dropdown-item" href="#">Calendar</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown padding-sides">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Gallery</a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Latest</a>
+                        <a class="dropdown-item" href="#">Archive</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown padding-sides">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Board of Directors</a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">President's Message</a>
+                        <a class="dropdown-item" href="#">Board Members</a>
+                    </div>
+                </li>
+                <li class="nav-item padding-sides">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fab fa-facebook-f custom-secondary-text"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fab fa-twitter custom-secondary-text"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fab fa-instagram custom-secondary-text"></i></a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
+<script src={{url("js/jquery-3.3.1.min.js")}}></script>
+<script>
+    $(document).ready(function () {
+        $(".dropdown, .btn-group").hover(function () {
+            var dropdownMenu = $(this).children(".dropdown-menu");
+            if (dropdownMenu.is(":visible")) {
+                dropdownMenu.parent().toggleClass("open");
+            }
+        });
+    });
+
+</script>
