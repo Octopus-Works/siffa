@@ -22,10 +22,6 @@
             font-size: 17px !important;
         }
 
-        .mt-5 {
-            margin-top: 5rem !important;
-        }
-
     </style>
 
 
@@ -47,7 +43,7 @@
     </header>
     <!--Main Navigation-->
 
-    <main>
+    <main style="height: 1000px">
         <div class="container-fluid">
             <div class="container ">
 
