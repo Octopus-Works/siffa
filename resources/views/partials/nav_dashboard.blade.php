@@ -1,19 +1,20 @@
 <style>
-    .dropdown-menu{
-		background-color: #242b39 !important;
-    }
+
+  .dropdown-menu{
+  background-color: #242b39 !important;
+  }
 	.navbar .dropdown-menu a{
 		color:#fff!important;
 	}
 	.dropdown .dropdown-menu .dropdown-item:hover{
 		background-color: #3d5e9e!important;
-    }
-    .dropdown .dropdown-menu.dropdown-primary .dropdown-item:hover{
-        background-color: #3d5e9e!important;
-    }
-    .badge{
-        vertical-align: text-top!important;
-    }
+  }
+  .dropdown .dropdown-menu.dropdown-primary .dropdown-item:hover{
+    background-color: #3d5e9e!important;
+  }
+  .badge{
+    vertical-align: text-top!important;
+  }
 </style>
 
 <nav class="navbar fixed-top navbar-expand-lg scrolling-navbar custom-primary double-nav ">
@@ -57,7 +58,7 @@
             <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas custom-secondary-text fa-user"></i>
-                <span class="d-lg-inline-block d-md-inline-block">Username</span>
+                <span class="d-lg-inline-block d-md-inline-block">{{ App\UserDetail::find(auth::user()->id)->fullname}}</span>
             </a>
             {{--TODO --}}
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -65,7 +66,7 @@
                     <i class="fas custom-secondary-text fa-user mr-2" aria-hidden="true"></i>
                     <span>My Account</span>
                 </a>
-                <a class="dropdown-item" href="{{ url('/logout') }}">
+                <a class="dropdown-item" href="{{ route('logout') }}">
                     <i class="fas custom-secondary-text fa-sign-out-alt mr-2" aria-hidden="true"></i>
                     <span>Log out</span>
                 </a>

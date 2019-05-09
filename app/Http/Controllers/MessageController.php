@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\InternalMessaging;
+use App\Image;
 use Auth; 
 
 class MessageController extends Controller
@@ -15,11 +16,20 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $mail = InternalMessaging::where('sender_id', auth::user()->id)
-                                    // ->where('receiver_id', auth::user()->id)
-                                    ->get();
-        error_log($mail);
-        return view('user/view_messages')->withmail($mail); 
+        if ( auth::user()->role == 'RMS'){
+            $mail = InternalMessaging::where('sender_id', auth::user()->id)
+                                        ->orWhere('receiver_id', 0)
+                                        ->get();
+            return view('rms/view_messages')->withmail($mail);                             
+        }
+
+        if ( auth::user()->role == 'user'){
+            $mail = InternalMessaging::where('sender_id', auth::user()->id)
+                                        ->orWhere('receiver_id', auth::user()->id)
+                                        ->get();
+            return view('user/view_messages')->withmail($mail); 
+
+        }
     }
 
     /**
@@ -41,6 +51,7 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         $mail = new InternalMessaging;
+        error_log($mail);
         $mail->subject = $request->subject; 
         $mail->body = $request->message; 
         $mail->attachement = $request->attachement;
@@ -48,9 +59,26 @@ class MessageController extends Controller
         $mail->body = $request->message; 
         $mail->attachement = $request->attachement;
         $mail->sender_id = auth::user()->id;
-
+        error_log($mail->id); 
         if ( auth::user()->role == 'CMS')
             $mail->sender_id = auth::user()->id; 
+        
+        if ( $request->hasfile('attachement')){
+            $filenameWithExt = $request->file('attachement')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('attachement')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            $path = $request->file('attachement')->storeAs('public/attachement', $fileNameToStore);
+            $Image = new Image;  
+            $Image->imageable_id = $mail->id;
+            $Image->imageable_type = 'App\InternalMessaging';
+            $Image->url = '/storage/attachement/'. $fileNameToStore;
+            $Image->save();
+        }
+        
         $mail->save();
         return response('success'); 
 
@@ -64,10 +92,8 @@ class MessageController extends Controller
      */
     public function show($id)
     {
-        if ( auth::check()){
-            $mail = InternalMessaging::find(Auth::user()->id);
-            return view('user/view_messages')->withmail($mail); 
-        }    }
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.

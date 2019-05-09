@@ -40,13 +40,10 @@ Route::post('/application_info', 'ApplicationController@update')->name('applicat
 
 
 Auth::routes(['verify' => true]);
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
 Route::post('/register', 'Auth\RegisterController@mail')->name('register');
 
-// Route::get('/verification', function (){
-//     return view('register'); 
-// });
-
-// Route::post('/verification', 'Auth\MailSendingController@mail')->name('verification'); 
 //contact us route
 // Route::get('/contact', [
 // 'uses' => 'ContactMessageController@create'
@@ -55,13 +52,7 @@ Route::post('/register', 'Auth\RegisterController@mail')->name('register');
 //     'uses' => 'ContactMessageController@send'
 // ]);
 
-// Route::get('/view_messages', function () {
-//     return view('user/view_messages');
-// });
 
-Route::get('/rms/view_messages', function () {
-    return view('rms/view_messages');
-});
 
 Route::get('/rms/view_applications', function () {
     return view('rms/view_applications');

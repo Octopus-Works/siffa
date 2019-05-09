@@ -112,10 +112,10 @@
                         <div class="file-field">
                             <div class="btn btn-amber btn-sm float-left">
                                 <span>Choose file</span>
-                                <input type="file" name="attachment">
+                                <input type="file" name="attachement">
                             </div>
                             <div class="file-path-wrapper">
-                                <input id="attachment" class="file-path validate" type="text" placeholder="Upload your file">
+                                <input id="attachement" class="file-path validate" type="text" placeholder="Upload your file">
                             </div>
                         </div>
 
