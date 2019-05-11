@@ -201,7 +201,8 @@
       text-shadow: 0 0px 0 #fff !important; 
       opacity: .9 !important;
       }
-            
+
+  
     
     </style>
   </head>
@@ -283,7 +284,7 @@
                   <div class="card custom-primary">
                     <div class="card-body">
                       <div class="table-responsive">
-                        <table id="example" class="table table-striped" cellspacing="0" width="100%">
+                        <table id="example" class="table table-striped" cellspacing="0" width="100%"  style="min-height:550px;">
                         </table>
                       </div>
                     </div>

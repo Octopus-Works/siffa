@@ -298,7 +298,7 @@
                   <div class="card custom-primary">
                     <div class="card-body">
                       <div class="table-responsive">
-                        <table id="example" class="table table-striped" cellspacing="0" width="100%">
+                        <table id="example" class="table table-striped" cellspacing="0" width="100%"  style="min-height:650px;">
                         </table>
                       </div>
                     </div>
