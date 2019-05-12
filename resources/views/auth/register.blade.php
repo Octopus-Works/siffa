@@ -3,6 +3,7 @@
 
 <head>
     @include('partials.head')
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Register</title>
     <link rel="stylesheet" href={{url("css/intlTelInput.css")}}>
     <style>
@@ -71,6 +72,7 @@
                 <!--Grid column-->
                 <div class="col-md-12">
                     <form id="app_form" action="{{ route('register')}} " enctype="multipart/form-data" method="POST">
+                        @csrf
                         <div class="card p-5 mt-3 mb-3 shadow-lg">
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i
                                     class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>

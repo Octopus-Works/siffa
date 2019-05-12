@@ -150,17 +150,17 @@
             processData: false,
             contentType: false,
             statusCode: {
-                        401: function () {
-                            window.location = '/login';
-                        },
-                        500: function () {
-                            console.log('500 status code! server error');
-                        },
-                        200: function (msg) {
+                401: function () {
+                    window.location = '/login';
+                },
+                500: function () {
+                    console.log('500 status code! server error');
+                },
+                200: function (msg) {
 
-                            location.reload();
-                        },
-                    },
+                    // location.reload();
+                },
+            },
         });
     });
 

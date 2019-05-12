@@ -185,27 +185,12 @@
       .blockquote .bq-title, .card, .card .card-body h1, .card .card-body h2, .card .card-body h3, .card .card-body h4, .card .card-body h5, .card .card-body h6 {
         font-weight: 400;
       }
-      .card {
-        position: relative;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background: center;
-        background-clip: border-box;
-        border: 1px solid rgba(0,0,0,.125);
-        border-radius: .25rem;
-      }
+
       .text-center {
           text-align: center!important;
       }
     
-      .btn-amber {
-      background-color: #ffa000d4!important;
-      color: #fff;
-      }
+ 
 
       .close {
       float: right;
@@ -216,7 +201,8 @@
       text-shadow: 0 0px 0 #fff !important; 
       opacity: .9 !important;
       }
-            
+
+  
     
     </style>
   </head>
@@ -231,7 +217,7 @@
     </form>
 
     <!-- Navigation -->
-
+    <header>
 
 
 
@@ -247,10 +233,10 @@
 
 
       
-      <div class="container-fluid  ">
+      <div class="container-fluid   ">
 
         <!--Section: Team v.1-->
-        <section class="section team-section">
+        <section class="section team-section ">
 
           <!--Grid row-->
           <div class="row text-center">
@@ -260,10 +246,10 @@
 
 
               <!--Card-->
-              <div class="card card-cascade narrower mb-5">
+              <div class="card card-cascade narrower custom-primary mb-5">
 
                 <!--Card header-->
-                <div class="view view-cascade py-3 gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
+                <div class="view view-cascade py-3 custom-primary gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
 
                   <div>
                     <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
@@ -274,7 +260,7 @@
                     </button>
                   </div>
 
-                  <a href="" class="white-text mx-3">Messges</a>
+                  <a href="" class="white-text mx-3">messages</a>
 
                   <div>
                     <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_new_message">
@@ -298,7 +284,7 @@
                   <div class="card custom-primary">
                     <div class="card-body">
                       <div class="table-responsive">
-                        <table id="example" class="table table-striped" cellspacing="0" width="100%"  style="min-height:650px;">
+                        <table id="example" class="table table-striped" cellspacing="0" width="100%"  style="min-height:550px;">
                         </table>
                       </div>
                     </div>
@@ -356,9 +342,11 @@
             @foreach($mail as $message)[
                 "{{ $message->sender_id }}",
                 "{{ $message->subject }}",
-                `<a data-toggle='modal' data-target='#modal_view_messge' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`,
+                `<a data-toggle='modal' data-target='#modal_view_message' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`,
                 "{{ $message->body }}",
-                "{{ $message->attachement }}",
+                "{{ $message->images[0]->url }}",
+                "{{ $message->sender_id }}",
+                "{{ $message->receiver_id }}",
             ],
             @endforeach
           @endif
@@ -381,6 +369,12 @@
           },
           {
               title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+          },
+          {
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+          },    
+          {
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
           }
       ];
 
@@ -399,20 +393,39 @@
       });
       myTable.column(3).visible(false);
       myTable.column(4).visible(false);
+      myTable.column(5).visible(false);
+      myTable.column(6).visible(false);
       var table = $('#example').DataTable();
 
 
       $('#example tbody').on('click', 'tr', function () {
-       console.log("test")
+
         var subject = table.row(this).data()[1];
         var body = table.row(this).data()[3];
-        console.log(subject)
-        console.log(body)
-        $('#subjetc').text(subject);
+        var attachment = table.row(this).data()[4];
+        var sender = table.row(this).data()[5];
+        var reciver = table.row(this).data()[6];
+        $('#subjetc').val(subject);
         $('#body').text(body);
+        $('#id').html("<input type='hidden' id='reciver' name='reciver' value=''><input type='hidden' id='sender' name='sender' value=''>");
+        $('#sender').val(reciver);
+        $('#reciver').val(sender);
+
+        $('#att_render').html("<a  href="+attachment+" download><img src="+attachment+" class='ml-auto '  width='50%' height='50%'> </a>");
 
     });
 
+      $( "#replay" ).click(function() {
+        $('#modal_new_message').modal('show');
+      });
+
+      $( "#new" ).click(function() {
+        $( "#sender" ).remove();
+        $( "#reciver" ).remove();
+      });
+
+
+ 
       $("button span:contains('Copy')").parent().removeClass('dt-button ');
       $("button span:contains('Excel')").parent().removeClass('dt-button ');
       $("button span:contains('CSV')").parent().removeClass('dt-button ');
