@@ -391,10 +391,10 @@
 
 
       });
-      // myTable.column(3).visible(false);
-      // myTable.column(4).visible(false);
-      // myTable.column(5).visible(false);
-      // myTable.column(6).visible(false);
+      myTable.column(3).visible(false);
+      myTable.column(4).visible(false);
+      myTable.column(5).visible(false);
+      myTable.column(6).visible(false);
       var table = $('#example').DataTable();
 
 
@@ -415,14 +415,14 @@
 
     });
 
-    $( "#replay" ).click(function() {
-      $('#modal_new_message').modal('show');
-    });
+      $( "#replay" ).click(function() {
+        $('#modal_new_message').modal('show');
+      });
 
-    $( "#new" ).click(function() {
-      $( "#sender" ).remove();
-      $( "#reciver" ).remove();
-    });
+      $( "#new" ).click(function() {
+        $( "#sender" ).remove();
+        $( "#reciver" ).remove();
+      });
 
 
  

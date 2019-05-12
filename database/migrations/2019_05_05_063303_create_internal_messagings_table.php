@@ -24,7 +24,6 @@ class CreateInternalMessagingsTable extends Migration
             $table->increments('id');
             $table->string('subject');
             $table->string('body');
-            $table->string('attachement');
             $table->timestamps();
 
             // Foreign keys

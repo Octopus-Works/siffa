@@ -51,18 +51,16 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         $mail = new InternalMessaging;
-        error_log($mail);
         $mail->subject = $request->subject; 
         $mail->body = $request->message; 
-        $mail->attachement = $request->attachement;
         $mail->sender_id = auth::user()->id;
-        $mail->body = $request->message; 
-        $mail->attachement = $request->attachement;
-        $mail->sender_id = auth::user()->id;
-        error_log($mail->id); 
-        if ( auth::user()->role == 'CMS')
-            $mail->sender_id = auth::user()->id; 
-        
+        error_log($request->reciver);
+        if ( auth::user()->role == 'user')
+            $mail->receiver_id = 0; 
+        else if ( auth::user()->role == 'RMS')
+            $mail->receiver_id = $request->reciver;
+        $mail->save();
+
         if ( $request->hasfile('attachement')){
             $filenameWithExt = $request->file('attachement')->getClientOriginalName();
             // Get just filename
@@ -79,7 +77,6 @@ class MessageController extends Controller
             $Image->save();
         }
         
-        $mail->save();
         return response('success'); 
 
     }

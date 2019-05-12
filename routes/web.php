@@ -53,7 +53,6 @@ Route::post('/register', 'Auth\RegisterController@mail')->name('register');
 // ]);
 
 
-
 Route::get('/rms/view_applications', function () {
     return view('rms/view_applications');
 });
