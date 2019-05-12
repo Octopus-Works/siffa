@@ -41,9 +41,9 @@ class LoginController extends Controller
         if ( auth::user()->role == 'user') {
             return redirect('/home');
         } else if ( auth::user()->role == 'CMS') {
-            return redirect('/cms');
+            return redirect('/cms/index');
         } else {
-            return redirect('/rms');
+            return redirect('/rms/index');
         }
    }
 }

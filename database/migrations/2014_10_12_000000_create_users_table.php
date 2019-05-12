@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
 
             $table->increments('id');
             $table->string('username');
+            $table->boolean('blocked');
             $table->enum('role', ['user', 'CMS', 'RMS']); 
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

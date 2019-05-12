@@ -439,36 +439,38 @@
             $(document).ready(function () {
 
 
-
-
-            var dataSet = [
-                @if(isset($users))
-                    @foreach ($users as $user)
-                        ['{{$$user->userdetail->id}}','{{$user->userdetail->fullname}}','{{$user->userdetail->website}}','{{$user->userdetail->place_of_birth}}','{{$$user->userdetail->address}}','{{$user->userdetail->date_of_birth}}'],
+                var dataSet = [
+                    @if(isset($user))
+                        @foreach ($user as $user)[
+                            "{{$user->id}}",
+                            "{{$user->userdetail->fullname}}",
+                            "{{$user->userdetail->father_name}}",
+                            "{{$user->userdetail->mother_name}}",
+                            "{{$user->userdetail->address}}",
+                            "{{$user->shippingoffice->name}}",
+            
+                        ],
                         @endforeach
-                @endif
+                    @endif
                 ];
 
                 var columnDefs = [{
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Id</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Full name</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Father name</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Mother name</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Address</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
-                    },
-                    {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Office name</h5>"
                     }
                 ];
 
@@ -515,9 +517,6 @@
 
                 }
                 });
-
-
-
 
 
 
