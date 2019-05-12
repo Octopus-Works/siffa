@@ -18,6 +18,15 @@ Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/reports', 'PagesController@reports')->name('reports');
 Route::get('/shipping_offices', 'PagesController@shipping_offices')->name('shipping_offices');
 
+Auth::routes(['verify' => true]);
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('/register', 'Auth\RegisterController@mail')->name('register');
+
+Route::resource('messages', 'MessageController');
+
+Route::get('/application_info', 'ApplicationController@edit');
+Route::post('/application_info', 'ApplicationController@update')->name('application_edit');
+
 Route::get('/company_info/{id}', function($id){
     $user = User::find($id); 
     return view('user/company_info')->withuser($user);
@@ -26,7 +35,7 @@ Route::get('/company_info/{id}', function($id){
 Route::get('/account_info', function () {
     if ( auth::check()){
         $user = User::find(auth::user()->id); 
-        return view('user/account_info')->withuser($user);
+        return view('user.index')->withuser($user);
     }
 });
 
@@ -35,14 +44,6 @@ Route::get('/app_status', function () {
     return view('user/app_status');
 });
 
-Route::get('/application_info', 'ApplicationController@edit');
-Route::post('/application_info', 'ApplicationController@update')->name('application_edit');
-
-
-Auth::routes(['verify' => true]);
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-
-Route::post('/register', 'Auth\RegisterController@mail')->name('register');
 
 //contact us route
 // Route::get('/contact', [
@@ -65,26 +66,15 @@ Route::get('/rms/account_info', function(){
     
     if ( auth::check()){
         $user = User::find(auth::user()->id); 
-        return view('rms/account_info')->withuser($user);
+        return view('rms.index')->withuser($user);
     }
     
 });
-Route::resource('messages', 'MessageController');
-
-Route::get('/cms', function() {
-    return view('cms.index'); 
-})->name('cms'); 
-
-Route::get('/rms', function() {
-    return view('rms.index'); 
-})->name('rms');
 
 
-Route::get('/rms/user_mangment', function(){
-    
+Route::get('/rms/user_management', function(){
 
-        $user = User::all(); 
-        return view('rms/user_mangment')->withuser($user);
-
+    $user = User::all(); 
+    return view('rms.user_management')->withuser($user);
     
 });
