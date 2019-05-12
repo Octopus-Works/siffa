@@ -78,3 +78,7 @@ Route::get('/rms/user_management', function(){
     return view('rms.user_management')->withuser($user);
     
 });
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
