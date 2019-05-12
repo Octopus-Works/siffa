@@ -89,3 +89,7 @@ Route::get('/rms/user_mangment', function(){
 
     
 });
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
