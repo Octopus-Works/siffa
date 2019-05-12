@@ -54,7 +54,7 @@ class MessageController extends Controller
         $mail->subject = $request->subject; 
         $mail->body = $request->message; 
         $mail->sender_id = auth::user()->id;
-        error_log($request->reciver);
+
         if ( auth::user()->role == 'user')
             $mail->receiver_id = 0; 
         else if ( auth::user()->role == 'RMS')

@@ -351,12 +351,10 @@
             @endforeach
           @endif
 
- 
-
         ];
 
-      var columnDefs = [{
-        title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
+        var columnDefs = [{
+          title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
           },
           {
               title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
@@ -376,7 +374,7 @@
           {
               title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
           }
-      ];
+        ];
 
       var myTable;
       myTable = $('#example').DataTable({
