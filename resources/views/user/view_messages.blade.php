@@ -344,7 +344,7 @@
                 "{{ $message->subject }}",
                 `<a data-toggle='modal' data-target='#modal_view_message' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`,
                 "{{ $message->body }}",
-                "{{ $message->attachement }}",
+                "{{ $message->images[0]->url }}",
                 "{{ $message->sender_id }}",
                 "{{ $message->receiver_id }}",
             ],
@@ -391,10 +391,10 @@
 
 
       });
-      myTable.column(3).visible(false);
-      myTable.column(4).visible(false);
-      myTable.column(5).visible(false);
-      myTable.column(6).visible(false);
+      // myTable.column(3).visible(false);
+      // myTable.column(4).visible(false);
+      // myTable.column(5).visible(false);
+      // myTable.column(6).visible(false);
       var table = $('#example').DataTable();
 
 
