@@ -409,7 +409,7 @@
         $('#body').text(body);
         $('#id').html("<input type='hidden' id='reciver' name='reciver' value=''><input type='hidden' id='sender' name='sender' value=''>");
         $('#sender').val(reciver);
-        $('#reciver').val(reciver);
+        $('#reciver').val(sender);
 
         $('#att_render').html("<a  href="+attachment+" download><img src="+attachment+" class='ml-auto '  width='50%' height='50%'> </a>");
 
