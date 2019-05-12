@@ -11,7 +11,7 @@
 
         <!--Body-->
         <div class="modal-body container" id="roles">
-            <div class="row">
+         <div class="row">
             <div class=" col-4 custom-control custom-checkbox ml-auto mr-auto">
                 <input type="checkbox" class="custom-control-input ami " id="admin" value ='admin'   name="Employeedetails[]">
                 <label class="custom-control-label  mr-auto ml-auto" for="admin">admin</label>
