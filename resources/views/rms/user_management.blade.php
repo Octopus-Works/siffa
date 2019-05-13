@@ -356,23 +356,18 @@
                                     <a href="" class="white-text mx-3">messages</a>
 
                                     <div>
-                                            <button type="button" id="edit" class="btn btn-outline-white btn-rounded btn-sm px-2"
-                                            data-toggle="modal"
-                                              data-target="#modalConfirmBlock">
-                                              <span>block</span>
-                                              <i class="fas fa-ban mt-0"></i>
-                                            </button>
-                                            <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal"
-                                              data-target="#modalConfirmUnblock">
-                                              <span>unblock</span>
-                                              <i class="fas fa-unlock-alt "></i>
-                                            </button>
-                                            <button id="editrole" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal"
-                                            data-target="#modaleditrole">
+                                        <button type="button" id="edit" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modalConfirmBlock">
+                                            <span>block</span>
+                                            <i class="fas fa-ban mt-0"></i>
+                                        </button>
+                                        <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modalConfirmUnblock">
+                                            <span>unblock</span>
+                                            <i class="fas fa-unlock-alt "></i>
+                                        </button>
+                                        <button id="editrole" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modaleditrole">
                                             <span>change role</span>
                                             <i class="fas fa-unlock-alt mt-0"></i>
-                                          </button>
-
+                                        </button>
                                     </div>
 
 
@@ -385,8 +380,7 @@
                                     <div class="card custom-primary">
                                         <div class="card-body">
                                             <div class="table-responsive">
-                                                <table id="example" class="table table-striped" cellspacing="0"
-                                                    width="100%"  style="min-height:650px;">
+                                                <table id="example" class="table table-striped" cellspacing="0" width="100%"  style="min-height:650px;">
                                                 </table>
                                             </div>
                                         </div>
@@ -432,8 +426,6 @@
                 wheelPropagation: true,
                 minScrollbarLength: 20
             });
-
-
 
 
             $(document).ready(function () {
@@ -631,10 +623,9 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: 'POST',
-                    url: '/admin/change_state',
+                    url: '/rms/user_management/block/'+ json,
                     data: JSON.stringify({
                         id: json,
-                        state: 'block',
                     }),
                     contentType: "application/json;",
                     dataType: "json",
@@ -646,8 +637,7 @@
                             console.log('500 status code! server error');
                         },
                         200: function (msg) {
-
-                            location.reload();
+                            console.log("Success");
                         },
                     },
 
@@ -667,10 +657,9 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: 'POST',
-                    url: '/admin/change_state',
+                    url: '/rms/user_management/unblock/'+ json,
                     data: JSON.stringify({
                         id: json,
-                        state: 'unblock',
                     }),
                     contentType: "application/json;",
                     dataType: "json",
@@ -682,10 +671,7 @@
                             console.log('500 status code! server error');
                         },
                         200: function (msg) {
-
-                            location.reload();
-
-
+                            console.log("Success");
                         },
                     },
 

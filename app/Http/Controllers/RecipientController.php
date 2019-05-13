@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Session;
 use Auth;
 
 class RecipientController extends Controller
@@ -34,5 +35,16 @@ class RecipientController extends Controller
         return view('rms.user_management')->withuser($user);
     }
 
+    public function block($id){
+        $user = User::find($id); 
+        $user->blocked = true; 
+        $user->save(); 
+    }
+
+    public function unblock($id){
+        $user = User::find($id); 
+        $user->blocked = false; 
+        $user->save(); 
+    }
  
 }
