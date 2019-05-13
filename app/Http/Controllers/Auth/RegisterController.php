@@ -129,22 +129,33 @@ class RegisterController extends Controller
         $application->Date_of_application = $request->date_of_application; 
         $application->Resume_information = $request->resume_info;
         $application->save();
+        // $request->file('financial_photo')
+        
+        $counter = 0; 
+        foreach ($request->files->all() as $file) {
+            $filenameWithExt = $file->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $file->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            if ( $counter == 0 )
+            $path = $request->file('financial_photo')->storeAs('public/application', $fileNameToStore);
+            else if ( $counter == 1 )
+            $path = $request->file('signature_photo')->storeAs('public/application', $fileNameToStore);
+            else
+            $path = $request->file('hard_copy')->storeAs('public/application', $fileNameToStore);
 
-
-        $filenameWithExt = $request->file('financial_photo')->getClientOriginalName();
-        // Get just filename
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-        // Get just ext
-        $extension = $request->file('financial_photo')->getClientOriginalExtension();
-        // Filename to store
-        $fileNameToStore= $filename.'_'.time().'.'.$extension;
-        $path = $request->file('financial_photo')->storeAs('public/financial_assignment', $fileNameToStore);
-        $Image = new Image;  
-        $Image->imageable_id = $user->id;
-        $Image->imageable_type = 'App\ApplicationDetail';
-        $Image->url = '/storage/financial_assignment/'. $fileNameToStore;
-        $Image->save();
-
+            $Image = new Image;  
+            $Image->imageable_id = $user->id;
+            $Image->imageable_type = 'App\ApplicationDetail';
+            $Image->url = '/storage/application/'. $fileNameToStore;
+            $Image->save();
+            error_log($counter); 
+            $counter++; 
+        }
+        
 
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));

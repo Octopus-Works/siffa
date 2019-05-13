@@ -74,34 +74,28 @@
                     <form id="app_form" action="{{ route('register')}} " enctype="multipart/form-data" method="POST">
                         @csrf
                         <div class="card p-5 mt-3 mb-3 shadow-lg">
-                            <h1 class="text-center mb-5 font-weight-bolder">Register<i
-                                    class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
+                            <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1560px;">
                                 <li class="step active">
                                     <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Personal Information <i
-                                                class="fas fa-user m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Personal Information <i class="fas fa-user m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="fullname" name="fullname" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="fullname" name="fullname" type="text" class="validate form-control" required>
                                                 <label for="fullname">{{ __('Full name') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="father" name="father" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="father" name="father" type="text" class="validate form-control" required>
                                                 <label for="father">{{ __("Father's name") }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="mother" name="mother" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="mother" name="mother" type="text" class="validate form-control" required>
                                                 <label for="mother">{{ __("Mother's name") }}</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="email" name="email" type="email"
-                                                    class="validate form-control" required>
+                                                <input id="email" name="email" type="email" class="validate form-control" required>
                                                 <label for="email">{{ __('E-mail') }}</label>
                                             </div>
 
@@ -115,35 +109,29 @@
                                                 <label for="place-of-birth">Place of Birth</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="record" name="record" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="record" name="record" type="text" class="validate form-control" required>
                                                 <label for="record">Individual Civil Registry Record</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="nationality" name="nationality" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="nationality" name="nationality" type="text" class="validate form-control" required>
                                                 <label for="nationality">Nationality</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="address" name="address" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="address" name="address" type="text" class="validate form-control" required>
                                                 <label for="address">Address</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input type="text" id="phone" type="tel" class="validate form-control"
-                                                    name="phone" required>
+                                                <input type="text" id="phone" type="tel" class="validate form-control" name="phone" required>
                                                 <span id="valid-msg" class="hide">✓</span>
                                                 <span id="error-msg" class="hide"></span>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input type="text" id="mobile" type="tel" class="validate form-control"
-                                                    name="mobile" required>
+                                                <input type="text" id="mobile" type="tel" class="validate form-control" name="mobile" required>
                                                 <span id="valid-msg" class="hide">✓</span>
                                                 <span id="error-msg" class="hide"></span>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="website" name="website" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="website" name="website" type="text" class="validate form-control" required>
                                                 <label for="website">Website</label>
                                             </div>
                                         </div>
@@ -162,28 +150,23 @@
                                                 class="fas fa-briefcase m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="company-name" name="company_name" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="company-name" name="company_name" type="text" class="validate form-control" required>
                                                 <label for="company-name">Shipping Company Name</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <textarea id="branches-address" name="branches_address"
-                                                    class="md-textarea form-control " required rows="3"></textarea>
+                                                <textarea id="branches-address" name="branches_address" class="md-textarea form-control " required rows="3"></textarea>
                                                 <label for="branches-address">Addresses of Branches</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="type" name="shipping_services" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="type" name="shipping_services" type="text" class="validate form-control" required>
                                                 <label for="type">Type of Shipping Service Provided</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="position" name="position_title" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="position" name="position_title" type="text" class="validate form-control" required>
                                                 <label for="position">Workplace Position</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="chamber" name="chamber_of_commerce" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="chamber" name="chamber_of_commerce" type="text" class="validate form-control" required>
                                                 <label for="chamber">Chamber of Commerce</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
@@ -193,8 +176,7 @@
                                             </div>
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                data-feedback="someFunction21">CONTINUE</button>
+                                            <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">CONTINUE</button>
                                         </div>
                                     </div>
                                 </li>
@@ -207,45 +189,33 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">Available Shipping Methods:</h6>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="method1"
-                                                        name="shipping_methods[]" value="LTL">
-                                                    <label class="custom-control-label" for="method1">Less Than Track
-                                                        Load(LTL)</label>
+                                                    <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods[]" value="LTL">
+                                                    <label class="custom-control-label" for="method1">Less Than Track Load(LTL)</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="method2"
-                                                        name="shipping_methods[]" value="FTL">
-                                                    <label class="custom-control-label" for="method2">Full Track
-                                                        Load(FTL)</label>
+                                                    <input type="checkbox" class="custom-control-input" id="method2" name="shipping_methods[]" value="FTL">
+                                                    <label class="custom-control-label" for="method2">Full Track Load(FTL)</label>
                                                 </div>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">External Shipping Modes:</h6>
                                                 <div class="custom-control custom-checkbox ml-4">
 
-                                                    <input type="checkbox" class="custom-control-input" id="mode1"
-                                                        name="shipping_modes[]" value="Wild">
-                                                    <label class="custom-control-label" for="mode1">Land
-                                                        Transport</label>
+                                                    <input type="checkbox" class="custom-control-input" id="mode1" name="shipping_modes[]" value="Wild">
+                                                    <label class="custom-control-label" for="mode1">Land Transport</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode2"
-                                                        name="shipping_modes[]" value="Aerial">
-                                                    <label class="custom-control-label" for="mode2">Air
-                                                        Transport</label>
+                                                    <input type="checkbox" class="custom-control-input" id="mode2" name="shipping_modes[]" value="Aerial">
+                                                    <label class="custom-control-label" for="mode2">Air Transport</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode3"
-                                                        name="shipping_modes[]" value="Nautical">
-                                                    <label class="custom-control-label" for="mode3">Water
-                                                        Transport</label>
+                                                    <input type="checkbox" class="custom-control-input" id="mode3" name="shipping_modes[]" value="Nautical">
+                                                    <label class="custom-control-label" for="mode3">Water Transport</label>
                                                 </div>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="src-dest" name="src_dest" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="src-dest">Sources and Destinations Served By the Shipping
-                                                    Company</label>
+                                                <input id="src-dest" name="src_dest" type="text" class="validate form-control" required>
+                                                <label for="src-dest">Sources and Destinations Served By the Shipping Company</label>
                                             </div>
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
@@ -257,12 +227,10 @@
                                 <li class="step">
                                     <div id="step4" class="step-title waves-effect waves-dark">Step 4</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Financial Information <i
-                                                class="fas fa-money-check-alt m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Financial Information <i class="fas fa-money-check-alt m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="financial-status" name="financial_status" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="financial-status" name="financial_status" type="text" class="validate form-control" required>
                                                 <label for="financial-status">Financial Assignment Status</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
@@ -271,8 +239,7 @@
                                                     <h6>Photo of the Financial Assignment:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input id="financial_photo" type="file" name="financial_photo"
-                                                            accept="image/*"
+                                                        <input id="financial_photo" type="file" name="financial_photo" accept="image/*"
                                                             onchange="document.getElementById('financial').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
@@ -283,21 +250,17 @@
 
                                             </div>
                                             <div class="col-md-12">
-                                                <img id="financial" src="" alt=""
-                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                                <img id="financial" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
-                                                <button
-                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">CONTINUE</button>
+                                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">CONTINUE</button>
                                             </div>
                                         </div>
                                 </li>
                                 <li class="step">
                                     <div id="step5" class="step-title waves-effect waves-dark">Step 5</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Application Information <i
-                                                class="fas fa-edit ml-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Application Information <i class="fas fa-edit ml-1"></i></h5>
                                         <div class="row">
 
                                             <div class="md-form col-12 ml-auto">
@@ -306,13 +269,11 @@
                                                     <h6>Photo of Signature and Fingerprint:</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
-                                                        <input id="signature_photo" type="file" name="signature_photo"
-                                                            accept="image/*"
+                                                        <input id="signature_photo" type="file" name="signature_photo" accept="image/*"
                                                             onchange="document.getElementById('signature').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
-                                                        <input id="signature-photo" class="file-path validate"
-                                                            type="text" placeholder="Upload your file">
+                                                        <input id="signature-photo" class="file-path validate" type="text" placeholder="Upload your file">
                                                     </div>
                                                 </div>
 
@@ -322,14 +283,10 @@
                                                     style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input placeholder="Date of Application" name="date_of_application"
-                                                    type="text" id="date-picker-example2"
-                                                    class="form-control datepicker">
+                                                <input placeholder="Date of Application" name="date_of_application" type="text" id="date-picker-example2" class="form-control datepicker">
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
-                                                <button
-                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">CONTINUE</button>
+                                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">CONTINUE</button>
                                             </div>
                                         </div>
 
@@ -338,20 +295,16 @@
                                 <li class="step">
                                     <div id="step6" class="step-title waves-effect waves-dark">Step 6</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Resume Information <i
-                                                class="fas fa-user-edit ml-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Resume Information <i class="fas fa-user-edit ml-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <textarea id="resume-info" name="resume_info"
-                                                    class="md-textarea form-control" rows="3"></textarea>
-                                                <label for="resume-info">Resume Information (As Mentioned in the
-                                                    Application
-                                                    Document)</label>
+                                                <textarea id="resume-info" name="resume_info" class="md-textarea form-control" rows="3"></textarea>
+                                                <label for="resume-info">Resume Information (As Mentioned in the Application Document)</label>
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
-                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">CONTINUE</button>
+                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">CONTINUE
+                                                </button>
                                             </div>
                                         </div>
 
@@ -360,8 +313,7 @@
                                 <li class="step">
                                     <div id="step7" class="step-title waves-effect waves-dark">Step 7</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Hard Copy <i
-                                                class="far fa-clipboard m-1"></i>
+                                        <h5 class="text-center font-weight-bolder">Hard Copy <i class="far fa-clipboard m-1"></i>
                                         </h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
@@ -373,18 +325,15 @@
                                                             onchange="document.getElementById('application').src = window.URL.createObjectURL(this.files[0])">
                                                     </div>
                                                     <div class="file-path-wrapper">
-                                                        <input id="hard-copy" class="file-path validate" type="text"
-                                                            placeholder="Upload your file">
+                                                        <input id="hard-copy" class="file-path validate" type="text" placeholder="Upload your file">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <img id="application" src="" alt=""
-                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                                <img id="application" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
-                                                    type="submit">SUBMIT</button>
+                                                <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4" type="submit">SUBMIT</button>
                                             </div>
                                         </div>
 

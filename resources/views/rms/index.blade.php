@@ -82,15 +82,14 @@
                                 <!-- Card content -->
                                 <div class="card-body card-body-cascade text-center">
                                     <div class="view overlay">
-                                        <img src="img/7.jpg" class="img-fluid z-depth-1 shadow-lg" alt="">
+                                        <img src="{{ $user->applicationdetail->images[0]->url}}" class="img-fluid z-depth-1 shadow-lg" alt="">
                                         <div class="mask rgba-white-slight"></div>
                                     </div>
 
                                     <p class="text-muted"><small>Profile photo will be changed automatically</small>
                                     </p>
                                     <div class="row flex-center">
-                                        <button class="btn custom-secondary black-text btn-rounded">Upload New
-                                            Photo</button><br>
+                                        <button class="btn custom-secondary black-text btn-rounded">Upload New Photo</button><br>
                                         <button class="btn btn-danger btn-rounded">Delete</button>
                                     </div>
                                 </div>
@@ -124,18 +123,14 @@
                                             <!-- First column -->
                                             <div class="col-md-6">
                                                 <div class="md-form mb-0">
-                                                    <input id="fullname" name="fullname" type="text"
-                                                        value="{{ $user->userdetail->fullname }}"
-                                                        class="validate form-control">
+                                                    <input id="fullname" name="fullname" type="text" value="{{ $user->userdetail->fullname }}" class="validate form-control">
                                                     <label for="fullname">{{ __('Full name') }}</label>
                                                 </div>
                                             </div>
                                             <!-- Second column -->
                                             <div class="col-md-6">
                                                 <div class="md-form mb-0">
-                                                    <input id="username" name="username" type="text"
-                                                        value="{{ $user->shippingoffice->name }}"
-                                                        class="validate form-control">
+                                                    <input id="username" name="username" type="text" value="{{ $user->shippingoffice->name }}" class="validate form-control">
                                                     <label for="username">{{ __('Username') }}</label>
 
                                                 </div>
@@ -148,9 +143,7 @@
                                             <!-- First column -->
                                             <div class="col-md-6">
                                                 <div class="md-form mb-0">
-                                                    <input id="father" name="father" type="text"
-                                                        value="{{ $user->userdetail->father_name }}"
-                                                        class="validate form-control">
+                                                    <input id="father" name="father" type="text" value="{{ $user->userdetail->father_name }}" class="validate form-control">
                                                     <label for="father">{{ __("Father's name") }}</label>
 
                                                 </div>
@@ -159,9 +152,7 @@
                                             <!-- Second column -->
                                             <div class="col-md-6">
                                                 <div class="md-form mb-0">
-                                                    <input id="mother" name="mother" type="text"
-                                                        value="{{ $user->userdetail->mother_name }}"
-                                                        class="validate form-control">
+                                                    <input id="mother" name="mother" type="text" value="{{ $user->userdetail->mother_name }}" class="validate form-control">
                                                     <label for="mother">{{ __("Mother's name") }}</label>
 
                                                 </div>
@@ -175,8 +166,7 @@
                                             <!-- First column -->
                                             <div class="col-md-6">
                                                 <div class="md-form mb-0">
-                                                    <input id="email" name="email" type="email" value="{{$user->email}}"
-                                                        class="validate form-control">
+                                                    <input id="email" name="email" type="email" value="{{$user->email}}" class="validate form-control">
                                                     <label for="email">{{ __('E-mail') }}</label>
                                                 </div>
                                             </div>
@@ -184,8 +174,7 @@
 
                                             <div class="col-md-6">
                                                 <div class="md-form mb-0">
-                                                    <input id="password" name="password" value="" type="text"
-                                                        class="validate form-control">
+                                                    <input id="password" name="password" value="" type="text" class="validate form-control">
                                                     <label for="password">Password</label>
                                                 </div>
                                             </div>
@@ -195,9 +184,7 @@
                                         <!-- First column -->
                                         <div class="col-md-12">
                                             <div class="md-form mb-0">
-                                                <input id="website" name="website"
-                                                    value="{{ $user->userdetail->website }}" type="text"
-                                                    class="validate form-control">
+                                                <input id="website" name="website" value="{{ $user->userdetail->website }}" type="text" class="validate form-control">
                                                 <label for="website">Website Address</label>
                                             </div>
                                         </div>
@@ -207,8 +194,7 @@
                                 <!-- Fourth row -->
                                 <div class="row">
                                     <div class="col-md-12 text-center my-4">
-                                        <input type="submit" value="Update Account"
-                                            class="btn custom-secondary black-text btn-rounded">
+                                        <input type="submit" value="Update Account" class="btn custom-secondary black-text btn-rounded">
                                     </div>
                                 </div>
                                 <!-- Fourth row -->
