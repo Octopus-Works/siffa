@@ -18,32 +18,32 @@ Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/reports', 'PagesController@reports')->name('reports');
 Route::get('/shipping_offices', 'PagesController@shipping_offices')->name('shipping_offices');
 
+Route::get('/rms', 'RecipientController@index');
+Route::get('/rms/view_applications', 'RecipientController@applications_view');
+Route::get('/rms/application', 'RecipientController@application');
+Route::get('/rms/account_info', 'RecipientController@account_info');
+Route::get('/rms/user_management', 'RecipientController@recipients_management');
+Route::post('rms/user_management/block/{id}', 'RecipientController@block')->name('blocking');
+Route::post('rms/user_management/unblock/{id}', 'RecipientController@unblock')->name('unblocking');
+
+Route::get('/app_status', 'AdminController@app_status');
+Route::get('//company_info/{id}', 'AdminController@company_info');
+Route::get('/account_info', 'AdminController@account_info');
+
+
 Auth::routes(['verify' => true]);
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/register', 'Auth\RegisterController@mail')->name('register');
+
 
 Route::resource('messages', 'MessageController');
 
 Route::get('/application_info', 'ApplicationController@edit');
 Route::post('/application_info', 'ApplicationController@update')->name('application_edit');
 
-Route::get('/company_info/{id}', function($id){
-    $user = User::find($id); 
-    return view('user/company_info')->withuser($user);
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
-
-Route::get('/account_info', function () {
-    if ( auth::check()){
-        $user = User::find(auth::user()->id); 
-        return view('user.index')->withuser($user);
-    }
-});
-
-
-Route::get('/app_status', function () {
-    return view('user/app_status');
-});
-
 
 //contact us route
 // Route::get('/contact', [
@@ -52,33 +52,3 @@ Route::get('/app_status', function () {
 // Route::post('/contact', [
 //     'uses' => 'ContactMessageController@send'
 // ]);
-
-
-Route::get('/rms/view_applications', function () {
-    return view('rms/view_applications');
-});
-
-Route::get('/rms/application', function () {
-    return view('rms/application');
-});
-
-Route::get('/rms/account_info', function(){
-    
-    if ( auth::check()){
-        $user = User::find(auth::user()->id); 
-        return view('rms.index')->withuser($user);
-    }
-    
-});
-
-
-Route::get('/rms/user_management', function(){
-
-    $user = User::all(); 
-    return view('rms.user_management')->withuser($user);
-    
-});
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
