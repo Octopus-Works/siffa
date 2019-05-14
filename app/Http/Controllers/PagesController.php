@@ -24,4 +24,28 @@ class PagesController extends Controller
         return view('pages/shipping_offices')->withusers($users);
     }
 
+    public function mission(){
+        return view('pages.about.mission_statement');
+    }
+
+    public function laws(){
+        return view('pages.about.laws');
+    }
+
+    public function becomeamember(){
+        return view('pages.members.become_member');
+    }
+
+    public function membors_list(){
+        return view('pages.members.member_list');
+    }
+
+    public function calendar(){
+        return view('pages.news.calendar');
+    }
+    
+    public function events(){
+        return view('pages.news.events');
+    }
+
 }

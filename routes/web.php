@@ -18,6 +18,15 @@ Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/reports', 'PagesController@reports')->name('reports');
 Route::get('/shipping_offices', 'PagesController@shipping_offices')->name('shipping_offices');
 
+Route::get('mission_statement', 'PagesController@mission');
+Route::get('laws', 'PagesController@laws');
+Route::get('become_member', 'PagesController@becomeamember');
+Route::get('membors_list', 'PagesController@membors_list');
+Route::get('calendar', 'PagesController@calendar');
+Route::get('events', 'PagesController@events');
+
+
+
 Route::get('/rms', 'RecipientController@index');
 Route::get('/rms/view_applications', 'RecipientController@applications_view');
 Route::get('/rms/application', 'RecipientController@application');
