@@ -18,17 +18,17 @@ Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/reports', 'PagesController@reports')->name('reports');
 Route::get('/shipping_offices', 'PagesController@shipping_offices')->name('shipping_offices');
 
-Route::get('mission_statement', 'PagesController@mission');
-Route::get('laws', 'PagesController@laws');
-Route::get('trading_conditions', 'PagesController@trading_conditions');
-Route::get('become_member', 'PagesController@becomeamember');
-Route::get('members_list', 'PagesController@members_list');
-Route::get('calendar', 'PagesController@calendar');
-Route::get('events', 'PagesController@events');
-Route::get('latest', 'PagesController@latest');
-Route::get('archive', 'PagesController@archive');
-Route::get('president_message', 'PagesController@president_message');
-Route::get('board_members', 'PagesController@board_members');
+Route::get('mission_statement', 'PagesController@mission')->name('mission_statement');
+Route::get('laws', 'PagesController@laws')->name('laws');
+Route::get('trading_conditions', 'PagesController@trading_conditions')->name('trading_conditions');
+Route::get('become_member', 'PagesController@becomeamember')->name('become_member');
+Route::get('members_list', 'PagesController@members_list')->name('members_list');
+Route::get('calendar', 'PagesController@calendar')->name('calendar');
+Route::get('events', 'PagesController@events')->name('events');
+Route::get('latest', 'PagesController@latest')->name('latest');
+Route::get('archive', 'PagesController@archive')->name('archive');
+Route::get('president_message', 'PagesController@president_message')->name('president_message');
+Route::get('board_members', 'PagesController@board_members')->name('board_members');
 
 
 

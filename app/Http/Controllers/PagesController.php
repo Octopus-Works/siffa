@@ -8,15 +8,15 @@ use App\User;
 class PagesController extends Controller
 {
     public function about(){
-        return view('pages/about');
+        return view('pages.about');
     }
 
     public function contact(){
-        return view('pages/contact');
+        return view('pages.contact');
     }
 
     public function reports(){
-        return view('pages/reports&publications');
+        return view('pages.reports&publications');
     }
 
     public function shipping_offices(){
