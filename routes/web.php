@@ -20,15 +20,21 @@ Route::get('/shipping_offices', 'PagesController@shipping_offices')->name('shipp
 
 Route::get('mission_statement', 'PagesController@mission');
 Route::get('laws', 'PagesController@laws');
+Route::get('trading_conditions', 'PagesController@trading_conditions');
 Route::get('become_member', 'PagesController@becomeamember');
-Route::get('membors_list', 'PagesController@membors_list');
+Route::get('members_list', 'PagesController@members_list');
 Route::get('calendar', 'PagesController@calendar');
 Route::get('events', 'PagesController@events');
+Route::get('latest', 'PagesController@latest');
+Route::get('archive', 'PagesController@archive');
+Route::get('president_message', 'PagesController@president_message');
+Route::get('board_members', 'PagesController@board_members');
 
 
 
 Route::get('/rms', 'RecipientController@index');
 Route::get('/rms/view_applications', 'RecipientController@applications_view');
+Route::get('/rms/view_messages', 'RecipientController@messages_view');
 Route::get('/rms/application', 'RecipientController@application');
 Route::get('/rms/account_info', 'RecipientController@account_info');
 Route::get('/rms/user_management', 'RecipientController@recipients_management');

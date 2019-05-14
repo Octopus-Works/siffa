@@ -61,51 +61,51 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item padding-sides">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href={{url('/home')}}>Home</a>
                 </li>
                 <li class="nav-item dropdown padding-sides">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">About Us</a>
+                        aria-haspopup="true" aria-expanded="false" href={{url('/about')}}>About Us</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Mission Statement</a>
-                        <a class="dropdown-item" href="#">By-Laws</a>
-                        <a class="dropdown-item" href="#">Standard Trading Conditions</a>
+                        <a class="dropdown-item" href={{url('mission_statement')}}>Mission Statement</a>
+                        <a class="dropdown-item" href={{url('laws')}}>By-Laws</a>
+                        <a class="dropdown-item" href={{url('trading_conditions')}}>Standard Trading Conditions</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Members</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Member List</a>
-                        <a class="dropdown-item" href="#">Become a Member</a>
+                        <a class="dropdown-item" href={{url('members_list')}}>Member List</a>
+                        <a class="dropdown-item" href={{url('become_member')}}>Become a Member</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">News & Events</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Our Events</a>
-                        <a class="dropdown-item" href="#">Calendar</a>
+                        <a class="dropdown-item" href={{url('events')}}>Our Events</a>
+                        <a class="dropdown-item" href={{url('calendar')}}>Calendar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Gallery</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Latest</a>
-                        <a class="dropdown-item" href="#">Archive</a>
+                        <a class="dropdown-item" href={{url('latest')}}>Latest</a>
+                        <a class="dropdown-item" href={{url('archive')}}>Archive</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Board of Directors</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">President's Message</a>
-                        <a class="dropdown-item" href="#">Board Members</a>
+                        <a class="dropdown-item" href={{url('president_message')}}>President's Message</a>
+                        <a class="dropdown-item" href={{url('board_message')}}>Board Members</a>
                     </div>
                 </li>
                 <li class="nav-item padding-sides">
-                    <a class="nav-link" href="#">Contact Us</a>
+                    <a class="nav-link" href={{url('/contact')}}>Contact Us</a>
                 </li>
             </ul>
             <ul class="navbar-nav nav-flex-icons">

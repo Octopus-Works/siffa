@@ -38,44 +38,9 @@
 	<!--/.Search Form-->
 		<!-- Side navigation links -->
 		<li>
-			<ul class="collapsible collapsible-accordion">
-				<li class="pt-2 pb-2"><a class="collapsible-header waves-effect arrow-r"><i class="fas custom-secondary-text fa-th-list"></i>
-						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>My Account</a>
-					<div class="collapsible-body">
-						<ul>
-							{{--TODO --}}
-							<li>
-								<a href={{url("/cms/admins/service_points/")}} class="waves-effect">
-									Service Points
-								</a>
-							</li>
-							<li>
-								<a href={{url("/cms/admins/activities/")}} class="waves-effect">
-									Activities
-								</a>
-							</li>
-							<li>
-								<a href={{url("/cms/admins/stories/")}} class="waves-effect">
-									Stories
-								</a>
-							</li>
-							<li>
-								<a href={{url("/cms/admins/news/")}} class="waves-effect">
-									News
-								</a>
-							</li>
-							{{--<li>--}}
-								{{--<a href={{url("/cms/admins/publications")}} class="waves-effect">--}}
-									{{--Reports & Publication--}}
-								{{--</a>--}}
-							{{--</li>--}}
-							{{--<li>--}}
-								{{--<a href={{url("/cms/admins/vacancies")}} class="waves-effect">--}}
-									{{--Vacancies--}}
-								{{--</a>--}}
-							{{--</li>--}}
-						</ul>
-					</div>
+			<ul class="">
+				<li class="pt-2 pb-2"><a  class="waves-effect "><i class="fas custom-secondary-text fa-th-list mr-1" ></i>Applications</a>
+
 				</li >
 				<li class="pt-2 pb-2"><a class="collapsible-header waves-effect arrow-r"><i class="fas custom-secondary-text fa-clipboard"></i>
 						<i class="fas custom-secondary-text fa-angle-down rotate-icon"></i>Application</a>

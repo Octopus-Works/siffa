@@ -18,6 +18,10 @@ class RecipientController extends Controller
         return view('rms/view_applications');
     }
 
+    public function messages_view(){
+        return view('rms/view_messages');
+    }
+
     public function application(){
         return view('rms/application');
     }
