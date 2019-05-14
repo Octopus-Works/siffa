@@ -15,7 +15,8 @@ class RecipientController extends Controller
     }
 
     public function applications_view(){
-        return view('rms/view_applications');
+        $user = User::all();
+        return view('rms/view_applications')->withuser($user);
     }
 
     public function messages_view(){

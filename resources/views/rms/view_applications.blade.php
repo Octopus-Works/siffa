@@ -110,13 +110,11 @@
 
                                     <div>
                                         <button type="button" id="new"
-                                            class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal"
-                                            data-target="#modal_new_message">
+                                            class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_new_message">
                                             <span>new</span>
                                             <i class="fas fa-plus mt-0"></i>
                                         </button>
-                                        <button id="delete" type="button"
-                                            class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal"
+                                        <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal"
                                             data-target="#modal_edit_message">
                                             <span>edit</span>
                                             <i class="fas fa-edit mt-0"></i>
@@ -134,8 +132,7 @@
                                     <div class="card custom-primary">
                                         <div class="card-body ">
                                             <div class="table-responsive">
-                                                <table id="example" class="table table-striped" cellspacing="0"
-                                                    width="100%"  style="min-height:650px;">
+                                                <table id="example" class="table table-striped" cellspacing="0" width="100%"  style="min-height:650px;">
                                                 </table>
                                             </div>
                                         </div>
@@ -186,39 +183,34 @@
 
             $(document).ready(function () {
 
-
+                // office name,fullname, status, view
 
 
                 var dataSet = [
-                    ["Application1","<h5><span class='badge badge-pill badge-danger'>Rejected</span></h5>",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
-                    ],
-                    ["Application2","<h5><span class='badge badge-pill badge-success'>Established</span></h5>",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  >View</button>"
-                    ],
-                    ["Application3", "<h5><span class='badge badge-pill badge-warning'>In Progress</span></h5>",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
-                    ],
-                    ["Application4", "<h5><span class='badge badge-pill badge-primary'>Approved Under Payment</span></h5>",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text'  >View</button>"
-                    ],
-                    ["Application5", "<h5><span class='badge badge-pill badge-danger'>Rejected</span></h5>",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
-                    ],
-                    ["Application6","<h5><span class='badge badge-pill badge-success'>Established</span></h5>",
-                        "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
-                    ],
+
+                    @if(isset($user))
+                        @foreach ($user as $user)[
+                            "{{$user->userdetail->fullname}}","{{$user->shippingoffice->name}}",
+                            "<h5><span class='badge badge-pill badge-danger'>{{$user->applicationdetail->status}}</span></h5>",
+                            "<button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button>"
+                        ],
+                        @endforeach
+                    @endif
+
                 ];
 
                 var columnDefs = [{
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Application</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Full name</h5>"
+                    },
+                    {
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Office name</h5>"
                     },
                     {
                         title: "<h5 class='font-weight-bold custom-secondary-text'>Status</h5>"
                     },
                     {
-
-                    }
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>View</h5>"
+                    },
                 ];
 
                 var myTable;

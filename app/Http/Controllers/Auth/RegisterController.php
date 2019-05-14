@@ -90,8 +90,8 @@ class RegisterController extends Controller
         $details->mother_name = $request->mother;
         $details->date_of_birth = $request->date_of_birth; 
         $details->place_of_birth = $request->place_of_birth;
-        $details->mobile_number = $request->mobile_number;
-        $details->phone_number = $request->phone_number;
+        $details->mobile_number = $request->mobile;
+        $details->phone_number = $request->phone;
         $details->website = $request->website; 
         $details->record = $request->record; 
         $details->nationality = $request->nationality; 

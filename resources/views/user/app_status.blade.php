@@ -236,13 +236,11 @@
                                 <a href="" class="white-text mx-3">Staff</a>
 
                                 <div>
-                                    <button type="button" id="new"
-                                        class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                    <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2">
                                         <span>new</span>
                                         <i class="fas custom-secondary-text fa-ban mt-0"></i>
                                     </button>
-                                    <button id="delete" type="button"
-                                        class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                    <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
                                         <span>edit</span>
                                         <i class="fas custom-secondary-text fa-unlock-alt mt-0"></i>
                                     </button>
@@ -259,8 +257,9 @@
                                 <div class="card custom-primary" style="height:800px">
                                     <div class="card-body p-5 mt-5 text-center">
                                         <img class="mb-5" src="img/folder.png" alt="file" height="200px" width="200px">
-                                        <h3 class="h3-responsive">Application Status: <span
-                                                class="badge badge-primary rounded-pill ml-3">Approved Under Payment</span> </h3>
+                                        <h3 class="h3-responsive">Application Status: 
+                                            <span class="badge badge-primary rounded-pill ml-3">Approved Under Payment</span> 
+                                        </h3>
                                     
                                     <div>
                                         <div class="m-5">

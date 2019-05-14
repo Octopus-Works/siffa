@@ -22,6 +22,7 @@ class CreateApplicationDetailsTable extends Migration
 
             // Attributes 
             $table->increments('id');
+            $table->enum('status', ['In progress', 'Rejected', 'Approved under Payment','Paid under Registration', 'Registered']);
             $table->string('Financial_assignment_status'); 
             $table->string('Date_of_application'); 
             $table->string('Resume_information'); 

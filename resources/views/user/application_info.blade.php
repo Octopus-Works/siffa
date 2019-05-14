@@ -99,18 +99,18 @@
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="fullname" name="fullname" type="text"
-                                                    value="{{$user->fullname}}" class="validate form-control" required>
+                                                    value="{{$user->userdetail->fullname}}" class="validate form-control" required>
                                                 <label for="fullname">{{ __('Full name') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="father" name="father" type="text"
-                                                    value="{{$user->father_name}}" class="validate form-control"
+                                                    value="{{$user->userdetail->father_name}}" class="validate form-control"
                                                     required>
                                                 <label for="father">{{ __("Father's name") }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="mother" name="mother" type="text"
-                                                    value="{{$user->mother_name}}" class="validate form-control"
+                                                    value="{{$user->userdetail->mother_name}}" class="validate form-control"
                                                     required>
                                                 <label for="mother">{{ __("Mother's name") }}</label>
                                             </div>
@@ -123,46 +123,43 @@
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input placeholder="Date of Birth" name="date_of_birth"
-                                                    value="{{$user->date_of_birth}}" type="text"
+                                                    value="{{$user->userdetail->date_of_birth}}" type="text"
                                                     id="date-picker-example" class="form-control datepicker">
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="place-of-birth" name="place_of_birth"
-                                                    value="{{$user->place_of_birth}}" type="text"
+                                                    value="{{$user->userdetail->place_of_birth}}" type="text"
                                                     class="validate form-control" required>
                                                 <label for="place-of-birth">Place of Birth</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="record" name="record" value="{{$user->record}}" type="text"
+                                                <input id="record" name="record" value="{{$user->userdetail->record}}" type="text"
                                                     class="validate form-control" required>
                                                 <label for="record">Individual Civil Registry Record</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="nationality" name="nationality"
-                                                    value="{{$user->nationality}}" type="text"
+                                                    value="{{$user->userdetail->nationality}}" type="text"
                                                     class="validate form-control" required>
                                                 <label for="nationality">Nationality</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="address" name="address" value="{{$user->address}}"
+                                                <input id="address" name="address" value="{{$user->userdetail->address}}"
                                                     type="text" class="validate form-control" required>
                                                 <label for="address">Address</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input type="text" id="phone" type="tel" class="validate form-control"
-                                                    name="phone" required>
+                                                <input type="text" id="phone" type="tel" class="validate form-control" name="phone" value="{{$user->userdetail->phone_number}}" required>
                                                 <span id="valid-msg" class="hide">✓</span>
                                                 <span id="error-msg" class="hide"></span>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input type="text" id="mobile" type="tel" class="validate form-control"
-                                                    name="mobile" required>
+                                                <input type="text" id="mobile" type="tel" class="validate form-control" name="mobile" value="{{$user->userdetail->mobile_number}}" required>
                                                 <span id="valid-msg" class="hide">✓</span>
                                                 <span id="error-msg" class="hide"></span>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="website" name="website" type="text"
-                                                    class="validate form-control" required>
+                                                <input id="website" name="website" value="{{$user->userdetail->website}}" type="text" class="validate form-control" required>
                                                 <label for="website">Website</label>
                                             </div>
                                         </div>
