@@ -192,11 +192,15 @@ return [
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
-        //'css/custom.css',
+        //'css/custom.css'
+        '/css/mdb.css'
     ],
 
     'additional_js' => [
         //'js/custom.js',
+        // 'https://code.jquery.com/jquery-3.3.1.slim.min.js'
+        '/js/mdb.js',
+        '/js/full-calendar.min.js'
     ],
 
     'googlemaps' => [
