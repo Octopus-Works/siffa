@@ -30,6 +30,9 @@ Route::get('archive', 'PagesController@archive')->name('archive');
 Route::get('president_message', 'PagesController@president_message')->name('president_message');
 Route::get('board_members', 'PagesController@board_members')->name('board_members');
 
+Route::get('/cms', function(){
+    return view('cms.index');
+});
 
 
 Route::get('/rms', 'RecipientController@index');

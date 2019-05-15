@@ -38,10 +38,10 @@ class LoginController extends Controller
     }
 
     protected function authenticated() {
-        if ( auth::user()->role == 'user'){
+        if ( auth::user()->role->id == 1){
             return redirect('/home');
         } 
-        else if ( auth::user()->role == 'CMS'){
+        else if ( auth::user()->role->id == 2){
             return redirect('/cms');
         } 
         else {
