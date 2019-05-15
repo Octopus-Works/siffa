@@ -16,6 +16,8 @@ class MessageController extends Controller
      */
     public function index()
     {
+       //
+       // dd(auth::user()->role->name );
         if ( auth::user()->role->name == 'RMS'){
             $mail = InternalMessaging::where('sender_id', auth::user()->id)
                                         ->orWhere('receiver_id', 0)

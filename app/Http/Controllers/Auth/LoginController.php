@@ -25,7 +25,10 @@ class LoginController extends Controller
      *
      * @var string
      */
+
     protected $redirectTo = '/home';
+ 
+ 
 
     /**
      * Create a new controller instance.
@@ -38,14 +41,12 @@ class LoginController extends Controller
     }
 
     protected function authenticated() {
-        if ( auth::user()->role->id == 1){
-            return redirect('/home');
+        if ( auth::user()->role->name == 'User'){
+            return redirect('/account_info');
         } 
-        else if ( auth::user()->role->id == 2){
-            return redirect('/cms');
-        } 
-        else {
+        else if ( auth::user()->role->name == 'RMS'){
             return redirect('/rms');
-        }
+        } 
+
    }
 }
