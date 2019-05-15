@@ -3,7 +3,7 @@
 
 <head>
     @include('partials.head')
-    <title>Edit Application</title>
+    <title>Application Review</title>
     <style>
         @media only screen and (min-width: 993px) {
             ul.stepper.horizontal .step-title {
@@ -39,6 +39,10 @@
             color: #fff !important;
         }
 
+        .custom-control-label::before{
+            background-color:#ffffff00!important;
+        }
+
         ul.stepper.horizontal .step .step-title:before {
             background-color: #868788 !important;
         }
@@ -61,7 +65,7 @@
     <!--Main Navigation-->
     <header>
         @include('partials.nav_dashboard')
-        @include('partials.sidebar')
+        @include('partials.rms_sidebar')
     </header>
     <!--Main Navigation-->
 
@@ -77,16 +81,6 @@
                 <div class="col-md-12">
                     <div id="app_form">
                         <div class="card p-5 mt-3 mb-3 shadow-lg custom-primary">
-                            <div>
-
-
-                                <button type="button" id="new" class="btn custom-tertiary btn-rounded  px-2" data-toggle='modal' data-target='#change_status_modal'>Change
-                                    Status
-                                </button>
-
-                            </div>
-
-
                             <h1 class="text-center mb-5 font-weight-bolder">Application<i
                                     class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1300px;">
@@ -372,7 +366,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            <div class="d-flex justify-content-center col-md-12">
+                                                <button type="button" 
+                                                    class="btn btn-success btn-rounded  px-2">Approve Application
+                                                </button>
+                                                <button type="button"
+                                                class="btn btn-danger btn-rounded  px-2">Decline Application
+                                            </button>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -391,7 +392,7 @@
 
 
     @include('partials.footer')
-    @include('modal_partials.change_status_modal')
+ 
 
     <script>
         $(".button-collapse").sideNav();

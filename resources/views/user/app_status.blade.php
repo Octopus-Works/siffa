@@ -9,7 +9,7 @@
     <title>Application Status</title>
 
     <style>
-        @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+  
 
         .md-form label {
             position: absolute;
@@ -196,7 +196,7 @@
     <!--Main Navigation-->
     <header>
         @include('partials.nav_dashboard')
-        @include('partials.sidebar')
+        @include('partials.user_sidebar')
     </header>
     <!--Main Navigation-->
 
@@ -224,16 +224,8 @@
                             <div
                                 class="view view-cascade py-3 gradient-card-header custom-tertiary mx-4 d-flex justify-content-between align-items-center">
 
-                                <div>
-                                    <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                        <i class="fas custom-secondary-text fa-th-large mt-0"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                        <i class="fas custom-secondary-text fa-columns mt-0"></i>
-                                    </button>
-                                </div>
 
-                                <a href="" class="white-text mx-3">Staff</a>
+                                <a href="" class="white-text mx-3">Status</a>
 
                                 <div>
                                     <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2">
