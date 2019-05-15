@@ -13,6 +13,9 @@
     color:var(--test)!important;
 }
 
+
+
+
 .custom-primary-transparent{
     background-color:var(--primary-transparent)!important;
     color:var(--test)!important;
@@ -47,3 +50,45 @@
     background-color:rgba(61, 94, 158,0.3) !important;
 
 }
+
+
+
+
+
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  /* Handle */
+  
+  ::-webkit-scrollbar-thumb {
+  
+  
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-linear-gradient(330deg, #3d5e9e 0%, #3d5d9e86 100%);
+    background-image: linear-gradient(120deg, #3d5e9e 0%, #3d5d9e4d 100%); 
+  
+  
+  }
+  
+  ::-webkit-scrollbar-thumb:window-inactive {
+  
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-linear-gradient(330deg, #3d5e9e 0%, #3d5e9e 100%);
+    background-image: linear-gradient(120deg, #3d5e9e 0%, #3d5e9e 100%); 
+  
+  }     
+  
+  
