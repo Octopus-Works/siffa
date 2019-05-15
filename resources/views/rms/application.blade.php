@@ -61,7 +61,7 @@
     <!--Main Navigation-->
     <header>
         @include('partials.nav_dashboard')
-        @include('partials.sidebar')
+        @include('partials.rms_sidebar')
     </header>
     <!--Main Navigation-->
 

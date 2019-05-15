@@ -196,7 +196,7 @@
     <!--Main Navigation-->
     <header>
         @include('partials.nav_dashboard')
-        @include('partials.sidebar')
+        @include('partials.user_sidebar')
     </header>
     <!--Main Navigation-->
 

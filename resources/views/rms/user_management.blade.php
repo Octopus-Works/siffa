@@ -316,7 +316,7 @@
         <!--Main Navigation-->
         <header>
             @include('partials.nav_dashboard')
-            @include('partials.sidebar')
+            @include('partials.rms_sidebar')
         </header>
         <!--Main Navigation-->
 
@@ -344,16 +344,8 @@
                                 <div
                                     class="view view-cascade py-3 custom-primary gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
 
-                                    <div>
-                                        <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                            <i class="fas custom-secondary-text fa-th-large mt-0"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                                            <i class="fas custom-secondary-text fa-columns mt-0"></i>
-                                        </button>
-                                    </div>
 
-                                    <a href="" class="white-text mx-3">messages</a>
+                                    <a href="" class="white-text mx-3">Messages</a>
 
                                     <div>
                                         <button type="button" id="edit" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modalConfirmBlock">
@@ -379,8 +371,8 @@
                                 <div class="modal-body">
                                     <div class="card custom-primary">
                                         <div class="card-body">
-                                            <div class="table-responsive">
-                                                <table id="example" class="table table-striped" cellspacing="0" width="100%"  style="min-height:650px;">
+                                            <div class="table-responsive"  style="min-height:650px;">
+                                                <table id="example" class="table table-striped" cellspacing="0" width="100%" >
                                                 </table>
                                             </div>
                                         </div>

@@ -224,7 +224,7 @@
     <!--Main Navigation-->
     <header>
       @include('partials.nav_dashboard')
-      @include('partials.sidebar')
+      @include('partials.user_sidebar')
     </header>
     <!--Main Navigation-->
 
@@ -249,30 +249,12 @@
               <div class="card card-cascade narrower custom-primary mb-5">
 
                 <!--Card header-->
-                <div class="view view-cascade py-3 custom-primary gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
+                <div class="view view-cascade py-3 custom-tertiary gradient-card-header mx-4 align-items-center ">
 
-                  <div>
-                    <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                      <i class="fas custom-secondary-text fa-th-large mt-0"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                      <i class="fas custom-secondary-text fa-columns mt-0"></i>
-                    </button>
-                  </div>
+ 
 
-                  <a href="" class="white-text mx-3">messages</a>
+                  <a href="" class="white-text mx-3">Messages</a>
 
-                  <div>
-                    <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_new_message">
-                      <span>new</span>
-                      <i class="fas fa-plus mt-0"></i>
-                    </button>
-                    <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_edit_message">
-                      <span>edit</span>
-                      <i class="fas fa-edit mt-0"></i>
-                    </button>
-
-                  </div>
 
 
                 </div>
@@ -283,8 +265,8 @@
                 <div class="modal-body">
                   <div class="card custom-primary">
                     <div class="card-body">
-                      <div class="table-responsive">
-                        <table id="example" class="table table-striped" cellspacing="0" width="100%"  style="min-height:550px;">
+                      <div class="table-responsive" style="min-height:650px;">
+                        <table id="example" class="table table-striped" cellspacing="0" width="100%" >
                         </table>
                       </div>
                     </div>

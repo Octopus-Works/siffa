@@ -42,7 +42,7 @@ Route::post('rms/user_management/block/{id}', 'RecipientController@block')->name
 Route::post('rms/user_management/unblock/{id}', 'RecipientController@unblock')->name('unblocking');
 
 Route::get('/app_status', 'AdminController@app_status');
-Route::get('//company_info/{id}', 'AdminController@company_info');
+Route::get('/company_info/{id}', 'AdminController@company_info');
 Route::get('/account_info', 'AdminController@account_info');
 
 
