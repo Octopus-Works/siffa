@@ -44,8 +44,11 @@
         <li>
             <ul class="">
 
-                <li class="pt-2 pb-2"><a class=" waves-effect" href={{url('/rms/view_applications')}}><i
-                            class="fas custom-secondary-text fa-clipboard mr-3"></i>Applications</a>
+                <li class="pt-2 pb-2">
+                    <a class=" waves-effect" href={{url('/rms/view_applications')}}>
+                        <i class="fas custom-secondary-text fa-clipboard mr-3"></i>
+                        Applications
+                    </a>
                 </li>
                 <li class="pt-2 pb-2"><a class="waves-effect " href={{url('/rms/user_management')}}><i
                             class="fas fa-users custom-secondary-text mr-3"></i>User Management</a>

@@ -65,10 +65,7 @@
             </a>
             {{--TODO --}}
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{url("/cms/admins/profile/")}}">
-                    <i class="fas custom-secondary-text fa-user mr-2" aria-hidden="true"></i>
-                    <span>My Account</span>
-                </a>
+
                 <a class="dropdown-item" href="{{ route('logout') }}">
                     <i class="fas custom-secondary-text fa-sign-out-alt mr-2" aria-hidden="true"></i>
                     <span>Log out</span>
