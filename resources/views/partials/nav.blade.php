@@ -113,14 +113,51 @@
                     <a class="nav-link" href={{route('contact')}}>Contact Us</a>
                 </li>
             </ul>
-            <ul class="navbar-nav nav-flex-icons">
+            {{-- <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item">
                     <a class="nav-link custom-secondary-text" href={{route('register')}}>Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link custom-secondary-text"href={{route('login')}}>Login</a>
                 </li>
-            </ul>
+            </ul> --}}
+            <ul class="navbar-nav nav-flex-icons">
+
+            @if (Auth::check())
+            <li class="nav-item dropdown profile">
+                <a id="MY PROFILE" class="selver-text nav-link dropdown-toggle waves-effect waves-light "
+                   id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    <i class="fas fa-user"> </i>{{ Auth::getUser()->userdetail->fullname}} </a>
+
+                <div class="dropdown-menu dropdown-menu-right dropdown-default trans-1-0"
+                     aria-labelledby="navbarDropdownMenuLink-4">
+                    <a id="MY ACCOUNT" class="dropdown-item waves-effect waves-light"
+                       href={{url("/redirect")}}>
+                        MY ACCOUNT</a>
+                    <a class="dropdown-item waves-effect waves-light" href="{{ url('/logout') }}">LOGOUT</a>
+                </div>
+
+            </li>
+        @else
+            <li id="register" class="nav-item">
+                <a id="SIGNUP"
+                   class="pl-auto left selver-text padding-sides nav-link waves-effect waves-light white-text font-weight-bold"
+                   href={{url("register")}}>
+
+                    REGISTER</a>
+            </li>
+            <li class="nav-item">
+                <a id="LOGIN"
+                   class="selver-text padding-sides nav-link waves-effect waves-light white-text font-weight-bold"
+                   href={{url("login")}}>
+
+                    LOGIN</a>
+            </li>
+        @endif
+    </ul>
+
+
         </div>
     </div>
 </nav>
