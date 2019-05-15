@@ -47,43 +47,7 @@
 	<div class="container">
 
 
-		<hr>
 
-		<!-- Section: About 2-->
-		<section id="about" class="section about mt-5 mb-5 pb-3 wow fadeIn" data-wow-delay="0.2s">
-
-            <div class="row pt-4 mt-5">
-
-                <!-- Grid column -->
-                <div class="col-lg-12 col-md-12 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
-
-                    <!-- Secion heading -->
-                    <h3 class="mb-2 dark-grey-text title font-weight-bold wow fadeIn text-center" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
-                        <strong>Our mission</strong>
-                    </h3>
-
-                    <!-- Description -->
-                    <p align="justify" class="grey-text text-center">
-
-                        <h6 class="feature-title title font-weight-bold dark-grey-text  spacing mt-4 mx-4">
-                            <i class="fas fa-square orange-text mr-2" aria-hidden="true"></i>
-                            <strong>SIFFA aims to be the driving force behind the development of the freight forwarding industry in Syria by setting the standards, 
-                                protecting the interest of member freight forwarders and ensuring that Syrian freight forwarders have the capacity to participate 
-                                successfully in the global trading arena.</strong>
-                        </h6>
-
-                        
-                    </p>
-
-                </div>
-                <!-- Grid column -->
-
-
-            </div>
-
-		</section>
-		<!-- Section: About 2-->
-        <hr>
 	
 	</div>
 

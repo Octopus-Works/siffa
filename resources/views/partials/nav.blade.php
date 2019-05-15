@@ -76,7 +76,7 @@
                 <li class="nav-item dropdown padding-sides">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"  href={{route('about')}}>About Us</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href={{route('mission_statement')}}>Mission Statement</a>
+                        <a class="dropdown-item" href='{{route('about')}}/#mission'>Mission Statement</a>
                         <a class="dropdown-item" href={{route('laws')}}>By-Laws</a>
                         <a class="dropdown-item" href={{route('trading_conditions')}}>Standard Trading Conditions</a>
                     </div>
@@ -115,13 +115,10 @@
             </ul>
             <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item">
-                    <a class="nav-link"><i class="fab fa-facebook-f custom-secondary-text"></i></a>
+                    <a class="nav-link custom-secondary-text" href={{route('register')}}>Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"><i class="fab fa-twitter custom-secondary-text"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"><i class="fab fa-instagram custom-secondary-text"></i></a>
+                    <a class="nav-link custom-secondary-text"href={{route('login')}}>Login</a>
                 </li>
             </ul>
         </div>

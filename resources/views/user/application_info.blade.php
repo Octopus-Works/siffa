@@ -45,7 +45,13 @@
 
         .md-form input[type=text]:focus:not([readonly])+label,
         .md-form textarea.md-textarea:focus:not([readonly])+label {
-            color: #3d5e9e !important;
+            color: #5f96ce !important;
+        }
+
+        
+
+        .custom-control-label::before{
+            background-color:#ffffff00!important;
         }
 
         .hide {
