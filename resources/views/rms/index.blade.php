@@ -34,8 +34,10 @@
             color: #fff !important;
         }
 
-        .md-form input[type=text]:focus:not([readonly])+label {
-            color: #3d5e9e !important;
+
+        .md-form input[type=text]:focus:not([readonly])+label,
+        .md-form textarea.md-textarea:focus:not([readonly])+label {
+            color: #5f96ce !important;
         }
 
     </style>

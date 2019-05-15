@@ -115,13 +115,10 @@
             </ul>
             <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item">
-                    <a class="nav-link"><i class="fab fa-facebook-f custom-secondary-text"></i></a>
+                    <a class="nav-link custom-secondary-text" href={{route('register')}}>Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"><i class="fab fa-twitter custom-secondary-text"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"><i class="fab fa-instagram custom-secondary-text"></i></a>
+                    <a class="nav-link custom-secondary-text"href={{route('login')}}>Login</a>
                 </li>
             </ul>
         </div>
