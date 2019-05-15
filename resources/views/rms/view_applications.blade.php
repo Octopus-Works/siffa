@@ -166,7 +166,7 @@
                         @foreach ($user as $user)[
                             "{{$user->userdetail->fullname}}","{{$user->shippingoffice->name}}",
                             "<h5><span class='badge badge-pill badge-danger'>{{$user->applicationdetail->status}}</span></h5>",
-                            "<a href='{{url("/rms/application/" . $user->id)}}'><button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button></a>"
+                            "<a href='{{url("/rms/application/" . $user->id)}}'><button class='btn btn-sm btn-rounded amber waves-effect black-text' >Handle</button></a>"
                         ],
                         @endforeach
                     @endif
@@ -183,7 +183,7 @@
                         title: "<h5 class='font-weight-bold custom-secondary-text'>Status</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>View</h5>"
+                        title: "<h5 class='font-weight-bold custom-secondary-text'>Actions</h5>"
                     },
                 ];
 
