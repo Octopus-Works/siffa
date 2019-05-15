@@ -41,9 +41,9 @@ Route::get('/rms/user_management', 'RecipientController@recipients_management');
 Route::post('rms/user_management/block/{id}', 'RecipientController@block')->name('blocking');
 Route::post('rms/user_management/unblock/{id}', 'RecipientController@unblock')->name('unblocking');
 
-Route::get('/app_status', 'AdminController@app_status');
-Route::get('/company_info/{id}', 'AdminController@company_info');
-Route::get('/account_info', 'AdminController@account_info');
+Route::get('/app_status', 'UserController@app_status');
+Route::get('/company_info/{id}', 'UserController@company_info');
+Route::get('/account_info', 'UserController@account_info');
 
 
 Auth::routes(['verify' => true]);
@@ -58,6 +58,8 @@ Route::post('/application_info', 'ApplicationController@update')->name('applicat
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+
+    Route::get('calendar' , 'AdminController@getCalendarPage')->name('calendar');
 });
 
 //contact us route
