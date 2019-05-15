@@ -76,7 +76,7 @@
                 <li class="nav-item dropdown padding-sides">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"  href={{route('about')}}>About Us</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href={{route('mission_statement')}}>Mission Statement</a>
+                        <a class="dropdown-item" href='{{route('about')}}/#mission'>Mission Statement</a>
                         <a class="dropdown-item" href={{route('laws')}}>By-Laws</a>
                         <a class="dropdown-item" href={{route('trading_conditions')}}>Standard Trading Conditions</a>
                     </div>
