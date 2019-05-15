@@ -20,7 +20,11 @@
             height: 700px;
         }
 
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
 
+            background-color: #3d5e9e;
+        }
 
     </style>
 </head>
@@ -82,10 +86,6 @@
 
                     </strong>
                 </p>
-                <p >
-                <strong >
-                </strong>
-            </p>
             </div>
 
 

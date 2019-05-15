@@ -41,7 +41,8 @@ class PagesController extends Controller
     }
 
     public function members_list(){
-        return view('pages.members.member_list');
+        $users = User::all();
+        return view('pages.members.member_list')->withusers($users);;
     }
 
     public function calendar(){
