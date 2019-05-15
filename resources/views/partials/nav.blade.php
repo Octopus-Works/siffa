@@ -74,8 +74,7 @@
                     <a class="nav-link" href={{route('home')}}>Home</a>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" href={{route('about')}}>About Us</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"  href={{route('about')}}>About Us</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('mission_statement')}}>Mission Statement</a>
                         <a class="dropdown-item" href={{route('laws')}}>By-Laws</a>
@@ -83,32 +82,28 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Members</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Members</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('members_list')}}>Member List</a>
                         <a class="dropdown-item" href={{route('become_member')}}>Become a Member</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">News & Events</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" >News & Events</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('events')}}>Our Events</a>
                         <a class="dropdown-item" href={{route('calendar')}}>Calendar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Gallery</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Gallery</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('latest')}}>Latest</a>
                         <a class="dropdown-item" href={{route('archive')}}>Archive</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Board of Directors</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Board of Directors</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('president_message')}}>President's Message</a>
                         <a class="dropdown-item" href={{route('board_members')}}>Board Members</a>
@@ -132,15 +127,4 @@
         </div>
     </div>
 </nav>
-<script src={{url("js/jquery-3.3.1.min.js")}}></script>
-<script>
-    $(document).ready(function () {
-        $(".dropdown, .btn-group").hover(function () {
-            var dropdownMenu = $(this).children(".dropdown-menu");
-            if (dropdownMenu.is(":visible")) {
-                dropdownMenu.parent().toggleClass("open");
-            }
-        });
-    });
 
-</script>
