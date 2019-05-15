@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('partials.head')
+        @include('partials.head')
 
 <style>
 
@@ -51,7 +51,19 @@
 
 		<!-- Section: About 1-->
 		<section id="about" class="section about mt-5 mb-5 py-3 wow fadeIn" data-wow-delay="0.2s">
-				<h5 class="black-text description mb-5 wow fadeIn text-center" data-wow-delay="0.4s">
+
+
+
+
+                <div class="col-md-12 wow fadeIn   ">
+                        <h1 class="display-3 dark-grey-text text-center mb-2 wow fadeInDown text-white font-size-0" data-wow-delay="0.3s">
+                        ABOUT <span class="custom-secondary-text">SYFFA</span> </h1>
+     
+                    </div>
+
+                    <hr class="w-25 mt-2 mb-2">
+
+				<h5 class="dark-grey-text description mb-5 wow fadeIn text-center" data-wow-delay="0.4s">
 
                         SIFFA (siffa)  is a cooperative association in Damascus in the name of Freight Forwarders Association whose activities cover all the provinces in the Syrian Arab Republic.
                         The Association''''s objective is to improve the economic and social status of its members; in realizing this end, it performs the following acts: 

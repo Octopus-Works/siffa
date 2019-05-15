@@ -19,7 +19,7 @@ class UserController extends Controller
 
     public function companyInfo($id){
         $user = User::find($id); 
-        return view('user/company_info')->withuser($user);
+        return view('pages.company_info')->withuser($user);
     }
 
     public function accountInfo(){

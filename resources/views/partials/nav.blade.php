@@ -85,7 +85,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Members</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('members_list')}}>Member List</a>
-                        <a class="dropdown-item" href={{route('become_member')}}>Become a Member</a>
+                        <a class="dropdown-item" href={{route('register')}}>Become a Member</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
