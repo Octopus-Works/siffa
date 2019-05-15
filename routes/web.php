@@ -38,15 +38,16 @@ Route::get('/cms', function(){
 Route::get('/rms', 'RecipientController@index');
 Route::get('/rms/view_applications', 'RecipientController@applications_view');
 Route::get('/rms/view_messages', 'RecipientController@messages_view');
-Route::get('/rms/application', 'RecipientController@application');
+Route::get('/rms/application/{id}', 'RecipientController@application');
 Route::get('/rms/account_info', 'RecipientController@account_info');
 Route::get('/rms/user_management', 'RecipientController@recipients_management');
 Route::post('rms/user_management/block/{id}', 'RecipientController@block')->name('blocking');
 Route::post('rms/user_management/unblock/{id}', 'RecipientController@unblock')->name('unblocking');
 
-Route::get('/app_status', 'UserController@app_status');
-Route::get('/company_info/{id}', 'UserController@company_info');
-Route::get('/account_info', 'UserController@account_info');
+Route::get('/app_status', 'UserController@appStatus');
+Route::get('/user/company_info/{id}', 'UserController@userCompanyInfo');
+Route::get('/company_info/{id}', 'UserController@companyInfo');
+Route::get('/account_info', 'UserController@accountInfo');
 
 
 Auth::routes(['verify' => true]);

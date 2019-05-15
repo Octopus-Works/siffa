@@ -23,8 +23,9 @@ class RecipientController extends Controller
         return view('rms/view_messages');
     }
 
-    public function application(){
-        return view('rms/application');
+    public function application($id){
+        $user = User::find($id);
+        return view('rms/application')->withuser($user); 
     }
 
     public function account_info(){

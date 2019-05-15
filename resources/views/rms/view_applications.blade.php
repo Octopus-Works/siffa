@@ -157,11 +157,7 @@
             });
 
 
-
-
             $(document).ready(function () {
-
-                // office name,fullname, status, view
 
 
                 var dataSet = [
@@ -170,7 +166,7 @@
                         @foreach ($user as $user)[
                             "{{$user->userdetail->fullname}}","{{$user->shippingoffice->name}}",
                             "<h5><span class='badge badge-pill badge-danger'>{{$user->applicationdetail->status}}</span></h5>",
-                            "<a href={{url('/rms/application')}}><button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button></a>"
+                            "<a href='{{url("/rms/application/" . $user->id)}}'><button class='btn btn-sm btn-rounded amber waves-effect black-text' >View</button></a>"
                         ],
                         @endforeach
                     @endif

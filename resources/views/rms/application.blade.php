@@ -91,67 +91,59 @@
                                                 class="fas fa-user m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="fullname" name="fullname" type="text" value="Full Name"
-                                                    disabled>
+                                                <input id="fullname" name="fullname" type="text" value="{{ $user->userdetail->fullname }}" disabled>
                                                 <label for="fullname">{{ __('Full Name') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="father" name="father" type="text" value="Father's Name"
-                                                    disabled>
+                                                <input id="father" name="father" type="text" value="{{ $user->userdetail->father_name }}" disabled>
                                                 <label for="father">{{ __("Father's Name") }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="mother" name="mother" type="text" value="Mother's Name"
-                                                    disabled>
+                                                <input id="mother" name="mother" type="text" value="{{ $user->userdetail->mother_name }}" disabled>
                                                 <label for="mother">{{ __("Father's Name") }}</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="email" name="email" type="email" value="" disabled>
+                                                <input id="email" name="email" type="email" value="{{ $user->email }}" disabled>
                                                 <label for="email">{{ __('E-mail') }}</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
-                                                <input name="date_of_birth" type="text" value="" disabled>
+                                                <input name="date_of_birth" type="text" value="{{ $user->userdetail->date_of_birth }}" disabled>
                                                 <label for="date_of_birth">{{ __("Date of Birth") }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="place-of-birth" name="place_of_birth" type="text" value=""
-                                                    disabled>
+                                                <input id="place-of-birth" name="place_of_birth" type="text" value="{{ $user->userdetail->place_of_birth }}" disabled>
                                                 <label for="place-of-birth">Place of Birth</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="record" name="record" type="text" value="" disabled>
+                                                <input id="record" name="record" type="text" value="{{ $user->userdetail->record }}" disabled>
                                                 <label for="record">Individual Civil Registry Record</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="nationality" name="nationality" type="text" value=""
-                                                    disabled>
+                                                <input id="nationality" name="nationality" type="text" value="{{ $user->userdetail->nationality }}" disabled>
                                                 <label for="nationality">Nationality</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="address" name="address" type="text" value="" disabled>
+                                                <input id="address" name="address" type="text" value="{{ $user->userdetail->address }}" disabled>
                                                 <label for="address">Address</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="phonenumber" name="phone_number" type="text" value=""
-                                                    disabled>
+                                                <input id="phonenumber" name="phone_number" type="text" value="{{ $user->userdetail->phone_number }}" disabled>
                                                 <label for="phonenumber">Phone Number</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="mobilenumber" name="mobile_number" type="text" value=""
-                                                    disabled>
+                                                <input id="mobilenumber" name="mobile_number" type="text" value="{{ $user->userdetail->mobile_number }}" disabled>
                                                 <label for="mobilenumber">Mobile Number</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="website" name="website" type="text" value="" disabled>
+                                                <input id="website" name="website" type="text" value="{{ $user->userdetail->website }}" disabled>
                                                 <label for="website">Website</label>
                                             </div>
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
                                             <button type="submit"
-                                                class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                data-feedback="someFunction21">NEXT</button>
+                                                class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
                                         </div>
                                     </div>
 
@@ -159,110 +151,90 @@
                                 <li class="step">
                                     <div id="step2" class="step-title waves-effect waves-dark">Step 2</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Company Information <i
-                                                class="fas fa-briefcase m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Shipping Company Information <i class="fas fa-briefcase m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="company-name" name="company_name" type="text" value=""
-                                                    disabled>
+                                                <input id="company-name" name="company_name" type="text" value="{{$user->shippingOffice->name}}" disabled>
                                                 <label for="company-name">Shipping Company Name</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <textarea id="branches-address" name="branches_address"
-                                                    class="md-textarea form-control" rows="3" value=""
-                                                    disabled></textarea>
+                                                <textarea id="branches-address" name="branches_address" class="md-textarea form-control" rows="3" disabled> {{$user->shippingOffice->addresses}}</textarea>
                                                 <label for="branches-address">Addresses of Branches</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="type" name="shipping_services" type="text" value="" disabled>
+                                                <input id="type" name="shipping_services" type="text" value="{{$user->shippingOffice->shipping_services}}" disabled>
                                                 <label for="type">Type of Shipping Service Provided</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="position" name="position_title" type="text" value=""
-                                                    disabled>
+                                                <input id="position" name="position_title" type="text" value="{{$user->shippingOffice->position_title}}" disabled>
                                                 <label for="position">Workplace Position</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="chamber" name="chamber_of_commerce" type="text" value=""
-                                                    disabled>
+                                                <input id="chamber" name="chamber_of_commerce" type="text" value="{{$user->shippingOffice->chamber_of_commerce}}" disabled>
                                                 <label for="chamber">Chamber of Commerce</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="regist-num" name="commercial_registry" type="text" value=""
-                                                    disabled>
+                                                <input id="regist-num" name="commercial_registry" type="text" value="{{$user->shippingOffice->commerical_registry}}" disabled>
                                                 <label for="regist-num">Commercial Registration Number</label>
                                             </div>
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                data-feedback="someFunction21">NEXT</button>
+                                            <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="step">
                                     <div id="step3" class="step-title waves-effect waves-dark">Step 3</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Services Information <i
-                                                class="fas fa-info-circle m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Shipping Services Information <i class="fas fa-info-circle m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">Available Shipping Methods:</h6>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="method1"
-                                                        name="shipping_methods[]" value="LTL" disabled>
-                                                    <label class="custom-control-label" for="method1">Less Than Track
-                                                        Load(LTL)</label>
+                                                    <?php $chk = "" ?>
+                                                    <?php $chk = explode(" ",$user->shippingService->shipping_methods) ?>
+                                                    <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods[]" value="LTL" @if(in_array("LTL", $chk)) checked @endif disabled>
+                                                    <label class="custom-control-label" for="method1">Less Than Track Load(LTL)</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="method2"
-                                                        name="shipping_methods[]" value="FTL" disabled>
-                                                    <label class="custom-control-label" for="method2">Full Track
-                                                        Load(FTL)</label>
+                                                    <input type="checkbox" class="custom-control-input" id="method2" name="shipping_methods[]" value="FTL" @if(in_array("FTL", $chk)) checked @endif disabled>
+                                                    <label class="custom-control-label" for="method2">Full Track Load(FTL)</label>
                                                 </div>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">External Shipping Modes:</h6>
                                                 <div class="custom-control custom-checkbox ml-4">
-
-                                                    <input type="checkbox" class="custom-control-input" id="mode1"
-                                                        name="shipping_modes[]" value="Wild" disabled>
-                                                    <label class="custom-control-label" for="mode1">Land
-                                                        Transport</label>
+                                                    <?php $chk1 = "" ?>
+                                                    <?php $chk1 = explode(" ",$user->shippingService->shipping_modes) ?>
+                                                    <input type="checkbox" class="custom-control-input" id="mode1" name="shipping_modes[]" value="Wild" @if(in_array("Wild", $chk1)) checked @endif disabled>
+                                                    <label class="custom-control-label" for="mode1">Land Transport</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode2"
-                                                        name="shipping_modes[]" value="Aerial" disabled>
-                                                    <label class="custom-control-label" for="mode2">Air
-                                                        Transport</label>
+                                                    <input type="checkbox" class="custom-control-input" id="mode2" name="shipping_modes[]" value="Aerial" @if(in_array("Aerial", $chk1)) checked @endif disabled>
+                                                    <label class="custom-control-label" for="mode2">Air Transport</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode3"
-                                                        name="shipping_modes[]" value="Nautical" disabled>
-                                                    <label class="custom-control-label" for="mode3">Water
-                                                        Transport</label>
+                                                    <input type="checkbox" class="custom-control-input" id="mode3" name="shipping_modes[]" value="Nautical" @if(in_array("Nautical", $chk1)) checked @endif disabled>
+                                                    <label class="custom-control-label" for="mode3">Water Transport</label>
                                                 </div>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="src-dest" name="src_dest" type="text" value="" disabled>
-                                                <label for="src-dest">Sources and Destinations Served By the Shipping
-                                                    Company</label>
+                                                <input id="src-dest" name="src_dest" type="text" value="{{$user->shippingService->sources_destinations}}" disabled>
+                                                <label for="src-dest">Sources and Destinations Served By the Shipping Company</label>
                                             </div>
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                data-feedback="someFunction21">NEXT</button>
+                                            <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="step">
                                     <div id="step4" class="step-title waves-effect waves-dark">Step 4</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Financial Information <i
-                                                class="fas fa-money-check-alt m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Financial Information <i class="fas fa-money-check-alt m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="financial-status" name="financial_status" type="text"
-                                                    value="" disabled>
+                                                <input id="financial-status" name="financial_status" type="text" value="{{$user->applicationDetail->Financial_assignment_status}}" disabled>
                                                 <label for="financial-status">Financial Assignment Status</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
@@ -274,24 +246,21 @@
                                                         <input type="file" name="financial_photo">
                                                     </div>
                                                     <div class="file-path-wrapper">
-                                                        <input id="financial-photo" class="file-path validate"
-                                                            type="text" placeholder="Upload your file">
+                                                        <input id="financial-photo" class="file-path validate" type="text" placeholder="Upload your file">
                                                     </div>
                                                 </div>
 
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
-                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">NEXT</button>
+                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
                                             </div>
                                         </div>
                                 </li>
                                 <li class="step">
                                     <div id="step5" class="step-title waves-effect waves-dark">Step 5</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Application Information <i
-                                                class="fas fa-edit ml-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Application Information <i class="fas fa-edit ml-1"></i></h5>
                                         <div class="row">
 
                                             <div class="md-form col-12 ml-auto">
@@ -303,21 +272,17 @@
                                                         <input type="file" name="signature_photo">
                                                     </div>
                                                     <div class="file-path-wrapper">
-                                                        <input id="signature-photo" class="file-path validate"
-                                                            type="text" placeholder="Upload your file">
+                                                        <input id="signature-photo" class="file-path validate" type="text" placeholder="Upload your file">
                                                     </div>
                                                 </div>
 
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input name="date_of_application" type="text" id="date-picker-example2"
-                                                    value="" disabled>
+                                                <input name="date_of_application" type="text" id="date-picker-example2" value="{{$user->applicationDetail->Date_of_application}}" disabled>
                                                 <label for="date_of_application">Financial Assignment Status</label>
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
-                                                <button
-                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">NEXT</button>
+                                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
                                             </div>
                                         </div>
 
@@ -326,16 +291,11 @@
                                 <li class="step">
                                     <div id="step6" class="step-title waves-effect waves-dark">Step 6</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Resume Information <i
-                                                class="fas fa-user-edit ml-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Resume Information <i class="fas fa-user-edit ml-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <textarea id="resume-info" name="resume_info"
-                                                    class="md-textarea form-control" rows="3" value=""
-                                                    disabled></textarea>
-                                                <label for="resume-info">Resume Information (As Mentioned in the
-                                                    Application
-                                                    Document)</label>
+                                                <textarea id="resume-info" name="resume_info" class="md-textarea form-control" rows="3" disabled>{{$user->applicationDetail->Resume_information}}</textarea>
+                                                <label for="resume-info">Resume Information (As Mentioned in the Application Document)</label>
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
@@ -349,8 +309,7 @@
                                 <li class="step">
                                     <div id="step7" class="step-title waves-effect waves-dark">Step 7</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Hard Copy <i
-                                                class="far fa-clipboard m-1"></i>
+                                        <h5 class="text-center font-weight-bolder">Hard Copy <i class="far fa-clipboard m-1"></i>
                                         </h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
@@ -361,8 +320,7 @@
                                                         <input type="file" name="hard_copy">
                                                     </div>
                                                     <div class="file-path-wrapper">
-                                                        <input id="hard-copy" class="file-path validate" type="text"
-                                                            placeholder="Upload your file">
+                                                        <input id="hard-copy" class="file-path validate" type="text" placeholder="Upload your file">
                                                     </div>
                                                 </div>
                                             </div>
@@ -370,8 +328,7 @@
                                                 <button type="button" 
                                                     class="btn btn-success btn-rounded  px-2">Approve Application
                                                 </button>
-                                                <button type="button"
-                                                class="btn btn-danger btn-rounded  px-2">Decline Application
+                                                <button type="button" class="btn btn-danger btn-rounded  px-2">Decline Application
                                             </button>
                                             </div>
                                         </div>
