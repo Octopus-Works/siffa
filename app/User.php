@@ -52,4 +52,8 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
     public function userdetail(){
         return $this->hasOne('App\UserDetail');
     }
+
+    public function role(){
+        return $this->belongsTo('App\Role'); 
+    }
 }

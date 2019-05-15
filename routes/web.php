@@ -30,6 +30,9 @@ Route::get('archive', 'PagesController@archive')->name('archive');
 Route::get('president_message', 'PagesController@president_message')->name('president_message');
 Route::get('board_members', 'PagesController@board_members')->name('board_members');
 
+Route::get('/cms', function(){
+    return view('cms.index');
+});
 
 
 Route::get('/rms', 'RecipientController@index');
@@ -42,7 +45,9 @@ Route::post('rms/user_management/block/{id}', 'RecipientController@block')->name
 Route::post('rms/user_management/unblock/{id}', 'RecipientController@unblock')->name('unblocking');
 
 Route::get('/app_status', 'AdminController@app_status');
-Route::get('/company_info/{id}', 'AdminController@company_info');
+Route::get('/user/company_info/{id}', 'AdminController@company_info');
+Route::get('/company_info/{id}', 'AdminController@company_info'); // For Guest
+
 Route::get('/account_info', 'AdminController@account_info');
 
 

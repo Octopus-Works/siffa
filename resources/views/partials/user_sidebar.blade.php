@@ -55,7 +55,7 @@
                 </li>
                 @if (Auth::check())
 
-                <li class="pt-2 pb-2"><a class="waves-effect " href={{url('/company_info').'/'.Auth::getUser()->id}}><i
+                <li class="pt-2 pb-2"><a class="waves-effect " href={{url('/user/company_info').'/'.Auth::getUser()->id}}><i
                             class="fas fa-truck custom-secondary-text mr-3"></i>Company Info</a>
                 </li>
                 @endif
