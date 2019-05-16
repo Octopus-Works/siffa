@@ -16,16 +16,11 @@ class MessageController extends Controller
      */
     public function index()
     {
-       //
-       // dd(auth::user()->role->name );
-        if ( auth::user()->role->name == 'RMS'){
-            $mail = InternalMessaging::where('sender_id', auth::user()->id)
-                                        ->orWhere('receiver_id', 0)
-                                        ->get();
-            return view('rms/view_messages')->withmail($mail);                             
-        }
+  
 
-        if ( auth::user()->role->name == 'User'){
+ 
+
+        if ( auth::user()->role->name == 'user'){
             $mail = InternalMessaging::where('sender_id', auth::user()->id)
                                         ->orWhere('receiver_id', auth::user()->id)
                                         ->get();
@@ -52,12 +47,23 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
+
+        if($request->exists('sender') && $request->exists('reciver'))
+        if( $request->reciver == $request->sender)
+        return response('error',500); 
+
+
+
         $mail = new InternalMessaging;
         $mail->subject = $request->subject; 
         $mail->body = $request->message; 
         $mail->sender_id = auth::user()->id;
 
-        if ( auth::user()->role->name == 'User')
+
+    
+
+
+        if ( auth::user()->role->name == 'user')
             $mail->receiver_id = 0; 
         else if ( auth::user()->role->name == 'RMS')
             $mail->receiver_id = $request->reciver;
