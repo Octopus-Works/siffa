@@ -55,7 +55,6 @@
 			<hr class="w-25 mt-2 mb-2">
 
 			<h5 class="dark-grey-text description mb-5 wow fadeIn text-center" data-wow-delay="0.4s">
-
 				SYFFA (siffa) is a cooperative association in Damascus in the name of Freight Forwarders Association
 				whose activities cover all the provinces in the Syrian Arab Republic.
 				The Association''''s objective is to improve the economic and social status of its members; in realizing
