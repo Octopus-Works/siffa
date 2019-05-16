@@ -174,14 +174,14 @@
 
             </li>
         @else
-            <li id="register" class="nav-item">
+            <li id="register" class="nav-item padding-sides">
                 <a id="SIGNUP"
                    class="left custom-secondary-text padding-sides nav-link waves-effect  white-text font-weight-bold"
                    href={{url("register")}}>
 
                     REGISTER</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item padding-sides">
                 <a id="LOGIN"
                    class="custom-secondary-text padding-sides nav-link waves-effect  white-text font-weight-bold"
                    href={{url("login")}}>

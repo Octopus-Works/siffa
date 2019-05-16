@@ -389,7 +389,7 @@
     </main>
     <!--Main Layout-->
 
-    @include('partials.footer')
+    @include('partials.footer_dashboard')
 
     <script type="text/javascript"
         src={{url("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js")}}></script>

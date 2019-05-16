@@ -80,6 +80,7 @@ class RegisterController extends Controller
         $validated = $request->validated(); 
         $username = str_random(10); 
         $password = str_random(10);
+      
 
         $user = new User; 
         $user->username = $username; 
@@ -101,13 +102,15 @@ class RegisterController extends Controller
         $details->website = $request->website; 
         $details->record = $request->record; 
         $details->nationality = $request->nationality; 
-        $details->address = $request->address; 
+        
+        $details->address = preg_replace( "/\r|\n/", "", $request->address ); 
         $details->save(); 
 
         $office = new ShippingOffice;
         $office->user_id = $user->id;
         $office->name = $request->company_name;
-        $office->addresses = $request->branches_address;
+  
+        $office->addresses = preg_replace( "/\r|\n/", "", $request->branches_address ); 
         $office->shipping_services = $request->shipping_services; 
         $office->position_title = $request->position_title;
         $office->chamber_of_commerce = $request->chamber_of_commerce; 
