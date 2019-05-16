@@ -123,13 +123,15 @@
             $(document).ready(function () {
 
 
-
+                var myEscapedJSONString = myJSONString
 
                 var dataSet = [
                     @if ( @isset($users))
                         @foreach($users as $user)[
-                            "{{ $user->shippingoffice->name }}",
-                            "{{ $user->shippingoffice->addresses }}",
+
+
+                            `{{ $user->shippingoffice->name }}`,
+                            `{{ $user->shippingoffice->addresses }}`,
                             `<a href='{{url('company_info').'/'.$user->id}}' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
                         ],
                         @endforeach
