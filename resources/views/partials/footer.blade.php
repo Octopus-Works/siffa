@@ -9,12 +9,18 @@
     
           <!-- Footer links -->
           <div class="row text-center text-md-left mt-3 pb-3">
-    
+
             <!-- First column -->
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">About me</h6>
-              <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.</p>
+              <h6 class="text-uppercase mb-4 font-weight-bold">About
+                <img style="
+				height: auto !important;
+				width: 60px !important;
+			" src="{{url('/img/Logos/logo_xs_1.png')}}" />
+              </h6>
+              <p style="font-size: 18px !important;">
+                SIFFA aims to be the driving force behind the development of the freight forwarding industry in Syria by setting the standards.
+              </p>
             </div>
             <!-- First column -->
     
@@ -22,19 +28,17 @@
     
             <!-- Second column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">Category</h6>
+              <h6 class="text-uppercase mb-4 font-weight-bold">News & Updates</h6>
               <p>
-                <a href="#!">Lifestyle</a>
+                <a href="#!">Events</a>
               </p>
               <p>
-                <a href="#!">Travel</a>
+                <a href="#!">Calender</a>
               </p>
               <p>
-                <a href="#!">Work</a>
+                <a href="#!">Gallery</a>
               </p>
-              <p>
-                <a href="#!">Fashion</a>
-              </p>
+
             </div>
             <!-- Second column -->
     
@@ -44,16 +48,16 @@
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
               <p>
-                <a href="#!">Collaboriation</a>
+                <a href="#!">Members List</a>
               </p>
               <p>
-                <a href="#!">Media about me</a>
+                <a href="#!">Become a Member</a>
               </p>
               <p>
-                <a href="#!">Newsletter</a>
+                <a href="#!">Account Info</a>
               </p>
               <p>
-                <a href="#!">Help</a>
+                <a href="#!">Contact us</a>
               </p>
             </div>
             <!-- Third column -->
@@ -64,31 +68,31 @@
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
               <p>
-                <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                <i class="fas fa-home mr-3"></i> Marjeh Square, Damascus Tower, 7th Floor, Suite No. 12</p>
               <p>
-                <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                <i class="fas fa-envelope mr-3"></i> info@syffa.org</p>
               <p>
-                <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                <i class="fas fa-phone mr-3"></i> +963 11 231 6166</p>
               <p>
-                <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                <i class="fas fa-print mr-3"></i> +963 11 231 4629</p>
             </div>
             <!-- Fourth column -->
     
           </div>
           <!-- Footer links -->
     
-          <hr>
+          <hr style="margin-bottom: 0px !important;">
     
           <div class="row py-3 d-flex align-items-center">
     
             <!-- Grid column -->
             <div class="col-md-7 col-lg-8">
-    
+
               <!-- Copyright -->
-              <p class="text-center text-md-left grey-text">
-                © 2019 Copyright: <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com
-                </a>
-              </p>
+              <div style="background-color: transparent !important;" class="footer-copyright py-3"><b>© 2019 Powered By</b>
+                <img width="104px" height="31.2px" src={{url('/img/octopusworks_logo.png')}}>
+                <a href="#"> </a>
+              </div>
               <!-- Copyright -->
     
             </div>

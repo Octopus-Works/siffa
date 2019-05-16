@@ -121,7 +121,9 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Members</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('members_list')}}>Member List</a>
+                        @if (!Auth::check())
                         <a class="dropdown-item" href={{route('register')}}>Become a Member</a>
+                        @endif
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
@@ -132,11 +134,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Gallery</a>
-                    <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href={{route('latest')}}>Latest</a>
-                        <a class="dropdown-item" href={{route('archive')}}>Archive</a>
-                    </div>
+                    <a class="nav-link" href={{route('latest')}}>Gallery</a>
                 </li>
                 <li class="nav-item dropdown padding-sides">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Board</a>
@@ -178,7 +176,7 @@
         @else
             <li id="register" class="nav-item">
                 <a id="SIGNUP"
-                   class="pl-auto left custom-secondary-text padding-sides nav-link waves-effect  white-text font-weight-bold"
+                   class="left custom-secondary-text padding-sides nav-link waves-effect  white-text font-weight-bold"
                    href={{url("register")}}>
 
                     REGISTER</a>

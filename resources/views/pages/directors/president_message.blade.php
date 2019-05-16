@@ -32,7 +32,8 @@
 						<div class="row mt-5">
 							<div class="col-md-12 wow fadeIn mb-3  custom-primary-transparent">
 								<h1 class="display-3 mb-2 wow fadeInDown text-white font-size-0" data-wow-delay="0.3s">
-										President of the Association Letter</h1>
+										The Letter Of The Association's President
+								</h1>
 								<h5 class="text-uppercase mb-3 mt-1 custom-secondary-text font-weight-bold wow fadeIn"
 									data-wow-delay="0.4s">SYFFA</h5>
 							</div>
@@ -41,15 +42,6 @@
 				</div>
 			</div>
 
-
-
-
-
-
-
-
-
-			
     </header>
     <!--Main Navigation-->
 
@@ -76,7 +68,7 @@
 				  <div class="container">
 	
 						<h2 class="h1-responsive font-weight-light my-5 text-center ">
-								President of the Association Letter
+							The Letter Of The Association's President
 									<span class="custom-secondary-text"><br><small><small>SIFFA</small></small></span>
 								</h2>
 								<hr style="width:50%">

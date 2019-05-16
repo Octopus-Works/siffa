@@ -12,26 +12,13 @@
         <!--Main Navigation-->
         <header>
             @include('partials.nav')
-            <div class="view jarallax" style="height: 100vh;" data-jarallax='{"speed": 0.2}'>
-                    <img class="jarallax-img" src="img/7.jpg" alt="">
-                    <div class="mask rgba-blue-slight">
-                      <div class="container flex-center text-center">
-                        <div class="row mt-5">
-                          <div class="col-md-12 wow fadeIn mb-3">
-                            <h1 class="display-3 mb-2 wow fadeInDown" data-wow-delay="0.3s">CONTACT <a class="indigo-text font-weight-bold">US</a></h1>
-                            <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">SIFFA</h5>
-                            <a class="btn btn-light-blue btn-lg wow fadeIn" data-wow-delay="0.4s">portfolio</a> <a class="btn btn-indigo btn-lg wow fadeIn" data-wow-delay="0.4s">About me</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
         </header>
         <!--Main Navigation-->
         <main>
 
 
-                <div class="container">
+                <div style="margin-top: 180px !important;" class="container">
                         <!-- Section: Contact v.3 -->
                             <section class="contact-section my-5" >
                                 <form id="form_contact">
@@ -123,35 +110,35 @@
                                         <!-- Grid column -->
                                         <div class="col-lg-4">
                                 
-                                        <div class="card-body contact text-center h-100 white-text">
+                                        <div style="background-color: #353B48 !important;" class="card-body contact text-center h-100 white-text">
                                 
                                             <h3 class="my-4 pb-2">Contact information</h3>
                                             <ul class="text-lg-left list-unstyled ml-4">
                                             <li>
-                                                <p><i class="fas fa-map-marker-alt pr-2 amber-text"></i>New York, 94126, USA</p>
+                                                <p><i class="fas fa-map-marker-alt pr-2 amber-text"></i>Marjeh Square, Damascus Tower, 7th Floor, Suite No. 12</p>
                                             </li>
                                             <li>
-                                                <p><i class="fas fa-phone pr-2 amber-text"></i>+ 01 234 567 89</p>
+                                                <p><i class="fas fa-phone pr-2 amber-text"></i>+963 11 231 6166</p>
                                             </li>
                                             <li>
-                                                <p><i class="fas fa-envelope pr-2 amber-text"></i>contact@example.com</p>
+                                                <p><i class="fas fa-envelope pr-2 amber-text"></i>info@syffa.com</p>
                                             </li>
                                             </ul>
                                             <hr class="hr-light my-4">
-                                            <ul class="list-inline text-center list-unstyled">
-                                            <li class="list-inline-item">
-                                                <a class="p-2 fa-lg tw-ic">
-                                                <i class="fab fa-twitter"></i>
+                                            <ul class="silver-text list-inline text-center list-unstyled">
+                                            <li class="silver-text list-inline-item">
+                                                <a class="silver-text p-2 fa-lg tw-ic">
+                                                <i class="silver-text fab fa-twitter"></i>
                                                 </a>
                                             </li>
-                                            <li class="list-inline-item">
-                                                <a class="p-2 fa-lg li-ic">
-                                                <i class="fab fa-linkedin-in"> </i>
+                                            <li class="silver-text list-inline-item">
+                                                <a class="silver-text p-2 fa-lg li-ic">
+                                                <i class="silver-text fab fa-linkedin-in"> </i>
                                                 </a>
                                             </li>
-                                            <li class="list-inline-item">
-                                                <a class="p-2 fa-lg ins-ic">
-                                                <i class="fab fa-instagram"> </i>
+                                            <li class="silver-text list-inline-item">
+                                                <a class="silver-text p-2 fa-lg ins-ic">
+                                                <i class="silver-text fab fa-instagram"> </i>
                                                 </a>
                                             </li>
                                             </ul>

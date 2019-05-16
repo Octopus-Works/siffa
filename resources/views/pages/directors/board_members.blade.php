@@ -23,9 +23,9 @@
 }
 
 .mask.rgba-gradient {
-    background: -webkit-linear-gradient(45deg,#9e9b3d59,#9e3d3d 100%);
-     background: -o-linear-gradient(45deg,#9e9b3d59,#9e3d3d 100%);
-    background: linear-gradient(to 45deg,#9e9b3d59,#9e3d3d 100%);
+    background: -webkit-linear-gradient(45deg,#353b5099, #af8b2e44 100%);
+     background: -o-linear-gradient(45deg,#353b5044 100%);
+    background: linear-gradient(to 45deg,#353b5044 100%);
 }
 
 .flex-center {
@@ -53,19 +53,7 @@
     <!--Main Navigation-->
     <header>
         @include('partials.nav')
-        <div class="view jarallax" style="height: 100vh;" data-jarallax='{"speed": 0.2}'>
-            <img class="jarallax-img" src={{url('img/7.jpg')}} alt="">
-            <div class="mask rgba-blue-slight">
-                <div class="container flex-center text-center">
-                    <div class="row mt-5">
-                        <div class="col-md-12 wow fadeIn mb-3">
-                            <h1 class="display-3 mb-2 wow fadeInDown" data-wow-delay="0.3s">About us</h1>
-                            <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">Siffa</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </header>
     <!--Main Navigation-->
 
@@ -76,11 +64,11 @@
 
     <div class="container">
 
-            <section class="team-section pb-5 mb-4">
+            <section style="margin-top: 160px !important;" class="team-section pb-5 mb-4">
 
                     <!-- Secion heading -->
-                    <h3 class="my-5 text-center title font-weight-bold wow fadeIn" data-wow-delay="0.2s">
-                      <strong>Meet our Boread of Directors</strong>
+                    <h3 class="my-5 text-center title dark-grey-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                      Board of Directors
                     </h3>
                     <!-- Section description -->
                     <p class="grey-text w-responsive text-center mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -258,7 +246,7 @@
                             data-ride="carousel" data-interval="false">
             
                             <!-- Slides -->
-                            <div class="carousel-inner" role="listbox">
+                            <div class="pb-5 mb-5  carousel-inner" role="listbox">
                               <!-- First slide -->
                               <div class="carousel-item active">
             
@@ -281,12 +269,7 @@
                                   <h4 class="mt-4">Anna Deynah</h4>
                                   <h6>Founder at ET Company</h6>
             
-                                  <!-- Review -->
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star-half-alt blue-text"> </i>
+                                  
                                 </div>
             
                               </div>
@@ -312,12 +295,7 @@
                                   <h4 class="mt-4">Maria Kate</h4>
                                   <h6>Photographer at Studio LA</h6>
             
-                                  <!-- Review -->
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star blue-text"> </i>
+
                                 </div>
             
                               </div>
@@ -344,12 +322,7 @@
                                   <h4 class="mt-4">John Doe</h4>
                                   <h6>Front-end Developer in NY</h6>
             
-                                  <!-- Review -->
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="fas fa-star blue-text"> </i>
-                                  <i class="far fa-star blue-text"> </i>
+
                                 </div>
             
                               </div>

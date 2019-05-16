@@ -64,7 +64,9 @@
 
 			<hr>
 		</section>
-
+		<div class="view jarallax" style="height: 40vh;" data-jarallax='{"speed": 0.2}'>
+			<img class="jarallax-img" src='{{url('img/temp1.jpg')}}' alt="">
+		</div>
 		<section class="mt-3 mb-2 pt-5 pb-2 container">
 			<h5 class="dark-grey-text font-weight-normal description wow fadeIn" data-wow-delay="0.4s">
 				SYFFA (siffa) is a cooperative association in Damascus in the name of Freight Forwarders Association
