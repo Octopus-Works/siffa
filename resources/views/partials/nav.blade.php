@@ -10,7 +10,14 @@
 		font-size: 15px !important;
 	}
 
-	.navbar-dark .navbar-brand {
+    .nav-item .dropdown-item{
+        letter-spacing: 1.1px !important;
+        text-transform: uppercase !important;
+        padding-left: 5px !important;
+        font-size: 13px !important;
+    }
+
+    .navbar-dark .navbar-brand {
 		color: #ffc107 !important;
 	}
 
