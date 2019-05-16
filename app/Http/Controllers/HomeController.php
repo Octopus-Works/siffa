@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function redirect()
     {
-        if ( auth::user()->role->name == 'User'){
+        if ( auth::user()->role->name == 'user'){
             return redirect('/account_info');
         } 
         else if ( auth::user()->role->name == 'RMS'){
