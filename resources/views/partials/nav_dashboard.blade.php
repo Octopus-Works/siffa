@@ -23,12 +23,9 @@
         <a href="#" data-activates="slide-out" class="button-collapse "><i class="fas fa-bars"></i></a>
     </div>
 
-    <!-- Breadcrumb-->
-    <div class="breadcrumb-dn mt-2 ml-2">
-        {{-- <p>{{$resource_path}}</p> --}}
-    </div>
 
-    <!--Navbar links-->
+
+
     <ul class="nav navbar-nav nav-flex-icons ml-auto mr-2 ">
         <!-- Dropdown -->
         <li class="nav-item dropdown notifications-nav">

@@ -75,7 +75,16 @@
     color:whitesmoke !important;
 }
 
+.custom-control-label::before {
+    background-color: #ffffff00!important;
+}
+.md-form label{
+    color:#dedede!important;
+}
 
+.custom-control-label::after{
+    cursor:initial;
+}
     </style>
 
 
