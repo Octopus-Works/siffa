@@ -63,8 +63,7 @@
         <!--Main Navigation-->
 
         <main>
-            <div class="view"
-                style="background-image:url('img/7.jpg'); background-repeat:no-repeat;background-size: cover; background-position: center center;">
+            <div class="view" style="background-image:url('img/7.jpg'); background-repeat:no-repeat;background-size: cover; background-position: center center;" data-jarallax='{"speed": 0.2}'>
                 <div class="container p-5" style="height:900px">
                     <div class="mask flex-center rgba-black-slight">
                         <div class="container mb-5 mt-5 ">

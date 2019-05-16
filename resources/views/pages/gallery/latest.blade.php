@@ -58,7 +58,7 @@ border-radius: 2px; }
     <!--Main Navigation-->
     <header>
         @include('partials.nav')
-        <div class="view jarallax" style="height: 100vh;">
+        <div class="view jarallax" style="height: 100vh;" data-jarallax='{"speed": 0.2}'>
             <img class="jarallax-img" src='{{url('img/3.jpg')}}' alt="">
             <div class="mask rgba-blue-slight">
                 <div class="container flex-center text-center">
