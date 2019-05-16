@@ -348,7 +348,7 @@
 
 
 
-    @include('partials.footer')
+    @include('partials.footer_dashboard')
  
 
     <script>
