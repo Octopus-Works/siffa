@@ -287,7 +287,7 @@
     <!-- Main layout -->
 
     <!-- Footer -->
-    @include('partials.footer')
+    @include('partials.footer_dashboard')
     @include('modal_partials.payment_details')
     <!-- Footer -->
 

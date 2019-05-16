@@ -241,7 +241,7 @@
         <!-- Main layout -->
 
         <!-- Footer -->
-        @include('partials.footer')
+        @include('partials.footer_dashboard')
 
         <!-- Footer -->
 
