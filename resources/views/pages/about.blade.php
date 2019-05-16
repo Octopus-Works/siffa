@@ -30,6 +30,10 @@
 								SYFFA
 							</span>
 						</h1>
+						<h5 class="text-uppercase mb-3 mt-1 custom-secondary-text font-weight-bold wow fadeIn"
+							data-wow-delay="0.4s">
+							SYFFA
+						</h5>
 					</div>
 				</div>
 			</div>

@@ -1,15 +1,4 @@
 <style>
-	.nav-item a{
-		letter-spacing: 1.2px !important;
-		text-transform: uppercase !important;
-		padding-top: 4px !important;
-		padding-right: 0px !important;
-		padding-left: 0px !important;
-		padding-bottom: 15px !important;
-		margin: 0px !important;
-		font-size: 15px !important;
-	}
-
 	.navbar-dark .navbar-brand {
 		color: #ffc107 !important;
 	}
@@ -87,12 +76,7 @@
 
 <nav class="navbar fixed-top navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar p-4">
     <div class="container">
-		<a class="navbar-brand" href="#">
-			<img style="
-				height: auto !important;
-				width: 150px !important;
-			" src="{{url('/img/Logos/logo_xs_1.png')}}" />
-		</a>
+        <a class="navbar-brand" href="#"><strong>SIFFA</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -100,10 +84,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item padding-sides">
-                    <a class="nav-link" href={{route('home')}}>HOME</a>
+                    <a class="nav-link" href={{route('home')}}>Home</a>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"  href={{route('about')}}>About</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"  href={{route('about')}}>About Us</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href='{{route('about')}}/#mission'>Mission Statement</a>
                         <a class="dropdown-item" href={{route('laws')}}>By-Laws</a>
@@ -132,7 +116,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Board</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Board of Directors</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('president_message')}}>President's Message</a>
                         <a class="dropdown-item" href={{route('board_members')}}>Board Members</a>
