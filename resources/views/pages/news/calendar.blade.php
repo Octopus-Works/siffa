@@ -118,7 +118,7 @@
 
 
   .fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody, .fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-content, .fc-unthemed .fc-popover, .fc-unthemed .fc-list-view, .fc-unthemed .fc-list-heading td {
-    border-color: #ffc107;
+    border-color: #1F2A3D33;
 
 }
 
@@ -129,12 +129,16 @@
     font-size: .85em;
     line-height: 1.4;
     border-radius: 3px;
-    border: 1px solid #ffe45a;
-    background: #ffe45a ;
+    border: 1px solid #ffc107;
+    background: #1F2A3Dbb ;
 }
 
 .fc-event, .fc-event:hover {
-    color: black;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    letter-spacing: 1.2px !important;
+    color: #ffffff !important;
     text-decoration: none;
 }
 </style>
@@ -150,7 +154,7 @@
     <!--Main Navigation-->
     <header>
             @include('partials.nav')
-            <div class="view jarallax" style="height: 100vh;" data-jarallax='{"speed": 0.2}'>
+            <div class="view jarallax" style="height: 25vh;" data-jarallax='{"speed": 0.2}'>
                 <img class="jarallax-img" src='{{url('img/3.jpg')}}' alt="">
                 <div class="mask rgba-blue-slight">
                     <div class="container flex-center text-center">
