@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c87263b-b4e1-4612-91ea-d5359b09752d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/pages/about/mission_statement.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/octopus_custom/layout.css" afterPath="$PROJECT_DIR$/public/css/octopus_custom/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/about.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/about.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/about/laws.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/about/laws.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/nav_dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/nav_dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/rms_sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/rms_sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/rms/view_applications.blade.php" afterPath="$PROJECT_DIR$/resources/views/rms/view_applications.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,18 +16,64 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="about.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="about.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/about.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+            <state relative-caret-position="272">
+              <caret line="64" column="32" lean-forward="false" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
               <folding>
-                <marker date="1557964100285" expanded="true" signature="51:66" ph="..." />
-                <marker date="1557964100285" expanded="true" signature="245:259" ph="..." />
-                <marker date="1557964100285" expanded="true" signature="348:364" ph="..." />
-                <marker date="1557964100285" expanded="true" signature="11688:11705" ph="..." />
+                <marker date="1557964680874" expanded="true" signature="51:66" ph="..." />
+                <marker date="1557964680874" expanded="true" signature="245:259" ph="..." />
+                <marker date="1557964680874" expanded="true" signature="348:364" ph="..." />
+                <marker date="1557964680874" expanded="true" signature="11687:11704" ph="..." />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/partials/nav.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="79" column="28" lean-forward="true" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <marker date="1557966304647" expanded="true" signature="1228:1259" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="1734:1747" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="1907:1921" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="2064:2078" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="2166:2179" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="2247:2274" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="2602:2623" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="2695:2712" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="3034:3049" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="3120:3137" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="3433:3448" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="3500:3516" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="3807:3833" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="3898:3920" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="4035:4051" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="4773:4811" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="5064:5080" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="5204:5220" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="5476:5491" ph="..." />
+                <marker date="1557966304647" expanded="true" signature="5705:5717" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sketch-Logo-Mockup-PSD.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/artifacts/Sketch-Logo-Mockup-PSD.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Untitled-1.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/artifacts/Untitled-1.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -44,6 +86,7 @@
       <find>view</find>
       <find>View</find>
       <find>step1</find>
+      <find>brand</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -59,6 +102,7 @@
         <option value="$PROJECT_DIR$/resources/views/pages/about/mission_statement.blade.php" />
         <option value="$PROJECT_DIR$/public/css/octopus_custom/layout.css" />
         <option value="$PROJECT_DIR$/resources/views/pages/about.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/nav.blade.php" />
       </list>
     </option>
   </component>
@@ -140,33 +184,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siffa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siffa" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="about" />
+              <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -194,47 +212,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siffa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siffa" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siffa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siffa" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="octopus_custom" />
+              <option name="myItemId" value="artifacts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,12 +310,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557957216501</updated>
-      <workItem from="1557957218076" duration="4960000" />
+      <workItem from="1557957218076" duration="7175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4960000" />
+    <option name="totallyTimeSpent" value="7175000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="0" />
@@ -462,13 +440,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/about.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+        <state relative-caret-position="272">
+          <caret line="64" column="32" lean-forward="false" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
           <folding>
-            <marker date="1557964100285" expanded="true" signature="51:66" ph="..." />
-            <marker date="1557964100285" expanded="true" signature="245:259" ph="..." />
-            <marker date="1557964100285" expanded="true" signature="348:364" ph="..." />
-            <marker date="1557964100285" expanded="true" signature="11688:11705" ph="..." />
+            <marker date="1557964680874" expanded="true" signature="51:66" ph="..." />
+            <marker date="1557964680874" expanded="true" signature="245:259" ph="..." />
+            <marker date="1557964680874" expanded="true" signature="348:364" ph="..." />
+            <marker date="1557964680874" expanded="true" signature="11687:11704" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artifacts/Sketch-Logo-Mockup-PSD.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artifacts/Untitled-1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="79" column="28" lean-forward="true" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <marker date="1557966304647" expanded="true" signature="1228:1259" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="1734:1747" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="1907:1921" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="2064:2078" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="2166:2179" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="2247:2274" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="2602:2623" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="2695:2712" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="3034:3049" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="3120:3137" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="3433:3448" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="3500:3516" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="3807:3833" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="3898:3920" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="4035:4051" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="4773:4811" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="5064:5080" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="5204:5220" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="5476:5491" ph="..." />
+            <marker date="1557966304647" expanded="true" signature="5705:5717" ph="..." />
           </folding>
         </state>
       </provider>
