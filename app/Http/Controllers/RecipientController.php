@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Session;
 use Auth;
+use App\InternalMessaging;
+
 
 class RecipientController extends Controller
 {
@@ -20,6 +22,13 @@ class RecipientController extends Controller
     }
 
     public function messages_view(){
+        if ( auth::user()->role->name == 'RMS')
+        {
+            $mail = InternalMessaging::where('sender_id', auth::user()->id)
+                                        ->orWhere('receiver_id', 0)
+                                        ->get();
+            return view('rms/view_messages')->withmail($mail);                             
+        }
         return view('rms/view_messages');
     }
 

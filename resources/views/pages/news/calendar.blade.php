@@ -17,6 +17,153 @@
         }
 
     </style>
+
+<link href='../../../../public/../packages/core/main.css' rel='stylesheet' />
+<link href='../../../../public/../packages/bootstrap/main.css' rel='stylesheet' />
+<link href='../../../../public/../packages/timegrid/main.css' rel='stylesheet' />
+<link href='../../../../public/../packages/daygrid/main.css' rel='stylesheet' />
+<link href='../../../../public/../packages/list/main.css' rel='stylesheet' />
+<script src='../../../../public/../packages/core/main.js'></script>
+<script src='../../../../public/../packages/interaction/main.js'></script>
+<script src='../../../../public/../packages/bootstrap/main.js'></script>
+<script src='../../../../public/../packages/daygrid/main.js'></script>
+<script src='../../../../public/../packages/timegrid/main.js'></script>
+<script src='../../../../public/../packages/list/main.js'></script>
+<script src='../../../../public/demos/js/theme-chooser.js'></script>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar;
+
+    initThemeChooser({
+
+      init: function(themeSystem) {
+        calendar = new FullCalendar.Calendar(calendarEl, {
+          plugins: [ 'bootstrap', 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+          themeSystem: themeSystem,
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+          },
+          defaultDate: '2019-04-12',
+          weekNumbers: true,
+          navLinks: true, // can click day/week names to navigate views
+          editable: true,
+          eventLimit: true, // allow "more" link when too many events
+          events: [
+            {
+              title: 'All Day Event',
+              start: '2019-04-01'
+            },
+            {
+              title: 'Long Event',
+              start: '2019-04-07',
+              end: '2019-04-10'
+            },
+            {
+              groupId: 999,
+              title: 'Repeating Event',
+              start: '2019-04-09T16:00:00'
+            },
+            {
+              groupId: 999,
+              title: 'Repeating Event',
+              start: '2019-04-16T16:00:00'
+            },
+            {
+              title: 'Conference',
+              start: '2019-04-11',
+              end: '2019-04-13'
+            },
+            {
+              title: 'Meeting',
+              start: '2019-04-12T10:30:00',
+              end: '2019-04-12T12:30:00'
+            },
+            {
+              title: 'Lunch',
+              start: '2019-04-12T12:00:00'
+            },
+            {
+              title: 'Meeting',
+              start: '2019-04-12T14:30:00'
+            },
+            {
+              title: 'Happy Hour',
+              start: '2019-04-12T17:30:00'
+            },
+            {
+              title: 'Dinner',
+              start: '2019-04-12T20:00:00'
+            },
+            {
+              title: 'Birthday Party',
+              start: '2019-04-13T07:00:00'
+            },
+            {
+              title: 'Click for Google',
+              url: 'http://google.com/',
+              start: '2019-04-28'
+            }
+          ]
+        });
+        calendar.render();
+      },
+
+      change: function(themeSystem) {
+        calendar.setOption('themeSystem', themeSystem);
+      }
+
+    });
+
+  });
+
+</script>
+<style>
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  #top,
+  #calendar.fc-unthemed {
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  }
+
+  #top {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    padding: 0 10px;
+    line-height: 40px;
+    font-size: 12px;
+    color: #000;
+  }
+
+  #top .selector {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  #top select {
+    font: inherit; /* mock what Boostrap does, don't compete  */
+  }
+
+  .left { float: left }
+  .right { float: right }
+  .clear { clear: both }
+
+  #calendar {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 10px;
+  }
+
+</style>
+
 </head>
 
 
@@ -67,77 +214,7 @@
 
 
     @include('partials.footer')
-    <script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/moment.min.js"></script>
-    <script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/fullcalendar.min.js"></script>
-    <script>
-$('#calendar').fullCalendar({
-    header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay,listWeek'
-    },
-    defaultDate: '2018-11-16',
-    navLinks: true,
-    editable: true,
-    eventLimit: true,
-    events: [{
-            title: 'All Day Event',
-            start: '2018-11-01'
-        },
-        {
-            title: 'Long Event',
-            start: '2018-11-07',
-            end: '2018-11-10'
-        },
-        {
-            id: 999,
-            title: 'Repeating Event',
-            start: '2018-11-09T16:00:00'
-        },
-        {
-            id: 999,
-            title: 'Repeating Event',
-            start: '2018-11-16T16:00:00'
-        },
-        {
-            title: 'Conference',
-            start: '2018-11-11',
-            end: '2018-11-13'
-        },
-        {
-            title: 'Meeting',
-            start: '2018-11-12T10:30:00',
-            end: '2018-11-12T12:30:00'
-        },
-        {
-            title: 'Lunch',
-            start: '2018-11-12T12:00:00'
-        },
-        {
-            title: 'Meeting',
-            start: '2018-11-12T14:30:00'
-        },
-        {
-            title: 'Happy Hour',
-            start: '2018-11-12T17:30:00'
-        },
-        {
-            title: 'Dinner',
-            start: '2018-11-12T20:00:00'
-        },
-        {
-            title: 'Birthday Party',
-            start: '2018-11-13T07:00:00'
-        },
-        {
-            title: 'Click for Google',
-            url: 'https://google.com/',
-            start: '2018-11-28'
-        }
-    ]
-});    
-    
-    </script>
+
 
 </body>
 
