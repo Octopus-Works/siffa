@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\GenerateCredentials;
 use Illuminate\Support\Facades\Mail;
+use TCG\Voyager\Models\Role;
+
 use App\Http\Requests\UserStoreRequest;
 
 class RegisterController extends Controller
@@ -73,6 +75,8 @@ class RegisterController extends Controller
      */
     protected function mail(UserStoreRequest $request){
         
+        $role = Role::where('name', 'user')->firstOrFail();
+
         $validated = $request->validated(); 
         $username = str_random(10); 
         $password = str_random(10);
@@ -81,6 +85,8 @@ class RegisterController extends Controller
         $user->username = $username; 
         $user->password = Hash::make($password);
         $user->email = $request->email; 
+        $user->role_id = $role->id; 
+
         $user->save(); 
 
         $details = new UserDetail; 
