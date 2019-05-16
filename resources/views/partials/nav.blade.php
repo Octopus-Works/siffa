@@ -59,6 +59,21 @@
 
 }
 
+
+
+.dropdown .dropdown-menu.dropdown-default .dropdown-item.active, .dropdown .dropdown-menu.dropdown-default .dropdown-item:active, .dropdown .dropdown-menu.dropdown-default .dropdown-item:hover, .dropleft .dropdown-menu.dropdown-default .dropdown-item.active, .dropleft .dropdown-menu.dropdown-default .dropdown-item:active, .dropleft .dropdown-menu.dropdown-default .dropdown-item:hover, .dropright .dropdown-menu.dropdown-default .dropdown-item.active, .dropright .dropdown-menu.dropdown-default .dropdown-item:active, .dropright .dropdown-menu.dropdown-default .dropdown-item:hover, .dropup .dropdown-menu.dropdown-default .dropdown-item.active, .dropup .dropdown-menu.dropdown-default .dropdown-item:active, .dropup .dropdown-menu.dropdown-default .dropdown-item:hover {
+    background-color: #3d5e9e!important; 
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    -webkit-border-radius: .125rem;
+    border-radius: .125rem;
+}
+
+
+
+
+
+
 </style>
 
 <nav class="navbar fixed-top navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar p-4">
@@ -125,31 +140,31 @@
 
             @if (Auth::check())
             <li class="nav-item dropdown  padding-sides">
-                <a id="MY PROFILE" class="custom-secondary-text nav-link dropdown-toggle waves-effect waves-light "
+                <a id="MY PROFILE" class="custom-secondary-text nav-link dropdown-toggle waves-effect  "
                    id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">
                     <i class="fas fa-user"> </i>{{ Auth::getUser()->userdetail->fullname}} </a>
 
                 <div class="dropdown-menu dropdown-menu-right dropdown-default trans-1-0"
                      aria-labelledby="navbarDropdownMenuLink-4">
-                    <a id="MY ACCOUNT" class="dropdown-item waves-effect waves-light custom-secondary-text"
+                    <a id="MY ACCOUNT" class="dropdown-item waves-effect  custom-secondary-text"
                        href={{url("/redirect")}}>
                         MY ACCOUNT</a>
-                    <a class="dropdown-item waves-effect waves-light custom-secondary-text" href="{{ url('/logout') }}">LOGOUT</a>
+                    <a class="dropdown-item waves-effect  custom-secondary-text" href="{{ url('/logout') }}">LOGOUT</a>
                 </div>
 
             </li>
         @else
             <li id="register" class="nav-item">
                 <a id="SIGNUP"
-                   class="pl-auto left custom-secondary-text padding-sides nav-link waves-effect waves-light white-text font-weight-bold"
+                   class="pl-auto left custom-secondary-text padding-sides nav-link waves-effect  white-text font-weight-bold"
                    href={{url("register")}}>
 
                     REGISTER</a>
             </li>
             <li class="nav-item">
                 <a id="LOGIN"
-                   class="custom-secondary-text padding-sides nav-link waves-effect waves-light white-text font-weight-bold"
+                   class="custom-secondary-text padding-sides nav-link waves-effect  white-text font-weight-bold"
                    href={{url("login")}}>
 
                     LOGIN</a>
