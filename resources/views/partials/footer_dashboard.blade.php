@@ -37,10 +37,11 @@
         </div>
         <!-- Footer Elements -->
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-        </div>
+        <!-- Copyright -->    
+            <div class="footer-copyright text-center py-3"><b>© 2019 Powered By</b>
+              <img width="104px" height="31.2px" src={{url('/img/octopusworks_logo.png')}}>
+              <a href="#"> </a>
+            </div>
         <!-- Copyright -->
 
     </footer>

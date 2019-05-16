@@ -19,11 +19,12 @@
         <!-- Logo -->
         <li class="logo-sn waves-effect">
             <div class="text-center">
-                <a href="#" class="text-center pl-0 navbar-brand amber-text">
-
-                    <strong>SIFFA</strong>
-                    {{-- <img width="157px" height="73px" src={{url('/logo_1_dark.png')}}> --}}
-                </a>
+                    <a class="navbar-brand p-2" href="#">
+                            <img style="
+                                height: auto !important;
+                                width: 150px !important;
+                            " src="{{url('/img/Logos/logo_xs_1.png')}}" />
+                        </a>
             </div>
         </li>
         <hr>

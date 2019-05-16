@@ -110,7 +110,8 @@
                     <a class="nav-link" href={{route('home')}}>HOME</a>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"  href={{route('about')}}>About</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"  data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"  href={{route('about')}}>About</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href='{{route('about')}}/#mission'>Mission Statement</a>
                         <a class="dropdown-item" href={{route('laws')}}>By-Laws</a>
@@ -118,7 +119,8 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Members</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"  data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Members</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('members_list')}}>Member List</a>
                         @if (!Auth::check())
@@ -127,7 +129,8 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" >News & Events</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"  data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">News & Events</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('events')}}>Our Events</a>
                         <a class="dropdown-item" href={{route('calendar')}}>Calendar</a>
@@ -137,7 +140,8 @@
                     <a class="nav-link" href={{route('latest')}}>Gallery</a>
                 </li>
                 <li class="nav-item dropdown padding-sides">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink">Board</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"  data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Board</a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href={{route('president_message')}}>President's Message</a>
                         <a class="dropdown-item" href={{route('board_members')}}>Board Members</a>
