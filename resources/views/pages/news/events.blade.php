@@ -6,7 +6,35 @@
         @include('partials.head')
   <!-- Your custom scripts -->
   <style type="text/css">
+.teal-text {
+    color: #ffc107!important;
+}
 
+
+.pagination .page-item.active .page-link:hover {
+    background-color: #ffc107;
+}
+
+
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #3d5e9e;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.pagination .page-item.active .page-link {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    transition: all .2s linear;
+    -webkit-border-radius: .125rem;
+    border-radius: .125rem;
+    background-color: #ffc107;
+    color: #fff;
+}
   </style>
 </head>
 
