@@ -288,9 +288,12 @@
         }
 
         .red {
-            background-color: #f44336 !important;
+            background-color: #ffc107 !important;
         }
 
+        .badge-danger {
+    background-color: #ffc107!important;
+}
         .grey-text {
             color: #9e9e9e !important;
         }
@@ -458,6 +461,8 @@
             src: url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.eot#iefix) format("embedded-opentype"), url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.woff2) format("woff2"), url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.woff) format("woff"), url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.ttf) format("truetype"), url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.svg#fontawesome) format("svg");
         }
 
+
+        
     </style>
 </head>
 
@@ -1721,19 +1726,18 @@
                         <div class="jumbotron text-center">
 
                             <!-- Title --->
-                            <h1 class="card-title h2-responsive mt-2"><strong>Material Design for Bootstrap</strong>
+                            <h1 class="card-title h2-responsive mt-2"><strong>Advertisment</strong>
                             </h1>
 
                             <!-- Subtitle --->
-                            <p class="blue-text mb-4 mt-5 font-weight-bold">Powerful and free Material Design UI KIT</p>
+                            <p class="blue-text mb-4 mt-5 font-weight-bold">Advertisment</p>
 
                             <!-- Text --->
                             <div class="d-flex justify-content-center">
 
-                                <p class="card-text mb-1" style="max-width: 43rem;">Sed ut perspiciatis unde omnis iste
-                                    natus sit
-
-                                    voluptatem accusantium doloremque laudantium,
+                                <p class="card-text mb-1" style="max-width: 43rem;">Advertisment
+                                        Advertisment
+                                        Advertisment
 
                                     totam rem aperiam.
 
@@ -1743,10 +1747,10 @@
 
                             <hr class="my-4">
 
-                            <button type="button" class="btn btn-primary btn-sm waves-effect">Buy now <span
+                            <button type="button" class="btn btn-primary btn-sm waves-effect">Advertisment<span
                                     class="far fa-gem ml-1"></span></button>
 
-                            <button type="button" class="btn btn-outline-primary btn-sm waves-effect">Download <i
+                            <button type="button" class="btn btn-outline-primary btn-sm waves-effect">Advertisment <i
                                     class="fas fa-download ml-1"></i></button>
 
                         </div>
