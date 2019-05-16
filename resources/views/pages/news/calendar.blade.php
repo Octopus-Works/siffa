@@ -149,23 +149,24 @@
 
     <!--Main Navigation-->
     <header>
-        @include('partials.nav')
-        <div class="view jarallax" style="height: 100vh;">
-            <img class="jarallax-img" src="https://mdbootstrap.com/img/Photos/Others/img%20%2844%29.jpg" alt="">
-            <div class="mask rgba-blue-slight">
-                <div class="container flex-center text-center">
-                    <div class="row mt-5">
-                        <div class="col-md-12 wow fadeIn mb-3">
-                            <h1 class="display-3 mb-2 wow fadeInDown" data-wow-delay="0.3s">About us</h1>
-                            <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">Siffa
-                            </h5>
+            @include('partials.nav')
+            <div class="view jarallax" style="height: 100vh;" data-jarallax='{"speed": 0.2}'>
+                <img class="jarallax-img" src='{{url('img/3.jpg')}}' alt="">
+                <div class="mask rgba-blue-slight">
+                    <div class="container flex-center text-center">
+                        <div class="row mt-5">
+                            <div class="col-md-12 wow fadeIn mb-3  custom-primary-transparent">
+                                <h1 class="display-3 mb-2 wow fadeInDown text-white font-size-0" data-wow-delay="0.3s">
+                                        CALENDAR</h1>
+                                <h5 class="text-uppercase mb-3 mt-1 custom-secondary-text font-weight-bold wow fadeIn"
+                                    data-wow-delay="0.4s">SYFFA</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <!--Main Navigation-->
+        </header>
+        <!--Main Navigation-->
 
 
 
