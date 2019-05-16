@@ -1,6 +1,8 @@
 <?php
 
 Use App\User;
+use \Illuminate\Support\Facades\View;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
