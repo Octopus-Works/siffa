@@ -110,7 +110,7 @@ class RegisterController extends Controller
         $office->user_id = $user->id;
         $office->name = $request->company_name;
   
-        $office->addresses = $request->preg_replace( "/\r|\n/", "", $request->branches_address ); 
+        $office->addresses = preg_replace( "/\r|\n/", "", $request->branches_address ); 
         $office->shipping_services = $request->shipping_services; 
         $office->position_title = $request->position_title;
         $office->chamber_of_commerce = $request->chamber_of_commerce; 
