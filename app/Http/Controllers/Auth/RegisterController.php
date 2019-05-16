@@ -160,7 +160,7 @@ class RegisterController extends Controller
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
         Session::flash('Success', 'Registeration is completed');
-         return redirect()->route('redirect');
+         return redirect()->route('login');
 
     }
 }

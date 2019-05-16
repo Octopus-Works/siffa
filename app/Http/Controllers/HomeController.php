@@ -31,6 +31,8 @@ class HomeController extends Controller
             return redirect('/rms');
         } 
      
+        else
+        return view('pages/home');
     }
 
     public function index()
