@@ -246,30 +246,30 @@
 
 
               <!--Card header-->
-              <div class="view view-cascade py-3 custom-primary gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
+                <div class="view view-cascade py-3 custom-primary gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
 
+                    <div>
+                      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                        <i class="fas custom-secondary-text fa-th-large mt-0"></i>
+                      </button>
+                      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                        <i class="fas custom-secondary-text fa-columns mt-0"></i>
+                      </button>
+                    </div>
+ 
+
+                  <a href="" class="white-text mx-3">Messages</a>
                   <div>
-                    <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                      <i class="fas custom-secondary-text fa-th-large mt-0"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-                      <i class="fas custom-secondary-text fa-columns mt-0"></i>
-                    </button>
-                  </div>
-
-
-                <a href="" class="white-text mx-3">Messages</a>
-                <div>
-                    <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_new_message">
-                      <span>new</span>
-                      <i class="fas fa-plus mt-0"></i>
-                    </button>
-                    <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_edit_message">
-                      <span>edit</span>
-                      <i class="fas fa-edit mt-0"></i>
-                    </button>
-
-                  </div>
+                      <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_new_message">
+                        <span>new</span>
+                        <i class="fas fa-plus mt-0"></i>
+                      </button>
+                      <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_edit_message">
+                        <span>edit</span>
+                        <i class="fas fa-edit mt-0"></i>
+                      </button>
+  
+                    </div>
 
 
 
@@ -307,7 +307,7 @@
     <!--Main layout-->
 
     <!-- Footer -->
-    @include('partials.footer_dashboard')
+    @include('partials.footer')
     @include('modal_partials.new_message_modal')
     @include('modal_partials.view_message_modal')
     <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>

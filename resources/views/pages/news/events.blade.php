@@ -143,21 +143,6 @@ a {
                   </p>
 
                   <hr class="pb-0 mb-0">
-
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-twitter grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-google-plus-g grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-linkedin-in grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-instagram grey-text"></i>
-                  </a>
-
-                  <hr class="pt-0 mt-0">
                 </div>
                 <!-- Grid column -->
 
@@ -187,22 +172,6 @@ a {
                     sit aspernatur aut odit aut fugit, quia consequuntur magni dolores eos qui ratione
                     voluptatem.
                   </p>
-
-                  <hr class="pb-0 mb-0">
-
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-twitter grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-google-plus-g grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-linkedin-in grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-instagram grey-text"></i>
-                  </a>
-
                   <hr class="pt-0 mt-0">
                 </div>
                 <!-- Grid column -->
@@ -240,21 +209,6 @@ a {
                     voluptatem.
                   </p>
 
-                  <hr class="pb-0 mb-0">
-
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-twitter grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-google-plus-g grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-linkedin-in grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-instagram grey-text"></i>
-                  </a>
-
                   <hr class="pt-0 mt-0">
                 </div>
                 <!-- Grid column -->
@@ -285,21 +239,6 @@ a {
                     sit aspernatur aut odit aut fugit, quia consequuntur magni dolores eos qui ratione
                     voluptatem.
                   </p>
-
-                  <hr class="pb-0 mb-0">
-
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-twitter grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-google-plus-g grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-linkedin-in grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-instagram grey-text"></i>
-                  </a>
 
                   <hr class="pt-0 mt-0">
                 </div>
@@ -338,21 +277,6 @@ a {
                     voluptatem.
                   </p>
 
-                  <hr class="pb-0 mb-0">
-
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-twitter grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-google-plus-g grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-linkedin-in grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-instagram grey-text"></i>
-                  </a>
-
                   <hr class="pt-0 mt-0">
                 </div>
                 <!-- Grid column -->
@@ -384,20 +308,7 @@ a {
                     voluptatem.
                   </p>
 
-                  <hr class="pb-0 mb-0">
-
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-twitter grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-google-plus-g grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-linkedin-in grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-instagram grey-text"></i>
-                  </a>
+            
 
                   <hr class="pt-0 mt-0">
                 </div>
@@ -436,21 +347,6 @@ a {
                     voluptatem.
                   </p>
 
-                  <hr class="pb-0 mb-0">
-
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-twitter grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-google-plus-g grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-linkedin-in grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-instagram grey-text"></i>
-                  </a>
-
                   <hr class="pt-0 mt-0">
                 </div>
                 <!-- Grid column -->
@@ -482,20 +378,6 @@ a {
                     voluptatem.
                   </p>
 
-                  <hr class="pb-0 mb-0">
-
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-twitter grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-google-plus-g grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-linkedin-in grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-instagram grey-text"></i>
-                  </a>
 
                   <hr class="pt-0 mt-0">
                 </div>
@@ -534,20 +416,6 @@ a {
                     voluptatem.
                   </p>
 
-                  <hr class="pb-0 mb-0">
-
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-twitter grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-google-plus-g grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-linkedin-in grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-instagram grey-text"></i>
-                  </a>
 
                   <hr class="pt-0 mt-0">
                 </div>
@@ -580,20 +448,6 @@ a {
                     voluptatem.
                   </p>
 
-                  <hr class="pb-0 mb-0">
-
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-twitter grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-google-plus-g grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-linkedin-in grey-text"></i>
-                  </a>
-                  <a class="nav-link waves-effect waves-light mt-2">
-                    <i class="fab fa-instagram grey-text"></i>
-                  </a>
 
                   <hr class="pt-0 mt-0">
                 </div>
