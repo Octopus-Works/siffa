@@ -485,14 +485,8 @@
                     <div class="row smooth-scroll">
                         <div class="col-md-12 white-text text-center">
                             <div class="wow fadeInDown" data-wow-delay="0.2s">
-                                <h1 class="display-4 text-uppercase rgba-black-light px-3 py-2"><strong
-                                        class="font-weight-bold">Worldwide
-                                        freight service</strong></h1>
-                                <h5 class="white-text mt-5">Our 24 Hour's Services</h5>
-                                <h2 class="white-text text-uppercase h2-responsive font-weight-bold mb-5 mt-4">Ship of
-                                    export & import</h2>
-                                <a href="#getaquote" data-offset="100" class="btn btn-danger-2 btn-rounded">Get a
-                                    quote</a>
+                                <h6 class="display-4 rgba-black-light px-3 py-2">
+                                    <strong class="font-weight-bold">Syrian National <br> Freight Forwarding & Logistics <br> Association</strong></h6>
                             </div>
                         </div>
                     </div>

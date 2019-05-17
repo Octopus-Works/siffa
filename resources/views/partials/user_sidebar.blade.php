@@ -4,10 +4,6 @@
         line-height: 2rem !important;
     }
 
-    .side-nav {
-        width: 18rem !important;
-    }
-
     a {
         color: #fff !important;
     }
@@ -63,6 +59,8 @@
 
                 <li class="pt-2 pb-2"><a class="waves-effect " href={{url('/account_info')}}><i
                             class="fas fa-user custom-secondary-text mr-3"></i>Account Info</a>
+                </li>
+                <li class="pt-2 pb-2"><a class="waves-effect " href={{url('home')}}><i class="fas custom-secondary-text mr-3 fa-sign-out-alt"></i>Home</a>
                 </li>
             </ul>
         </li>
