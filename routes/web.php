@@ -28,9 +28,7 @@ Route::get('archive', 'PagesController@archive')->name('archive');
 Route::get('president_message', 'PagesController@president_message')->name('president_message');
 Route::get('board_members', 'PagesController@board_members')->name('board_members');
 Route::get('/company_info/{id}', 'UserController@companyInfo');
-Route::post('/contact', [
-    'uses' => 'ContactMessageController@send'
-]);
+Route::post('/contact', ['uses' => 'ContactMessageController@send']);
 
 /*
 |--------------------------------------------------------------------------
@@ -124,10 +122,3 @@ Route::group(['prefix' => 'admin'], function () {
     
 });
 
-//contact us route
-// Route::get('/contact', [
-// 'uses' => 'ContactMessageController@create'
-// ]);
-// Route::post('/contact', [
-//     'uses' => 'ContactMessageController@send'
-// ]);
