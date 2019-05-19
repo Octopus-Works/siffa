@@ -38,16 +38,25 @@ Route::get('/cms', function(){
 });
 
 
-Route::get('/rms', 'RecipientController@index');
-Route::get('/rms/view_applications', 'RecipientController@applications_view');
-Route::get('/rms/view_messages', 'RecipientController@messages_view');
-Route::get('/rms/application/{id}', 'RecipientController@application');
-Route::get('/rms/account_info', 'RecipientController@account_info');
-Route::get('/rms/user_management', 'RecipientController@recipients_management');
-Route::post('rms/user_management/block/{id}', 'RecipientController@block')->name('blocking');
-Route::post('rms/user_management/unblock/{id}', 'RecipientController@unblock')->name('unblocking');
+
+Route::group(['prefix' => 'rms' , 'middleware' => 'rms'], function()
+{
+    //All the routes that belongs to the group goes here
+    Route::get('/', 'RecipientController@index');
+    Route::get('/view_applications', 'RecipientController@applications_view');
+    Route::get('/view_messages', 'RecipientController@messages_view');
+    Route::get('/application/{id}', 'RecipientController@application');
+    Route::get('/account_info', 'RecipientController@account_info');
+    Route::get('/user_management', 'RecipientController@recipients_management');
+    Route::post('/user_management/block/{id}', 'RecipientController@block')->name('blocking');
+    Route::post('/user_management/unblock/{id}', 'RecipientController@unblock')->name('unblocking');
+
+});
+
+
 
 Route::get('/app_status', 'UserController@appStatus');
+
 Route::get('/user/company_info/{id}', 'UserController@userCompanyInfo');
 Route::get('/company_info/{id}', 'UserController@companyInfo');
 Route::get('/account_info', 'UserController@accountInfo');
