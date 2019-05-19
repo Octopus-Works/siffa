@@ -25,8 +25,8 @@ class RecipientController extends Controller
         if ( auth::user()->role->name == 'RMS')
         {
             $mail = InternalMessaging::where('sender_id', auth::user()->id)
-                                        ->orWhere('receiver_id', 0)
-                                        ->get();
+            ->orWhere('receiver_id', 0)
+            ->get();
             return view('rms/view_messages')->withmail($mail);                             
         }
         return view('rms/view_messages');

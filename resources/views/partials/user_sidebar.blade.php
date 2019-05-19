@@ -41,10 +41,10 @@
         <li>
             <ul class="">
 
-                <li class="pt-2 pb-2"><a class="waves-effect " href={{url('/app_status')}}><i
+                <li class="pt-2 pb-2"><a class="waves-effect " href={{url('/user/app_status')}}><i
                             class="fas custom-secondary-text fa-spinner mr-3"></i>App Status</a>
                 </li>
-                <li class="pt-2 pb-2"><a class=" waves-effect" href={{url('/application_info')}}><i
+                <li class="pt-2 pb-2"><a class=" waves-effect" href={{url('/user/application_info')}}><i
                             class="fas custom-secondary-text fa-clipboard mr-3"></i>My Application</a>
                 </li>
                 <li class="pt-2 pb-2"><a class=" waves-effect " href={{url('/messages')}}><i
@@ -57,7 +57,7 @@
                 </li>
                 @endif
 
-                <li class="pt-2 pb-2"><a class="waves-effect " href={{url('/account_info')}}><i
+                <li class="pt-2 pb-2"><a class="waves-effect " href={{url('/user')}}><i
                             class="fas fa-user custom-secondary-text mr-3"></i>Account Info</a>
                 </li>
                 <li class="pt-2 pb-2"><a class="waves-effect " href={{url('home')}}><i class="fas custom-secondary-text mr-3 fa-sign-out-alt"></i>Home</a>

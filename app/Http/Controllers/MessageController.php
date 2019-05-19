@@ -16,16 +16,11 @@ class MessageController extends Controller
      */
     public function index()
     {
-  
-
- 
-
-        if ( auth::user()->role->name == 'user'){
+        if (auth::user()->role->name == 'user'){
             $mail = InternalMessaging::where('sender_id', auth::user()->id)
-                                        ->orWhere('receiver_id', auth::user()->id)
-                                        ->get();
+            ->orWhere('receiver_id', auth::user()->id)
+            ->get();
             return view('user/view_messages')->withmail($mail); 
-
         }
     }
 
@@ -52,23 +47,16 @@ class MessageController extends Controller
         if( $request->reciver == $request->sender)
         return response('error',500); 
 
-
-
+        
         $mail = new InternalMessaging;
         $mail->subject = $request->subject; 
         $mail->body = $request->message; 
         $mail->sender_id = auth::user()->id;
-
-
-    
-
-
         if ( auth::user()->role->name == 'user')
             $mail->receiver_id = 0; 
         else if ( auth::user()->role->name == 'RMS')
             $mail->receiver_id = $request->reciver;
         $mail->save();
-
         if ( $request->hasfile('attachement')){
             $filenameWithExt = $request->file('attachement')->getClientOriginalName();
             // Get just filename

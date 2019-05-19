@@ -18,11 +18,6 @@ class filter extends Controller
 
         
 
-        $filterd = $user->filter(function ($user) {
-            $chk = implode(' ', $request->shipping_methods);
-            $chk1 = implode(' ', $request->shipping_modes);
-
-        }
 
 
     }

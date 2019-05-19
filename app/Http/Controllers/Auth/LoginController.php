@@ -41,12 +41,7 @@ class LoginController extends Controller
     }
 
     protected function authenticated() {
-        if ( auth::user()->role->name == 'user'){
-            return redirect('/account_info');
-        } 
-        else if ( auth::user()->role->name == 'RMS'){
-            return redirect('/rms');
-        } 
 
+        return redirect('/redirect');
    }
 }
