@@ -68,7 +68,9 @@ Route::post('/application_info', 'ApplicationController@update')->name('applicat
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
-    Route::get('calendar' , 'AdminController@getCalendarPage')->name('calendarr');
+    Route::get('/calendar' , 'AdminController@getCalendarPage')->name('calendar');
+    Route::post('/calendar', 'AdminController@getEventsData');
+    
 });
 
 //contact us route

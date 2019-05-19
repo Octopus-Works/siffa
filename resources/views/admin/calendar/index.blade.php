@@ -4,6 +4,11 @@
 
 @section('css')
 
+<link href='/packages/core/main.css' rel='stylesheet' />
+<link href='/packages/daygrid/main.css' rel='stylesheet' />
+<link href='/packages/timegrid/main.css' rel='stylesheet' />
+<link href='/packages/list/main.css' rel='stylesheet' />
+
 @endsection
 @section('content')
     <div class="page-content browse container-fluid">
@@ -21,7 +26,7 @@
                    
                 </div>
                 <div class="modal-body">
-                    
+                    <strong>Do Something</strong>
                 </div>
                 <div class="modal-footer">
 
@@ -32,39 +37,74 @@
 @stop
 
 @section('javascript')
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src='/js/rrule.js'></script>
 
+<script src='/packages/core/main.js'></script>
+<script src='/packages/interaction/main.js'></script>
+<script src='/packages/daygrid/main.js'></script> 
+<script src='/packages/timegrid/main.js'></script>
+<script src='/packages/list/main.js'></script>
+{{-- <script src='/packages/rrule/main.js'></script> --}}
 <script type="text/javascript">
-      document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
+    var eventsData = {};
+    var calendar;
+    ajaxData();
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list', 'rrule' ],
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,listMonth'
-      },
-      defaultDate: '2019-04-12',
-      editable: true,
-      events: [
-        {
-          title: 'rrule event',
-          rrule: {
-            dtstart: '2019-04-09T13:00:00',
-            freq: 'weekly'
-          },
-          duration: '02:00'
+    /*
+      
+    */
+
+    function ajaxData(){
+      $.ajax({
+        method : 'POST',
+        url :'calendar',
+        data : {
+          '_token': $('meta[name="csrf-token"]').attr('content')
+        },
+        header : {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-      ],
-      eventClick: function(arg) {
-        showModal();
-      }
-    });
+      }).done(response => {
+        console.log();
+        response = JSON.parse(response);
+        eventsData = response.data;
+        initializeCalendar();
+      }).fail( () => {
+        Swal.fire({
+          title: 'Whoops..!',
+          text: 'Something went wrong',
+          type: 'error'
+        });
+      });
+    }
+    
+    function initializeCalendar(){
+      calendar= new FullCalendar.Calendar(calendarEl, {
+        plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,listMonth'
+        },
+        defaultDate: '{{date('Y-m-d')}}',
+        editable: true,
+        events: eventsData,
+        eventClick: function(arg, data) {
+          showModal();
+        }
+      });
 
-    calendar.render();
+      calendar.render();
+    }
+
+    function showModal(){
+      $('#delete_modal').modal('show');
+    }
   });
+
 
 </script>
 
