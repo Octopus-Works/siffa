@@ -248,9 +248,14 @@
                             <div class="modal-body" style="height:800px">
                                 <div class="card custom-primary" style="height:800px">
                                     <div class="card-body p-5 mt-5 text-center">
-                                        <img class="mb-5" src="img/folder.png" alt="file" height="200px" width="200px">
-                                        <h3 class="h3-responsive">Application Status: 
-                                            <span class="badge badge-primary rounded-pill ml-3">Approved Under Payment</span> 
+                                        <img class="mb-5" src="{{url('img/folder.png')}}" alt="file" height="200px" width="200px">
+                                        <h3 class="h3-responsive">Application Status: <!-- Change the badges --> 
+                                            <span class=' @if(auth::user()->applicationdetail->status == "In progress") badge badge-primary @endif
+                                                        @if(auth::user()->applicationdetail->status == "Rejected") badge badge-danger @endif
+                                                        @if(auth::user()->applicationdetail->status == "Approved under Payment") badge badge-primary @endif
+                                                        @if(auth::user()->applicationdetail->status == "Paid under Registration") badge badge-primary @endif
+                                                        @if(auth::user()->applicationdetail->status == "Registered") badge badge-success @endif
+                                            rounded-pill ml-3'>{{ auth::user()->applicationdetail->status}}</span> 
                                         </h3>
                                     
                                     <div>
@@ -258,8 +263,10 @@
                                             <i class="fas fa-angle-double-down fa-2x custom-tertiary-text"></i>
                                         </div>
                                         <div>
-                                            <button type="button" id="new" class="btn custom-secondary btn-rounded  p-3" data-toggle='modal' data-target='#payment_details'>Send Payment Details<i class="fas fa-paper-plane ml-2"></i>
-                                            </button>
+                                            @if ( auth::user()->applicationdetail->status == "Approved under Payment")
+                                                <button type="button" id="new" class="btn custom-secondary btn-rounded  p-3" data-toggle='modal' data-target='#payment_details'>Send Payment Details<i class="fas fa-paper-plane ml-2"></i>
+                                                </button>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

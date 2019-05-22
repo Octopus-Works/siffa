@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventsTable extends Migration
+class CreateNotificationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,27 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
-            
+        Schema::create('notifications', function (Blueprint $table) {
+
             // Init 
             $table->engine = 'InnoDB'; 
             $table->charset = 'UTF8';
             $table->collation = 'utf8_unicode_ci';
-            
+
+            // Attributes
             $table->bigIncrements('id');
-            $table->string('title_en', 90);
-            $table->string('title_ar', 90);
-            $table->text('description_en');
-            $table->text('description_ar');   
-            $table->string('img_src')->nullable();
-            $table->dateTime('start_date');
+            $table->string('body');
+            $table->string('type');
+            $table->boolean('checked')->default(false);
             $table->timestamps();
+
+            // Foreign Keys
+            $table->unsignedInteger('user_id');
+
+            // Indexes 
+            $table->index('user_id');
+
+
         });
     }
 
@@ -38,6 +44,6 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('notifications');
     }
 }

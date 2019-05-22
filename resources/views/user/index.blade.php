@@ -84,7 +84,7 @@
                                     <!-- Card content -->
                                     <div class="card-body card-body-cascade text-center">
                                         <div class="view overlay">
-                                        <img src='{{url('/storage/application/5_1557999344.jpg')}}' class="img-fluid z-depth-1 shadow-lg" alt="">
+                                        <img src='{{ $user->applicationdetail->images[0]->url}}' class="img-fluid z-depth-1 shadow-lg" alt="">
                                             <div class="mask rgba-white-slight"></div>
                                         </div>
 

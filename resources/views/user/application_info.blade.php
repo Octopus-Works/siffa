@@ -284,7 +284,7 @@
 
                                             </div>
                                             <div class="col-md-12">
-                                                <img id="financial" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                                <img id="financial" src="{{ url($user->applicationdetail->images[0]->url)}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
@@ -315,7 +315,7 @@
 
                                             </div>
                                             <div class="col-md-12">
-                                                <img id="signature" src="" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                                <img id="signature" src="{{ url($user->applicationdetail->images[1]->url)}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input placeholder="Date of Application" name="date_of_application" value="{{$user->applicationDetail->Date_of_application}}" type="text" id="date-picker-example2"
@@ -366,7 +366,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <img id="application" src="" alt=""
+                                                <img id="application" src="{{ url($user->applicationdetail->images[2]->url)}}" alt=""
                                                     style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">

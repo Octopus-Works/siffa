@@ -87,8 +87,7 @@
                                 <li class="step active">
                                     <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Personal Information <i
-                                                class="fas fa-user m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Personal Information <i class="fas fa-user m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="fullname" name="fullname" type="text" value="{{ $user->userdetail->fullname }}" disabled>
@@ -248,14 +247,20 @@
                                                     <div class="file-path-wrapper">
                                                         <input id="financial-photo" class="file-path validate" type="text" placeholder="Upload your file">
                                                     </div>
+
+                                                    <br>
+                                                    <img src="{{ url($user->applicationdetail->images[0]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt="" 
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px">
+
+                                                    <div class="step-actions d-flex justify-content-center">
+                                                        <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
+                                                    </div>
                                                 </div>
 
                                             </div>
-                                            <div class="step-actions d-flex justify-content-center">
-                                                <button
-                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
-                                            </div>
+
                                         </div>
+                                    </div>
                                 </li>
                                 <li class="step">
                                     <div id="step5" class="step-title waves-effect waves-dark">Step 5</div>
@@ -281,6 +286,10 @@
                                                 <input name="date_of_application" type="text" id="date-picker-example2" value="{{$user->applicationDetail->Date_of_application}}" disabled>
                                                 <label for="date_of_application">Financial Assignment Status</label>
                                             </div>
+                                            <div>
+                                                <img src="{{ url($user->applicationdetail->images[1]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt=""
+                                                style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" >
+                                            </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
                                             </div>
@@ -298,9 +307,7 @@
                                                 <label for="resume-info">Resume Information (As Mentioned in the Application Document)</label>
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
-                                                <button
-                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">NEXT</button>
+                                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
                                             </div>
                                         </div>
 
@@ -324,12 +331,13 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div>
+                                                <img src="{{ url($user->applicationdetail->images[2]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt="" 
+                                                style="min-height:200px; max-height:400px; min-width:200px; max-width:400px">
+                                            </div>
                                             <div class="d-flex justify-content-center col-md-12">
-                                                <button type="button" 
-                                                    class="btn btn-success btn-rounded  px-2">Approve Application
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-rounded  px-2">Decline Application
-                                            </button>
+                                                <button id='state' type="button" class="btn btn-success btn-rounded px-2">Approve Application </a></button>
+                                                <button id ='state2' type="button" class="btn btn-danger btn-rounded  px-2">Decline Application </button>
                                             </div>
                                         </div>
 
@@ -347,9 +355,45 @@
     <!--Main Layout-->
 
 
-
     @include('partials.footer_dashboard')
- 
+    
+    <script>
+        $("#state").click(function () {
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: '/rms/application/{{$id}}/approved',
+                contentType: "application/json;",
+                dataType: "json",
+                statusCode: {
+                    200: function (msg) {
+                        console.log("Success");
+                    },
+                },
+            });
+        });
+    </script>
+
+    <script>
+        $("#state2").click(function () {
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: '/rms/application/{{$id}}/rejected',
+                contentType: "application/json;",
+                dataType: "json",
+                statusCode: {
+                    200: function (msg) {
+                        console.log("Success");
+                    },
+                },
+            });
+        });
+    </script>
 
     <script>
         $(".button-collapse").sideNav();

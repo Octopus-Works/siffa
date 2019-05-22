@@ -599,10 +599,7 @@
                         },
 
                     });
-
                 });
-
-
             }
 
             //modal confirm delete

@@ -55,7 +55,7 @@ Route::group(['prefix' => 'cms' , 'middleware' => 'auth' ], function()
 |Route Domain : /rms
 |
 */
-Route::group(['prefix' => 'rms' , 'middleware' => ['auth','rms'] ], function()
+Route::group(['prefix' => 'rms' , 'middleware' => ['auth', 'rms'] ], function()
 {
     //All the routes that belongs to the group goes here
     Route::get('/', 'RecipientController@index');
@@ -66,6 +66,9 @@ Route::group(['prefix' => 'rms' , 'middleware' => ['auth','rms'] ], function()
     Route::get('/user_management', 'RecipientController@recipients_management');
     Route::post('/user_management/block/{id}', 'RecipientController@block')->name('blocking');
     Route::post('/user_management/unblock/{id}', 'RecipientController@unblock')->name('unblocking');
+    Route::post('/application/{id}/approved', 'RecipientController@approved');
+    Route::post('/application/{id}/rejected', 'RecipientController@rejected');
+
 });
 
 
@@ -77,7 +80,7 @@ Route::group(['prefix' => 'rms' , 'middleware' => ['auth','rms'] ], function()
 |Route Domain : /user
 |
 */
-Route::group(['prefix' => 'user' , 'middleware' => ['auth','user'] ] , function()
+Route::group(['prefix' => 'user' , 'middleware' => ['auth', 'user'] ] , function()
 {
     //All the routes that belongs to the group goes here
     Route::get('/', 'UserController@accountInfo');
@@ -85,6 +88,7 @@ Route::group(['prefix' => 'user' , 'middleware' => ['auth','user'] ] , function(
     Route::get('/company_info/{id}', 'UserController@userCompanyInfo');
     Route::get('/application_info', 'ApplicationController@edit');
     Route::post('/application_info', 'ApplicationController@update')->name('application_edit');
+    Route::post('/payment_notification', 'UserController@paymentNotification')->name('paymentNotification');
 });
 /*
 |--------------------------------------------------------------------------

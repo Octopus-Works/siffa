@@ -30,35 +30,30 @@
         <!-- Dropdown -->
         <li class="nav-item dropdown notifications-nav">
             <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="badge red">3</span> <i class="fas fa-bell custom-secondary-text"></i>
+              <span class="badge red">{{$notifications->count()}}</span> <i class="fas fa-bell custom-secondary-text"></i>
               <span class="d-lg-inline-block d-md-inline-block">Notifications</span>
             </a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">
-                <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
-                <span>New order received</span>
-                <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 13 min</span>
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
-                <span>New order received</span>
-                <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 33 min</span>
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>
-                <span>Your campaign is about to end</span>
-                <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 53 min</span>
-              </a>
+
+              @foreach($notifications as $notes)
+                @if ( $notes->checked == 0 && $notes->type == "rms" )
+                  <a class="dropdown-item" href="{{ url('rms/application')}}/{{$notes->user->id}}">
+                    <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
+                    <span>{{ $notes->body }}</span>
+                    <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> {{$notes->created_at}}</span>
+                  </a>
+                @endif
+              @endforeach
+              
             </div>
           </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas custom-secondary-text fa-user"></i>
-                @if (Auth::check())
+            <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas custom-secondary-text fa-user"></i>
+              @if (Auth::check())
 
-                <span class="d-lg-inline-block d-md-inline-block">{{ Auth::getUser()->userdetail->fullname}}</span>
-                @endif
+              <span class="d-lg-inline-block d-md-inline-block">{{ Auth::getUser()->userdetail->fullname}}</span>
+              @endif
             </a>
             {{--TODO --}}
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

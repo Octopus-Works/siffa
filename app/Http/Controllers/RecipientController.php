@@ -34,7 +34,7 @@ class RecipientController extends Controller
 
     public function application($id){
         $user = User::find($id);
-        return view('rms/application')->withuser($user); 
+        return view('rms/application')->withuser($user)->withid($id);  
     }
 
     public function account_info(){
@@ -62,4 +62,23 @@ class RecipientController extends Controller
         $user->save(); 
     }
  
+    public function approved($id){
+        $user = User::find($id); 
+        if ( $user->applicationdetail->status == "In progress"){
+            $user->applicationdetail->status = 3;
+        }
+        else if( $user->applicationdetail->status == "Paid under Registration"){
+            $user->applicationdetail->status = 5;
+        }
+        $user->applicationdetail->save(); 
+        return response('Success'); 
+    }
+
+    public function rejected($id){
+        $user = User::find($id); 
+        $user->applicationdetail->status = 2;
+        $user->applicationdetail->save(); 
+        return response('Success'); 
+    }
+
 }

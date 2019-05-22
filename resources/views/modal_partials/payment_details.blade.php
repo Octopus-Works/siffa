@@ -2,7 +2,6 @@
     aria-hidden="true">
 
 
-
     <div class="modal-dialog modal-lg " role="document">
         <div class="modal-content  custom-primary-transparent">
             <div class="modal-header text-center">
@@ -12,40 +11,38 @@
                 </button>
             </div>
 
+            <form id="payment_form" method="POST" action="{{route('paymentNotification')}}" enctype="multipart/form-data">
+                <div class="modal-body mx-3 text-center mt-5 mb-5">
 
-            <div class="modal-body mx-3 text-center mt-5 mb-5">
+                    <h5 class="text-center custom-secondary-text">Upload attachement</h5>
 
-                <h5 class="text-center custom-secondary-text">Upload attachement</h5>
+                    <div class="md-form col-12 ml-auto">
 
-                <div class="md-form col-12 ml-auto">
-
-                    <div class="file-field">
-                        <div class="btn custom-tertiary btn-sm float-left">
-                            <span>Choose file</span>
-                            <input type="file" name="attachment">
+                        <div class="file-field">
+                            <div class="btn custom-tertiary btn-sm float-left">
+                                <span>Choose file</span>
+                                <input type="file" name="img">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input id="attachment" class="file-path validate" type="text" placeholder="Upload your file">
+                            </div>
                         </div>
-                        <div class="file-path-wrapper">
-                            <input id="attachment" class="file-path validate" type="text"
-                                placeholder="Upload your file">
-                        </div>
+
                     </div>
 
                 </div>
 
-            </div>
 
-
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="submit" class="btn btn-rounded custom-secondary">Send <i
-                        class="fas fa-paper-plane ml-1"></i></button>
-            </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="submit" class="btn btn-rounded custom-secondary">Send <i class="fas fa-paper-plane ml-1"></i></button>
+                </div>
             </form>
         </div>
     </div>
 </div>
 
 <script>
-    $('#app_form').submit(function (e) {
+    $('#payment_form').submit(function (e) {
         e.preventDefault();
 
         $.ajax({
@@ -58,7 +55,6 @@
             data: new FormData(this),
             processData: false,
             contentType: false,
-
         });
     });
 
