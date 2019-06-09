@@ -14,6 +14,9 @@
             }
         }
 
+        .custom-control-label::after {
+            cursor: pointer;
+        }
 
         .mt-5 {
             margin-top: 6rem !important;
@@ -213,10 +216,22 @@
                                                     <label class="custom-control-label" for="mode3">Water Transport</label>
                                                 </div>
                                             </div>
+
+      
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="src-dest" name="src_dest" type="text" class="validate form-control" required>
-                                                <label for="src-dest">Sources and Destinations Served By the Shipping Company</label>
+                                                <h6 class="font-weight-bold">Source:</h6>
+                                                <select class="mdb-select md-form "  id="sourceCountry" name ="sourceCountry"></select>
+
+                                                <select disabled class="mdb-select md-form "  name ="sourceCity" id ="sourceState"></select>
                                             </div>
+
+                                            <div class="md-form col-12 ml-auto">
+                                                    <h6 class="font-weight-bold">Destination:</h6>
+                                                    <select class="mdb-select md-form "  id="destCountry" name ="destCountry"></select>
+    
+                                                    <select disabled class="mdb-select md-form "  name ="destCity" id ="destState"></select>
+                                            </div>
+    
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
                                             <button class="waves-effect waves-dark btn btn-large btn-amber next-step"
@@ -366,9 +381,16 @@
         src={{url("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js")}}></script>
     <script src={{url("js/validate.js")}}></script>
     <script src={{url("js/intlTelInput.js")}}></script>
-
+    <script src={{url("js/countries.js")}}></script>
+    <script src={{url("js/countery.js")}}></script>
 
     <script>
+            populateCountries("sourceCountry", "sourceState"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+            populateCountries("destCountry", "destState");
+        </script>
+
+    <script>
+        
         $(document).ready(function () {
             $('.stepper').mdbStepper();
         })
@@ -443,6 +465,12 @@
         });
 
     </script>
+    <script>
+        // Material Select Initialization
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
+});
+</script>
 
     <script>
         // object-fit polyfill run
