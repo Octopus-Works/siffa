@@ -218,18 +218,12 @@
                                             </div>
 
       
-                                            <div class="md-form col-12 ml-auto">
-                                                <h6 class="font-weight-bold">Source:</h6>
-                                                <select class="mdb-select md-form "  id="sourceCountry" name ="sourceCountry"></select>
-
-                                                <select disabled class="mdb-select md-form "  name ="sourceCity" id ="sourceState"></select>
-                                            </div>
+               
 
                                             <div class="md-form col-12 ml-auto">
                                                     <h6 class="font-weight-bold">Destination:</h6>
-                                                    <select class="mdb-select md-form "  id="destCountry" name ="destCountry"></select>
-    
-                                                    <select disabled class="mdb-select md-form "  name ="destCity" id ="destState"></select>
+                                                    <input id="src-dest" name="src_dest" type="text" class="validate form-control" required>
+                                                    <label for="src-dest">Sources and Destinations Served By the Shipping Company</label>s
                                             </div>
     
                                         </div>

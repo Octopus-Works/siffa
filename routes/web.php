@@ -121,7 +121,7 @@ Route::post('/register','Auth\RegisterController@mail')->name('register');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
-    Route::get('/calendar' , 'AdminController@getCalendarPage')->name('calendar');
+    Route::get('/calendar' , 'AdminController@getCalendarPage')->name('calendarr');
     Route::post('/calendar', 'AdminController@getEventsData');
     
 });
