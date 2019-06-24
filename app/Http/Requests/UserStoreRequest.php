@@ -24,36 +24,42 @@ class UserStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'fullname' =>'required',
-            'father' => 'required',
-            'mother' => 'required', 
-            'email' => 'required|email',
-            'date_of_birth' => 'required',
-            'place_of_birth' =>'required',
-            'record' => 'required',
-            'nationality' =>'required',
-            'address' => 'required',
+            'fullname'    => 'required',
+            'email'       => 'required|email',
+            'nationality' => 'required',
+            'address'     => 'required',
+            'mobile'      => 'required', 
+            'phone'       => 'required',
 
-            'company_name' => 'required',
-            'branches_address' => 'required', 
-            'shipping_services' => 'required', 
-            'position_title' => 'required', 
-            'chamber_of_commerce' => 'numeric|min:4|required', 
-            'commercial_registry' => 'numeric|min:4|required', 
-
-            'shipping_methods' => 'required',
-            'shipping_modes' => 'required',
-            'src_dest' => 'required',
-
-            'financial_status' => 'required',
-            'financial_photo' => 'image|required', 
-
-            'date_of_application' => 'required', 
-            'signature_photo' => 'required',
-
-            'resume_info' => 'required',
-            'hard_copy' => 'required'
+            'company_name'        => 'required',
+            'commercial_registry' => 'required|min:4', 
         ];
+
+        // return [
+        //     'father' => 'required',
+        //     'mother' => 'required', 
+        //     'date_of_birth' => 'required',
+        //     'place_of_birth' =>'required',
+        //     'record' => 'required',
+
+        //     'branches_address' => 'required', 
+        //     'shipping_services' => 'required', 
+        //     'position_title' => 'required', 
+        //     'chamber_of_commerce' => 'numeric|min:4|required', 
+
+        //     'shipping_methods' => 'required',
+        //     'shipping_modes' => 'required',
+        //     'src_dest' => 'required',
+
+        //     'financial_status' => 'required',
+        //     'financial_photo' => 'image|required', 
+
+        //     'date_of_application' => 'required', 
+        //     'signature_photo' => 'required',
+
+        //     'resume_info' => 'required',
+        //     'hard_copy' => 'required'
+        // ];
     }
 
      /**

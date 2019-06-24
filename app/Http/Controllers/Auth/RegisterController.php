@@ -75,100 +75,101 @@ class RegisterController extends Controller
      */
     protected function mail(UserStoreRequest $request){
         
-        $role = Role::where('name', 'user')->firstOrFail();
+        // Returns the Role record of user so I can specify the user role on register
+        $role = Role::where('name', 'user')->firstOrFail(); 
 
-        $validated = $request->validated(); 
+        // Validation call from app\Requests\UserStoreRequest.php
+        // $validated = $request->validated(); 
+
         $username = str_random(10); 
         $password = str_random(10);
-      
+        $user = User::Create([
+            'username' => $username,
+            'password' => Hash::make($password),
+            'email'    => $request->email,
+            'role_id'  => $role->id,
+        ]);
 
-        $user = new User; 
-        $user->username = $username; 
-        $user->password = Hash::make($password);
-        $user->email = $request->email; 
-        $user->role_id = $role->id; 
+        UserDetail::Create([
+            'user_id'       => $user->id,
+            'fullname'      => $request->fullname,
+            'nationality'   => $request->nationality,
+            'mobile_number' => $request->mobile,
+            'phone_number'  => $request->phone,
+        ]);
 
-        $user->save(); 
-
-        $details = new UserDetail; 
-        $details->user_id = $user->id; 
-        $details->fullname = $request->fullname;
-        $details->father_name = $request->father; 
-        $details->mother_name = $request->mother;
-        $details->date_of_birth = $request->date_of_birth; 
-        $details->place_of_birth = $request->place_of_birth;
-        $details->mobile_number = $request->mobile;
-        $details->phone_number = $request->phone;
-        $details->website = $request->website; 
-        $details->record = $request->record; 
-        $details->nationality = $request->nationality; 
-        
-        $details->address = preg_replace( "/\r|\n/", "", $request->address ); 
-        $details->save(); 
-
-        $office = new ShippingOffice;
-        $office->user_id = $user->id;
-        $office->name = $request->company_name;
-  
-        $office->addresses = preg_replace( "/\r|\n/", "", $request->branches_address ); 
-        $office->shipping_services = $request->shipping_services; 
-        $office->position_title = $request->position_title;
-        $office->chamber_of_commerce = $request->chamber_of_commerce; 
-        $office->commerical_registry = $request->commercial_registry; 
-        $office->save();
- 
-        $services = new ShippingService; 
-        $services->user_id = $user->id;
-        $chk = implode(' ', $request->shipping_methods);
-        $chk1 = implode(' ', $request->shipping_modes);
-        $services->shipping_methods = $chk;
-        $services->shipping_modes = $chk1;
-        $services->sources_destinations = $request->src_dest;
-        $services->save(); 
-
-        $officeservice = new OfficeService;
-        $officeservice->shipping_office_id = $office->id;
-        $officeservice->shipping_service_id = $services->id;
-        $officeservice->save();
-        
-
-        $application = new ApplicationDetail; 
-        $application->user_id = $user->id;
-        $application->Financial_assignment_status = $request->financial_status;
-        $application->Date_of_application = $request->date_of_application; 
-        $application->Resume_information = $request->resume_info;
-        $application->save();
-        // $request->file('financial_photo')
-        
-        $counter = 0; 
-        foreach ($request->files->all() as $file) {
-            $filenameWithExt = $file->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $file->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore= $filename.'_'.time().'.'.$extension;
-            if ( $counter == 0 )
-            $path = $request->file('financial_photo')->storeAs('public/application', $fileNameToStore);
-            else if ( $counter == 1 )
-            $path = $request->file('signature_photo')->storeAs('public/application', $fileNameToStore);
-            else
-            $path = $request->file('hard_copy')->storeAs('public/application', $fileNameToStore);
-
-            $Image = new Image;  
-            $Image->imageable_id = $user->id;
-            $Image->imageable_type = 'App\ApplicationDetail';
-            $Image->url = '/storage/application/'. $fileNameToStore;
-            $Image->save();
-            error_log($counter); 
-            $counter++; 
-        }
-        
+        ShippingOffice::Create([
+            'user_id' => $user->id,
+            'name'  => $request->company_name,
+            'commerical_registry' => $request->commercial_registry,
+        ]);
 
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
-        return redirect()->route('login');
+        return redirect('login');
 
+        // $details->father_name = $request->father; 
+        // $details->mother_name = $request->mother;
+        // $details->date_of_birth = $request->date_of_birth; 
+        // $details->place_of_birth = $request->place_of_birth;
+        // $details->website = $request->website; 
+        // $details->record = $request->record; 
+        // $details->address = preg_replace( "/\r|\n/", "", $request->address ); 
+        // $details->save(); 
+
+        // $office = new ShippingOffice;
+        // $office->addresses = preg_replace( "/\r|\n/", "", $request->branches_address ); 
+        // $office->shipping_services = $request->shipping_services; 
+        // $office->position_title = $request->position_title;
+        // $office->chamber_of_commerce = $request->chamber_of_commerce; 
+        // $office->save();
+ 
+        // $services = new ShippingService; 
+        // $services->user_id = $user->id;
+        // $chk = implode(' ', $request->shipping_methods);
+        // $chk1 = implode(' ', $request->shipping_modes);
+        // $services->shipping_methods = $chk;
+        // $services->shipping_modes = $chk1;
+        // $services->sources_destinations = $request->src_dest;
+        // $services->save(); 
+
+        // $officeservice = new OfficeService;
+        // $officeservice->shipping_office_id = $office->id;
+        // $officeservice->shipping_service_id = $services->id;
+        // $officeservice->save();
+        
+
+        // $application = new ApplicationDetail; 
+        // $application->user_id = $user->id;
+        // $application->Financial_assignment_status = $request->financial_status;
+        // $application->Date_of_application = $request->date_of_application; 
+        // $application->Resume_information = $request->resume_info;
+        // $application->save();
+        // $request->file('financial_photo')
+        
+        // $counter = 0; 
+        // foreach ($request->files->all() as $file) {
+        //     $filenameWithExt = $file->getClientOriginalName();
+        //     // Get just filename
+        //     $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        //     // Get just ext
+        //     $extension = $file->getClientOriginalExtension();
+        //     // Filename to store
+        //     $fileNameToStore= $filename.'_'.time().'.'.$extension;
+        //     if ( $counter == 0 )
+        //     $path = $request->file('financial_photo')->storeAs('public/application', $fileNameToStore);
+        //     else if ( $counter == 1 )
+        //     $path = $request->file('signature_photo')->storeAs('public/application', $fileNameToStore);
+        //     else
+        //     $path = $request->file('hard_copy')->storeAs('public/application', $fileNameToStore);
+
+        //     $Image = new Image;  
+        //     $Image->imageable_id = $user->id;
+        //     $Image->imageable_type = 'App\ApplicationDetail';
+        //     $Image->url = '/storage/application/'. $fileNameToStore;
+        //     $Image->save();
+        //     error_log($counter); 
+        //     $counter++; 
+        // }
     }
 }

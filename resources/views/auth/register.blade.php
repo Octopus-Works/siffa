@@ -74,17 +74,14 @@
 
                 <!--Grid column-->
                 <div class="col-md-12">
-                    <form id="app_form" action="{{ route('register')}} " enctype="multipart/form-data" method="POST">
+                    <form id="app_form" enctype="multipart/form-data" method="POST">
                         @csrf
                         <div class="card p-5 mt-3 mb-3 shadow-lg">
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i
                                     class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
-                            <ul class="stepper horizontal" id="horizontal-stepper" style="height:800px;">
+                            <ul class="horizontal" id="horizontal-stepper" style="height:1000px;">
                                 <li class="step active">
-                                    <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Personal Information <i
-                                                class="fas fa-user m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="fullname" name="fullname" type="text"
@@ -98,63 +95,52 @@
                                                 <label for="email">{{ __('E-mail') }}</label>
                                             </div>
 
-
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="nationality" name="nationality" type="text"
                                                     class="validate form-control" required>
-                                                <label for="nationality">Nationality</label>
+                                                <label for="nationality">{{ __('Nationality')}}</label>
                                             </div>
+
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="address" name="address" type="text"
                                                     class="validate form-control" required>
-                                                <label for="address">Address</label>
+                                                <label for="address">{{ __('Address') }}</label>
                                             </div>
+
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="phone" type="tel" class="validate form-control" name="phone"
                                                     required>
                                                 <span id="valid-msg" class="hide">✓</span>
                                                 <span id="error-msg" class="hide"></span>
                                             </div>
+
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="mobile" type="tel" class="validate form-control"
                                                     name="mobile" required>
                                                 <span id="valid-msg" class="hide">✓</span>
                                                 <span id="error-msg" class="hide"></span>
                                             </div>
-                                        </div>
-                                        <div class="step-actions d-flex justify-content-center">
-                                            <button type="submit"
-                                                class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                data-feedback="someFunction21">CONTINUE</button>
-                                        </div>
-                                    </div>
 
-                                </li>
-
-                                <li class="step">
-                                    <div id="step2" class="step-title waves-effect waves-dark">Step 2</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Company Information <i
-                                                class="fas fa-briefcase m-1"></i></h5>
-                                        <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="company-name" name="company_name" type="text"
                                                     class="validate form-control" required>
-                                                <label for="company-name">Shipping Company Name</label>
+                                                <label for="company-name">{{ __('Shipping Company Name') }}</label>
                                             </div>
+
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="regist-num" name="commercial_registry" type="text"
                                                     class="validate form-control" required>
-                                                <label for="regist-num">Commercial Registration Number</label>
+                                                <label for="regist-num">{{ __('Commercial Registration Number') }}</label>
+                                            </div>
+
+                                            <div class="step-actions d-flex justify-content-center">
+                                                <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
+                                                    type="submit">{{ __('SUBMIT') }}</button>
                                             </div>
                                         </div>
-                                        <div class="step-actions d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
-                                                type="submit">SUBMIT</button>
-                                        </div>
+
                                     </div>
                                 </li>
-
                             </ul>
                         </div>
                     </form>
@@ -202,40 +188,9 @@
 
         // Data Picker Initialization
         $('.datepicker').pickadate();
-
-        //ajax 
-
-        // var test = JSON.stringify(jQuery('#app_form').serializeArray());
-        // var dataa = JSON.parse(test);
-        // var formData = new FormData();
-        // $.each(dataa, function (key, el) {
-        //     formData.append(el.name, el.value);
-        // });
-
-        // $.ajax({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     },
-        //     type: 'POST',
-        //     url: $(app_form).attr('action'),
-        //     enctype: 'multipart/form-data',
-        //     dataType : 'json', // data type
-        //     data :new FormData(this) , // post data || get data
-        //     statusCode: {
-        //         401: function () {
-        //             window.location = '/login';
-        //         },
-        //         500: function () {
-        //             alert('500 status code! server error');
-        //         },
-        //         200: function (msg) {
-        //             alert("sucess");
-        //         },
-        //     },
-
-        // });
-
-
+        $('#app_form').load(function(e){
+            e.preventDefault();
+        });
         $('#app_form').submit(function (e) {
             e.preventDefault();
 
@@ -244,7 +199,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: 'POST',
-                url: $(this).attr('action'),
+                url:'{{ route('register')}} ',
                 dataType: 'json', // data type
                 data: new FormData(this),
                 processData: false,
@@ -261,9 +216,11 @@
                     toastr.error(obj.message);
                 }
             });
+
         });
 
     </script>
+    
     <script>
         // Material Select Initialization
         $(document).ready(function () {
@@ -285,8 +242,6 @@
 
     </script>
 
-
-
     <script>
         $(document).ready(function () {
             $(function () {
@@ -299,11 +254,6 @@
                         // of an input field. Validation rules are defined
                         // on the right side
 
-                        chamber_of_commerce: {
-                            required: true,
-                            digits: true,
-                            minlength: 4
-                        },
                         commercial_registry: {
                             required: true,
                             digits: true,
@@ -437,9 +387,6 @@
         new WOW().init();
 
     </script>
-
-
-
 
 </body>
 
