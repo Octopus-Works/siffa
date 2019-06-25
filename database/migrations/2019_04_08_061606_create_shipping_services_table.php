@@ -31,9 +31,9 @@ class CreateShippingServicesTable extends Migration
 
             // Attributes
             $table->increments('id');
-            $table->string('shipping_methods');  // ['LTL', 'FTL'] 
-            $table->string('shipping_modes');  // ['wild', 'nautical', 'aerial'] 
-            $table->string('sources_destinations'); 
+            $table->string('shipping_methods')->nullable();  // ['LTL', 'FTL'] 
+            $table->string('shipping_modes')->nullable();    // ['wild', 'nautical', 'aerial'] 
+            $table->string('sources_destinations')->nullable(); 
             $table->timestamps();
 
             // Foreign Keys

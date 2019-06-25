@@ -14,84 +14,10 @@ use App\Image;
 use App\ShippingOffice; 
 use App\ShippingService;
 use App\ApplicationDetail;
+use App\Services\ImageUploadService;
 
 class ApplicationController extends Controller
 {
-    public function mail(UserStoreRequest $request){
-        
-        // Will return only validated data
-        $validated = $request->validated(); 
-        $username = str_random(10); 
-        $password = str_random(10);
-
-        $user = new User; 
-        $user->username = $username; 
-        $user->password = Hash::make($password);     
-        $user->fullname = $request->fullname;
-        $user->email = $request->email; 
-        $user->father_name = $request->father; 
-        $user->mother_name = $request->mother;
-        $user->date_of_birth = $request->date_of_birth; 
-        $user->place_of_birth = $request->place_of_birth; 
-        $user->record = $request->record; 
-        $user->nationality = $request->nationality; 
-        $user->address = $request->address; 
-        $user->save(); 
-
-        $office = new ShippingOffice; 
-        $office->name = $request->company_name;
-        $office->addresses = $request->branches_address;
-        $office->shipping_services = $request->shipping_services; 
-        $office->position_title = $request->position_title;
-        $office->chamber_of_commerce = $request->chamber_of_commerce; 
-        $office->commerical_registry = $request->commercial_registry; 
-        $office->save();
-
-        $services = new ShippingService; 
-        $services->shipping_methods = $request->shipping_methods; 
-        $services->shipping_modes = $request->shipping_modes; 
-        $services->sources_destinations = $request->src_dest;
-        $services->save(); 
-
-        $application = new ApplicationDetail; 
-        $application->Financial_assignment_status = $request->financial_status;
-        $application->Date_of_application = $request->date_of_application; 
-        $application->Resume_information = $request->resume_info;
-        $application->save();
-
-
-        // if ($counter == 0) 
-        //     $folder = "financial_assignment"; 
-        // elseif ($counter == 1)
-        //     $folder = "signature_fingerprint";
-        // elseif ($counter == 2) 
-        //     $folder = "application_form";
-        error_log($request->file('financial_photo'));
-        error_log($request->file('signature_photo'));
-        error_log($request->file('hard_copy'));
-
-        $filenameWithExt = $request->file('financial_photo')->getClientOriginalName();
-        // Get just filename
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-        // Get just ext
-        $extension = $request->file('financial_photo')->getClientOriginalExtension();
-        // Filename to store
-        $fileNameToStore= $filename.'_'.time().'.'.$extension;
-        $path = $request->file('financial_photo')->storeAs('public/financial_assignment', $fileNameToStore);
-        $Image = new Image;  
-        $Image->imageable_id = $user->id;
-        $Image->imageable_type = 'App\ApplicationDetail';
-        $Image->url = '/storage/financial_assignment/'. $fileNameToStore;
-        $Image->save();
-
-
-        $data = array('username' => $username, 'password' => $password); 
-        Mail::to($request->email)->send(new GenerateCredentials($data));
-        Session::flash('Success', 'Registeration is completed');
-        return redirect('/');
-
-    }
-
 
     public function show(){
 
@@ -113,58 +39,51 @@ class ApplicationController extends Controller
     public function update(Request $request){
         
         // $validated = $request->validated(); 
-        $user = User::find(Auth::user()->id);
-        $user->email = $request->email; 
+        $user = User::find(Auth::user()->id); 
+        $user->userdetail()->update([
+            'fullname'      => $request->fullname,
+            'father_name'   => $request->father, 
+            'mother_name'   => $request->mother,
+            'date_of_birth' => $request->date_of_birth, 
+            'place_of_birth'=> $request->place_of_birth, 
+            'mobile_number' => $request->mobile,
+            'phone_number'  => $request->phone,
+            'website'       => $request->website,
+            'record'        => $request->record,
+            'nationality'   => $request->nationality, 
+            'address'       => $request->address,
+        ]);
 
-        $user->userdetail->fullname = $request->fullname;
-        $user->userdetail->father_name = $request->father; 
-        $user->userdetail->mother_name = $request->mother;
-        $user->userdetail->date_of_birth = $request->date_of_birth; 
-        $user->userdetail->place_of_birth = $request->place_of_birth; 
-        $user->userdetail->mobile_number = $request->mobile_number;
-        $user->userdetail->phone_number = $request->phone_number;
-        $user->userdetail->website = $request->website; 
-        $user->userdetail->record = $request->record; 
-        $user->userdetail->nationality = $request->nationality; 
-        $user->userdetail->address = $request->address; 
+        $user->shippingOffice()->update([
+            'name'      => $request->company_name,
+            'addresses' => $request->branches_address,
+            'shipping_services'   => $request->shipping_services,
+            'position_title'      => $request->position_title,
+            'chamber_of_commerce' => $request->chamber_of_commerce,
+            'commercial_registry' => $request->commercial_registry,
+        ]);
 
-        $user->shippingOffice->name = $request->company_name;
-        $user->shippingOffice->addresses = $request->branches_address;
-        $user->shippingOffice->shipping_services = $request->shipping_services; 
-        $user->shippingOffice->position_title = $request->position_title;
-        $user->shippingOffice->chamber_of_commerce = $request->chamber_of_commerce; 
-        $user->shippingOffice->commerical_registry = $request->commercial_registry; 
+        $user->shippingService()->update([
+            'shipping_methods'     => implode(' ', $request->shipping_methods),
+            'shipping_modes'       => implode(' ', $request->shipping_modes),
+            'sources_destinations' => $request->src_dest,
+        ]);
 
+        $user->applicationDetail()->update([
+            'Financial_assignment_status' => $request->financial_status,
+            'Date_of_application'         => $request->date_of_application,
+            'Resume_information'          => $request->resume_info,
+        ]);
+
+        $user->update([
+            'email' => $request->email,
+        ]);
         
-        $user->shippingService->shipping_methods = $request->shipping_methods; 
-        $user->shippingService->shipping_modes = $request->shipping_modes; 
-        $user->shippingService->sources_destinations = $request->src_dest;
+        foreach($request->files as $file)
+        ImageUploadService::imageUpload($file, $user->id);
 
-        $user->applicationDetail->Financial_assignment_status = $request->financial_status;
-        $user->applicationDetail->Date_of_application = $request->date_of_application; 
-        $user->applicationDetail->Resume_information = $request->resume_info;
-        $user->save();
-
-        // done until here.
-        if($request->has('financial_photo')){
-            $filenameWithExt = $request->file('financial_photo')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $request->file('financial_photo')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore= $filename.'_'.time().'.'.$extension;
-            $path = $request->file('financial_photo')->storeAs('public/financial_assignment', $fileNameToStore);
-            $Image = new Image;  
-            $Image->imageable_id = $user->id;
-            $Image->imageable_type = 'App\ApplicationDetail';
-            $Image->url = '/storage/financial_assignment/'. $fileNameToStore;
-            $Image->save();
-        }
-        
         Session::flash('Success', 'Registeration is completed');
-        return response('Success');
-        // return redirect()->route('about');
+        return redirect()->route('about');
     }
 
 }

@@ -49,7 +49,7 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         return $this->hasOne('App\ApplicationDetail');
     }
 
-    public function userdetail(){
+    public function userDetail(){
         return $this->hasOne('App\UserDetail');
     }
 
@@ -57,7 +57,7 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         return $this->belongsTo('App\Role'); 
     }
 
-    public function notification(){
+    public function notifications(){
         return $this->hasMany('App\Notification'); 
     }
 }

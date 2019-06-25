@@ -22,10 +22,10 @@ class CreateApplicationDetailsTable extends Migration
 
             // Attributes 
             $table->increments('id');
-            $table->enum('status', ['In progress', 'Rejected', 'Approved under Payment','Paid under Registration', 'Registered']);
-            $table->string('Financial_assignment_status'); 
-            $table->string('Date_of_application'); 
-            $table->string('Resume_information'); 
+            $table->enum('status', ['In progress', 'Rejected', 'Approved under Payment','Paid under Registration', 'Registered'])->nullable();
+            $table->string('Financial_assignment_status')->nullable(); 
+            $table->string('Date_of_application')->nullable(); 
+            $table->string('Resume_information')->nullable(); 
             $table->timestamps();
 
             // Foreign Keys

@@ -118,7 +118,8 @@
                                     <div class="card-body card-body-cascade text-center">
 
                                         <!-- Edit Form -->
-                                        <form>
+                                        <form action="" method="POST">
+                                            @csrf
                                             <!-- First row -->
 
                                             <div class="row">
@@ -202,19 +203,19 @@
                                                     <label for="website">Website Address</label>
                                                 </div>
                                             </div>
-                                    </div>
-                                    <!-- Third row -->
+                                            <!-- Third row -->
 
-                                    <!-- Fourth row -->
-                                    <div class="row">
-                                        <div class="col-md-12 text-center my-4">
-                                            <input type="submit" value="Update Account" class="btn custom-secondary black-text btn-rounded">
-                                        </div>
-                                    </div>
-                                    <!-- Fourth row -->
+                                            <!-- Fourth row -->
+                                            <div class="row">
+                                                <div class="col-md-12 text-center my-4">
+                                                    <input type="submit" value="Update Account" class="btn custom-secondary black-text btn-rounded">
+                                                </div>
+                                            </div>
+                                            <!-- Fourth row -->
 
-                                    </form>
-                                    <!-- Edit Form -->
+                                        </form>
+                                        <!-- Edit Form -->
+                                    </div>
 
                                 </div>
                                 <!-- Card content -->

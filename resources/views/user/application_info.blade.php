@@ -3,6 +3,7 @@
 
 <head>
     @include('partials.head')
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Edit Application</title>
     <link rel="stylesheet" href={{url("css/intlTelInput.css")}}>
     <style>
@@ -91,8 +92,8 @@
 
                 <!--Grid column-->
                 <div class="col-md-12 ">
-                    <form id="app_form" action="{{ route('application_edit')}} " enctype="multipart/form-data"
-                        method="POST">
+                    <form id="app_form" action="{{ route('application_edit')}} " enctype="multipart/form-data" method="POST">
+                        @csrf
                         <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i
                                     class="fas fa-clipboard amber-text ml-3"></i></h1>
@@ -136,12 +137,12 @@
                                                 <input id="place-of-birth" name="place_of_birth"
                                                     value="{{$user->userdetail->place_of_birth}}" type="text"
                                                     class="validate form-control" required>
-                                                <label for="place-of-birth">Place of Birth</label>
+                                                <label for="place-of-birth">{{ __('Place of Birth') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="record" name="record" value="{{$user->userdetail->record}}" type="text"
                                                     class="validate form-control" required>
-                                                <label for="record">Individual Civil Registry Record</label>
+                                                <label for="record">{{ __('Individual Civil Registry Record') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="nationality" name="nationality"
@@ -283,8 +284,12 @@
                                                 </div>
 
                                             </div>
+                                                {{ $temp = ''}}
+                                                @if ( isset($user->applicationdetail->images[0]->url))
+                                                    {{ $temp = $user->applicationdetail->images[0]->url }}
+                                                @endif
                                             <div class="col-md-12">
-                                                <img id="financial" src="{{ url($user->applicationdetail->images[0]->url)}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                                <img id="financial" src="{{ url($temp)}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button
@@ -315,7 +320,10 @@
 
                                             </div>
                                             <div class="col-md-12">
-                                                <img id="signature" src="{{ url($user->applicationdetail->images[1]->url)}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                                @if ( isset($user->applicationdetail->images[1]->url))
+                                                    {{ $temp = $user->applicationdetail->images[1]->url }}
+                                                @endif
+                                                <img id="signature" src="{{ $temp}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input placeholder="Date of Application" name="date_of_application" value="{{$user->applicationDetail->Date_of_application}}" type="text" id="date-picker-example2"
@@ -366,7 +374,10 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <img id="application" src="{{ url($user->applicationdetail->images[2]->url)}}" alt=""
+                                                @if ( isset($user->applicationdetail->images[2]->url))
+                                                    {{ $temp = $user->applicationdetail->images[2]->url }}
+                                                @endif
+                                                <img id="application" src="{{ url($temp)}}" alt=""
                                                     style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
@@ -420,58 +431,25 @@
 
         // Data Picker Initialization
         $('.datepicker').pickadate();
+  
+        // $('#app_form').submit(function (e) {
+        //     e.preventDefault();
 
-        //ajax 
-
-        // var test = JSON.stringify(jQuery('#app_form').serializeArray());
-        // var dataa = JSON.parse(test);
-        // var formData = new FormData();
-        // $.each(dataa, function (key, el) {
-        //     formData.append(el.name, el.value);
+        //     $.ajax({
+        //         headers: {
+        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //         },
+        //         type: 'POST',
+        //         url: $(this).attr('action'),
+        //         dataType: 'json', // data type
+        //         data: new FormData(this),
+        //         processData: false,
+        //         contentType: false,
+        //         success: function (data) {
+        //             toastr.success('Registered!');
+        //         },
+        //     });
         // });
-
-        // $.ajax({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     },
-        //     type: 'POST',
-        //     url: $(app_form).attr('action'),
-        //     enctype: 'multipart/form-data',
-        //     dataType : 'json', // data type
-        //     data :new FormData(this) , // post data || get data
-        //     statusCode: {
-        //         401: function () {
-        //             window.location = '/login';
-        //         },
-        //         500: function () {
-        //             alert('500 status code! server error');
-        //         },
-        //         200: function (msg) {
-        //             alert("sucess");
-        //         },
-        //     },
-
-        // });
-
-
-        $('#app_form').submit(function (e) {
-            e.preventDefault();
-
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type: 'POST',
-                url: $(this).attr('action'),
-                dataType: 'json', // data type
-                data: new FormData(this),
-                processData: false,
-                contentType: false,
-                success: function (data) {
-                    window.location = "http://www.yoururl.com";
-                },
-            });
-        });
 
     </script>
 
@@ -625,9 +603,6 @@
         new WOW().init();
 
     </script>
-
-
-
 
 
 </body>

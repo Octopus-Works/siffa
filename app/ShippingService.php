@@ -6,11 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class ShippingService extends Model
 {
+    protected $fillable = [
+        'user_id',
+    ];
+    
     public function user(){
         return $this->belongsTo('App\User'); 
     }
 
-    public function officeservice(){
-        return $this->hasMany('App\OfficeService');
+    public function officeservices(){
+        return $this->belongsToMany('App\ShippingOffice');
     }
 }

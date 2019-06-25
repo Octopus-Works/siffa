@@ -80,7 +80,6 @@ class RegisterController extends Controller
 
         // Validation call from app\Requests\UserStoreRequest.php
         // $validated = $request->validated(); 
-
         $username = str_random(10); 
         $password = str_random(10);
         $user = User::Create([
@@ -98,12 +97,21 @@ class RegisterController extends Controller
             'phone_number'  => $request->phone,
         ]);
 
-        ShippingOffice::Create([
+        $shippingOffice = ShippingOffice::Create([
             'user_id' => $user->id,
             'name'  => $request->company_name,
-            'commerical_registry' => $request->commercial_registry,
+            'commercial_registry' => $request->commercial_registry,
+        ]);
+        
+        $shippingService = ShippingService::Create([
+            'user_id' => $user->id,
         ]);
 
+        ApplicationDetail::Create([
+            'user_id' => $user->id, 
+        ]);
+
+        $shippingOffice->officeservices()->attach($shippingService);
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
         return redirect('login');
@@ -133,11 +141,6 @@ class RegisterController extends Controller
         // $services->sources_destinations = $request->src_dest;
         // $services->save(); 
 
-        // $officeservice = new OfficeService;
-        // $officeservice->shipping_office_id = $office->id;
-        // $officeservice->shipping_service_id = $services->id;
-        // $officeservice->save();
-        
 
         // $application = new ApplicationDetail; 
         // $application->user_id = $user->id;
@@ -147,29 +150,5 @@ class RegisterController extends Controller
         // $application->save();
         // $request->file('financial_photo')
         
-        // $counter = 0; 
-        // foreach ($request->files->all() as $file) {
-        //     $filenameWithExt = $file->getClientOriginalName();
-        //     // Get just filename
-        //     $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-        //     // Get just ext
-        //     $extension = $file->getClientOriginalExtension();
-        //     // Filename to store
-        //     $fileNameToStore= $filename.'_'.time().'.'.$extension;
-        //     if ( $counter == 0 )
-        //     $path = $request->file('financial_photo')->storeAs('public/application', $fileNameToStore);
-        //     else if ( $counter == 1 )
-        //     $path = $request->file('signature_photo')->storeAs('public/application', $fileNameToStore);
-        //     else
-        //     $path = $request->file('hard_copy')->storeAs('public/application', $fileNameToStore);
-
-        //     $Image = new Image;  
-        //     $Image->imageable_id = $user->id;
-        //     $Image->imageable_type = 'App\ApplicationDetail';
-        //     $Image->url = '/storage/application/'. $fileNameToStore;
-        //     $Image->save();
-        //     error_log($counter); 
-        //     $counter++; 
-        // }
     }
 }

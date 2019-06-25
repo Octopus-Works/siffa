@@ -35,7 +35,7 @@ class CreateShippingOfficesTable extends Migration
             $table->string('shipping_services')->nullable();
             $table->string('position_title')->nullable(); 
             $table->integer('chamber_of_commerce')->nullable(); 
-            $table->integer('commerical_registry'); 
+            $table->integer('commercial_registry'); 
             $table->timestamps();
 
             // Foreign Keys

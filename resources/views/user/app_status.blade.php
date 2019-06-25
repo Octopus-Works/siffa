@@ -250,12 +250,17 @@
                                     <div class="card-body p-5 mt-5 text-center">
                                         <img class="mb-5" src="{{url('img/folder.png')}}" alt="file" height="200px" width="200px">
                                         <h3 class="h3-responsive">Application Status: <!-- Change the badges --> 
-                                            <span class=' @if(auth::user()->applicationdetail->status == "In progress") badge badge-primary @endif
-                                                        @if(auth::user()->applicationdetail->status == "Rejected") badge badge-danger @endif
-                                                        @if(auth::user()->applicationdetail->status == "Approved under Payment") badge badge-primary @endif
-                                                        @if(auth::user()->applicationdetail->status == "Paid under Registration") badge badge-primary @endif
-                                                        @if(auth::user()->applicationdetail->status == "Registered") badge badge-success @endif
-                                            rounded-pill ml-3'>{{ auth::user()->applicationdetail->status}}</span> 
+                                            @if( isset(auth::user()->applicationdetail->status))
+                                                {{$temp = auth::user()->applicationdetail->status}}
+                                            @endif
+                                            <span class='rounded-pill ml-3 @if(isset($temp) && $temp == "In progress") badge badge-primary @endif
+
+                                            @if(isset($temp) && $temp == "Rejected") badge badge-danger @endif
+                                            @if(isset($temp) && $temp == "Approved under Payment") badge badge-primary @endif
+                                            @if(isset($temp) && $temp === "Paid under Registration") badge badge-primary @endif
+                                            @if(isset($temp) && $temp == "Registered") badge badge-success @endif '>
+
+                                            @if(isset($temp)) {{ auth::user()->applicationdetail->status}} @endif</span>  
                                         </h3>
                                     
                                     <div>
@@ -263,7 +268,7 @@
                                             <i class="fas fa-angle-double-down fa-2x custom-tertiary-text"></i>
                                         </div>
                                         <div>
-                                            @if ( auth::user()->applicationdetail->status == "Approved under Payment")
+                                            @if(isset($temp) && $temp == "Approved under Payment")
                                                 <button type="button" id="new" class="btn custom-secondary btn-rounded  p-3" data-toggle='modal' data-target='#payment_details'>Send Payment Details<i class="fas fa-paper-plane ml-2"></i>
                                                 </button>
                                             @endif
