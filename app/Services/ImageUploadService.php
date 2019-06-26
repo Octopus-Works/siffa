@@ -6,7 +6,7 @@ use App\Image;
 
 class ImageUploadService{
 
-    public static function imageUpload($image, $id)
+    public static function imageUpload($image, $id, $type)
     {
         $path = str_replace('app\Services', '\public\storage\application\\' . $id . '\\', dirname(__FILE__));
         if (!empty($image)) {
@@ -14,7 +14,7 @@ class ImageUploadService{
             Image::Create([
                 'url'            => '/storage/application/' . $id . '/'. $image->getClientOriginalName(),
                 'imageable_id'   => $id,
-                'imageable_type' => 'App\ApplicationDetail',
+                'imageable_type' => $type,
             ]);
         }
     }

@@ -107,8 +107,13 @@ class ApplicationController extends Controller
         ]);
         
         foreach($request->files as $file)
-        ImageUploadService::imageUpload($file, $user->id);
+        ImageUploadService::imageUpload($file, $user->id, "App\ApplicationDetail");
 
         return redirect()->back()->with('Success'); 
+    }
+
+    public function imageUpload(Request $request){
+        foreach($request->files as $file)
+        ImageUploadService::imageUpload($file, Auth::user()->id, "App\ApplicationDetail");
     }
 }

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\InternalMessaging;
+use Auth;
 use App\Image;
-use Auth; 
+use App\InternalMessaging;
+use Illuminate\Http\Request;
+use App\Services\ImageUploadService;
+
 
 class MessageController extends Controller
 {
@@ -57,21 +59,9 @@ class MessageController extends Controller
         else if ( auth::user()->role->name == 'RMS')
             $mail->receiver_id = $request->reciver;
         $mail->save();
-        if ( $request->hasfile('attachement')){
-            $filenameWithExt = $request->file('attachement')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $request->file('attachement')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore= $filename.'_'.time().'.'.$extension;
-            $path = $request->file('attachement')->storeAs('public/attachement', $fileNameToStore);
-            $Image = new Image;  
-            $Image->imageable_id = $mail->id;
-            $Image->imageable_type = 'App\InternalMessaging';
-            $Image->url = '/storage/attachement/'. $fileNameToStore;
-            $Image->save();
-        }
+
+        foreach($request->files as $file)
+        ImageUploadService::imageUpload($file, Auth::user()->id, "App\InternalMessaging" );
         
         return response('success'); 
 
