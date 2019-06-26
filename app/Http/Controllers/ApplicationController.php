@@ -77,13 +77,39 @@ class ApplicationController extends Controller
 
         $user->update([
             'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
         
         foreach($request->files as $file)
         ImageUploadService::imageUpload($file, $user->id);
 
         Session::flash('Success', 'Registeration is completed');
-        return redirect()->route('about');
+        return redirect()->back()->with('Success'); 
     }
 
+    public function miniUpdate(Request $request){
+        
+        // $validated = $request->validated(); 
+        $user = User::find(Auth::user()->id); 
+        $user->userdetail()->update([
+            'fullname'      => $request->fullname,
+            'father_name'   => $request->father, 
+            'mother_name'   => $request->mother,
+            'website'       => $request->website,
+        ]);
+
+        $user->shippingOffice()->update([
+            'name'      => $request->company_name,
+        ]);
+
+        $user->update([
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        
+        foreach($request->files as $file)
+        ImageUploadService::imageUpload($file, $user->id);
+
+        return redirect()->back()->with('Success'); 
+    }
 }

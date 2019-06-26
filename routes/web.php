@@ -88,6 +88,7 @@ Route::group(['prefix' => 'user' , 'middleware' => ['auth', 'user'] ] , function
     Route::get('/company_info/{id}', 'UserController@userCompanyInfo');
     Route::get('/application_info', 'ApplicationController@edit');
     Route::post('/application_info', 'ApplicationController@update')->name('application_edit');
+    Route::post('/', 'ApplicationController@miniUpdate')->name('mini_edit');
     Route::post('/payment_notification', 'UserController@paymentNotification')->name('paymentNotification');
 });
 /*

@@ -118,7 +118,7 @@
                                     <div class="card-body card-body-cascade text-center">
 
                                         <!-- Edit Form -->
-                                        <form action="" method="POST">
+                                        <form action="{{ route('mini_edit')}}" method="POST">
                                             @csrf
                                             <!-- First row -->
 
@@ -136,10 +136,10 @@
                                                 <!-- Second column -->
                                                 <div class="col-md-6">
                                                     <div class="md-form mb-0">
-                                                        <input id="username" name="username" type="text"
+                                                        <input id="company_name" name="company_name" type="text"
                                                             value="{{ $user->shippingoffice->name }}"
                                                             class="validate form-control">
-                                                        <label for="username">{{ __('Username') }}</label>
+                                                        <label for="company_name">{{ __('company_name') }}</label>
 
                                                     </div>
                                                 </div>
@@ -189,7 +189,7 @@
                                                     <div class="md-form mb-0">
                                                         <input id="password" name="password" value="" type="text"
                                                             class="validate form-control">
-                                                        <label for="password">Password</label>
+                                                        <label for="password">{{__('Password')}}</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -200,7 +200,7 @@
                                                 <div class="md-form mb-0">
                                                     <input id="website" name="website" value="{{$user->userdetail->website}}"
                                                         type="text" class="validate form-control">
-                                                    <label for="website">Website Address</label>
+                                                    <label for="website">{{ __('Website Address')}}</label>
                                                 </div>
                                             </div>
                                             <!-- Third row -->
