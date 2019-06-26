@@ -15,21 +15,9 @@ class UserController extends Controller
     }
     
     public function paymentNotification(Request $request){
-        if($request->has('img')){
-            $filenameWithExt = $request->file('img')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $request->file('img')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore= $filename.'_'.time().'.'.$extension;
-            $path = $request->file('img')->storeAs('public/applicationPayment', $fileNameToStore);
-            $i = new Image;  
-            $i->imageable_id = auth::user()->id;
-            $i->imageable_type = 'App\ApplicationDetail';
-            $i->url = '/storage/applicationPayment/'. $fileNameToStore;
-            $i->save();
-        }
+
+        foreach($request->files as $file)
+        ImageUploadService::imageUpload($file, $user->id, "App\ApplicationDetail");
 
         $user = User::find(auth::user()->id); 
         if ( $user->applicationdetail->status == "Approved under Payment"){

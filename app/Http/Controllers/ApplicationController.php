@@ -51,12 +51,12 @@ class ApplicationController extends Controller
             'website'       => $request->website,
             'record'        => $request->record,
             'nationality'   => $request->nationality, 
-            'address'       => $request->address,
+            'address'       => preg_replace( "/\r|\n/", "", $request->address ),
         ]);
 
         $user->shippingOffice()->update([
             'name'      => $request->company_name,
-            'addresses' => $request->branches_address,
+            'addresses' => preg_replace( "/\r|\n/", "", $request->branches_address ),
             'shipping_services'   => $request->shipping_services,
             'position_title'      => $request->position_title,
             'chamber_of_commerce' => $request->chamber_of_commerce,

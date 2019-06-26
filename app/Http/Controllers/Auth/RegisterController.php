@@ -108,13 +108,23 @@ class RegisterController extends Controller
         ]);
 
         ApplicationDetail::Create([
-            'user_id' => $user->id, 
+            'user_id' => $user->id,
+            'status'  => 1,
         ]);
 
         $shippingOffice->officeservices()->attach($shippingService);
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
         return redirect('login');
+
+        // $application = new ApplicationDetail; 
+        // $application->user_id = $user->id;
+        // $application->Financial_assignment_status = $request->financial_status;
+        // $application->Date_of_application = $request->date_of_application; 
+        // $application->Resume_information = $request->resume_info;
+        // $application->save();
+        // $request->file('financial_photo')
+
 
         // $details->father_name = $request->father; 
         // $details->mother_name = $request->mother;
@@ -131,7 +141,7 @@ class RegisterController extends Controller
         // $office->position_title = $request->position_title;
         // $office->chamber_of_commerce = $request->chamber_of_commerce; 
         // $office->save();
- 
+
         // $services = new ShippingService; 
         // $services->user_id = $user->id;
         // $chk = implode(' ', $request->shipping_methods);
@@ -140,15 +150,8 @@ class RegisterController extends Controller
         // $services->shipping_modes = $chk1;
         // $services->sources_destinations = $request->src_dest;
         // $services->save(); 
+       
 
-
-        // $application = new ApplicationDetail; 
-        // $application->user_id = $user->id;
-        // $application->Financial_assignment_status = $request->financial_status;
-        // $application->Date_of_application = $request->date_of_application; 
-        // $application->Resume_information = $request->resume_info;
-        // $application->save();
-        // $request->file('financial_photo')
         
     }
 }

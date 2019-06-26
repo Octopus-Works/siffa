@@ -48,7 +48,6 @@ class MessageController extends Controller
         if($request->exists('sender') && $request->exists('reciver'))
         if( $request->reciver == $request->sender)
         return response('error',500); 
-
         
         $mail = new InternalMessaging;
         $mail->subject = $request->subject; 
@@ -62,9 +61,8 @@ class MessageController extends Controller
 
         foreach($request->files as $file)
         ImageUploadService::imageUpload($file, Auth::user()->id, "App\InternalMessaging" );
-        
-        return response('success'); 
 
+        return redirect()->back()->with('Success'); 
     }
 
     /**
