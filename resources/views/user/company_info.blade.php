@@ -59,9 +59,9 @@
                             <div class="view overlay">
                                 {{ $temp = ""}}
                                 @if ( isset($user->applicationdetail->images[2]->url))
-                                    {{ $temp = $user->applicationdetail->images[2]->url }}
+                                    @php $temp = $user->applicationdetail->images[2]->url @endphp
                                 @endif
-                                <img src="{{$temp}}"
+                                <img src="{{url($temp)}}"
                                     style="min-height:383px; min-width:400px" class="img-fluid z-depth-1" alt="">
                                 <div class="mask rgba-white-slight"></div>
                             </div>

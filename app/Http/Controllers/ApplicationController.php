@@ -83,7 +83,6 @@ class ApplicationController extends Controller
         foreach($request->files as $file)
         ImageUploadService::imageUpload($file, $user->id);
 
-        Session::flash('Success', 'Registeration is completed');
         return redirect()->back()->with('Success'); 
     }
 

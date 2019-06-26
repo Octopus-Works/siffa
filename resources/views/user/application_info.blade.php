@@ -205,7 +205,7 @@
                                                 <label for="chamber">Chamber of Commerce</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="regist-num" name="commercial_registry" value="{{$user->shippingOffice->commerical_registry}}" type="text" class="validate form-control" required>
+                                                <input id="regist-num" name="commercial_registry" value="{{$user->shippingOffice->commercial_registry}}" type="text" class="validate form-control" required>
                                                 <label for="regist-num">Commercial Registration Number</label>
                                             </div>
                                         </div>
@@ -286,7 +286,7 @@
                                             </div>
                                                 {{ $temp = ''}}
                                                 @if ( isset($user->applicationdetail->images[0]->url))
-                                                    {{ $temp = $user->applicationdetail->images[0]->url }}
+                                                    @php $temp = $user->applicationdetail->images[0]->url @endphp
                                                 @endif
                                             <div class="col-md-12">
                                                 <img id="financial" src="{{ url($temp)}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
@@ -321,7 +321,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 @if ( isset($user->applicationdetail->images[1]->url))
-                                                    {{ $temp = $user->applicationdetail->images[1]->url }}
+                                                    @php $temp = $user->applicationdetail->images[1]->url @endphp
                                                 @endif
                                                 <img id="signature" src="{{ $temp}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
@@ -375,7 +375,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 @if ( isset($user->applicationdetail->images[2]->url))
-                                                    {{ $temp = $user->applicationdetail->images[2]->url }}
+                                                    @php $temp = $user->applicationdetail->images[2]->url @endphp
                                                 @endif
                                                 <img id="application" src="{{ url($temp)}}" alt=""
                                                     style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
