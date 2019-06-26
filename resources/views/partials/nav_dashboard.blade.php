@@ -36,12 +36,20 @@
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
 
               @foreach($notifications as $notes)
-                @if ( $notes->checked == 0 && $notes->type == "rms" )
+                @if ( $notes->checked == 0 && $notes->type == "rms" && Auth::getUser()->role->name == "rms")
                   <a class="dropdown-item" href="{{ url('rms/application')}}/{{$notes->user->id}}">
                     <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
                     <span>{{ $notes->body }}</span>
                     <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> {{$notes->created_at}}</span>
                   </a>
+                @elseif ( $notes->checked == 0 && $notes->type == "user" && Auth::getUser()->role->name == "user")
+
+                  <a class="dropdown-item" href="{{ url('rms/application')}}/{{$notes->user->id}}">
+                    <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
+                    <span>{{ $notes->body }}</span>
+                    <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> {{$notes->created_at}}</span>
+                  </a>
+
                 @endif
               @endforeach
               

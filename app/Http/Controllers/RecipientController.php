@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use Session;
 use Auth;
+use App\User;
+use App\Notification;
 use App\InternalMessaging;
 
 
@@ -63,12 +63,25 @@ class RecipientController extends Controller
     }
  
     public function approved($id){
+
         $user = User::find($id); 
         if ( $user->applicationdetail->status == "In progress"){
             $user->applicationdetail->status = 3;
+
+            $notify = new Notification; 
+            $notify->body = "Upload payment Information";
+            $notify->user_id = $id;
+            $notify->type = "user";  
+            $notify->save();
         }
         else if( $user->applicationdetail->status == "Paid under Registration"){
             $user->applicationdetail->status = 5;
+
+            $notify = new Notification; 
+            $notify->body = "Upload payment Information";
+            $notify->user_id = $id;
+            $notify->type = "user";  
+            $notify->save();
         }
         $user->applicationdetail->save(); 
         return response('Success'); 

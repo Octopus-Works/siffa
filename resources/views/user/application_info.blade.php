@@ -265,7 +265,7 @@
                                         <h5 class="text-center font-weight-bolder">Financial Information <i class="fas fa-money-check-alt m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="financial-status" name="financial_status" value="{{$user->applicationDetail->Financial_assignment_status}}" type="text" class="validate form-control" required>
+                                                <input id="financial-status" name="financial_status" value="{{$user->applicationDetail->financial_assignment_status}}" type="text" class="validate form-control" required>
                                                 <label for="financial-status">Financial Assignment Status</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
@@ -326,7 +326,7 @@
                                                 <img id="signature" src="{{ $temp}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input placeholder="Date of Application" name="date_of_application" value="{{$user->applicationDetail->Date_of_application}}" type="text" id="date-picker-example2"
+                                                <input placeholder="Date of Application" name="date_of_application" value="{{$user->applicationDetail->date_of_application}}" type="text" id="date-picker-example2"
                                                     class="form-control datepicker">
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
@@ -342,7 +342,7 @@
                                         <h5 class="text-center font-weight-bolder">Resume Information <i class="fas fa-user-edit ml-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <textarea id="resume-info" name="resume_info" class="md-textarea form-control" rows="3"> {{$user->applicationDetail->Resume_information}} </textarea>
+                                                <textarea id="resume-info" name="resume_info" class="md-textarea form-control" rows="3"> {{$user->applicationDetail->resume_information}} </textarea>
                                                 <label for="resume-info">Resume Inofrmation (As Mentioned in the Application Document)</label>
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">

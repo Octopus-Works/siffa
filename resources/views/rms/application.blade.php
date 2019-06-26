@@ -145,7 +145,6 @@
                                                 class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
                                         </div>
                                     </div>
-
                                 </li>
                                 <li class="step">
                                     <div id="step2" class="step-title waves-effect waves-dark">Step 2</div>
@@ -173,7 +172,7 @@
                                                 <label for="chamber">Chamber of Commerce</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="regist-num" name="commercial_registry" type="text" value="{{$user->shippingOffice->commerical_registry}}" disabled>
+                                                <input id="regist-num" name="commercial_registry" type="text" value="{{$user->shippingOffice->commercial_registry}}" disabled>
                                                 <label for="regist-num">Commercial Registration Number</label>
                                             </div>
                                         </div>
@@ -233,7 +232,7 @@
                                         <h5 class="text-center font-weight-bolder">Financial Information <i class="fas fa-money-check-alt m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="financial-status" name="financial_status" type="text" value="{{$user->applicationDetail->Financial_assignment_status}}" disabled>
+                                                <input id="financial-status" name="financial_status" type="text" value="{{$user->applicationDetail->financial_assignment_status}}" disabled>
                                                 <label for="financial-status">Financial Assignment Status</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
@@ -249,8 +248,10 @@
                                                     </div>
 
                                                     <br>
-                                                    <img src="{{ url($user->applicationdetail->images[0]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt="" 
-                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px">
+                                                    @if (isset($user->applicationdetail->images[0]->url))
+                                                        <img src="{{ url($user->applicationdetail->images[0]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt="" 
+                                                        style="min-height:200px; max-height:400px; min-width:200px; max-width:400px">
+                                                    @endif
 
                                                     <div class="step-actions d-flex justify-content-center">
                                                         <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
@@ -283,12 +284,14 @@
 
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input name="date_of_application" type="text" id="date-picker-example2" value="{{$user->applicationDetail->Date_of_application}}" disabled>
+                                                <input name="date_of_application" type="text" id="date-picker-example2" value="{{$user->applicationDetail->date_of_application}}" disabled>
                                                 <label for="date_of_application">Financial Assignment Status</label>
                                             </div>
                                             <div>
-                                                <img src="{{ url($user->applicationdetail->images[1]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt=""
-                                                style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" >
+                                                @if (isset($user->applicationdetail->images[1]->url))
+                                                    <img src="{{ url($user->applicationdetail->images[1]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt=""
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" >
+                                                @endif
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
                                                 <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
@@ -303,7 +306,7 @@
                                         <h5 class="text-center font-weight-bolder">Resume Information <i class="fas fa-user-edit ml-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <textarea id="resume-info" name="resume_info" class="md-textarea form-control" rows="3" disabled>{{$user->applicationDetail->Resume_information}}</textarea>
+                                                <textarea id="resume-info" name="resume_info" class="md-textarea form-control" rows="3" disabled>{{$user->applicationDetail->resume_information}}</textarea>
                                                 <label for="resume-info">Resume Information (As Mentioned in the Application Document)</label>
                                             </div>
                                             <div class="step-actions d-flex justify-content-center">
@@ -332,8 +335,10 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <img src="{{ url($user->applicationdetail->images[2]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt="" 
-                                                style="min-height:200px; max-height:400px; min-width:200px; max-width:400px">
+                                                @if (isset($user->applicationdetail->images[2]->url))
+                                                    <img src="{{ url($user->applicationdetail->images[2]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt="" 
+                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px">
+                                                @endif
                                             </div>
                                             <div class="d-flex justify-content-center col-md-12">
                                                 <button id='state' type="button" class="btn btn-success btn-rounded px-2">Approve Application </a></button>
