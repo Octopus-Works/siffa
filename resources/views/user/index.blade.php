@@ -61,6 +61,7 @@
 
         <main>
 
+                @include('modal_partials.upload_photo_modal')
 
             <div class="container-fluid" style="height:100%">
                 <div class="container ">
@@ -92,7 +93,7 @@
 
                                         <p class="text-muted"><small>Profile photo will be changed automatically</small> </p>
                                         <div class="row flex-center">
-                                            <button class="btn custom-secondary black-text btn-rounded">Upload New Photo</button><br>
+                                            <button class="btn custom-secondary black-text btn-rounded" data-toggle="modal" data-target="#modal_upload_photo">Upload New Photo</button><br>
                                             <button class="btn btn-danger btn-rounded">Delete</button>
                                         </div>
                                     </div>

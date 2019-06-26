@@ -44,7 +44,7 @@
                   </a>
                 @elseif ( $notes->checked == 0 && $notes->type == "user" && Auth::getUser()->role->name == "user")
 
-                  <a class="dropdown-item" href="{{ url('rms/application')}}/{{$notes->user->id}}">
+                  <a class="dropdown-item" href="{{ url('user/app_status')}}">
                     <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
                     <span>{{ $notes->body }}</span>
                     <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> {{$notes->created_at}}</span>
