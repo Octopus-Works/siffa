@@ -7,12 +7,7 @@
     <title>Register</title>
     <link rel="stylesheet" href={{url("css/intlTelInput.css")}}>
     <style>
-        @media only screen and (min-width: 993px) {
-            ul.stepper.horizontal .step-title {
-                padding: 0 1.5625rem 0 3.5rem !important;
-                white-space: normal !important;
-            }
-        }
+
 
         .custom-control-label::after {
             cursor: pointer;
@@ -22,17 +17,7 @@
             margin-top: 6rem !important;
         }
 
-        ul.stepper .step.active:before {
-            background-color: #ffc107 !important;
-        }
 
-        ul.stepper.horizontal .step.active .step-title:before {
-            background-color: #ffc107 !important;
-        }
-
-        ul.stepper.horizontal .step-actions {
-            position: relative !important;
-        }
 
         .hide {
             display: none;
@@ -44,11 +29,12 @@
         }
 
         .intl-tel-input {
-            width: 93% !important;
             position: relative;
-            display: inline-block;
+            display: block;
+            width:89%;
         }
 
+  
     </style>
 </head>
 
@@ -69,83 +55,72 @@
             </div>
         </div>
         <div class="container">
-            <!--Grid row-->
-            <div class="row mb-5 mt-5 p-3">
+                <div class=" col-xl-9 col-lg-9  col-md-9 col-sm-12 mx-auto m-5">
+                        <div class="card mt-3 mb-3 shadow-lg text-center p-3">
 
-                <!--Grid column-->
-                <div class="col-md-12">
-                    <form id="app_form" enctype="multipart/form-data" method="POST">
-                        @csrf
-                        <div class="card p-5 mt-3 mb-3 shadow-lg">
-                            <h1 class="text-center mb-5 font-weight-bolder">Register<i
+                            <h1 class="text-center mb-5 font-weight-bolder mt-2">Register<i
                                     class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
-                            <ul class="horizontal" id="horizontal-stepper" style="height:1000px;">
-                                <li class="step active">
-                                    <div class="step-new-content">
-                                        <div class="row">
-                                            <div class="md-form col-12 ml-auto">
+                                    <div class="card-body px-lg-5 pt-0 ">
+ 
+                                    <form id="app_form" class="text-center" enctype="multipart/form-data" method="POST">
+                                        @csrf
+                                            <div class="md-form">
                                                 <input id="fullname" name="fullname" type="text"
                                                     class="validate form-control" required>
                                                 <label for="fullname">{{ __('Full name') }}</label>
                                             </div>
 
-                                            <div class="md-form col-12 ml-auto">
+                                            <div class="md-form">
                                                 <input id="email" name="email" type="email"
                                                     class="validate form-control" required>
                                                 <label for="email">{{ __('E-mail') }}</label>
                                             </div>
 
-                                            <div class="md-form col-12 ml-auto">
+                                            <div class="md-form">
                                                 <input id="nationality" name="nationality" type="text"
                                                     class="validate form-control" required>
                                                 <label for="nationality">{{ __('Nationality')}}</label>
                                             </div>
 
-                                            <div class="md-form col-12 ml-auto">
+                                            <div class="md-form">
                                                 <input id="address" name="address" type="text"
                                                     class="validate form-control" required>
                                                 <label for="address">{{ __('Address') }}</label>
                                             </div>
 
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="phone" type="tel" class="validate form-control" name="phone"
-                                                    required>
-                                                <span id="valid-msg" class="hide">✓</span>
-                                                <span id="error-msg" class="hide"></span>
-                                            </div>
-
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="mobile" type="tel" class="validate form-control"
-                                                    name="mobile" required>
-                                                <span id="valid-msg" class="hide">✓</span>
-                                                <span id="error-msg" class="hide"></span>
-                                            </div>
-
-                                            <div class="md-form col-12 ml-auto">
+                                            <div class="md-form">
                                                 <input id="company-name" name="company_name" type="text"
                                                     class="validate form-control" required>
                                                 <label for="company-name">{{ __('Shipping Company Name') }}</label>
                                             </div>
 
-                                            <div class="md-form col-12 ml-auto">
+                                            <div class="md-form">
                                                 <input id="regist-num" name="commercial_registry" type="text"
                                                     class="validate form-control" required>
                                                 <label for="regist-num">{{ __('Commercial Registration Number') }}</label>
                                             </div>
 
-                                            <div class="step-actions d-flex justify-content-center">
+                                            <div class="md-form text-left">
+                                                <input id="mobile" type="tel" class="validate form-control" name="mobile" placeholder="Mobile: (201) 555-0123"
+                                                    required>
+                                            </div>
+    
+                                            <div class="md-form text-left">
+                                                <input id="phone" type="tel" class="validate form-control" placeholder="Phone: (201) 555-0123"
+                                                    name="phone" required>
+                                            </div>
+
+                                            <div class="d-flex justify-content-center">
                                                 <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
                                                     type="submit">{{ __('SUBMIT') }}</button>
                                             </div>
-                                        </div>
+                                    </form>
 
-                                    </div>
-                                </li>
-                            </ul>
+  
                         </div>
-                    </form>
+                        </div>
                 </div>
-            </div>
+
         </div>
         <div class="view jarallax">
             <img class="jarallax-img" src={{url('img/7.jpg')}} alt="">
@@ -176,15 +151,7 @@
     </script>
 
     <script>
-        $(document).ready(function () {
-            $('.stepper').mdbStepper();
-        })
 
-        function someFunction21() {
-            setTimeout(function () {
-                $('#horizontal-stepper').nextStep();
-            }, 2000);
-        }
 
         // Data Picker Initialization
         $('.datepicker').pickadate();
