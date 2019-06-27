@@ -24,7 +24,6 @@
         form .error {
             color: red;
             text-align: left;
-            margin-top: -20px
         }
 
         .md-form label{
@@ -32,7 +31,11 @@
             font-weight: bold;
         }
 
-
+        .intl-tel-input {
+            position: relative;
+            display: block;
+            width: 95%;
+        }
 
     </style>
 </head>
@@ -105,16 +108,16 @@
 
                             <div class="md-form text-left">
 
-                                <input type="text" id="mobile" type="tel" class="form-control" name="tel1" placeholder="Mobile: (201) 555-0123">
-                                <span id="valid-msg2" class="hide">✓</span>
+                                <input type="text" id="mobile" type="tel" class="form-control" name="tel1" placeholder="Mobile: (201) 555-0123" required>
+                                {{-- <span id="valid-msg2" class="hide">✓</span> --}}
                                 <span id="error-msg2" class="hide"></span>
                             </div>
 
 
                             <div class="md-form text-left">
 
-                                <input type="text" id="phone" type="tel" class="form-control" name="tel2" placeholder="Phone: (201) 555-0123">
-                                <span id="valid-msg1" class="hide">✓</span>
+                                <input type="text" id="phone" type="tel" class="form-control" name="tel2" placeholder="Phone: (201) 555-0123" required>
+                                {{-- <span id="valid-msg1" class="hide">✓</span> --}}
                                 <span id="error-msg1" class="hide"></span>
                             </div>
 
