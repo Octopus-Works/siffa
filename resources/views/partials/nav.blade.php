@@ -7,7 +7,7 @@
 		padding-left: 0px !important;
 		padding-bottom: 15px !important;
 		margin: 0px !important;
-		font-size: 15px !important;
+		font-size: 14px !important;
 	}
 
     .nav-item .dropdown-item{
