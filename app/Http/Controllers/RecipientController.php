@@ -78,7 +78,7 @@ class RecipientController extends Controller
             $user->applicationdetail->status = 5;
 
             $notify = new Notification; 
-            $notify->body = "Upload payment Information";
+            $notify->body = "Your application is approved";
             $notify->user_id = $id;
             $notify->type = "user";  
             $notify->save();

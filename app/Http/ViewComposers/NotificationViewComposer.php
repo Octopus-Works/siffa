@@ -17,6 +17,8 @@ class NotificationViewComposer
     public function compose(View $view)
     {
         $notify = Notification::all(); 
-        $view->with('notifications', $notify); 
+        $q1 = Notification::where('type', 'user')->count();
+        $q2 = Notification::where('type', 'rms')->count();
+        $view->withnotifications($notify)->withcount1($q1)->withcount2($q2);
     }
 }

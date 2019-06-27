@@ -7,6 +7,7 @@ use App\Notification;
 use App\Image; 
 use app\User;
 use Auth;
+use App\Services\ImageUploadService;
 
 class UserController extends Controller
 {
@@ -17,7 +18,7 @@ class UserController extends Controller
     public function paymentNotification(Request $request){
 
         foreach($request->files as $file)
-        ImageUploadService::imageUpload($file, $user->id, "App\ApplicationDetail");
+        ImageUploadService::imageUpload($file,Auth::user()->id, "App\ApplicationDetail");
 
         $user = User::find(auth::user()->id); 
         if ( $user->applicationdetail->status == "Approved under Payment"){
@@ -26,7 +27,7 @@ class UserController extends Controller
         $user->applicationdetail->save(); 
 
         $notify = new Notification; 
-        $notify->body = "Uploaded payment Information";
+        $notify->body = "Payment Information uploaded";
         $notify->user_id = auth::user()->id;
         $notify->type = "rms";  
         $notify->save();
