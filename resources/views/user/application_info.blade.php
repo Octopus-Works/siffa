@@ -156,15 +156,16 @@
                                                 <label for="address">Address</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input type="text" id="phone" type="tel" class="validate form-control" name="phone" value="{{$user->userdetail->phone_number}}" required>
-                                                <span id="valid-msg" class="hide">✓</span>
-                                                <span id="error-msg" class="hide"></span>
+                                                <input type="text" id="mobile" type="tel" class="validate form-control" name="mobile" value="{{$user->userdetail->mobile_number}}" required>
+                                                <span id="valid-msg2" class="hide">✓</span>
+                                                <span id="error-msg2" class="hide"></span>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input type="text" id="mobile" type="tel" class="validate form-control" name="mobile" value="{{$user->userdetail->mobile_number}}" required>
-                                                <span id="valid-msg" class="hide">✓</span>
-                                                <span id="error-msg" class="hide"></span>
+                                                <input type="text" id="phone" type="tel" class="validate form-control" name="phone" value="{{$user->userdetail->phone_number}}" required>
+                                                <span id="valid-msg1" class="hide">✓</span>
+                                                <span id="error-msg1" class="hide"></span>
                                             </div>
+
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="website" name="website" value="{{$user->userdetail->website}}" type="text" class="validate form-control" required>
                                                 <label for="website">Website</label>
@@ -410,6 +411,20 @@
     <script src={{url("js/intlTelInput.js")}}></script>
 
     <script>
+        populateCountries("country",
+        "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+        var input1 = document.querySelector("#phone");
+        var input2 = document.querySelector("#mobile");
+        window.intlTelInput(input1, {
+            utilsScript: "js/utils.js",
+        });
+        window.intlTelInput(input2, {
+            utilsScript: "js/utils.js",
+        });
+    </script>
+
+
+    <script>
         $(".button-collapse").sideNav();
 
         var container = document.querySelector('.custom-scrollbar');
@@ -513,96 +528,98 @@
 
     </script>
 
-    <script>
-        $(document).ready(function () {
+<script>
+    $(document).ready(function () {
 
-            var input_selector = 'input[type=tel]';
-            $(input_selector).each(function (index, element) {
-                if (true) {
-                    $(this).siblings('label').addClass('active');
-                } else {
-                    $(this).siblings('label').removeClass('active');
-                }
+
+                var input1 = document.querySelector("#phone"),
+                input2 = document.querySelector("#mobile"),
+                    errorMsg1 = document.querySelector("#error-msg1"),
+                    errorMsg2 = document.querySelector("#error-msg2"),
+                    validMsg1 = document.querySelector("#valid-msg1"),
+                    validMsg2 = document.querySelector("#valid-msg2");
+                var flag = false;
+                // here, the index maps to the error code returned from getValidationError - see readme
+                var errorMap1 = ["Invalid number", "Invalid country code", "Too short", "Too long",
+                "Invalid number"];
+
+                var errorMap2 = ["Invalid number", "Invalid country code", "Too short", "Too long",
+                "Invalid number"];
+
+
+
+
+                // initialise plugin
+                var iti1 = window.intlTelInput(input1, {
+                    utilsScript: '{{url("js/utils.js")}}',
+                });
+
+                var iti2 = window.intlTelInput(input2, {
+                    utilsScript: '{{url("js/utils.js")}}',
+                });
+
+                var reset1 = function () {
+                    input1.classList.remove("error");
+
+                    errorMsg1.classList.add("hide");
+                    validMsg1.classList.add("hide");
+
+                };
+
+                var reset2 = function () {
+                    input2.classList.remove("error");
+
+                    errorMsg2.classList.add("hide");
+                    validMsg2.classList.add("hide");
+
+                };
+
+                // on blur: validate
+                input1.addEventListener('blur', function () {
+                    reset1();
+                    if (input1.value.trim()) {
+                        if (iti1.isValidNumber()) {
+                            validMsg1.classList.remove("hide");
+                        } else {
+                            input1.classList.add("error");
+                            var errorCode1 = iti1.getValidationError();
+                            $('#phone').val(errorMap1[errorCode1]);
+                            errorMsg1.classList.remove("hide");
+
+                        }
+                    }
+                });
+
+                // on blur: validate
+                input2.addEventListener('blur', function () {
+                    reset2();
+                    if (input2.value.trim()) {
+                        if (iti2.isValidNumber()) {
+                            validMsg2.classList.remove("hide");
+                        } else {
+                            input2.classList.add("error");
+                            var errorCode2 = iti2.getValidationError();
+                            $('#mobile').val(errorMap2[errorCode2]);
+                            errorMsg2.classList.remove("hide");
+
+                        }
+                    }
+                });
+
+
+                // on keyup / change flag: reset
+                input1.addEventListener('change', reset);
+                input1.addEventListener('keyup', reset);
+                new WOW().init();
+
+                
+                // on keyup / change flag: reset
+                input2.addEventListener('change', reset);
+                input2.addEventListener('keyup', reset);
+                new WOW().init();
+
             });
-        });
-        var input1 = document.querySelector("#phone"),
-            input2 = document.querySelector("#mobile"),
-            errorMsg = document.querySelector("#error-msg"),
-            validMsg = document.querySelector("#valid-msg");
-        var flag = false;
-        // here, the index maps to the error code returned from getValidationError - see readme
-        var errorMap = ["Invalid number", "Too short", "Too long",
-            "Invalid number"
-        ];
-
-        // initialise plugin
-        var iti1 = window.intlTelInput(input1, {
-            utilsScript: '{{url("js/utils.js")}}',
-        });
-
-        var iti2 = window.intlTelInput(input2, {
-            utilsScript: '{{url("js/utils.js")}}',
-        });
-
-
-        var reset = function () {
-            input1.classList.remove("error");
-
-            errorMsg.classList.add("hide");
-            validMsg.classList.add("hide");
-
-        };
-
-        var reset = function () {
-            input2.classList.remove("error");
-
-            errorMsg.classList.add("hide");
-            validMsg.classList.add("hide");
-
-        };
-
-        // on blur: validate
-        input1.addEventListener('blur', function () {
-            reset();
-            if (input1.value.trim()) {
-                if (iti1.isValidNumber()) {
-                    validMsg.classList.remove("hide");
-                } else {
-                    input1.classList.add("error");
-                    var errorCode = iti1.getValidationError();
-                    $('#phone').val(errorMap[errorCode]);
-                    errorMsg.classList.remove("hide");
-
-                }
-            }
-        });
-
-        input2.addEventListener('blur', function () {
-            reset();
-            if (input2.value.trim()) {
-                if (iti2.isValidNumber()) {
-                    validMsg.classList.remove("hide");
-                } else {
-                    input2.classList.add("error");
-                    var errorCode = iti2.getValidationError();
-                    $('#mobile').val(errorMap[errorCode]);
-                    errorMsg.classList.remove("hide");
-
-                }
-            }
-        });
-
-
-        // on keyup / change flag: reset
-        input1.addEventListener('change', reset);
-        input1.addEventListener('keyup', reset);
-        new WOW().init();
-
-        input2.addEventListener('change', reset);
-        input2.addEventListener('keyup', reset);
-        new WOW().init();
-
-    </script>
+</script>
 
 
 </body>

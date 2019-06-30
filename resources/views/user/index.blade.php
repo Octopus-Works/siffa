@@ -188,7 +188,7 @@
 
                                                 <div class="col-md-6">
                                                     <div class="md-form mb-0">
-                                                        <input id="password" name="password" value="" type="text"
+                                                        <input id="password" name="password" value="" type="password"
                                                             class="validate form-control">
                                                         <label for="password">{{__('Password')}}</label>
                                                     </div>
