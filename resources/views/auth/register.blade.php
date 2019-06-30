@@ -26,12 +26,16 @@
         form .error {
             color: red;
             text-align:left;
-            margin-top:-2rem;
+            margin-top:-1rem;
 
         }
 
-        #mobile-error, #phone-error{
+        #mobile-error, #phone-error, .initialized{
             margin-top:0!important
+        }
+
+        .intl-tel-input .flag-container{
+            top:-15px!important;
         }
 
         .intl-tel-input {
@@ -88,13 +92,23 @@
                                                 <label for="nationality">{{ __('Nationality')}}</label>
                                             </div>
 
-                                            <div class="md-form">
-                                                <select class="validate mdb-select md-form" id="country" name="country" required></select>
-                                            </div>
-                    
-                                            <div class="md-form hide" id="statediv">
-                                                <select disabled class="validate mdb-select md-form" name="city" id="state" required></select>
-                                            </div>
+                                            <select class="mdb-select md-form" required>
+                                                    <option value="" disabled selected>City</option>
+                                                    <option value="1">Al Hasakah</option>
+                                                    <option value="2">Al Ladhiqiyah</option>
+                                                    <option value="3">Al Qunaytirah</option>
+                                                    <option value="4">Ar Raqqah</option>
+                                                    <option value="5">As Suwayda'</option>
+                                                    <option value="6">Dar'a</option>
+                                                    <option value="7">Dayr az Zawr</option>
+                                                    <option value="8">Dimashq</option>
+                                                    <option value="9">Halab</option>
+                                                    <option value="10">Hamah</option>
+                                                    <option value="11">Hims</option>
+                                                    <option value="12">Idlib</option>
+                                                    <option value="13">Rif Dimashq</option>
+                                                    <option value="14">Tartus</option>
+                                            </select>
 
                                             <div class="md-form">
                                                 <input id="company-name" name="company_name" type="text"
@@ -150,12 +164,6 @@
         src={{url("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js")}}></script>
     <script src={{url("js/validate.js")}}></script>
     <script src={{url("js/intlTelInput.js")}}></script>
-    <script src={{url("js/countries.js")}}></script>
-    <script>
-        populateCountries("country",
-            "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
-
-    </script>
 
 
 
@@ -202,11 +210,6 @@
         $(document).ready(function () {
             $('.mdb-select').materialSelect();
         });
-
-        $('#country').change(function() {
-            $('#statediv').removeClass('hide');
-        });
-
 
     </script>
 

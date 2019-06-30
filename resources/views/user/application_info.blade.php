@@ -7,13 +7,6 @@
     <title>Edit Application</title>
     <link rel="stylesheet" href={{url("css/intlTelInput.css")}}>
     <style>
-        @media only screen and (min-width: 993px) {
-            ul.stepper.horizontal .step-title {
-                padding: 0 1.5625rem 0 3.5rem !important;
-                white-space: normal !important;
-            }
-        }
-
         .mt-5 {
             margin-top: 6rem !important;
         }
@@ -26,10 +19,36 @@
             background-color: #ffc107 !important;
         }
 
-        ul.stepper.horizontal .step-actions {
-            position: relative !important;
+        ul.stepper .step.done:before,
+        ul.stepper .step.wrong:before {
+            font-family: 'Font Awesome 5 free';
+            font-weight: 900;
         }
 
+        ul.stepper .step.done:before {
+            font-size: 1rem;
+            background-color: #00c851;
+        }
+
+        ul.stepper .step.wrong:before {
+            font-family: 'Font Awesome 5 Free' !important;
+            font-size: 1rem;
+        }
+
+        @media only screen and (min-width: 993px) {
+            ul.stepper.horizontal .step.done .step-title:before {
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                font-size: 1rem;
+                background-color: #00c851 !important;
+            }
+        }
+
+        @media only screen and (min-width: 993px) {
+            ul.stepper.horizontal .step.wrong .step-title:before {
+                font-family: 'Font Awesome 5 Free' !important;
+            }
+        }
 
         .md-form label {
             color: #b7b9bd !important;
@@ -49,10 +68,10 @@
             color: #5f96ce !important;
         }
 
-        
 
-        .custom-control-label::before{
-            background-color:#ffffff00!important;
+
+        .custom-control-label::before {
+            background-color: #ffffff00 !important;
         }
 
         .hide {
@@ -64,10 +83,28 @@
 
         }
 
+        #mobile-error,
+        #phone-error,
+        .initialized {
+            margin-top: 0 !important
+        }
+
+        .intl-tel-input .flag-container {
+            top: -15px !important;
+        }
+
         .intl-tel-input {
             width: 93% !important;
             position: relative;
             display: inline-block;
+        }
+
+        .custom-control-label::after {
+            cursor: pointer;
+        }
+
+        .btn-rounded{
+            padding: .60rem 1.4rem!important;
         }
 
     </style>
@@ -92,31 +129,35 @@
 
                 <!--Grid column-->
                 <div class="col-md-12 ">
-                    <form id="app_form" action="{{ route('application_edit')}} " enctype="multipart/form-data" method="POST">
+                    <form id="app_form" action="{{ route('application_edit')}} " enctype="multipart/form-data"
+                        method="POST">
                         @csrf
                         <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i
                                     class="fas fa-clipboard amber-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
                                 <li class="step active">
-                                    <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
+                                    <div id="step1" class="step-title waves-effect waves-dark">Basic Information</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Personal Information <i
+                                        <h5 class="text-center font-weight-bolder">Basic Information <i
                                                 class="fas fa-user m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="fullname" name="fullname" type="text"
-                                                    value="{{$user->userdetail->fullname}}" class="validate form-control" required>
+                                                    value="{{$user->userdetail->fullname}}"
+                                                    class="validate form-control" required>
                                                 <label for="fullname">{{ __('Full name') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="father" name="father" type="text"
-                                                    value="{{$user->userdetail->father_name}}" class="validate form-control">
+                                                    value="{{$user->userdetail->father_name}}"
+                                                    class="validate form-control">
                                                 <label for="father">{{ __("Father's name") }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="mother" name="mother" type="text"
-                                                    value="{{$user->userdetail->mother_name}}" class="validate form-control">
+                                                    value="{{$user->userdetail->mother_name}}"
+                                                    class="validate form-control">
                                                 <label for="mother">{{ __("Mother's name") }}</label>
                                             </div>
 
@@ -125,7 +166,7 @@
                                                     class="validate form-control" required>
                                                 <label for="email">{{ __('E-mail') }}</label>
                                             </div>
-                                            
+
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input placeholder="Date of Birth" name="date_of_birth"
@@ -139,8 +180,8 @@
                                                 <label for="place-of-birth">{{ __('Place of Birth') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="record" name="record" value="{{$user->userdetail->record}}" type="text"
-                                                    class="validate form-control">
+                                                <input id="record" name="record" value="{{$user->userdetail->record}}"
+                                                    type="text" class="validate form-control">
                                                 <label for="record">{{ __('Individual Civil Registry Record') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
@@ -150,259 +191,221 @@
                                                 <label for="nationality">Nationality</label>
                                             </div>
 
-                                            <div class="md-form col-12 ml-auto">
-                                                    <select class="validate mdb-select md-form" id="country" name="country" required></select>
-                                                </div>
-                        
-                                                <div class="md-form col-12 ml-auto hide" id="statediv">
-                                                    <select disabled class="validate mdb-select md-form" name="city" id="state" required></select>
-                                            </div>
+                                            <select class="mdb-select md-form col-12 ml-auto">
+                                                <option value="" disabled selected>City</option>
+                                                <option value="1">Al Hasakah</option>
+                                                <option value="2">Al Ladhiqiyah</option>
+                                                <option value="3">Al Qunaytirah</option>
+                                                <option value="4">Ar Raqqah</option>
+                                                <option value="5">As Suwayda'</option>
+                                                <option value="6">Dar'a</option>
+                                                <option value="7">Dayr az Zawr</option>
+                                                <option value="8">Dimashq</option>
+                                                <option value="9">Halab</option>
+                                                <option value="10">Hamah</option>
+                                                <option value="11">Hims</option>
+                                                <option value="12">Idlib</option>
+                                                <option value="13">Rif Dimashq</option>
+                                                <option value="14">Tartus</option>
+                                            </select>
 
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="address" name="address" value="{{$user->userdetail->address}}"
-                                                    type="text" class="validate form-control">
+                                                <input id="address" name="address"
+                                                    value="{{$user->userdetail->address}}" type="text"
+                                                    class="validate form-control">
                                                 <label for="address">Address</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input type="text" id="mobile" type="tel" class="validate form-control" name="mobile" value="{{$user->userdetail->mobile_number}}" required>
+                                                <input type="text" id="mobile" type="tel" class="validate form-control"
+                                                    name="mobile" value="{{$user->userdetail->mobile_number}}" required>
                                                 <span id="valid-msg2" class="hide">✓</span>
                                                 <span id="error-msg2" class="hide"></span>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <input type="text" id="phone" type="tel" class="validate form-control" name="phone" value="{{$user->userdetail->phone_number}}" required>
+                                                <input type="text" id="phone" type="tel" class="validate form-control"
+                                                    name="phone" value="{{$user->userdetail->phone_number}}" required>
                                                 <span id="valid-msg1" class="hide">✓</span>
                                                 <span id="error-msg1" class="hide"></span>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="website" name="website" value="{{$user->userdetail->website}}" type="text" class="validate form-control">
+                                                <input id="website" name="website"
+                                                    value="{{$user->userdetail->website}}" type="text"
+                                                    class="validate form-control">
                                                 <label for="website">Website</label>
                                             </div>
                                         </div>
-                                        <div class="step-actions d-flex justify-content-center">
+                                        <div class="mt-2 d-flex justify-content-center">
                                             <button type="submit"
                                                 class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                data-feedback="someFunction21">CONTINUE</button>
+                                                data-feedback="someFunction21">Save Changes</button>
+                                                <button class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
                                     </div>
 
                                 </li>
                                 <li class="step">
-                                    <div id="step2" class="step-title waves-effect waves-dark">Step 2</div>
+                                    <div id="step2" class="step-title waves-effect waves-dark">Shipping Info</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Company Information <i class="fas fa-briefcase m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Shipping Company Information <i
+                                                class="fas fa-briefcase m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="company-name" name="company_name" value="{{$user->shippingOffice->name}}" type="text"
+                                                <input id="company-name" name="company_name"
+                                                    value="{{$user->shippingOffice->name}}" type="text"
                                                     class="validate form-control" required>
                                                 <label for="company-name">Shipping Company Name</label>
                                             </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <textarea id="branches-address" name="branches_address" class="md-textarea form-control" rows="3"> {{$user->shippingOffice->addresses}} </textarea>
-                                                <label for="branches-address">Addresses of Branches</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="type" name="shipping_services" value="{{$user->shippingOffice->shipping_services}}" type="text" class="validate form-control" required>
-                                                <label for="type">Type of Shipping Service Provided</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="position" name="position_title" value="{{$user->shippingOffice->position_title}}" type="text" class="validate form-control" required>
-                                                <label for="position">Workplace Position</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="chamber" name="chamber_of_commerce" value="{{$user->shippingOffice->chamber_of_commerce}}" type="text" class="validate form-control" required>
-                                                <label for="chamber">Chamber of Commerce</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="regist-num" name="commercial_registry" value="{{$user->shippingOffice->commercial_registry}}" type="text" class="validate form-control" required>
-                                                <label for="regist-num">Commercial Registration Number</label>
-                                            </div>
+                                            {{-- <div class="md-form col-12 ml-auto">
+                                                <textarea id="branches-address" name="branches_address" class="md-textarea form-control" rows="3"> {{$user->shippingOffice->addresses}}
+                                            </textarea>
+                                            <label for="branches-address">Addresses of Branches</label>
+                                        </div> --}}
+                                        <div class="md-form col-12 ml-auto">
+                                            <input id="position" name="position_title"
+                                                value="{{$user->shippingOffice->position_title}}" type="text"
+                                                class="validate form-control" required>
+                                            <label for="position">Workplace Position</label>
                                         </div>
-                                        <div class="step-actions d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">CONTINUE</button>
+                                        <div class="md-form col-12 ml-auto">
+                                            <input id="chamber" name="chamber_of_commerce"
+                                                value="{{$user->shippingOffice->chamber_of_commerce}}" type="text"
+                                                class="validate form-control" required>
+                                            <label for="chamber">Chamber of Commerce</label>
+                                        </div>
+                                        <div class="md-form col-12 ml-auto">
+                                            <input id="regist-num" name="commercial_registry"
+                                                value="{{$user->shippingOffice->commercial_registry}}" type="text"
+                                                class="validate form-control" required>
+                                            <label for="regist-num">Commercial Registration Number</label>
+                                        </div>
+
+
+                                        <div class="md-form col-12 ml-auto">
+                                            <h6 class="font-weight-bold">Available Shipping Methods:</h6>
+                                            <ul>
+                                                <div class="custom-control custom-checkbox p-2">
+                                                    <input type="checkbox" class="custom-control-input" id="method1">
+                                                    <label class="custom-control-label" for="method1">International
+                                                        Shipping</label>
+                                                </div>
+                                                <ul class="hide" id="international">
+                                                    <div class="custom-control custom-checkbox p-2">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="method11">
+                                                        <label class="custom-control-label"
+                                                            for="method11">LandTransport</label>
+                                                    </div>
+                                                    <ul id="land">
+                                                        <div class="custom-control custom-checkbox p-2">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="method111">
+                                                            <label class="custom-control-label"
+                                                                for="method111">ETL</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox p-2">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="method112">
+                                                            <label class="custom-control-label"
+                                                                for="method112">LTL</label>
+                                                        </div>
+                                                    </ul>
+
+
+
+                                                    <div class="custom-control custom-checkbox p-2">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="method12">
+                                                        <label class="custom-control-label"
+                                                            for="method12">WaterTransport</label>
+                                                    </div>
+                                                    <ul id="water">
+                                                        <div class="custom-control custom-checkbox p-2">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="method121">
+                                                            <label class="custom-control-label"
+                                                                for="method121">ECL</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox p-2">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="method122">
+                                                            <label class="custom-control-label"
+                                                                for="method122">LCL</label>
+                                                        </div>
+                                                    </ul>
+
+                                                    <div class="custom-control custom-checkbox p-2">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="method13">
+                                                        <label class="custom-control-label"
+                                                            for="method13">AirTransport</label>
+                                                    </div>
+                                                </ul>
+
+                                                <div class="custom-control custom-checkbox p-2">
+                                                    <input type="checkbox" class="custom-control-input" id="method2">
+                                                    <label class="custom-control-label" for="method2">National
+                                                        Shipping</label>
+                                                </div>
+                                            </ul>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="step">
-                                    <div id="step3" class="step-title waves-effect waves-dark">Step 3</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Services Information <i class="fas fa-info-circle m-1"></i></h5>
-                                        <div class="row">
-                                            <div class="md-form col-12 ml-auto">
-                                                <h6 class="font-weight-bold">Available Shipping Methods:</h6>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <?php $chk = "" ?>
-                                                    <?php $chk = explode(" ",$user->shippingService->shipping_methods) ?>
-                                                    <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods[]" value="LTL" @if(in_array("LTL", $chk)) checked @endif>
-                                                    <label class="custom-control-label" for="method1">Less Than Track Load(LTL)</label>
-                                                </div>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="method2" name="shipping_methods[]" value="FTL" @if(in_array("FTL", $chk)) checked @endif>
-                                                    <label class="custom-control-label" for="method2">Full Track Load(FTL)</label>
-                                                </div>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <h6 class="font-weight-bold">External Shipping Modes:</h6>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <?php $chk1 = "" ?>
-                                                    <?php $chk1 = explode(" ",$user->shippingService->shipping_modes) ?>
-                                                    <input type="checkbox" class="custom-control-input" id="mode1" name="shipping_modes[]" value="Wild" @if(in_array("Wild", $chk1)) checked @endif>
-                                                    <label class="custom-control-label" for="mode1">LandTransport</label>
-                                                </div>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode2" name="shipping_modes[]" value="Aerial" @if(in_array("Aerial", $chk1)) checked @endif>
-                                                    <label class="custom-control-label" for="mode2">AirTransport</label>
-                                                </div>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode3" name="shipping_modes[]" value="Nautical" @if(in_array("Nautical", $chk1)) checked @endif>
-                                                    <label class="custom-control-label" for="mode3">WaterTransport</label>
-                                                </div>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="src-dest" name="src_dest" value="{{$user->shippingService->sources_destinations}}" type="text" class="validate form-control" required>
-                                                <label for="src-dest">Sources and Destinations Served By the Shipping Company</label>
-                                            </div>
-                                        </div>
-                                        <div class="step-actions d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">CONTINUE</button>
-                                        </div>
+                                    <div class="mt-2 d-flex justify-content-center">
+                                        <button
+                                            class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
+                                        <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
+                                            data-feedback="someFunction21">Save Changes</button>
+                                        <button
+                                            class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                     </div>
-                                </li>
-                                <li class="step">
-                                    <div id="step4" class="step-title waves-effect waves-dark">Step 4</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Financial Information <i class="fas fa-money-check-alt m-1"></i></h5>
-                                        <div class="row">
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="financial-status" name="financial_status" value="{{$user->applicationDetail->financial_assignment_status}}" type="text" class="validate form-control" required>
-                                                <label for="financial-status">Financial Assignment Status</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-
-                                                <div class="file-field">
-                                                    <h6>Photo of the Financial Assignment:</h6>
-                                                    <div class="btn btn-elegant btn-sm float-left">
-                                                        <span>Choose file</span>
-                                                        <input id="financial_photo" type="file" name="financial_photo" accept="image/*" 
-                                                        onchange="document.getElementById('financial').src = window.URL.createObjectURL(this.files[0])">
-                                                    </div>
-                                                    <div class="file-path-wrapper">
-                                                        <input id="financial-photo" class="file-path validate" type="text" placeholder="Upload your file">
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                                {{ $temp = ''}}
-                                                @if ( isset($user->applicationdetail->images[0]->url))
-                                                    @php $temp = $user->applicationdetail->images[0]->url @endphp
-                                                @endif
-                                            <div class="col-md-12">
-                                                <img id="financial" src="{{ url($temp)}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
-                                            </div>
-                                            <div class="step-actions d-flex justify-content-center">
-                                                <button
-                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">CONTINUE</button>
-                                            </div>
-                                        </div>
-                                </li>
-                                <li class="step">
-                                    <div id="step5" class="step-title waves-effect waves-dark">Step 5</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Application Information <i class="fas fa-edit ml-1"></i></h5>
-                                        <div class="row">
-
-                                            <div class="md-form col-12 ml-auto">
-
-                                                <div class="file-field">
-                                                    <h6>Photo of Signature and Fingerprint:</h6>
-                                                    <div class="btn btn-elegant btn-sm float-left">
-                                                        <span>Choose file</span>
-                                                        <input id="signature_photo" type="file" name="signature_photo" accept="image/*"
-                                                            onchange="document.getElementById('signature').src = window.URL.createObjectURL(this.files[0])">
-                                                    </div>
-                                                    <div class="file-path-wrapper">
-                                                        <input id="signature-photo" class="file-path validate" type="text" placeholder="Upload your file">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="col-md-12">
-                                                @if ( isset($user->applicationdetail->images[1]->url))
-                                                    @php $temp = $user->applicationdetail->images[1]->url @endphp
-                                                @endif
-                                                <img id="signature" src="{{ $temp}}" alt="" style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input placeholder="Date of Application" name="date_of_application" value="{{$user->applicationDetail->date_of_application}}" type="text" id="date-picker-example2"
-                                                    class="form-control datepicker">
-                                            </div>
-                                            <div class="step-actions d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">CONTINUE</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </li>
-                                <li class="step">
-                                    <div id="step6" class="step-title waves-effect waves-dark">Step 6</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Resume Information <i class="fas fa-user-edit ml-1"></i></h5>
-                                        <div class="row">
-                                            <div class="md-form col-12 ml-auto">
-                                                <textarea id="resume-info" name="resume_info" class="md-textarea form-control" rows="3"> {{$user->applicationDetail->resume_information}} </textarea>
-                                                <label for="resume-info">Resume Inofrmation (As Mentioned in the Application Document)</label>
-                                            </div>
-                                            <div class="step-actions d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">CONTINUE</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </li>
-                                <li class="step">
-                                    <div id="step7" class="step-title waves-effect waves-dark">Step 7</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Hard Copy <i
-                                                class="far fa-clipboard m-1"></i>
-                                        </h5>
-                                        <div class="row">
-                                            <div class="md-form col-12 ml-auto">
-                                                <div class="file-field">
-                                                    <h6>Hard Copy of the Application Form:</h6>
-                                                    <div class="btn btn-elegant btn-sm float-left">
-                                                        <span>Choose file</span>
-                                                        <input id="application_photo" type="file" name="hard_copy"
-                                                            onchange="document.getElementById('application').src = window.URL.createObjectURL(this.files[0])">
-                                                    </div>
-                                                    <div class="file-path-wrapper">
-                                                        <input id="hard-copy" class="file-path validate" type="text"
-                                                            placeholder="Upload your file">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                @if ( isset($user->applicationdetail->images[2]->url))
-                                                    @php $temp = $user->applicationdetail->images[2]->url @endphp
-                                                @endif
-                                                <img id="application" src="{{ url($temp)}}" alt=""
-                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
-                                            </div>
-                                            <div class="step-actions d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
-                                                    type="submit">SUBMIT</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </li>
-
-                            </ul>
                         </div>
-                    </form>
+                        </li>
+                        <li class="step">
+                            <div id="step3" class="step-title waves-effect waves-dark">Hard Copy</div>
+                            <div class="step-new-content">
+                                <h5 class="text-center font-weight-bolder">Hard Copy <i
+                                        class="far fa-clipboard m-1"></i>
+                                </h5>
+                                <div class="row">
+                                    <div class="md-form col-12 ml-auto">
+                                        <div class="file-field">
+                                            <h6>Hard Copy of the Application Form:</h6>
+                                            <div class="btn btn-elegant btn-sm float-left">
+                                                <span>Choose file</span>
+                                                <input id="application_photo" type="file" name="hard_copy"
+                                                    onchange="document.getElementById('application').src = window.URL.createObjectURL(this.files[0])">
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input id="hard-copy" class="file-path validate" type="text"
+                                                    placeholder="Upload your file">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    {{ $temp = ''}}
+                                    @if ( isset($user->applicationdetail->images[0]->url))
+                                    @php $temp = $user->applicationdetail->images[2]->url @endphp
+                                    @endif
+                                    <img id="application" src="{{ url($temp)}}" alt=""
+                                        style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                </div>
+                                <div class="mt-2 d-flex justify-content-center">
+                                    <button
+                                        class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
+                                    <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
+                                        data-feedback="someFunction21">Save Changes</button>
+                                </div>
+
+
+                            </div>
+                        </li>
+
+                        </ul>
                 </div>
+                </form>
             </div>
+        </div>
         </div>
 
 
@@ -417,32 +420,24 @@
         src={{url("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js")}}></script>
     <script src={{url("js/validate.js")}}></script>
     <script src={{url("js/intlTelInput.js")}}></script>
-    <script src={{url("js/countries.js")}}></script>
-
-    <script>
-        populateCountries("country",
-        "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
-    </script>
 
     <script>
         var input1 = document.querySelector("#phone");
         var input2 = document.querySelector("#mobile");
-        window.intlTelInput(input1, {
-            utilsScript: "js/utils.js",
+
+    </script>
+
+    <script>
+        $('#method1').change(function () {
+            $('#international').removeClass('hide');
         });
-        window.intlTelInput(input2, {
-            utilsScript: "js/utils.js",
-        });
+
     </script>
 
     <script>
         // Material Select Initialization
         $(document).ready(function () {
             $('.mdb-select').materialSelect();
-        });
-
-        $('#country').change(function() {
-            $('#statediv').removeClass('hide');
         });
 
     </script>
@@ -469,7 +464,7 @@
 
         // Data Picker Initialization
         $('.datepicker').pickadate();
-  
+
         // $('#app_form').submit(function (e) {
         //     e.preventDefault();
 
@@ -551,98 +546,101 @@
 
     </script>
 
-<script>
-    $(document).ready(function () {
+    <script>
+        $(document).ready(function () {
 
 
-                var input1 = document.querySelector("#phone"),
+            var input1 = document.querySelector("#phone"),
                 input2 = document.querySelector("#mobile"),
-                    errorMsg1 = document.querySelector("#error-msg1"),
-                    errorMsg2 = document.querySelector("#error-msg2"),
-                    validMsg1 = document.querySelector("#valid-msg1"),
-                    validMsg2 = document.querySelector("#valid-msg2");
-                var flag = false;
-                // here, the index maps to the error code returned from getValidationError - see readme
-                var errorMap1 = ["Invalid number", "Invalid country code", "Too short", "Too long",
-                "Invalid number"];
+                errorMsg1 = document.querySelector("#error-msg1"),
+                errorMsg2 = document.querySelector("#error-msg2"),
+                validMsg1 = document.querySelector("#valid-msg1"),
+                validMsg2 = document.querySelector("#valid-msg2");
+            var flag = false;
+            // here, the index maps to the error code returned from getValidationError - see readme
+            var errorMap1 = ["Invalid number", "Invalid country code", "Too short", "Too long",
+                "Invalid number"
+            ];
 
-                var errorMap2 = ["Invalid number", "Invalid country code", "Too short", "Too long",
-                "Invalid number"];
-
-
-
-
-                // initialise plugin
-                var iti1 = window.intlTelInput(input1, {
-                    utilsScript: '{{url("js/utils.js")}}',
-                });
-
-                var iti2 = window.intlTelInput(input2, {
-                    utilsScript: '{{url("js/utils.js")}}',
-                });
-
-                var reset1 = function () {
-                    input1.classList.remove("error");
-
-                    errorMsg1.classList.add("hide");
-                    validMsg1.classList.add("hide");
-
-                };
-
-                var reset2 = function () {
-                    input2.classList.remove("error");
-
-                    errorMsg2.classList.add("hide");
-                    validMsg2.classList.add("hide");
-
-                };
-
-                // on blur: validate
-                input1.addEventListener('blur', function () {
-                    reset1();
-                    if (input1.value.trim()) {
-                        if (iti1.isValidNumber()) {
-                            validMsg1.classList.remove("hide");
-                        } else {
-                            input1.classList.add("error");
-                            var errorCode1 = iti1.getValidationError();
-                            $('#phone').val(errorMap1[errorCode1]);
-                            errorMsg1.classList.remove("hide");
-
-                        }
-                    }
-                });
-
-                // on blur: validate
-                input2.addEventListener('blur', function () {
-                    reset2();
-                    if (input2.value.trim()) {
-                        if (iti2.isValidNumber()) {
-                            validMsg2.classList.remove("hide");
-                        } else {
-                            input2.classList.add("error");
-                            var errorCode2 = iti2.getValidationError();
-                            $('#mobile').val(errorMap2[errorCode2]);
-                            errorMsg2.classList.remove("hide");
-
-                        }
-                    }
-                });
+            var errorMap2 = ["Invalid number", "Invalid country code", "Too short", "Too long",
+                "Invalid number"
+            ];
 
 
-                // on keyup / change flag: reset
-                input1.addEventListener('change', reset);
-                input1.addEventListener('keyup', reset);
-                new WOW().init();
 
-                
-                // on keyup / change flag: reset
-                input2.addEventListener('change', reset);
-                input2.addEventListener('keyup', reset);
-                new WOW().init();
 
+            // initialise plugin
+            var iti1 = window.intlTelInput(input1, {
+                utilsScript: '{{url("js/utils.js")}}',
             });
-</script>
+
+            var iti2 = window.intlTelInput(input2, {
+                utilsScript: '{{url("js/utils.js")}}',
+            });
+
+            var reset1 = function () {
+                input1.classList.remove("error");
+
+                errorMsg1.classList.add("hide");
+                validMsg1.classList.add("hide");
+
+            };
+
+            var reset2 = function () {
+                input2.classList.remove("error");
+
+                errorMsg2.classList.add("hide");
+                validMsg2.classList.add("hide");
+
+            };
+
+            // on blur: validate
+            input1.addEventListener('blur', function () {
+                reset1();
+                if (input1.value.trim()) {
+                    if (iti1.isValidNumber()) {
+                        validMsg1.classList.remove("hide");
+                    } else {
+                        input1.classList.add("error");
+                        var errorCode1 = iti1.getValidationError();
+                        $('#phone').val(errorMap1[errorCode1]);
+                        errorMsg1.classList.remove("hide");
+
+                    }
+                }
+            });
+
+            // on blur: validate
+            input2.addEventListener('blur', function () {
+                reset2();
+                if (input2.value.trim()) {
+                    if (iti2.isValidNumber()) {
+                        validMsg2.classList.remove("hide");
+                    } else {
+                        input2.classList.add("error");
+                        var errorCode2 = iti2.getValidationError();
+                        $('#mobile').val(errorMap2[errorCode2]);
+                        errorMsg2.classList.remove("hide");
+
+                    }
+                }
+            });
+
+
+            // on keyup / change flag: reset
+            input1.addEventListener('change', reset);
+            input1.addEventListener('keyup', reset);
+            new WOW().init();
+
+
+            // on keyup / change flag: reset
+            input2.addEventListener('change', reset);
+            input2.addEventListener('keyup', reset);
+            new WOW().init();
+
+        });
+
+    </script>
 
 
 </body>
