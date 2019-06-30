@@ -25,7 +25,13 @@
 
         form .error {
             color: red;
+            text-align:left;
+            margin-top:-2rem;
 
+        }
+
+        #mobile-error, #phone-error{
+            margin-top:0!important
         }
 
         .intl-tel-input {
@@ -83,9 +89,11 @@
                                             </div>
 
                                             <div class="md-form">
-                                                <input id="address" name="address" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="address">{{ __('Address') }}</label>
+                                                <select class="validate mdb-select md-form" id="country" name="country" required></select>
+                                            </div>
+                    
+                                            <div class="md-form hide" id="statediv">
+                                                <select disabled class="validate mdb-select md-form" name="city" id="state" required></select>
                                             </div>
 
                                             <div class="md-form">
@@ -144,11 +152,12 @@
     <script src={{url("js/intlTelInput.js")}}></script>
     <script src={{url("js/countries.js")}}></script>
     <script>
-        populateCountries("sourceCountry",
-            "sourceState"); // first parameter is id of country drop-down and second parameter is id of state drop-down
-        populateCountries("destCountry", "destState");
+        populateCountries("country",
+            "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
 
     </script>
+
+
 
     <script>
 
@@ -193,6 +202,11 @@
         $(document).ready(function () {
             $('.mdb-select').materialSelect();
         });
+
+        $('#country').change(function() {
+            $('#statediv').removeClass('hide');
+        });
+
 
     </script>
 

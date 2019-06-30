@@ -97,7 +97,7 @@
                         <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i
                                     class="fas fa-clipboard amber-text ml-3"></i></h1>
-                            <ul class="stepper horizontal" id="horizontal-stepper" style="height:1300px;">
+                            <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
                                 <li class="step active">
                                     <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
                                     <div class="step-new-content">
@@ -111,14 +111,12 @@
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="father" name="father" type="text"
-                                                    value="{{$user->userdetail->father_name}}" class="validate form-control"
-                                                    required>
+                                                    value="{{$user->userdetail->father_name}}" class="validate form-control">
                                                 <label for="father">{{ __("Father's name") }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="mother" name="mother" type="text"
-                                                    value="{{$user->userdetail->mother_name}}" class="validate form-control"
-                                                    required>
+                                                    value="{{$user->userdetail->mother_name}}" class="validate form-control">
                                                 <label for="mother">{{ __("Mother's name") }}</label>
                                             </div>
 
@@ -127,6 +125,7 @@
                                                     class="validate form-control" required>
                                                 <label for="email">{{ __('E-mail') }}</label>
                                             </div>
+                                            
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input placeholder="Date of Birth" name="date_of_birth"
@@ -136,23 +135,32 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="place-of-birth" name="place_of_birth"
                                                     value="{{$user->userdetail->place_of_birth}}" type="text"
-                                                    class="validate form-control" required>
+                                                    class="validate form-control">
                                                 <label for="place-of-birth">{{ __('Place of Birth') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="record" name="record" value="{{$user->userdetail->record}}" type="text"
-                                                    class="validate form-control" required>
+                                                    class="validate form-control">
                                                 <label for="record">{{ __('Individual Civil Registry Record') }}</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="nationality" name="nationality"
                                                     value="{{$user->userdetail->nationality}}" type="text"
-                                                    class="validate form-control" required>
+                                                    class="validate form-control">
                                                 <label for="nationality">Nationality</label>
                                             </div>
+
+                                            <div class="md-form col-12 ml-auto">
+                                                    <select class="validate mdb-select md-form" id="country" name="country" required></select>
+                                                </div>
+                        
+                                                <div class="md-form col-12 ml-auto hide" id="statediv">
+                                                    <select disabled class="validate mdb-select md-form" name="city" id="state" required></select>
+                                            </div>
+
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="address" name="address" value="{{$user->userdetail->address}}"
-                                                    type="text" class="validate form-control" required>
+                                                    type="text" class="validate form-control">
                                                 <label for="address">Address</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
@@ -167,7 +175,7 @@
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
-                                                <input id="website" name="website" value="{{$user->userdetail->website}}" type="text" class="validate form-control" required>
+                                                <input id="website" name="website" value="{{$user->userdetail->website}}" type="text" class="validate form-control">
                                                 <label for="website">Website</label>
                                             </div>
                                         </div>
@@ -409,10 +417,14 @@
         src={{url("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js")}}></script>
     <script src={{url("js/validate.js")}}></script>
     <script src={{url("js/intlTelInput.js")}}></script>
+    <script src={{url("js/countries.js")}}></script>
 
     <script>
         populateCountries("country",
         "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+    </script>
+
+    <script>
         var input1 = document.querySelector("#phone");
         var input2 = document.querySelector("#mobile");
         window.intlTelInput(input1, {
@@ -423,6 +435,17 @@
         });
     </script>
 
+    <script>
+        // Material Select Initialization
+        $(document).ready(function () {
+            $('.mdb-select').materialSelect();
+        });
+
+        $('#country').change(function() {
+            $('#statediv').removeClass('hide');
+        });
+
+    </script>
 
     <script>
         $(".button-collapse").sideNav();
