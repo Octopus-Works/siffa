@@ -30,7 +30,7 @@
         <!-- Dropdown -->
         <li class="nav-item dropdown notifications-nav">
             <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="badge red">{{ Auth::getUser()->role->name == 'user' ? if(isset($count1)) $count1 @endif : if(isset($count2)) $count2 @endif}}</span> <i class="fas fa-bell custom-secondary-text"></i>
+              <span class="badge red">{{ Auth::getUser()->role->name == 'user' ? $count1 : $count2}}</span> <i class="fas fa-bell custom-secondary-text"></i>
               <span class="d-lg-inline-block d-md-inline-block">Notifications</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">

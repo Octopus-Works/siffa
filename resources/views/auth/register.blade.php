@@ -175,7 +175,7 @@
         // $('#app_form').load(function(e){
         //     e.preventDefault();
         // });
-        $('#app_form').click(function (e) {
+        $('#app_form').submit(function (e) {
             e.preventDefault();
 
             $.ajax({
