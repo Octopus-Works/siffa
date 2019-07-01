@@ -98,9 +98,12 @@ class RegisterController extends Controller
         ]);
 
         $shippingOffice = ShippingOffice::Create([
-            'user_id' => $user->id,
-            'name'  => $request->company_name,
+            'user_id'   => $user->id,
+            'name'      => $request->company_name,
             'commercial_registry' => $request->commercial_registry,
+            'country'   => $request->country,
+            'city'      => $request->city,
+            'addresses' => $request->address,
         ]);
         
         $shippingService = ShippingService::Create([
@@ -151,7 +154,5 @@ class RegisterController extends Controller
         // $services->sources_destinations = $request->src_dest;
         // $services->save(); 
        
-
-        
     }
 }
