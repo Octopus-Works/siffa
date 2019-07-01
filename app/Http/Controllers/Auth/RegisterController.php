@@ -74,9 +74,10 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function mail(UserStoreRequest $request){
-        
+
         // Returns the Role record of user so I can specify the user role on register
         $role = Role::where('name', 'user')->firstOrFail(); 
+
 
         // Validation call from app\Requests\UserStoreRequest.php
         // $validated = $request->validated(); 
@@ -101,9 +102,7 @@ class RegisterController extends Controller
             'user_id'   => $user->id,
             'name'      => $request->company_name,
             'commercial_registry' => $request->commercial_registry,
-            'country'   => $request->country,
-            'city'      => $request->city,
-            'addresses' => $request->address,
+            'city'      => $request->city, 
         ]);
         
         $shippingService = ShippingService::Create([
@@ -118,7 +117,7 @@ class RegisterController extends Controller
         $shippingOffice->officeservices()->attach($shippingService);
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
-        return redirect('login');
+        return response('Success');
 
         // $application = new ApplicationDetail; 
         // $application->user_id = $user->id;

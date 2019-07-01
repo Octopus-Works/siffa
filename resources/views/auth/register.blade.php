@@ -72,7 +72,7 @@
                                     class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
                                     <div class="card-body px-lg-5 pt-0 ">
  
-                                    <form id="app_form" class="text-center" enctype="multipart/form-data" method="POST">
+                                    <form id="app_form" class="text-center" action="{{route('register')}}" enctype="multipart/form-data" method="POST">
                                         @csrf
                                             <div class="md-form">
                                                 <input id="fullname" name="fullname" type="text"
@@ -92,7 +92,7 @@
                                                 <label for="nationality">{{ __('Nationality')}}</label>
                                             </div>
 
-                                            <select class="mdb-select md-form" required>
+                                            <select class="mdb-select md-form" name="city" required>
                                                     <option value="" disabled selected>City</option>
                                                     <option value="1">Al Hasakah</option>
                                                     <option value="2">Al Ladhiqiyah</option>
@@ -133,7 +133,7 @@
                                             </div>
 
                                             <div class="d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
+                                                <button id="submitbtn" class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
                                                     type="submit">{{ __('SUBMIT') }}</button>
                                             </div>
                                     </form>
@@ -172,10 +172,10 @@
 
         // Data Picker Initialization
         $('.datepicker').pickadate();
-        $('#app_form').load(function(e){
-            e.preventDefault();
-        });
-        $('#app_form').submit(function (e) {
+        // $('#app_form').load(function(e){
+        //     e.preventDefault();
+        // });
+        $('#app_form').click(function (e) {
             e.preventDefault();
 
             $.ajax({
