@@ -4,8 +4,6 @@
 
 img {
     vertical-align: middle;
-    border-style: dashed !important;
-    border-color: whitesmoke !important;
     display: block;
     margin-left: auto;
     margin-right: auto;

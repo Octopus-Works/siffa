@@ -26,14 +26,14 @@
 
 
 
-    <ul class="nav navbar-nav nav-flex-icons ml-auto mr-2 ">
+    <ul class="navbar-nav ml-auto nav-flex-icons">
         <!-- Dropdown -->
         <li class="nav-item dropdown notifications-nav">
             <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="badge red">{{ Auth::getUser()->role->name == 'user' ? $count1 : $count2}}</span> <i class="fas fa-bell custom-secondary-text"></i>
               <span class="d-lg-inline-block d-md-inline-block">Notifications</span>
             </a>
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
 
               @foreach($notifications as $notes)
                 @if ( $notes->checked == 0 && $notes->type == "rms" && Auth::getUser()->role->name == "rms")
@@ -64,7 +64,7 @@
               @endif
             </a>
             {{--TODO --}}
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 
                 <a class="dropdown-item" href="{{ route('logout') }}">
                     <i class="fas custom-secondary-text fa-sign-out-alt mr-2" aria-hidden="true"></i>
