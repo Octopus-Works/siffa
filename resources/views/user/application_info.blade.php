@@ -129,119 +129,119 @@
 
                 <!--Grid column-->
                 <div class="col-md-12 ">
-                    <form id="app_form" action="{{ route('application_edit')}} " enctype="multipart/form-data"
-                        method="POST">
-                        @csrf
+                   
                         <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
-                            <h1 class="text-center mb-5 font-weight-bolder">Register<i
-                                    class="fas fa-clipboard amber-text ml-3"></i></h1>
+                            <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
                                 <li class="step active">
-                                    <div id="step1" class="step-title waves-effect waves-dark">Basic Information</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Basic Information <i
-                                                class="fas fa-user m-1"></i></h5>
-                                        <div class="row">
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="fullname" name="fullname" type="text"
-                                                    value="{{$user->userdetail->fullname}}"
-                                                    class="validate form-control" required>
-                                                <label for="fullname">{{ __('Full name') }}</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="father" name="father" type="text"
-                                                    value="{{$user->userdetail->father_name}}"
-                                                    class="validate form-control">
-                                                <label for="father">{{ __("Father's name") }}</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="mother" name="mother" type="text"
-                                                    value="{{$user->userdetail->mother_name}}"
-                                                    class="validate form-control">
-                                                <label for="mother">{{ __("Mother's name") }}</label>
-                                            </div>
+                                    <form id="app_form" action="{{ route('application_edit')}} " enctype="multipart/form-data" method="POST">
+                                        @csrf
+                                        <div id="step1" class="step-title waves-effect waves-dark">Basic Information</div>
+                                        <div class="step-new-content">
+                                            <h5 class="text-center font-weight-bolder">Basic Information <i
+                                                    class="fas fa-user m-1"></i></h5>
+                                            <div class="row">
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input id="fullname" name="fullname" type="text"
+                                                        value="{{$user->userdetail->fullname}}"
+                                                        class="validate form-control" required>
+                                                    <label for="fullname">{{ __('Full name') }}</label>
+                                                </div>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input id="father" name="father" type="text"
+                                                        value="{{$user->userdetail->father_name}}"
+                                                        class="validate form-control">
+                                                    <label for="father">{{ __("Father's name") }}</label>
+                                                </div>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input id="mother" name="mother" type="text"
+                                                        value="{{$user->userdetail->mother_name}}"
+                                                        class="validate form-control">
+                                                    <label for="mother">{{ __("Mother's name") }}</label>
+                                                </div>
 
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="email" name="email" type="email" value="{{$user->email}}"
-                                                    class="validate form-control" required>
-                                                <label for="email">{{ __('E-mail') }}</label>
-                                            </div>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input id="email" name="email" type="email" value="{{$user->email}}"
+                                                        class="validate form-control" required>
+                                                    <label for="email">{{ __('E-mail') }}</label>
+                                                </div>
 
 
-                                            <div class="md-form col-12 ml-auto">
-                                                <input placeholder="Date of Birth" name="date_of_birth"
-                                                    value="{{$user->userdetail->date_of_birth}}" type="text"
-                                                    id="date-picker-example" class="form-control datepicker">
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="place-of-birth" name="place_of_birth"
-                                                    value="{{$user->userdetail->place_of_birth}}" type="text"
-                                                    class="validate form-control">
-                                                <label for="place-of-birth">{{ __('Place of Birth') }}</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="record" name="record" value="{{$user->userdetail->record}}"
-                                                    type="text" class="validate form-control">
-                                                <label for="record">{{ __('Individual Civil Registry Record') }}</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="nationality" name="nationality"
-                                                    value="{{$user->userdetail->nationality}}" type="text"
-                                                    class="validate form-control">
-                                                <label for="nationality">Nationality</label>
-                                            </div>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input placeholder="Date of Birth" name="date_of_birth"
+                                                        value="{{$user->userdetail->date_of_birth}}" type="text"
+                                                        id="date-picker-example" class="form-control datepicker">
+                                                </div>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input id="place-of-birth" name="place_of_birth"
+                                                        value="{{$user->userdetail->place_of_birth}}" type="text"
+                                                        class="validate form-control">
+                                                    <label for="place-of-birth">{{ __('Place of Birth') }}</label>
+                                                </div>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input id="record" name="record" value="{{$user->userdetail->record}}"
+                                                        type="text" class="validate form-control">
+                                                    <label for="record">{{ __('Individual Civil Registry Record') }}</label>
+                                                </div>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input id="nationality" name="nationality"
+                                                        value="{{$user->userdetail->nationality}}" type="text"
+                                                        class="validate form-control">
+                                                    <label for="nationality">Nationality</label>
+                                                </div>
 
-                                            <select class="mdb-select md-form col-12 ml-auto">
-                                                <option value="" disabled selected>City</option>
-                                                <option value="1">Al Hasakah</option>
-                                                <option value="2">Al Ladhiqiyah</option>
-                                                <option value="3">Al Qunaytirah</option>
-                                                <option value="4">Ar Raqqah</option>
-                                                <option value="5">As Suwayda'</option>
-                                                <option value="6">Dar'a</option>
-                                                <option value="7">Dayr az Zawr</option>
-                                                <option value="8">Dimashq</option>
-                                                <option value="9">Halab</option>
-                                                <option value="10">Hamah</option>
-                                                <option value="11">Hims</option>
-                                                <option value="12">Idlib</option>
-                                                <option value="13">Rif Dimashq</option>
-                                                <option value="14">Tartus</option>
-                                            </select>
+                                                <select class="mdb-select md-form col-12 ml-auto">
+                                                    <option value="" disabled selected>City</option>
+                                                    <option value="1">Al Hasakah</option>
+                                                    <option value="2">Al Ladhiqiyah</option>
+                                                    <option value="3">Al Qunaytirah</option>
+                                                    <option value="4">Ar Raqqah</option>
+                                                    <option value="5">As Suwayda'</option>
+                                                    <option value="6">Dar'a</option>
+                                                    <option value="7">Dayr az Zawr</option>
+                                                    <option value="8">Dimashq</option>
+                                                    <option value="9">Halab</option>
+                                                    <option value="10">Hamah</option>
+                                                    <option value="11">Hims</option>
+                                                    <option value="12">Idlib</option>
+                                                    <option value="13">Rif Dimashq</option>
+                                                    <option value="14">Tartus</option>
+                                                </select>
 
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="address" name="address"
-                                                    value="{{$user->userdetail->address}}" type="text"
-                                                    class="validate form-control">
-                                                <label for="address">Address</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input type="text" id="mobile" type="tel" class="validate form-control"
-                                                    name="mobile" value="{{$user->userdetail->mobile_number}}" required>
-                                                <span id="valid-msg2" class="hide">✓</span>
-                                                <span id="error-msg2" class="hide"></span>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input type="text" id="phone" type="tel" class="validate form-control"
-                                                    name="phone" value="{{$user->userdetail->phone_number}}" required>
-                                                <span id="valid-msg1" class="hide">✓</span>
-                                                <span id="error-msg1" class="hide"></span>
-                                            </div>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input id="address" name="address"
+                                                        value="{{$user->userdetail->address}}" type="text"
+                                                        class="validate form-control">
+                                                    <label for="address">Address</label>
+                                                </div>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input type="text" id="mobile" type="tel" class="validate form-control"
+                                                        name="mobile" value="{{$user->userdetail->mobile_number}}" required>
+                                                    <span id="valid-msg2" class="hide">✓</span>
+                                                    <span id="error-msg2" class="hide"></span>
+                                                </div>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input type="text" id="phone" type="tel" class="validate form-control"
+                                                        name="phone" value="{{$user->userdetail->phone_number}}" required>
+                                                    <span id="valid-msg1" class="hide">✓</span>
+                                                    <span id="error-msg1" class="hide"></span>
+                                                </div>
 
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="website" name="website"
-                                                    value="{{$user->userdetail->website}}" type="text"
-                                                    class="validate form-control">
-                                                <label for="website">Website</label>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <input id="website" name="website"
+                                                        value="{{$user->userdetail->website}}" type="text"
+                                                        class="validate form-control">
+                                                    <label for="website">Website</label>
+                                                </div>
+                                            </div>
+                                            <div class="mt-2 d-flex justify-content-center">
+                                                <button type="submit"
+                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step"
+                                                    data-feedback="someFunction21">Save Changes</button>
+                                                    <button class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                             </div>
                                         </div>
-                                        <div class="mt-2 d-flex justify-content-center">
-                                            <button type="submit"
-                                                class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                data-feedback="someFunction21">Save Changes</button>
-                                                <button class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
-                                        </div>
-                                    </div>
+                                    </form>
 
                                 </li>
                                 <li class="step">
