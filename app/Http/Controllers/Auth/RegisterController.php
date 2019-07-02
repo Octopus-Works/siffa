@@ -117,8 +117,7 @@ class RegisterController extends Controller
         $shippingOffice->officeservices()->attach($shippingService);
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
-        // return response('Success');
-
+        
         // $application = new ApplicationDetail; 
         // $application->user_id = $user->id;
         // $application->Financial_assignment_status = $request->financial_status;

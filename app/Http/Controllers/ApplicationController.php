@@ -40,6 +40,7 @@ class ApplicationController extends Controller
         
         // $validated = $request->validated(); 
         $user = User::find(Auth::user()->id); 
+
         $user->userdetail()->update([
             'fullname'      => $request->fullname,
             'father_name'   => $request->father, 
@@ -54,8 +55,9 @@ class ApplicationController extends Controller
             'address'       => preg_replace( "/\r|\n/", "", $request->address ),
         ]);
 
-        $user->shippingOffice()->update([
+        $user->shippingOffice()->updateOrCreate([
             'name'      => $request->company_name,
+            'city'      => $request->city,
             'addresses' => preg_replace( "/\r|\n/", "", $request->branches_address ),
             'shipping_services'   => $request->shipping_services,
             'position_title'      => $request->position_title,
@@ -63,11 +65,13 @@ class ApplicationController extends Controller
             'commercial_registry' => $request->commercial_registry,
         ]);
 
-        $user->shippingService()->update([
-            'shipping_methods'     => implode(' ', $request->shipping_methods),
-            'shipping_modes'       => implode(' ', $request->shipping_modes),
-            'sources_destinations' => $request->src_dest,
-        ]);
+        if ( $request->shipping_methods ){
+            $user->shippingService()->update([
+                'shipping_methods'     => implode(' ', $request->shipping_methods),
+                'shipping_modes'       => implode(' ', $request->shipping_modes),
+                'sources_destinations' => $request->src_dest,
+            ]);
+        }
 
         $user->applicationDetail()->update([
             'Financial_assignment_status' => $request->financial_status,

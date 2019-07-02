@@ -27,6 +27,8 @@ class CreateUserDetailsTable extends Migration
             $table->string('mother_name')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('mobile_number')->nullable();
+            $table->string('date_of_birth')->nullable();
+            $table->string('place_of_birth')->nullable();
             $table->string('website')->nullable();
             $table->string('record')->nullable();
             $table->string('nationality')->nullable(); 

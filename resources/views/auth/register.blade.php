@@ -169,9 +169,13 @@
 
     <script>
 
-        $('#app_form').submit(function (e) {
+        // $('#app_form').load(function(e){
+        //     e.preventDefault();
+        // });
+        $('#submitbtn').click(function (e) {
             e.preventDefault();
 
+            var form = $('#app_form'); 
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -179,12 +183,13 @@
                 type: 'POST',
                 url:'{{ route('register')}} ',
                 dataType: 'json', // data type
-                data: new FormData(this),
+                data: new FormData(form);,
                 processData: false,
                 contentType: false,
                 statusCode: {
                     200: function () {
                         toastr.success('Registered!');
+                        window.location.href = {{url('/')}};
                     }
 
                 },
