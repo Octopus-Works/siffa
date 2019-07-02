@@ -121,6 +121,7 @@
         .picker__box .picker__header .picker__date-display .picker__weekday-display {
             background-color: #444b58;
         }
+        
                 
 
     </style>
@@ -148,14 +149,12 @@
                    
                     <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
                         <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
-                        <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
+                        <ul class="stepper horizontal" id="horizontal-stepper" style="height:1500px;">
                             <li class="step active">
                                 <form id="app_form1" action="{{ route('application_edit')}}" enctype="multipart/form-data" method="POST">
                                     @csrf
                                     <div id="step1" class="step-title waves-effect waves-dark">Basic Information</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Basic Information <i
-                                                class="fas fa-user m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="fullname" name="fullname" type="text"
@@ -265,7 +264,6 @@
                                     @csrf
                                     <div id="step2" class="step-title waves-effect waves-dark">Shipping Info</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Company Information <i class="fas fa-briefcase m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="company-name" name="company_name"
@@ -386,9 +384,6 @@
                                 <form id="app_form3" action="{{ route('application_edit')}}" enctype="multipart/form-data" method="POST">
                                     @csrf
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Hard Copy <i
-                                                class="far fa-clipboard m-1"></i>
-                                        </h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <div class="file-field">
