@@ -169,12 +169,6 @@
 
     <script>
 
-
-        // Data Picker Initialization
-        $('.datepicker').pickadate();
-        // $('#app_form').load(function(e){
-        //     e.preventDefault();
-        // });
         $('#app_form').submit(function (e) {
             e.preventDefault();
 

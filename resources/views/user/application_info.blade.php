@@ -54,9 +54,8 @@
             color: #b7b9bd !important;
         }
 
-        .md-form input,
-        .md-form textarea {
-            color: #fff !important;
+        .form-control{
+            color:#fff;
         }
 
         ul.stepper.horizontal .step .step-title:before {
@@ -106,6 +105,23 @@
         .btn-rounded{
             padding: .60rem 1.4rem!important;
         }
+
+        .select-dropdown, .select-wrapper span.caret{
+            color:#b7b9bd;
+        }
+
+        .form-control:focus{
+            color:#fff;
+        }
+
+        .picker__box .picker__header .picker__date-display {
+            background-color: #7b8290;
+        }
+
+        .picker__box .picker__header .picker__date-display .picker__weekday-display {
+            background-color: #444b58;
+        }
+                
 
     </style>
 </head>
@@ -190,23 +206,25 @@
                                                     <label for="nationality">Nationality</label>
                                                 </div>
 
-                                                <select class="mdb-select md-form col-12 ml-auto">
-                                                    <option value="" disabled selected>City</option>
-                                                    <option value="1">Al Hasakah</option>
-                                                    <option value="2">Al Ladhiqiyah</option>
-                                                    <option value="3">Al Qunaytirah</option>
-                                                    <option value="4">Ar Raqqah</option>
-                                                    <option value="5">As Suwayda'</option>
-                                                    <option value="6">Dar'a</option>
-                                                    <option value="7">Dayr az Zawr</option>
-                                                    <option value="8">Dimashq</option>
-                                                    <option value="9">Halab</option>
-                                                    <option value="10">Hamah</option>
-                                                    <option value="11">Hims</option>
-                                                    <option value="12">Idlib</option>
-                                                    <option value="13">Rif Dimashq</option>
-                                                    <option value="14">Tartus</option>
-                                                </select>
+                                                <div class="md-form col-12 ml-auto">
+                                                    <select class="mdb-select">
+                                                        <option value="" disabled selected>City</option>
+                                                        <option value="1">Al Hasakah</option>
+                                                        <option value="2">Al Ladhiqiyah</option>
+                                                        <option value="3">Al Qunaytirah</option>
+                                                        <option value="4">Ar Raqqah</option>
+                                                        <option value="5">As Suwayda'</option>
+                                                        <option value="6">Dar'a</option>
+                                                        <option value="7">Dayr az Zawr</option>
+                                                        <option value="8">Dimashq</option>
+                                                        <option value="9">Halab</option>
+                                                        <option value="10">Hamah</option>
+                                                        <option value="11">Hims</option>
+                                                        <option value="12">Idlib</option>
+                                                        <option value="13">Rif Dimashq</option>
+                                                        <option value="14">Tartus</option>
+                                                    </select>
+                                                </div>
 
                                                 <div class="md-form col-12 ml-auto">
                                                     <input id="address" name="address"
@@ -285,18 +303,20 @@
                                             <h6 class="font-weight-bold">Available Shipping Methods:</h6>
                                             <ul>
                                                 <div class="custom-control custom-checkbox p-2">
-                                                    <input type="checkbox" class="custom-control-input" id="method1">
+                                                    <input type="checkbox" class="custom-control-input" id="method1" data-toggle="collapse" data-target="#international"
+                                                    aria-expanded="false" aria-controls="international">
                                                     <label class="custom-control-label" for="method1">International
                                                         Shipping</label>
                                                 </div>
-                                                <ul class="hide" id="international">
+                                                <ul class="collapse" id="international">
                                                     <div class="custom-control custom-checkbox p-2">
                                                         <input type="checkbox" class="custom-control-input"
-                                                            id="method11">
+                                                            id="method11" data-toggle="collapse" data-target="#land"
+                                                            aria-expanded="false" aria-controls="land">
                                                         <label class="custom-control-label"
                                                             for="method11">LandTransport</label>
                                                     </div>
-                                                    <ul id="land">
+                                                    <ul class="collapse" id="land">
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"
                                                                 id="method111">
@@ -315,11 +335,12 @@
 
                                                     <div class="custom-control custom-checkbox p-2">
                                                         <input type="checkbox" class="custom-control-input"
-                                                            id="method12">
+                                                            id="method12" data-toggle="collapse" data-target="#water"
+                                                            aria-expanded="false" aria-controls="water">
                                                         <label class="custom-control-label"
                                                             for="method12">WaterTransport</label>
                                                     </div>
-                                                    <ul id="water">
+                                                    <ul class="collapse" id="water">
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"
                                                                 id="method121">
@@ -427,19 +448,28 @@
 
     </script>
 
-    <script>
+    {{-- <script>
         $('#method1').change(function () {
             $('#international').removeClass('hide');
         });
 
-    </script>
+    </script> --}}
 
     <script>
         // Material Select Initialization
         $(document).ready(function () {
             $('.mdb-select').materialSelect();
+            $('.select-dropdown').click(function(){
+                $('.select-dropdown').addClass('white-text');
+            })
         });
 
+    </script>
+
+    <script>
+        $('.datepicker').pickadate({
+            selectYears: 200
+        })
     </script>
 
     <script>
@@ -462,8 +492,7 @@
             }, 2000);
         }
 
-        // Data Picker Initialization
-        $('.datepicker').pickadate();
+
 
         // $('#app_form').submit(function (e) {
         //     e.preventDefault();
@@ -485,6 +514,8 @@
         // });
 
     </script>
+
+    
 
     <script>
         $(document).ready(function () {
@@ -626,17 +657,6 @@
                 }
             });
 
-
-            // on keyup / change flag: reset
-            input1.addEventListener('change', reset);
-            input1.addEventListener('keyup', reset);
-            new WOW().init();
-
-
-            // on keyup / change flag: reset
-            input2.addEventListener('change', reset);
-            input2.addEventListener('keyup', reset);
-            new WOW().init();
 
         });
 
