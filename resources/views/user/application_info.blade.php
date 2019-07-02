@@ -130,125 +130,124 @@
                 <!--Grid column-->
                 <div class="col-md-12 ">
                    
-                        <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
-                            <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
-                            <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
-                                <li class="step active">
-                                    <form id="app_form" action="{{ route('application_edit')}} " enctype="multipart/form-data" method="POST">
-                                        @csrf
-                                        <div id="step1" class="step-title waves-effect waves-dark">Basic Information</div>
-                                        <div class="step-new-content">
-                                            <h5 class="text-center font-weight-bolder">Basic Information <i
-                                                    class="fas fa-user m-1"></i></h5>
-                                            <div class="row">
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input id="fullname" name="fullname" type="text"
-                                                        value="{{$user->userdetail->fullname}}"
-                                                        class="validate form-control" required>
-                                                    <label for="fullname">{{ __('Full name') }}</label>
-                                                </div>
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input id="father" name="father" type="text"
-                                                        value="{{$user->userdetail->father_name}}"
-                                                        class="validate form-control">
-                                                    <label for="father">{{ __("Father's name") }}</label>
-                                                </div>
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input id="mother" name="mother" type="text"
-                                                        value="{{$user->userdetail->mother_name}}"
-                                                        class="validate form-control">
-                                                    <label for="mother">{{ __("Mother's name") }}</label>
-                                                </div>
-
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input id="email" name="email" type="email" value="{{$user->email}}"
-                                                        class="validate form-control" required>
-                                                    <label for="email">{{ __('E-mail') }}</label>
-                                                </div>
-
-
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input placeholder="Date of Birth" name="date_of_birth"
-                                                        value="{{$user->userdetail->date_of_birth}}" type="text"
-                                                        id="date-picker-example" class="form-control datepicker">
-                                                </div>
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input id="place-of-birth" name="place_of_birth"
-                                                        value="{{$user->userdetail->place_of_birth}}" type="text"
-                                                        class="validate form-control">
-                                                    <label for="place-of-birth">{{ __('Place of Birth') }}</label>
-                                                </div>
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input id="record" name="record" value="{{$user->userdetail->record}}"
-                                                        type="text" class="validate form-control">
-                                                    <label for="record">{{ __('Individual Civil Registry Record') }}</label>
-                                                </div>
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input id="nationality" name="nationality"
-                                                        value="{{$user->userdetail->nationality}}" type="text"
-                                                        class="validate form-control">
-                                                    <label for="nationality">Nationality</label>
-                                                </div>
-
-                                                <select class="mdb-select md-form col-12 ml-auto">
-                                                    <option value="" disabled selected>City</option>
-                                                    <option value="1">Al Hasakah</option>
-                                                    <option value="2">Al Ladhiqiyah</option>
-                                                    <option value="3">Al Qunaytirah</option>
-                                                    <option value="4">Ar Raqqah</option>
-                                                    <option value="5">As Suwayda'</option>
-                                                    <option value="6">Dar'a</option>
-                                                    <option value="7">Dayr az Zawr</option>
-                                                    <option value="8">Dimashq</option>
-                                                    <option value="9">Halab</option>
-                                                    <option value="10">Hamah</option>
-                                                    <option value="11">Hims</option>
-                                                    <option value="12">Idlib</option>
-                                                    <option value="13">Rif Dimashq</option>
-                                                    <option value="14">Tartus</option>
-                                                </select>
-
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input id="address" name="address"
-                                                        value="{{$user->userdetail->address}}" type="text"
-                                                        class="validate form-control">
-                                                    <label for="address">Address</label>
-                                                </div>
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input type="text" id="mobile" type="tel" class="validate form-control"
-                                                        name="mobile" value="{{$user->userdetail->mobile_number}}" required>
-                                                    <span id="valid-msg2" class="hide">✓</span>
-                                                    <span id="error-msg2" class="hide"></span>
-                                                </div>
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input type="text" id="phone" type="tel" class="validate form-control"
-                                                        name="phone" value="{{$user->userdetail->phone_number}}" required>
-                                                    <span id="valid-msg1" class="hide">✓</span>
-                                                    <span id="error-msg1" class="hide"></span>
-                                                </div>
-
-                                                <div class="md-form col-12 ml-auto">
-                                                    <input id="website" name="website"
-                                                        value="{{$user->userdetail->website}}" type="text"
-                                                        class="validate form-control">
-                                                    <label for="website">Website</label>
-                                                </div>
+                    <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
+                        <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
+                        <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
+                            <li class="step active">
+                                <form id="app_form1" action="{{ route('application_edit')}}" enctype="multipart/form-data" method="POST">
+                                    @csrf
+                                    <div id="step1" class="step-title waves-effect waves-dark">Basic Information</div>
+                                    <div class="step-new-content">
+                                        <h5 class="text-center font-weight-bolder">Basic Information <i
+                                                class="fas fa-user m-1"></i></h5>
+                                        <div class="row">
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="fullname" name="fullname" type="text"
+                                                    value="{{$user->userdetail->fullname}}"
+                                                    class="validate form-control" required>
+                                                <label for="fullname">{{ __('Full name') }}</label>
                                             </div>
-                                            <div class="mt-2 d-flex justify-content-center">
-                                                <button type="submit"
-                                                    class="waves-effect waves-dark btn btn-large btn-amber next-step"
-                                                    data-feedback="someFunction21">Save Changes</button>
-                                                    <button class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="father" name="father" type="text"
+                                                    value="{{$user->userdetail->father_name}}"
+                                                    class="validate form-control">
+                                                <label for="father">{{ __("Father's name") }}</label>
+                                            </div>
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="mother" name="mother" type="text"
+                                                    value="{{$user->userdetail->mother_name}}"
+                                                    class="validate form-control">
+                                                <label for="mother">{{ __("Mother's name") }}</label>
+                                            </div>
+
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="email" name="email" type="email" value="{{$user->email}}"
+                                                    class="validate form-control" required>
+                                                <label for="email">{{ __('E-mail') }}</label>
+                                            </div>
+
+
+                                            <div class="md-form col-12 ml-auto">
+                                                <input placeholder="Date of Birth" name="date_of_birth"
+                                                    value="{{$user->userdetail->date_of_birth}}" type="text"
+                                                    id="date-picker-example" class="form-control datepicker">
+                                            </div>
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="place-of-birth" name="place_of_birth"
+                                                    value="{{$user->userdetail->place_of_birth}}" type="text"
+                                                    class="validate form-control">
+                                                <label for="place-of-birth">{{ __('Place of Birth') }}</label>
+                                            </div>
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="record" name="record" value="{{$user->userdetail->record}}"
+                                                    type="text" class="validate form-control">
+                                                <label for="record">{{ __('Individual Civil Registry Record') }}</label>
+                                            </div>
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="nationality" name="nationality"
+                                                    value="{{$user->userdetail->nationality}}" type="text"
+                                                    class="validate form-control">
+                                                <label for="nationality">Nationality</label>
+                                            </div>
+
+                                            <select class="mdb-select md-form col-12 ml-auto" name="city">
+                                                <option value="" disabled selected>City</option>
+                                                <option value="1">Al Hasakah</option>
+                                                <option value="2">Al Ladhiqiyah</option>
+                                                <option value="3">Al Qunaytirah</option>
+                                                <option value="4">Ar Raqqah</option>
+                                                <option value="5">As Suwayda'</option>
+                                                <option value="6">Dar'a</option>
+                                                <option value="7">Dayr az Zawr</option>
+                                                <option value="8">Dimashq</option>
+                                                <option value="9">Halab</option>
+                                                <option value="10">Hamah</option>
+                                                <option value="11">Hims</option>
+                                                <option value="12">Idlib</option>
+                                                <option value="13">Rif Dimashq</option>
+                                                <option value="14">Tartus</option>
+                                            </select>
+
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="address" name="address"
+                                                    value="{{$user->userdetail->address}}" type="text"
+                                                    class="validate form-control">
+                                                <label for="address">Address</label>
+                                            </div>
+                                            <div class="md-form col-12 ml-auto">
+                                                <input type="text" id="mobile" type="tel" class="validate form-control"
+                                                    name="mobile" value="{{$user->userdetail->mobile_number}}" required>
+                                                <span id="valid-msg2" class="hide">✓</span>
+                                                <span id="error-msg2" class="hide"></span>
+                                            </div>
+                                            <div class="md-form col-12 ml-auto">
+                                                <input type="text" id="phone" type="tel" class="validate form-control"
+                                                    name="phone" value="{{$user->userdetail->phone_number}}" required>
+                                                <span id="valid-msg1" class="hide">✓</span>
+                                                <span id="error-msg1" class="hide"></span>
+                                            </div>
+
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="website" name="website"
+                                                    value="{{$user->userdetail->website}}" type="text"
+                                                    class="validate form-control">
+                                                <label for="website">Website</label>
                                             </div>
                                         </div>
-                                    </form>
+                                        <div class="mt-2 d-flex justify-content-center">
+                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber" >Save Changes</button>
+                                            <button class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
 
-                                </li>
-                                <li class="step">
+                            </li>
+                            <li class="step">
+                                <form id="app_form2" action="{{ route('application_edit')}} " enctype="multipart/form-data" method="POST">
+                                    @csrf
                                     <div id="step2" class="step-title waves-effect waves-dark">Shipping Info</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Company Information <i
-                                                class="fas fa-briefcase m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Shipping Company Information <i class="fas fa-briefcase m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="company-name" name="company_name"
@@ -260,152 +259,154 @@
                                                 <textarea id="branches-address" name="branches_address" class="md-textarea form-control" rows="3"> {{$user->shippingOffice->addresses}}
                                             </textarea>
                                             <label for="branches-address">Addresses of Branches</label>
-                                        </div> --}}
-                                        <div class="md-form col-12 ml-auto">
-                                            <input id="position" name="position_title"
-                                                value="{{$user->shippingOffice->position_title}}" type="text"
-                                                class="validate form-control" required>
-                                            <label for="position">Workplace Position</label>
-                                        </div>
-                                        <div class="md-form col-12 ml-auto">
-                                            <input id="chamber" name="chamber_of_commerce"
-                                                value="{{$user->shippingOffice->chamber_of_commerce}}" type="text"
-                                                class="validate form-control" required>
-                                            <label for="chamber">Chamber of Commerce</label>
-                                        </div>
-                                        <div class="md-form col-12 ml-auto">
-                                            <input id="regist-num" name="commercial_registry"
-                                                value="{{$user->shippingOffice->commercial_registry}}" type="text"
-                                                class="validate form-control" required>
-                                            <label for="regist-num">Commercial Registration Number</label>
-                                        </div>
+                                            </div> --}}
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="position" name="position_title"
+                                                    value="{{$user->shippingOffice->position_title}}" type="text"
+                                                    class="validate form-control" required>
+                                                <label for="position">Workplace Position</label>
+                                            </div>
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="chamber" name="chamber_of_commerce"
+                                                    value="{{$user->shippingOffice->chamber_of_commerce}}" type="text"
+                                                    class="validate form-control" required>
+                                                <label for="chamber">Chamber of Commerce</label>
+                                            </div>
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="regist-num" name="commercial_registry"
+                                                    value="{{$user->shippingOffice->commercial_registry}}" type="text"
+                                                    class="validate form-control" required>
+                                                <label for="regist-num">Commercial Registration Number</label>
+                                            </div>
 
 
-                                        <div class="md-form col-12 ml-auto">
-                                            <h6 class="font-weight-bold">Available Shipping Methods:</h6>
-                                            <ul>
-                                                <div class="custom-control custom-checkbox p-2">
-                                                    <input type="checkbox" class="custom-control-input" id="method1">
-                                                    <label class="custom-control-label" for="method1">International
-                                                        Shipping</label>
-                                                </div>
-                                                <ul class="hide" id="international">
+                                            <div class="md-form col-12 ml-auto">
+                                                <h6 class="font-weight-bold">Available Shipping Methods:</h6>
+                                                <ul>
                                                     <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="method11">
-                                                        <label class="custom-control-label"
-                                                            for="method11">LandTransport</label>
+                                                        <input type="checkbox" class="custom-control-input" id="method1">
+                                                        <label class="custom-control-label" for="method1">International
+                                                            Shipping</label>
                                                     </div>
-                                                    <ul id="land">
+                                                    <ul class="hide" id="international">
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"
-                                                                id="method111">
+                                                                id="method11">
                                                             <label class="custom-control-label"
-                                                                for="method111">ETL</label>
+                                                                for="method11">LandTransport</label>
                                                         </div>
+                                                        <ul id="land">
+                                                            <div class="custom-control custom-checkbox p-2">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="method111">
+                                                                <label class="custom-control-label"
+                                                                    for="method111">ETL</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox p-2">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="method112">
+                                                                <label class="custom-control-label"
+                                                                    for="method112">LTL</label>
+                                                            </div>
+                                                        </ul>
+
+
+
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"
-                                                                id="method112">
+                                                                id="method12">
                                                             <label class="custom-control-label"
-                                                                for="method112">LTL</label>
+                                                                for="method12">WaterTransport</label>
+                                                        </div>
+                                                        <ul id="water">
+                                                            <div class="custom-control custom-checkbox p-2">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="method121">
+                                                                <label class="custom-control-label"
+                                                                    for="method121">ECL</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox p-2">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="method122">
+                                                                <label class="custom-control-label"
+                                                                    for="method122">LCL</label>
+                                                            </div>
+                                                        </ul>
+
+                                                        <div class="custom-control custom-checkbox p-2">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="method13">
+                                                            <label class="custom-control-label"
+                                                                for="method13">AirTransport</label>
                                                         </div>
                                                     </ul>
 
-
-
                                                     <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="method12">
-                                                        <label class="custom-control-label"
-                                                            for="method12">WaterTransport</label>
-                                                    </div>
-                                                    <ul id="water">
-                                                        <div class="custom-control custom-checkbox p-2">
-                                                            <input type="checkbox" class="custom-control-input"
-                                                                id="method121">
-                                                            <label class="custom-control-label"
-                                                                for="method121">ECL</label>
-                                                        </div>
-                                                        <div class="custom-control custom-checkbox p-2">
-                                                            <input type="checkbox" class="custom-control-input"
-                                                                id="method122">
-                                                            <label class="custom-control-label"
-                                                                for="method122">LCL</label>
-                                                        </div>
-                                                    </ul>
-
-                                                    <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="method13">
-                                                        <label class="custom-control-label"
-                                                            for="method13">AirTransport</label>
+                                                        <input type="checkbox" class="custom-control-input" id="method2">
+                                                        <label class="custom-control-label" for="method2">National
+                                                            Shipping</label>
                                                     </div>
                                                 </ul>
-
-                                                <div class="custom-control custom-checkbox p-2">
-                                                    <input type="checkbox" class="custom-control-input" id="method2">
-                                                    <label class="custom-control-label" for="method2">National
-                                                        Shipping</label>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 d-flex justify-content-center">
+                                            <button
+                                                class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
+                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
+                                                data-feedback="someFunction21">Save Changes</button>
+                                            <button
+                                                class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                            <li class="step">
+                                <div id="step3" class="step-title waves-effect waves-dark">Hard Copy</div>
+                                <form id="app_form3" action="{{ route('application_edit')}}" enctype="multipart/form-data" method="POST">
+                                    @csrf
+                                    <div class="step-new-content">
+                                        <h5 class="text-center font-weight-bolder">Hard Copy <i
+                                                class="far fa-clipboard m-1"></i>
+                                        </h5>
+                                        <div class="row">
+                                            <div class="md-form col-12 ml-auto">
+                                                <div class="file-field">
+                                                    <h6>Hard Copy of the Application Form:</h6>
+                                                    <div class="btn btn-elegant btn-sm float-left">
+                                                        <span>Choose file</span>
+                                                        <input id="application_photo" type="file" name="hard_copy"
+                                                            onchange="document.getElementById('application').src = window.URL.createObjectURL(this.files[0])">
+                                                    </div>
+                                                    <div class="file-path-wrapper">
+                                                        <input id="hard-copy" class="file-path validate" type="text"
+                                                            placeholder="Upload your file">
+                                                    </div>
                                                 </div>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="mt-2 d-flex justify-content-center">
-                                        <button
-                                            class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                        <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
-                                            data-feedback="someFunction21">Save Changes</button>
-                                        <button
-                                            class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
-                                    </div>
-                        </div>
-                        </li>
-                        <li class="step">
-                            <div id="step3" class="step-title waves-effect waves-dark">Hard Copy</div>
-                            <div class="step-new-content">
-                                <h5 class="text-center font-weight-bolder">Hard Copy <i
-                                        class="far fa-clipboard m-1"></i>
-                                </h5>
-                                <div class="row">
-                                    <div class="md-form col-12 ml-auto">
-                                        <div class="file-field">
-                                            <h6>Hard Copy of the Application Form:</h6>
-                                            <div class="btn btn-elegant btn-sm float-left">
-                                                <span>Choose file</span>
-                                                <input id="application_photo" type="file" name="hard_copy"
-                                                    onchange="document.getElementById('application').src = window.URL.createObjectURL(this.files[0])">
-                                            </div>
-                                            <div class="file-path-wrapper">
-                                                <input id="hard-copy" class="file-path validate" type="text"
-                                                    placeholder="Upload your file">
                                             </div>
                                         </div>
+                                        <div class="col-md-12">
+                                            {{ $temp = ''}}
+                                            @if ( isset($user->applicationdetail->images[0]->url))
+                                            @php $temp = $user->applicationdetail->images[2]->url @endphp
+                                            @endif
+                                            <img id="application" src="{{ url($temp)}}" alt=""
+                                                style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                        </div>
+                                        <div class="mt-2 d-flex justify-content-center">
+                                            <button
+                                                class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
+                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
+                                                data-feedback="someFunction21">Save Changes</button>
+                                        </div>
+
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    {{ $temp = ''}}
-                                    @if ( isset($user->applicationdetail->images[0]->url))
-                                    @php $temp = $user->applicationdetail->images[2]->url @endphp
-                                    @endif
-                                    <img id="application" src="{{ url($temp)}}" alt=""
-                                        style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
-                                </div>
-                                <div class="mt-2 d-flex justify-content-center">
-                                    <button
-                                        class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                    <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
-                                        data-feedback="someFunction21">Save Changes</button>
-                                </div>
-
-
-                            </div>
-                        </li>
+                                </form>
+                            </li>
 
                         </ul>
+                    </div>
                 </div>
-                </form>
             </div>
-        </div>
         </div>
 
 
@@ -464,25 +465,31 @@
 
         // Data Picker Initialization
         $('.datepicker').pickadate();
+    
+        $('#app_form1').click(function (e) {
+            e.preventDefault();
 
-        // $('#app_form').submit(function (e) {
-        //     e.preventDefault();
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: '{{ route('application_edit')}}',
+                dataType: 'json', // data type
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    toastr.success('Registered!');
+                },
 
-        //     $.ajax({
-        //         headers: {
-        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //         },
-        //         type: 'POST',
-        //         url: $(this).attr('action'),
-        //         dataType: 'json', // data type
-        //         data: new FormData(this),
-        //         processData: false,
-        //         contentType: false,
-        //         success: function (data) {
-        //             toastr.success('Registered!');
-        //         },
-        //     });
-        // });
+                error: function (xhr, textStatus, errorThrown) {
+                    var string = xhr.responseText;
+                    var obj = JSON.parse(string);
+                    toastr.error(obj.message);
+                }
+            });
+        });
 
     </script>
 
@@ -627,16 +634,16 @@
             });
 
 
-            // on keyup / change flag: reset
-            input1.addEventListener('change', reset);
-            input1.addEventListener('keyup', reset);
-            new WOW().init();
+            // // on keyup / change flag: reset
+            // input1.addEventListener('change', reset);
+            // input1.addEventListener('keyup', reset);
+            // new WOW().init();
 
 
-            // on keyup / change flag: reset
-            input2.addEventListener('change', reset);
-            input2.addEventListener('keyup', reset);
-            new WOW().init();
+            // // on keyup / change flag: reset
+            // input2.addEventListener('change', reset);
+            // input2.addEventListener('keyup', reset);
+            // new WOW().init();
 
         });
 
