@@ -516,6 +516,55 @@
             });
         });
 
+        $('#app_form2').click(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: '{{ route('application_edit')}}',
+                dataType: 'json', // data type
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    toastr.success('Registered!');
+                },
+
+                error: function (xhr, textStatus, errorThrown) {
+                    var string = xhr.responseText;
+                    var obj = JSON.parse(string);
+                    toastr.error(obj.message);
+                }
+            });
+        });
+
+        $('#app_form3').click(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: '{{ route('application_edit')}}',
+                dataType: 'json', // data type
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    toastr.success('Registered!');
+                },
+
+                error: function (xhr, textStatus, errorThrown) {
+                    var string = xhr.responseText;
+                    var obj = JSON.parse(string);
+                    toastr.error(obj.message);
+                }
+            });
+        });
     </script>
 
     
@@ -543,8 +592,6 @@
                             minlength: 4
                         }
                     },
-
-
 
 
                     // Specify validation error messages
@@ -599,8 +646,6 @@
             var errorMap2 = ["Invalid number", "Invalid country code", "Too short", "Too long",
                 "Invalid number"
             ];
-
-
 
 
             // initialise plugin
