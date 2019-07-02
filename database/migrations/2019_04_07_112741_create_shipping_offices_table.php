@@ -30,14 +30,14 @@ class CreateShippingOfficesTable extends Migration
 
             // Attributes 
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('country')->nullable();
-            $table->string('city');
+            $table->string('city')->nullable();
             $table->string('addresses')->nullable(); 
             $table->string('shipping_services')->nullable();
             $table->string('position_title')->nullable(); 
             $table->integer('chamber_of_commerce')->nullable(); 
-            $table->integer('commercial_registry'); 
+            $table->integer('commercial_registry')->nullable(); 
             $table->timestamps();
 
             // Foreign Keys
