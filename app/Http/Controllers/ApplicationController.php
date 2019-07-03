@@ -37,7 +37,6 @@ class ApplicationController extends Controller
     }
 
     public function update(Request $request){
-        
         // $validated = $request->validated(); 
         $user = User::find(Auth::user()->id); 
 

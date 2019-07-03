@@ -54,8 +54,9 @@
             color: #b7b9bd !important;
         }
 
-        .form-control{
-            color:#fff;
+        .md-form input,
+        .md-form textarea {
+            color: #fff !important;
         }
 
         ul.stepper.horizontal .step .step-title:before {
@@ -106,23 +107,6 @@
             padding: .60rem 1.4rem!important;
         }
 
-        .select-dropdown, .select-wrapper span.caret{
-            color:#b7b9bd;
-        }
-
-        .form-control:focus{
-            color:#fff;
-        }
-
-        .picker__box .picker__header .picker__date-display {
-            background-color: #7b8290;
-        }
-
-        .picker__box .picker__header .picker__date-display .picker__weekday-display {
-            background-color: #444b58;
-        }
-                
-
     </style>
 </head>
 
@@ -147,11 +131,12 @@
                 <div class="col-md-12 ">
                    
                     <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
-                        <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
-                        <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
-                            <li class="step active">
-                                <form id="app_form1" action="{{ route('application_edit')}}" enctype="multipart/form-data" method="POST">
-                                    @csrf
+                        <form id="app_form1" action="{{ route('application_edit')}}" enctype="multipart/form-data" method="POST">
+                            @csrf
+                            <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
+                            <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
+                                <li class="step active">
+
                                     <div id="step1" class="step-title waves-effect waves-dark">Basic Information</div>
                                     <div class="step-new-content">
                                         <h5 class="text-center font-weight-bolder">Basic Information <i
@@ -206,25 +191,23 @@
                                                 <label for="nationality">Nationality</label>
                                             </div>
 
-                                            <div class="md-form col-12 ml-auto">
-                                                <select class="mdb-select" name="city">
-                                                    <option value="" disabled selected>City</option>
-                                                    <option value="1">Al Hasakah</option>
-                                                    <option value="2">Al Ladhiqiyah</option>
-                                                    <option value="3">Al Qunaytirah</option>
-                                                    <option value="4">Ar Raqqah</option>
-                                                    <option value="5">As Suwayda'</option>
-                                                    <option value="6">Dar'a</option>
-                                                    <option value="7">Dayr az Zawr</option>
-                                                    <option value="8">Dimashq</option>
-                                                    <option value="9">Halab</option>
-                                                    <option value="10">Hamah</option>
-                                                    <option value="11">Hims</option>
-                                                    <option value="12">Idlib</option>
-                                                    <option value="13">Rif Dimashq</option>
-                                                    <option value="14">Tartus</option>
-                                                </select>
-                                            </div>
+                                            <select class="mdb-select md-form col-12 ml-auto" name="city">
+                                                <option value="" disabled selected>City</option>
+                                                <option value="1">Al Hasakah</option>
+                                                <option value="2">Al Ladhiqiyah</option>
+                                                <option value="3">Al Qunaytirah</option>
+                                                <option value="4">Ar Raqqah</option>
+                                                <option value="5">As Suwayda'</option>
+                                                <option value="6">Dar'a</option>
+                                                <option value="7">Dayr az Zawr</option>
+                                                <option value="8">Dimashq</option>
+                                                <option value="9">Halab</option>
+                                                <option value="10">Hamah</option>
+                                                <option value="11">Hims</option>
+                                                <option value="12">Idlib</option>
+                                                <option value="13">Rif Dimashq</option>
+                                                <option value="14">Tartus</option>
+                                            </select>
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="address" name="address"
@@ -253,16 +236,14 @@
                                             </div>
                                         </div>
                                         <div class="mt-2 d-flex justify-content-center">
-                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber" >Save Changes</button>
+                                            <button onClick="formsubmit()" type="submit" class="waves-effect waves-dark btn btn-large btn-amber" >Save Changes</button>
                                             <button class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
                                     </div>
-                                </form>
 
-                            </li>
-                            <li class="step">
-                                <form id="app_form2" action="{{ route('application_edit')}} " enctype="multipart/form-data" method="POST">
-                                    @csrf
+                                </li>
+                                <li class="step">
+                            
                                     <div id="step2" class="step-title waves-effect waves-dark">Shipping Info</div>
                                     <div class="step-new-content">
                                         <h5 class="text-center font-weight-bolder">Shipping Company Information <i class="fas fa-briefcase m-1"></i></h5>
@@ -273,23 +254,21 @@
                                                     class="validate form-control" required>
                                                 <label for="company-name">Shipping Company Name</label>
                                             </div>
-                                            {{-- <div class="md-form col-12 ml-auto">
-                                                <textarea id="branches-address" name="branches_address" class="md-textarea form-control" rows="3"> {{$user->shippingOffice->addresses}}
-                                            </textarea>
-                                            <label for="branches-address">Addresses of Branches</label>
-                                            </div> --}}
+
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="position" name="position_title"
                                                     value="{{$user->shippingOffice->position_title}}" type="text"
                                                     class="validate form-control" required>
                                                 <label for="position">Workplace Position</label>
                                             </div>
+
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="chamber" name="chamber_of_commerce"
                                                     value="{{$user->shippingOffice->chamber_of_commerce}}" type="text"
                                                     class="validate form-control" required>
                                                 <label for="chamber">Chamber of Commerce</label>
                                             </div>
+
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="regist-num" name="commercial_registry"
                                                     value="{{$user->shippingOffice->commercial_registry}}" type="text"
@@ -297,25 +276,22 @@
                                                 <label for="regist-num">Commercial Registration Number</label>
                                             </div>
 
-
-                                        <div class="md-form col-12 ml-auto">
-                                            <h6 class="font-weight-bold">Available Shipping Methods:</h6>
-                                            <ul>
-                                                <div class="custom-control custom-checkbox p-2">
-                                                    <input type="checkbox" class="custom-control-input" id="method1" data-toggle="collapse" data-target="#international"
-                                                    aria-expanded="false" aria-controls="international">
-                                                    <label class="custom-control-label" for="method1">International
-                                                        Shipping</label>
-                                                </div>
-                                                <ul class="collapse" id="international">
+                                            <div class="md-form col-12 ml-auto">
+                                                <h6 class="font-weight-bold">Available Shipping Methods:</h6>
+                                                <ul>
                                                     <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="method11" data-toggle="collapse" data-target="#land"
-                                                            aria-expanded="false" aria-controls="land">
-                                                        <label class="custom-control-label"
-                                                            for="method11">LandTransport</label>
+                                                        <input type="checkbox" class="custom-control-input" id="method1">
+                                                        <label class="custom-control-label" for="method1">International
+                                                            Shipping</label>
                                                     </div>
-                                                        <ul class="collapse" id="land">
+                                                    <ul class="hide" id="international">
+                                                        <div class="custom-control custom-checkbox p-2">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="method11">
+                                                            <label class="custom-control-label"
+                                                                for="method11">LandTransport</label>
+                                                        </div>
+                                                        <ul id="land">
                                                             <div class="custom-control custom-checkbox p-2">
                                                                 <input type="checkbox" class="custom-control-input"
                                                                     id="method111">
@@ -331,15 +307,13 @@
                                                         </ul>
 
 
-
-                                                    <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="method12" data-toggle="collapse" data-target="#water"
-                                                            aria-expanded="false" aria-controls="water">
-                                                        <label class="custom-control-label"
-                                                            for="method12">WaterTransport</label>
-                                                    </div>
-                                                        <ul class="collapse" id="water">
+                                                        <div class="custom-control custom-checkbox p-2">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="method12">
+                                                            <label class="custom-control-label"
+                                                                for="method12">WaterTransport</label>
+                                                        </div>
+                                                        <ul id="water">
                                                             <div class="custom-control custom-checkbox p-2">
                                                                 <input type="checkbox" class="custom-control-input"
                                                                     id="method121">
@@ -373,18 +347,16 @@
                                         <div class="mt-2 d-flex justify-content-center">
                                             <button
                                                 class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
+                                            <button onClick="formsubmit()" type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
                                                 data-feedback="someFunction21">Save Changes</button>
                                             <button
                                                 class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
                                     </div>
-                                </form>
-                            </li>
-                            <li class="step">
-                                <div id="step3" class="step-title waves-effect waves-dark">Hard Copy</div>
-                                <form id="app_form3" action="{{ route('application_edit')}}" enctype="multipart/form-data" method="POST">
-                                    @csrf
+                                </li>
+                                <li class="step">
+                                    <div id="step3" class="step-title waves-effect waves-dark">Hard Copy</div>
+                    
                                     <div class="step-new-content">
                                         <h5 class="text-center font-weight-bolder">Hard Copy <i
                                                 class="far fa-clipboard m-1"></i>
@@ -416,15 +388,15 @@
                                         <div class="mt-2 d-flex justify-content-center">
                                             <button
                                                 class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
+                                            <button onClick="formsubmit()" type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
                                                 data-feedback="someFunction21">Save Changes</button>
                                         </div>
 
                                     </div>
-                                </form>
-                            </li>
+                                </li>
 
-                        </ul>
+                            </ul>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -449,28 +421,48 @@
 
     </script>
 
-    {{-- <script>
+    <script>
         $('#method1').change(function () {
             $('#international').removeClass('hide');
-        });
-
-    </script> --}}
-
-    <script>
-        // Material Select Initialization
-        $(document).ready(function () {
-            $('.mdb-select').materialSelect();
-            $('.select-dropdown').click(function(){
-                $('.select-dropdown').addClass('white-text');
-            })
         });
 
     </script>
 
     <script>
-        $('.datepicker').pickadate({
-            selectYears: 200
-        })
+        // Material Select Initialization
+        $(document).ready(function () {
+            $('.mdb-select').materialSelect();
+        });
+
+    </script>
+
+    <script>
+
+        function formsubmit(e){
+
+            //     $('#submitbtn1').click(function (e) {
+            //     e.preventDefault();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                
+                type: 'POST',
+                url: '{{ route('application_edit')}}',
+                dataType: 'json', // data type
+                data: new FormData($('#app_form1')[0]),
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    toastr.success('Registered!');
+                },
+
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.responseText);
+                }
+            });
+        }
     </script>
 
     <script>
@@ -495,84 +487,9 @@
 
         // Data Picker Initialization
         $('.datepicker').pickadate();
-    
-        $('#app_form1').click(function (e) {
-            e.preventDefault();
 
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type: 'POST',
-                url: '{{ route('application_edit')}}',
-                dataType: 'json', // data type
-                data: new FormData(this),
-                processData: false,
-                contentType: false,
-                success: function (data) {
-                    toastr.success('Registered!');
-                },
 
-                error: function (xhr, textStatus, errorThrown) {
-                    var string = xhr.responseText;
-                    var obj = JSON.parse(string);
-                    toastr.error(obj.message);
-                }
-            });
-        });
-
-        $('#app_form2').click(function (e) {
-            e.preventDefault();
-
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type: 'POST',
-                url: '{{ route('application_edit')}}',
-                dataType: 'json', // data type
-                data: new FormData(this),
-                processData: false,
-                contentType: false,
-                success: function (data) {
-                    toastr.success('Registered!');
-                },
-
-                error: function (xhr, textStatus, errorThrown) {
-                    var string = xhr.responseText;
-                    var obj = JSON.parse(string);
-                    toastr.error(obj.message);
-                }
-            });
-        });
-
-        $('#app_form3').click(function (e) {
-            e.preventDefault();
-
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type: 'POST',
-                url: '{{ route('application_edit')}}',
-                dataType: 'json', // data type
-                data: new FormData(this),
-                processData: false,
-                contentType: false,
-                success: function (data) {
-                    toastr.success('Registered!');
-                },
-
-                error: function (xhr, textStatus, errorThrown) {
-                    var string = xhr.responseText;
-                    var obj = JSON.parse(string);
-                    toastr.error(obj.message);
-                }
-            });
-        });
     </script>
-
-    
 
     <script>
         $(document).ready(function () {

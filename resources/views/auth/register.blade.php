@@ -175,7 +175,6 @@
         $('#submitbtn').click(function (e) {
             e.preventDefault();
 
-            var form = $('#app_form'); 
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -183,20 +182,21 @@
                 type: 'POST',
                 url:'{{ route('register')}} ',
                 dataType: 'json', // data type
-                data: new FormData(form);,
+                data: new FormData($('#app_form')[0]),
                 processData: false,
                 contentType: false,
                 statusCode: {
                     200: function () {
                         toastr.success('Registered!');
-                        window.location.href = {{url('/')}};
+                        window.location.href = '{{url('/')}}';
                     }
 
                 },
                 error: function (xhr, textStatus, errorThrown) {
-                    var string = xhr.responseText;
-                    var obj = JSON.parse(string);
-                    toastr.error(obj.message);
+                    console.log(xhr.responseText);
+                    // var string = xhr.responseText;
+                    // var obj = JSON.parse(string);
+                    // toastr.error(obj.message);
                 }
             });
 
