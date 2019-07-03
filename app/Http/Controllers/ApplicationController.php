@@ -86,7 +86,7 @@ class ApplicationController extends Controller
         foreach($request->files as $file)
         ImageUploadService::imageUpload($file, $user->id, "App\ApplicationDetail");
 
-        return redirect()->back()->with('Success'); 
+        return response('Success', 200); 
     }
 
     public function miniUpdate(Request $request){

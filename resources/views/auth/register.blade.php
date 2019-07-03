@@ -133,7 +133,7 @@
                                             </div>
 
                                             <div class="d-flex justify-content-center">
-                                                <button id="submitbtn" class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
+                                                <button onClick="formsubmit()" class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
                                                     type="submit">{{ __('SUBMIT') }}</button>
                                             </div>
                                     </form>
@@ -169,38 +169,35 @@
 
     <script>
 
-        // $('#app_form').load(function(e){
-        //     e.preventDefault();
-        // });
-        $('#submitbtn').click(function (e) {
-            e.preventDefault();
+        function formsubmit(){
+            $('#app_form').submit(function (e) {
+                e.preventDefault();
 
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type: 'POST',
-                url:'{{ route('register')}} ',
-                dataType: 'json', // data type
-                data: new FormData($('#app_form')[0]),
-                processData: false,
-                contentType: false,
-                statusCode: {
-                    200: function () {
-                        toastr.success('Registered!');
-                        window.location.href = '{{url('/')}}';
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'POST',
+                    url:'{{ route('register')}} ',
+                    dataType: 'json', // data type
+                    data: new FormData($('#app_form')[0]),
+                    processData: false,
+                    contentType: false,
+                    statusCode: {
+                        200: function () {
+                            toastr.success('Registered!');
+                            window.location.href = '{{url('/')}}';
+                        }
+                    },
+
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(xhr.responseText);
                     }
+                });
 
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    console.log(xhr.responseText);
-                    // var string = xhr.responseText;
-                    // var obj = JSON.parse(string);
-                    // toastr.error(obj.message);
-                }
             });
+        }
 
-        });
 
     </script>
     
