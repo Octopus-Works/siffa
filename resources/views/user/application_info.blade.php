@@ -54,9 +54,8 @@
             color: #b7b9bd !important;
         }
 
-        .md-form input,
-        .md-form textarea {
-            color: #fff !important;
+        .form-control{
+            color:#fff;
         }
 
         ul.stepper.horizontal .step .step-title:before {
@@ -72,7 +71,7 @@
 
         .custom-control-label::before {
             background-color: #ffffff00 !important;
-        }
+        } 
 
         .hide {
             display: none;
@@ -107,6 +106,38 @@
             padding: .60rem 1.4rem!important;
         }
 
+        .select-dropdown, .select-wrapper span.caret{
+            color:#b7b9bd;
+        }
+
+        .form-control:focus{
+            color:#fff;
+        }
+
+        .picker__box .picker__header .picker__date-display {
+            background-color: #7b8290;
+        }
+
+        .picker__box .picker__header .picker__date-display .picker__weekday-display {
+            background-color: #444b58;
+        }
+
+
+        @media only screen and (max-width: 993px) {
+            .btn-rounded {
+                padding: .60rem 0.8rem!important;
+            }
+
+            .btn.btn-sm{
+                font-size:.57rem!important;
+            }
+        }
+
+        .country{
+            color:#444b58!important;
+        }
+                        
+
     </style>
 </head>
 
@@ -130,7 +161,7 @@
                 <!--Grid column-->
                 <div class="col-md-12 ">
                    
-                    <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
+                    <div class="card p-4  mt-3 mb-3 shadow-lg custom-primary">
                         <form id="app_form1" action="{{ route('application_edit')}}" enctype="multipart/form-data" method="POST">
                             @csrf
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
@@ -173,6 +204,7 @@
                                                     value="{{$user->userdetail->date_of_birth}}" type="text"
                                                     id="date-picker-example" class="form-control datepicker">
                                             </div>
+                                            
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="place-of-birth" name="place_of_birth"
                                                     value="{{$user->userdetail->place_of_birth}}" type="text"
@@ -191,23 +223,25 @@
                                                 <label for="nationality">Nationality</label>
                                             </div>
 
-                                            <select class="mdb-select md-form col-12 ml-auto" name="city">
-                                                <option value="" disabled selected>City</option>
-                                                <option value="1">Al Hasakah</option>
-                                                <option value="2">Al Ladhiqiyah</option>
-                                                <option value="3">Al Qunaytirah</option>
-                                                <option value="4">Ar Raqqah</option>
-                                                <option value="5">As Suwayda'</option>
-                                                <option value="6">Dar'a</option>
-                                                <option value="7">Dayr az Zawr</option>
-                                                <option value="8">Dimashq</option>
-                                                <option value="9">Halab</option>
-                                                <option value="10">Hamah</option>
-                                                <option value="11">Hims</option>
-                                                <option value="12">Idlib</option>
-                                                <option value="13">Rif Dimashq</option>
-                                                <option value="14">Tartus</option>
-                                            </select>
+                                            <div class="md-form col-12 ml-auto">
+                                                <select class="mdb-select" name="city">
+                                                    <option value="" disabled selected>City</option>
+                                                    <option value="1">Al Hasakah</option>
+                                                    <option value="2">Al Ladhiqiyah</option>
+                                                    <option value="3">Al Qunaytirah</option>
+                                                    <option value="4">Ar Raqqah</option>
+                                                    <option value="5">As Suwayda'</option>
+                                                    <option value="6">Dar'a</option>
+                                                    <option value="7">Dayr az Zawr</option>
+                                                    <option value="8">Dimashq</option>
+                                                    <option value="9">Halab</option>
+                                                    <option value="10">Hamah</option>
+                                                    <option value="11">Hims</option>
+                                                    <option value="12">Idlib</option>
+                                                    <option value="13">Rif Dimashq</option>
+                                                    <option value="14">Tartus</option>
+                                                </select>
+                                            </div>
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="address" name="address"
@@ -235,9 +269,11 @@
                                                 <label for="website">Website</label>
                                             </div>
                                         </div>
-                                        <div class="mt-2 d-flex justify-content-center">
-                                            <button onClick="formsubmit()" type="submit" class="waves-effect waves-dark btn btn-large btn-amber" >Save Changes</button>
-                                            <button class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
+                                        <div class="mt-3 text-center">
+                                            <button type="submit" class="waves-effect waves-dark btn btn-sm btn-amber" style="font-size: 11.96px"
+                                                data-feedback="someFunction21">Save Changes</button>
+                                                <button
+                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
                                     </div>
 
@@ -280,77 +316,82 @@
                                                 <h6 class="font-weight-bold">Available Shipping Methods:</h6>
                                                 <ul>
                                                     <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" class="custom-control-input" id="method1">
+                                                        <input type="checkbox" class="custom-control-input" id="method1" data-toggle="collapse" data-target="#international"
+                                                        aria-expanded="false" aria-controls="international">
                                                         <label class="custom-control-label" for="method1">International
                                                             Shipping</label>
                                                     </div>
-                                                    <ul class="hide" id="international">
+                                                    <ul class="collapse" id="international">
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"
-                                                                id="method11">
+                                                                id="method11" data-toggle="collapse" data-target="#land"
+                                                                aria-expanded="false" aria-controls="land">
                                                             <label class="custom-control-label"
                                                                 for="method11">LandTransport</label>
                                                         </div>
-                                                        <ul id="land">
-                                                            <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" class="custom-control-input"
-                                                                    id="method111">
-                                                                <label class="custom-control-label"
-                                                                    for="method111">ETL</label>
-                                                            </div>
-                                                            <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" class="custom-control-input"
-                                                                    id="method112">
-                                                                <label class="custom-control-label"
-                                                                    for="method112">LTL</label>
-                                                            </div>
-                                                        </ul>
-
-
+                                                            <ul class="collapse" id="land">
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="method111">
+                                                                    <label class="custom-control-label"
+                                                                        for="method111">ETL</label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="method112">
+                                                                    <label class="custom-control-label"
+                                                                        for="method112">LTL</label>
+                                                                </div>
+                                                            </ul>
+    
+    
+    
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"
-                                                                id="method12">
+                                                                id="method12" data-toggle="collapse" data-target="#water"
+                                                                aria-expanded="false" aria-controls="water">
                                                             <label class="custom-control-label"
                                                                 for="method12">WaterTransport</label>
                                                         </div>
-                                                        <ul id="water">
+                                                            <ul class="collapse" id="water">
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="method121">
+                                                                    <label class="custom-control-label"
+                                                                        for="method121">ECL</label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="method122">
+                                                                    <label class="custom-control-label"
+                                                                        for="method122">LCL</label>
+                                                                </div>
+                                                            </ul>
+    
                                                             <div class="custom-control custom-checkbox p-2">
                                                                 <input type="checkbox" class="custom-control-input"
-                                                                    id="method121">
+                                                                    id="method13">
                                                                 <label class="custom-control-label"
-                                                                    for="method121">ECL</label>
-                                                            </div>
-                                                            <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" class="custom-control-input"
-                                                                    id="method122">
-                                                                <label class="custom-control-label"
-                                                                    for="method122">LCL</label>
+                                                                    for="method13">AirTransport</label>
                                                             </div>
                                                         </ul>
-
+    
                                                         <div class="custom-control custom-checkbox p-2">
-                                                            <input type="checkbox" class="custom-control-input"
-                                                                id="method13">
-                                                            <label class="custom-control-label"
-                                                                for="method13">AirTransport</label>
+                                                            <input type="checkbox" class="custom-control-input" id="method2">
+                                                            <label class="custom-control-label" for="method2">National
+                                                                Shipping</label>
                                                         </div>
                                                     </ul>
-
-                                                    <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" class="custom-control-input" id="method2">
-                                                        <label class="custom-control-label" for="method2">National
-                                                            Shipping</label>
-                                                    </div>
-                                                </ul>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="mt-2 d-flex justify-content-center">
-                                            <button
-                                                class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button onClick="formsubmit()" type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
+                                        <div class="mt-5 text-center">
+                                                <button
+                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
+                                                <button type="submit" class="waves-effect waves-dark btn btn-sm btn-amber" style="font-size: 11.96px"
                                                 data-feedback="someFunction21">Save Changes</button>
-                                            <button
-                                                class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
+                                                <button
+                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
+                                    
                                         </div>
                                     </div>
                                 </li>
@@ -372,7 +413,7 @@
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="hard-copy" class="file-path validate" type="text"
-                                                            placeholder="Upload your file">
+                                                            placeholder="Upload your file" style="color:white">
                                                     </div>
                                                 </div>
                                             </div>
@@ -385,13 +426,12 @@
                                             <img id="application" src="{{ url($temp)}}" alt=""
                                                 style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
                                         </div>
-                                        <div class="mt-2 d-flex justify-content-center">
-                                            <button
-                                                class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button onClick="formsubmit()" type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
+                                        <div class="mt-2 text-center">
+                                                <button
+                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
+                                                <button type="submit" class="waves-effect waves-dark btn btn-sm btn-amber" style="font-size: 11.96px"
                                                 data-feedback="someFunction21">Save Changes</button>
                                         </div>
-
                                     </div>
                                 </li>
 
@@ -421,17 +461,15 @@
 
     </script>
 
-    <script>
-        $('#method1').change(function () {
-            $('#international').removeClass('hide');
-        });
 
-    </script>
 
     <script>
         // Material Select Initialization
         $(document).ready(function () {
             $('.mdb-select').materialSelect();
+            $('.select-dropdown').click(function(){
+                $('.select-dropdown').addClass('white-text');
+            })
         });
 
     </script>
@@ -487,6 +525,9 @@
 
         // Data Picker Initialization
         $('.datepicker').pickadate();
+        $('.datepicker').pickadate({
+            selectYears: 200
+        })
 
 
     </script>
