@@ -131,7 +131,7 @@
                 <div class="col-md-12 ">
                    
                     <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
-                        <form id="app_form1" enctype="multipart/form-data">
+                        <form id="app_form1" enctype="multipart/form-data" method="POST">
                             @csrf
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
@@ -236,7 +236,7 @@
                                             </div>
                                         </div>
                                         <div class="mt-2 d-flex justify-content-center">
-                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber" >Save Changes</button>
+                                            <button onClick="formsubmit()" type="submit" class="waves-effect waves-dark btn btn-large btn-amber" >Save Changes</button>
                                             <button class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
                                     </div>
@@ -347,7 +347,7 @@
                                         <div class="mt-2 d-flex justify-content-center">
                                             <button
                                                 class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
+                                            <button onClick="formsubmit()" type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
                                                 data-feedback="someFunction21">Save Changes</button>
                                             <button
                                                 class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
@@ -388,7 +388,7 @@
                                         <div class="mt-2 d-flex justify-content-center">
                                             <button
                                                 class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button type="submit" form="app_form1" class="waves-effect waves-dark btn btn-large btn-amber"
+                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
                                                 data-feedback="someFunction21">Save Changes</button>
                                         </div>
 

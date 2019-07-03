@@ -9,43 +9,47 @@
     <style>
 
 
-        .custom-control-label::after {
-            cursor: pointer;
-        }
-
-        .mt-5 {
-            margin-top: 6rem !important;
-        }
-
-
-
-        .hide {
-            display: none;
-        }
-
-        form .error {
-            color: red;
-            text-align:left;
-            margin-top:-1rem;
-
-        }
-
-        #mobile-error, #phone-error, .initialized{
-            margin-top:0!important
-        }
-
-        .intl-tel-input .flag-container{
-            top:-15px!important;
-        }
-
-        .intl-tel-input {
-            position: relative;
-            display: block;
-            width:89%;
-        }
-
-  
-    </style>
+            .custom-control-label::after {
+                cursor: pointer;
+            }
+    
+            .mt-5 {
+                margin-top: 6rem !important;
+            }
+    
+    
+    
+            .hide {
+                display: none;
+            }
+    
+            form .error {
+                color: red;
+                text-align:left;
+                margin-top:-1rem;
+    
+            }
+    
+            #mobile-error, #phone-error, .initialized{
+                margin-top:0!important
+            }
+    
+            .intl-tel-input .flag-container{
+                top:-15px!important;
+            }
+    
+            .intl-tel-input {
+                position: relative;
+                display: block;
+                width:89%;
+            }
+    
+            .select-dropdown, .select-wrapper span.caret{
+                color:#757575;
+            }
+    
+      
+        </style>
 </head>
 
 
@@ -92,23 +96,25 @@
                                                 <label for="nationality">{{ __('Nationality')}}</label>
                                             </div>
 
-                                            <select class="mdb-select md-form" name="city" required>
-                                                    <option value="" disabled selected>City</option>
-                                                    <option value="1">Al Hasakah</option>
-                                                    <option value="2">Al Ladhiqiyah</option>
-                                                    <option value="3">Al Qunaytirah</option>
-                                                    <option value="4">Ar Raqqah</option>
-                                                    <option value="5">As Suwayda'</option>
-                                                    <option value="6">Dar'a</option>
-                                                    <option value="7">Dayr az Zawr</option>
-                                                    <option value="8">Dimashq</option>
-                                                    <option value="9">Halab</option>
-                                                    <option value="10">Hamah</option>
-                                                    <option value="11">Hims</option>
-                                                    <option value="12">Idlib</option>
-                                                    <option value="13">Rif Dimashq</option>
-                                                    <option value="14">Tartus</option>
-                                            </select>
+                                            <div class="md-form">
+                                                <select class="mdb-select" name="city" required>
+                                                        <option value="" disabled selected>City</option>
+                                                        <option value="1">Al Hasakah</option>
+                                                        <option value="2">Al Ladhiqiyah</option>
+                                                        <option value="3">Al Qunaytirah</option>
+                                                        <option value="4">Ar Raqqah</option>
+                                                        <option value="5">As Suwayda'</option>
+                                                        <option value="6">Dar'a</option>
+                                                        <option value="7">Dayr az Zawr</option>
+                                                        <option value="8">Dimashq</option>
+                                                        <option value="9">Halab</option>
+                                                        <option value="10">Hamah</option>
+                                                        <option value="11">Hims</option>
+                                                        <option value="12">Idlib</option>
+                                                        <option value="13">Rif Dimashq</option>
+                                                        <option value="14">Tartus</option>
+                                                </select>
+                                            </div>
 
                                             <div class="md-form">
                                                 <input id="company-name" name="company_name" type="text"
@@ -125,11 +131,15 @@
                                             <div class="md-form text-left">
                                                 <input id="mobile" type="tel" class="validate form-control" name="mobile" placeholder="Mobile: (201) 555-0123"
                                                     required>
+                                                <span id="valid-msg2" class="hide">✓</span>
+                                                <span id="error-msg2" class="hide"></span>
                                             </div>
-    
+        
                                             <div class="md-form text-left">
                                                 <input id="phone" type="tel" class="validate form-control" placeholder="Phone: (201) 555-0123"
                                                     name="phone" required>
+                                                <span id="valid-msg1" class="hide">✓</span>
+                                                <span id="error-msg1" class="hide"></span>
                                             </div>
 
                                             <div class="d-flex justify-content-center">
@@ -205,6 +215,9 @@
         // Material Select Initialization
         $(document).ready(function () {
             $('.mdb-select').materialSelect();
+            $('.select-dropdown').click(function(){
+                $('.select-dropdown').css('color','#495057');
+            })
         });
 
     </script>
@@ -357,14 +370,14 @@
         });
 
 
-        // on keyup / change flag: reset
-        input1.addEventListener('change', reset);
-        input1.addEventListener('keyup', reset);
-        new WOW().init();
+        // // on keyup / change flag: reset
+        // input1.addEventListener('change', reset);
+        // input1.addEventListener('keyup', reset);
+        // new WOW().init();
 
-        input2.addEventListener('change', reset);
-        input2.addEventListener('keyup', reset);
-        new WOW().init();
+        // input2.addEventListener('change', reset);
+        // input2.addEventListener('keyup', reset);
+        // new WOW().init();
 
     </script>
 
