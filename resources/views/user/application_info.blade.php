@@ -254,20 +254,20 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <select class="mdb-select" name="city">
                                                     <option value="" disabled selected>City</option>
-                                                    <option value="1">Al Hasakah</option>
-                                                    <option value="2">Al Ladhiqiyah</option>
-                                                    <option value="3">Al Qunaytirah</option>
-                                                    <option value="4">Ar Raqqah</option>
-                                                    <option value="5">As Suwayda'</option>
-                                                    <option value="6">Dar'a</option>
-                                                    <option value="7">Dayr az Zawr</option>
-                                                    <option value="8">Dimashq</option>
-                                                    <option value="9">Halab</option>
-                                                    <option value="10">Hamah</option>
-                                                    <option value="11">Hims</option>
-                                                    <option value="12">Idlib</option>
-                                                    <option value="13">Rif Dimashq</option>
-                                                    <option value="14">Tartus</option>
+                                                    <option value="Al Hasakah">Al Hasakah</option>
+                                                    <option value="Al Ladhiqiyah">Al Ladhiqiyah</option>
+                                                    <option value="Al Qunaytirah">Al Qunaytirah</option>
+                                                    <option value="Ar Raqqah">Ar Raqqah</option>
+                                                    <option value="As Suwayda'">As Suwayda'</option>
+                                                    <option value="Dar'a">Dar'a</option>
+                                                    <option value="Dayr az Zawr">Dayr az Zawr</option>
+                                                    <option value="Dimashq">Dimashq</option>
+                                                    <option value="Halab">Halab</option>
+                                                    <option value="Hamah">Hamah</option>
+                                                    <option value="Hims">Hims</option>
+                                                    <option value="Idlib">Idlib</option>
+                                                    <option value="Rif Dimashq">Rif Dimashq</option>
+                                                    <option value="Tartus">Tartus</option>
                                                 </select>
                                             </div>
 
@@ -711,6 +711,20 @@
             reader.readAsDataURL(event.target.files[0]);
             $('#application').addClass('card-img-top');
         };
+
+        $('.collapse').collapse();
+
+        $('.panel-heading h4 a input[type=checkbox]').on('click', function(e) {
+            e.stopPropagation();
+            $(this).parent().trigger('click');   // <---  HERE
+        });
+
+        $('#collapseOne').on('show.bs.collapse', function(e) {
+            if(!$('.panel-heading h4 a input[type=checkbox]').is(':checked'))
+            {
+                return false;
+            }
+        });
 
     </script>
 
