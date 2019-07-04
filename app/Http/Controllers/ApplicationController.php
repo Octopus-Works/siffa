@@ -37,6 +37,7 @@ class ApplicationController extends Controller
     }
 
     public function update(Request $request){
+        
         // $validated = $request->validated(); 
         $user = User::find(Auth::user()->id); 
 
@@ -54,7 +55,7 @@ class ApplicationController extends Controller
             'address'       => preg_replace( "/\r|\n/", "", $request->address ),
         ]);
 
-        $user->shippingOffice()->updateOrCreate([
+        $user->shippingOffice()->update([
             'name'      => $request->company_name,
             'city'      => $request->city,
             'addresses' => preg_replace( "/\r|\n/", "", $request->branches_address ),
@@ -64,14 +65,13 @@ class ApplicationController extends Controller
             'commercial_registry' => $request->commercial_registry,
         ]);
 
-        if ( $request->shipping_methods ){
-            $user->shippingService()->update([
-                'shipping_methods'     => implode(' ', $request->shipping_methods),
-                'shipping_modes'       => implode(' ', $request->shipping_modes),
-                'sources_destinations' => $request->src_dest,
-            ]);
-        }
-
+        
+        $user->shippingService()->update([
+            // 'shipping_methods'     => implode(' ', $request->shipping_methods),
+            'shipping_modes'       => implode(' ', $request->shipping_modes),
+            'sources_destinations' => $request->src_dest,
+        ]);
+        
         $user->applicationDetail()->update([
             'Financial_assignment_status' => $request->financial_status,
             'Date_of_application'         => $request->date_of_application,

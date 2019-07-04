@@ -236,7 +236,7 @@
                                             </div>
                                         </div>
                                         <div class="mt-2 d-flex justify-content-center">
-                                            <button onClick="formsubmit()" type="submit" class="waves-effect waves-dark btn btn-large btn-amber" >Save Changes</button>
+                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber" >Save Changes</button>
                                             <button class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
                                     </div>
@@ -278,29 +278,35 @@
 
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">Available Shipping Methods:</h6>
+                                                @php $chk1 = "" @endphp
+                                                @php
+                                                
+                                                $chk1 = explode(" ",$user->shippingService->shipping_modes) @endphp
                                                 <ul>
                                                     <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" class="custom-control-input" id="method1">
+                                                        <input type="checkbox" name="shipping_modes[]" value="International" class="custom-control-input" id="method1"
+                                                        @if(in_array("International", $chk1)) checked @endif>
                                                         <label class="custom-control-label" for="method1">International
                                                             Shipping</label>
                                                     </div>
                                                     <ul class="hide" id="international">
                                                         <div class="custom-control custom-checkbox p-2">
-                                                            <input type="checkbox" class="custom-control-input"
-                                                                id="method11">
+                                                            
+                                                            <input type="checkbox" name="shipping_modes[]" value="LandTransport" class="custom-control-input"
+                                                                id="method11" @if(in_array("LandTransport", $chk1)) checked @endif>
                                                             <label class="custom-control-label"
                                                                 for="method11">LandTransport</label>
                                                         </div>
                                                         <ul id="land">
                                                             <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" class="custom-control-input"
-                                                                    id="method111">
+                                                                <input type="checkbox" name="shipping_modes[]" value="ETL" class="custom-control-input"
+                                                                    id="method111" @if(in_array("ETL", $chk1)) checked @endif>
                                                                 <label class="custom-control-label"
                                                                     for="method111">ETL</label>
                                                             </div>
                                                             <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" class="custom-control-input"
-                                                                    id="method112">
+                                                                <input type="checkbox" name="shipping_modes[]" value="LTL" class="custom-control-input"
+                                                                    id="method112" @if(in_array("LTL", $chk1)) checked @endif>
                                                                 <label class="custom-control-label"
                                                                     for="method112">LTL</label>
                                                             </div>
@@ -308,36 +314,37 @@
 
 
                                                         <div class="custom-control custom-checkbox p-2">
-                                                            <input type="checkbox" class="custom-control-input"
-                                                                id="method12">
+                                                            <input type="checkbox" name="shipping_modes[]" value="WaterTransport" class="custom-control-input"
+                                                                id="method12" @if(in_array("WaterTransport", $chk1)) checked @endif>
                                                             <label class="custom-control-label"
                                                                 for="method12">WaterTransport</label>
                                                         </div>
                                                         <ul id="water">
                                                             <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" class="custom-control-input"
-                                                                    id="method121">
+                                                                <input type="checkbox" name="shipping_modes[]" value="ECL" class="custom-control-input"
+                                                                    id="method121" @if(in_array("ECL", $chk1)) checked @endif>
                                                                 <label class="custom-control-label"
                                                                     for="method121">ECL</label>
                                                             </div>
                                                             <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" class="custom-control-input"
-                                                                    id="method122">
+                                                                <input type="checkbox" name="shipping_modes[]" value="LCL" class="custom-control-input"
+                                                                    id="method122" @if(in_array("LCL", $chk1)) checked @endif>
                                                                 <label class="custom-control-label"
                                                                     for="method122">LCL</label>
                                                             </div>
                                                         </ul>
 
                                                         <div class="custom-control custom-checkbox p-2">
-                                                            <input type="checkbox" class="custom-control-input"
-                                                                id="method13">
+                                                            <input type="checkbox" name="shipping_modes[]" value="AirTransport" class="custom-control-input"
+                                                                id="method13" @if(in_array("AirTransport", $chk1)) checked @endif>
                                                             <label class="custom-control-label"
                                                                 for="method13">AirTransport</label>
                                                         </div>
                                                     </ul>
 
                                                     <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" class="custom-control-input" id="method2">
+                                                        <input type="checkbox" name="shipping_modes[]" value="National" class="custom-control-input" id="method2"
+                                                        @if(in_array("National", $chk1)) checked @endif>
                                                         <label class="custom-control-label" for="method2">National
                                                             Shipping</label>
                                                     </div>
@@ -347,8 +354,7 @@
                                         <div class="mt-2 d-flex justify-content-center">
                                             <button
                                                 class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button onClick="formsubmit()" type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
-                                                data-feedback="someFunction21">Save Changes</button>
+                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber">Save Changes</button>
                                             <button
                                                 class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
@@ -388,8 +394,7 @@
                                         <div class="mt-2 d-flex justify-content-center">
                                             <button
                                                 class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber"
-                                                data-feedback="someFunction21">Save Changes</button>
+                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber">Save Changes</button>
                                         </div>
 
                                     </div>
@@ -477,12 +482,6 @@
         $(document).ready(function () {
             $('.stepper').mdbStepper();
         })
-
-        function someFunction21() {
-            setTimeout(function () {
-                $('#horizontal-stepper').nextStep();
-            }, 2000);
-        }
 
         // Data Picker Initialization
         $('.datepicker').pickadate();

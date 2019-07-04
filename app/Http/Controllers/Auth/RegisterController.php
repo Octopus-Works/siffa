@@ -118,7 +118,7 @@ class RegisterController extends Controller
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
         
-        return redirect()->back()->with('Success'); 
+        return response('success', 200);
 
         // $application = new ApplicationDetail; 
         // $application->user_id = $user->id;
