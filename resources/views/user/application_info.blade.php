@@ -23,6 +23,7 @@
         ul.stepper .step.wrong:before {
             font-family: 'Font Awesome 5 free';
             font-weight: 900;
+            background-color: #ff3547!important;
         }
 
         ul.stepper .step.done:before {
@@ -32,7 +33,9 @@
 
         ul.stepper .step.wrong:before {
             font-family: 'Font Awesome 5 Free' !important;
+            font-weight: 900!important;
             font-size: 1rem;
+            background-color: #ff3547!important;
         }
 
         @media only screen and (min-width: 993px) {
@@ -47,6 +50,8 @@
         @media only screen and (min-width: 993px) {
             ul.stepper.horizontal .step.wrong .step-title:before {
                 font-family: 'Font Awesome 5 Free' !important;
+                font-weight: 900!important;
+                background-color: #ff3547!important;
             }
         }
 
@@ -54,9 +59,8 @@
             color: #b7b9bd !important;
         }
 
-        .md-form input,
-        .md-form textarea {
-            color: #fff !important;
+        .form-control{
+            color:#fff;
         }
 
         ul.stepper.horizontal .step .step-title:before {
@@ -72,7 +76,7 @@
 
         .custom-control-label::before {
             background-color: #ffffff00 !important;
-        }
+        } 
 
         .hide {
             display: none;
@@ -107,6 +111,63 @@
             padding: .60rem 1.4rem!important;
         }
 
+        .select-dropdown, .select-wrapper span.caret{
+            color:#b7b9bd;
+        }
+
+        .form-control:focus{
+            color:#fff;
+        }
+
+        .picker__box .picker__header .picker__date-display {
+            background-color: #7b8290;
+        }
+
+        .picker__box .picker__header .picker__date-display .picker__weekday-display {
+            background-color: #444b58;
+        }
+
+
+        @media only screen and (max-width: 993px) {
+            .btn-rounded {
+                padding: .60rem 0.8rem!important;
+            }
+
+            .btn.btn-sm{
+                font-size:.57rem!important;
+            }
+
+            .intl-tel-input.allow-dropdown input, .intl-tel-input.allow-dropdown input[type=text]{
+                width: 80%!important
+            }
+        }
+
+        .country{
+            color:#444b58!important;
+        }
+
+        .intl-tel-input .selected-flag .iti-arrow {
+            border-top: 4px solid #fff;
+        }
+
+        @media only screen and (min-width: 993px) {
+            .card{
+                padding:3.5rem!important;
+            }
+        }
+
+        ul.stepper .step:before {
+            background-color: #868788 
+        }
+        
+        .card-img-top {
+        width: 50%;
+        height: 50%;
+        padding: 10px;
+        object-fit: cover;
+    }
+    
+
     </style>
 </head>
 
@@ -130,7 +191,7 @@
                 <!--Grid column-->
                 <div class="col-md-12 ">
                    
-                    <div class="card p-5  mt-3 mb-3 shadow-lg custom-primary">
+                    <div class="card p-4  mt-3 mb-3 shadow-lg custom-primary">
                         <form id="app_form1" enctype="multipart/form-data" method="POST">
                             @csrf
                             <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
@@ -190,24 +251,25 @@
                                                     class="validate form-control">
                                                 <label for="nationality">Nationality</label>
                                             </div>
-
-                                            <select class="mdb-select md-form col-12 ml-auto" name="city">
-                                                <option value=""{{$user->shippingOffice->city}}"" disabled selected>City</option>
-                                                <option value="1">Al Hasakah</option>
-                                                <option value="2">Al Ladhiqiyah</option>
-                                                <option value="3">Al Qunaytirah</option>
-                                                <option value="4">Ar Raqqah</option>
-                                                <option value="5">As Suwayda'</option>
-                                                <option value="6">Dar'a</option>
-                                                <option value="7">Dayr az Zawr</option>
-                                                <option value="8">Dimashq</option>
-                                                <option value="9">Halab</option>
-                                                <option value="10">Hamah</option>
-                                                <option value="11">Hims</option>
-                                                <option value="12">Idlib</option>
-                                                <option value="13">Rif Dimashq</option>
-                                                <option value="14">Tartus</option>
-                                            </select>
+                                            <div class="md-form col-12 ml-auto">
+                                                <select class="mdb-select" name="city">
+                                                    <option value="{{$user->shippingOffice->city}}" disabled selected>City</option>
+                                                    <option value="1">Al Hasakah</option>
+                                                    <option value="2">Al Ladhiqiyah</option>
+                                                    <option value="3">Al Qunaytirah</option>
+                                                    <option value="4">Ar Raqqah</option>
+                                                    <option value="5">As Suwayda'</option>
+                                                    <option value="6">Dar'a</option>
+                                                    <option value="7">Dayr az Zawr</option>
+                                                    <option value="8">Dimashq</option>
+                                                    <option value="9">Halab</option>
+                                                    <option value="10">Hamah</option>
+                                                    <option value="11">Hims</option>
+                                                    <option value="12">Idlib</option>
+                                                    <option value="13">Rif Dimashq</option>
+                                                    <option value="14">Tartus</option>
+                                                </select>
+                                            </div>
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="address" name="address"
@@ -235,9 +297,9 @@
                                                 <label for="website">Website</label>
                                             </div>
                                         </div>
-                                        <div class="mt-2 d-flex justify-content-center">
-                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber" >Save Changes</button>
-                                            <button class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
+                                        <div class="mt-3 text-center">
+                                            <button type="submit" class="waves-effect waves-dark btn btn-sm btn-amber"  style="font-size: 11.96px" >Save Changes</button>
+                                            <button class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
                                     </div>
 
@@ -284,80 +346,85 @@
                                                 $chk1 = explode(" ",$user->shippingService->shipping_modes) @endphp
                                                 <ul>
                                                     <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" name="shipping_modes[]" value="International" class="custom-control-input" id="method1"
+                                                        <input type="checkbox" name="shipping_modes[]" value="International" class="custom-control-input" id="method1"  data-toggle="collapse" data-target="#international"
+                                                        aria-expanded="false" aria-controls="international"
                                                         @if(in_array("International", $chk1)) checked @endif>
                                                         <label class="custom-control-label" for="method1">International
                                                             Shipping</label>
                                                     </div>
-                                                    <ul class="hide" id="international">
+                                                    <ul class="collapse" id="international">
                                                         <div class="custom-control custom-checkbox p-2">
-                                                            
-                                                            <input type="checkbox" name="shipping_modes[]" value="LandTransport" class="custom-control-input"
-                                                                id="method11" @if(in_array("LandTransport", $chk1)) checked @endif>
+                                                            <input type="checkbox" class="custom-control-input"  name="shipping_modes[]" value="LandTransport" 
+                                                                id="method11" data-toggle="collapse" data-target="#land"
+                                                                aria-expanded="false" aria-controls="land"  @if(in_array("LandTransport", $chk1)) checked @endif>
                                                             <label class="custom-control-label"
                                                                 for="method11">LandTransport</label>
                                                         </div>
-                                                        <ul id="land">
-                                                            <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" name="shipping_modes[]" value="ETL" class="custom-control-input"
+                                                            <ul class="collapse" id="land">
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" name="shipping_modes[]" value="ETL" class="custom-control-input"
                                                                     id="method111" @if(in_array("ETL", $chk1)) checked @endif>
-                                                                <label class="custom-control-label"
-                                                                    for="method111">ETL</label>
-                                                            </div>
-                                                            <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" name="shipping_modes[]" value="LTL" class="custom-control-input"
+                                                                    <label class="custom-control-label"
+                                                                        for="method111">ETL</label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" name="shipping_modes[]" value="LTL" class="custom-control-input"
                                                                     id="method112" @if(in_array("LTL", $chk1)) checked @endif>
-                                                                <label class="custom-control-label"
-                                                                    for="method112">LTL</label>
-                                                            </div>
-                                                        </ul>
-
-
+                                                                    <label class="custom-control-label"
+                                                                        for="method112">LTL</label>
+                                                                </div>
+                                                            </ul>
+    
+    
+    
                                                         <div class="custom-control custom-checkbox p-2">
-                                                            <input type="checkbox" name="shipping_modes[]" value="WaterTransport" class="custom-control-input"
-                                                                id="method12" @if(in_array("WaterTransport", $chk1)) checked @endif>
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="method12" data-toggle="collapse" data-target="#water"
+                                                                aria-expanded="false" aria-controls="water" name="shipping_modes[]" value="WaterTransport"
+                                                                @if(in_array("WaterTransport", $chk1)) checked @endif>
                                                             <label class="custom-control-label"
                                                                 for="method12">WaterTransport</label>
                                                         </div>
-                                                        <ul id="water">
-                                                            <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" name="shipping_modes[]" value="ECL" class="custom-control-input"
+                                                            <ul class="collapse" id="water">
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" name="shipping_modes[]" value="ECL" class="custom-control-input"
                                                                     id="method121" @if(in_array("ECL", $chk1)) checked @endif>
-                                                                <label class="custom-control-label"
-                                                                    for="method121">ECL</label>
-                                                            </div>
-                                                            <div class="custom-control custom-checkbox p-2">
-                                                                <input type="checkbox" name="shipping_modes[]" value="LCL" class="custom-control-input"
+                                                                    <label class="custom-control-label"
+                                                                        for="method121">ECL</label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" name="shipping_modes[]" value="LCL" class="custom-control-input"
                                                                     id="method122" @if(in_array("LCL", $chk1)) checked @endif>
+                                                                    <label class="custom-control-label"
+                                                                        for="method122">LCL</label>
+                                                                </div>
+                                                            </ul>
+    
+                                                            <div class="custom-control custom-checkbox p-2">
+                                                                <input type="checkbox" name="shipping_modes[]" value="AirTransport" class="custom-control-input"
+                                                                id="method13" @if(in_array("AirTransport", $chk1)) checked @endif>
                                                                 <label class="custom-control-label"
-                                                                    for="method122">LCL</label>
+                                                                    for="method13">AirTransport</label>
                                                             </div>
                                                         </ul>
-
+    
                                                         <div class="custom-control custom-checkbox p-2">
-                                                            <input type="checkbox" name="shipping_modes[]" value="AirTransport" class="custom-control-input"
-                                                                id="method13" @if(in_array("AirTransport", $chk1)) checked @endif>
-                                                            <label class="custom-control-label"
-                                                                for="method13">AirTransport</label>
+                                                            <input type="checkbox" name="shipping_modes[]" value="National" class="custom-control-input" id="method2"
+                                                            @if(in_array("National", $chk1)) checked @endif>
+                                                            <label class="custom-control-label" for="method2">National
+                                                                Shipping</label>
                                                         </div>
                                                     </ul>
-
-                                                    <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" name="shipping_modes[]" value="National" class="custom-control-input" id="method2"
-                                                        @if(in_array("National", $chk1)) checked @endif>
-                                                        <label class="custom-control-label" for="method2">National
-                                                            Shipping</label>
-                                                    </div>
-                                                </ul>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="mt-2 d-flex justify-content-center">
+                                        <div class="mt-4 text-center">
                                             <button
-                                                class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber">Save Changes</button>
+                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
+                                            <button type="submit" class="waves-effect waves-dark btn btn-sm btn-amber" style="font-size: 11.96px">Save Changes</button>
                                             <button
-                                                class="waves-effect waves-dark btn btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
+                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
+                                    
                                     </div>
                                 </li>
                                 <li class="step">
@@ -374,27 +441,26 @@
                                                     <div class="btn btn-elegant btn-sm float-left">
                                                         <span>Choose file</span>
                                                         <input id="application_photo" type="file" name="hard_copy"
-                                                            onchange="document.getElementById('application').src = window.URL.createObjectURL(this.files[0])">
+                                                        onchange="loadFile(event)">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="hard-copy" class="file-path validate" type="text"
-                                                            placeholder="Upload your file">
+                                                            placeholder="Upload your file" style="color:white">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 text-center mb-5">
                                             {{ $temp = ''}}
                                             @if ( isset($user->applicationdetail->images[0]->url))
                                             @php $temp = $user->applicationdetail->images[0]->url @endphp
                                             @endif
-                                            <img id="application" src="{{ url($temp)}}" alt=""
-                                                style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" />
+                                            <img id="application" src="{{ url($temp)}}" class="text-center" alt=""/>
                                         </div>
-                                        <div class="mt-2 d-flex justify-content-center">
+                                        <div class="mt-2 text-center">
                                             <button
-                                                class="waves-effect waves-dark btn btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button type="submit" class="waves-effect waves-dark btn btn-large btn-amber">Save Changes</button>
+                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
+                                            <button type="submit" class="waves-effect waves-dark btn btn-sm btn-amber" style="font-size: 11.96px">Save Changes</button>
                                         </div>
 
                                     </div>
@@ -426,17 +492,14 @@
 
     </script>
 
-    <script>
-        $('#method1').change(function () {
-            $('#international').removeClass('hide');
-        });
-
-    </script>
 
     <script>
         // Material Select Initialization
         $(document).ready(function () {
             $('.mdb-select').materialSelect();
+            $('.select-dropdown').click(function(){
+                $('.select-dropdown').addClass('white-text');
+            })
         });
 
     </script>
@@ -483,9 +546,12 @@
             $('.stepper').mdbStepper();
         })
 
+
         // Data Picker Initialization
         $('.datepicker').pickadate();
-
+        $('.datepicker').pickadate({
+            selectYears: 200
+        })
 
     </script>
 
@@ -494,7 +560,7 @@
             $(function () {
                 // Initialize form validation on the registration form.
                 // It has the name attribute "app_form"
-                $("#app_form").validate({
+                $("#app_form1").validate({
                     // Specify validation rules
                     rules: {
                         // The key name on the left side is the name attribute
@@ -519,12 +585,6 @@
                         minlength: "Please enter at least 4 characters"
                     },
 
-
-                    // Make sure the form is submitted to the destination defined
-                    // in the "action" attribute of the form when valid
-                    submitHandler: function (form) {
-                        form.submit();
-                    }
                 });
             });
 
@@ -640,6 +700,20 @@
         });
 
     </script>
+
+    <script>
+        var loadFile = function (event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById('application');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+            $('#application').addClass('card-img-top');
+        };
+
+    </script>
+
 
 
 </body>
