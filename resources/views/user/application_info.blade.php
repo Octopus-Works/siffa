@@ -452,8 +452,8 @@
                                         </div>
                                         <div class="col-md-12 text-center mb-5">
                                             {{ $temp = ''}}
-                                            @if ( isset($user->applicationdetail->images[0]->url))
-                                            @php $temp = $user->applicationdetail->images[0]->url @endphp
+                                            @if ( isset($image))
+                                            @php $temp = $image->url @endphp
                                             @endif
                                             <img id="application" src="{{ url($temp)}}" class="text-center card-img-top" alt=""/>
                                         </div>

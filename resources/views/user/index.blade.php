@@ -85,8 +85,8 @@
                                     <!-- Card content -->
                                     <div class="card-body card-body-cascade text-center">
                                         <div class="view overlay">
-                                            @if (isset($user->applicationdetail->images[0]->url))
-                                                <img src= "{{$user->applicationdetail->images[0]->url}}" class="img-fluid z-depth-1 shadow-lg" alt="">
+                                            @if (isset($image))
+                                                <img src= "{{$image->url}}" class="img-fluid z-depth-1 shadow-lg" alt="">
                                             @endif
                                             <div class="mask rgba-white-slight"></div>
                                         </div>

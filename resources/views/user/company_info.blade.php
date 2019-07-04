@@ -58,8 +58,8 @@
                             <!--Image-->
                             <div class="view overlay">
                                 {{ $temp = ""}}
-                                @if ( isset($user->applicationdetail->images[2]->url))
-                                    @php $temp = $user->applicationdetail->images[2]->url @endphp
+                                @if ( $image )
+                                    @php $temp = $image->url @endphp
                                 @endif
                                 <img src="{{url($temp)}}"
                                     style="min-height:383px; min-width:400px" class="img-fluid z-depth-1" alt="">

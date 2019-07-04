@@ -28,8 +28,10 @@ class ApplicationController extends Controller
         if ( Auth::check())
         {
             $user = User::find(Auth::user()->id); 
-     
-            return view('user.application_info')->withuser($user); 
+            
+            $image = Image::where('imageable_type', 'App\ApplicationDetail')->orderBy('id', 'desc')->first();
+
+            return view('user.application_info')->withuser($user)->withimage($image);
         }
 
         return view('user.application_info');

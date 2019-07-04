@@ -36,7 +36,8 @@ class UserController extends Controller
 
     public function userCompanyInfo($id){
         $user = User::find($id); 
-        return view('user/company_info')->withuser($user);
+        $image = Image::where('imageable_type', 'App\ShippingOffice')->orderBy('id', 'desc')->first();
+        return view('user/company_info')->withuser($user)->withimage($image);
     }
 
     public function companyInfo($id){
@@ -47,13 +48,17 @@ class UserController extends Controller
     public function accountInfo(){
         if ( auth::check()){
             $user = User::find(auth::user()->id); 
-            return view('user.index')->withuser($user);
+            $image = Image::where('imageable_type', 'App\UserDetail')->orderBy('id', 'desc')->first();
+
+            return view('user.index')->withuser($user)->withimage($image);
+
         }
     }
 
-    public function imageUpload(){
+    public function photoUpload(Request $request){
+        $user = User::find(auth::user()->id); 
         foreach($request->files as $file)
-        ImageUploadService::imageUpload($file, $user->id, "App\ApplicationDetail");
+        ImageUploadService::imageUpload($file, $user->id, "App\UserDetail");
 
         return response("Success", 200);
     }
