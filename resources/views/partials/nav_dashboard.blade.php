@@ -35,6 +35,14 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
 
+                @if ( !$count1 && !$count2)
+                  <a class="dropdown-item">
+                    <i class="far mr-2" aria-hidden="true"></i>
+                    <span>No Notifications</span>
+                    <span class="float-right"><i class="far" aria-hidden="true"></i></span>
+                  </a>
+                @endif
+
               @foreach($notifications as $notes)
                 @if ( $notes->checked == 0 && $notes->type == "rms" && Auth::getUser()->role->name == "rms")
                   <a class="dropdown-item" href="{{ url('rms/application')}}/{{$notes->user->id}}">
