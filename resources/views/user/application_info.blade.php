@@ -453,7 +453,7 @@
                                         <div class="col-md-12 text-center mb-5">
                                             {{ $temp = ''}}
                                             @if ( isset($user->applicationdetail->images[0]->url))
-                                            @php $temp = $user->applicationdetail->images[2]->url @endphp
+                                            @php $temp = $user->applicationdetail->images[0]->url @endphp
                                             @endif
                                             <img id="application" src="{{ url($temp)}}" class="text-center" alt=""/>
                                         </div>
@@ -560,7 +560,7 @@
             $(function () {
                 // Initialize form validation on the registration form.
                 // It has the name attribute "app_form"
-                $("#app_form").validate({
+                $("#app_form1").validate({
                     // Specify validation rules
                     rules: {
                         // The key name on the left side is the name attribute
