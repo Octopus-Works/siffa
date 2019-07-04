@@ -253,7 +253,7 @@
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <select class="mdb-select" name="city">
-                                                    <option disabled selected>{{$user->shippingOffice->city}}</option>
+                                                    <option disabled selected>{{ isset($user->shippingOffice->city) ? $user->shippingOffice->city : "City"}}</option>
                                                     <option value="Al Hasakah">Al Hasakah</option>
                                                     <option value="Al Ladhiqiyah">Al Ladhiqiyah</option>
                                                     <option value="Al Qunaytirah">Al Qunaytirah</option>
@@ -455,7 +455,7 @@
                                             @if ( isset($user->applicationdetail->images[0]->url))
                                             @php $temp = $user->applicationdetail->images[0]->url @endphp
                                             @endif
-                                            <img id="application" src="{{ url($temp)}}" class="text-center" alt=""/>
+                                            <img id="application" src="{{ url($temp)}}" class="text-center card-img-top" alt=""/>
                                         </div>
                                         <div class="mt-2 text-center">
                                             <button
