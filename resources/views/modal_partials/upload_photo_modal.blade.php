@@ -89,7 +89,7 @@
                 </button>
             </div>
             <div class="modal-body mx-3">
-                <form id="app_form" action=""  enctype="multipart/form-data" method="POST">
+                <form id="photo_upload" enctype="multipart/form-data">
                     @csrf
                     <div id="id">
 

@@ -84,11 +84,12 @@ Route::group(['prefix' => 'user' , 'middleware' => ['auth', 'user'] ] , function
 {
     //All the routes that belongs to the group goes here
     Route::get('/', 'UserController@accountInfo');
-    Route::post('/', 'ApplicationController@miniUpdate')->name('mini_edit');
     Route::get('/app_status', 'UserController@appStatus');
     Route::get('/company_info/{id}', 'UserController@userCompanyInfo');
     Route::get('/application_info', 'ApplicationController@edit');
+    Route::post('/', 'ApplicationController@miniUpdate')->name('mini_edit');
     Route::post('/application_info', 'ApplicationController@update')->name('application_edit');
+    Route::post('/photo_upload', 'ApplicationController@update')->name('photo_upload');
 
     Route::post('/payment_notification', 'UserController@paymentNotification')->name('paymentNotification');
 });
