@@ -65,6 +65,11 @@ class ApplicationController extends Controller
             'commercial_registry' => $request->commercial_registry,
         ]);
 
+        if ( isset($request->shipping_modes))
+            $user->shippingService->shipping_modes = implode(' ', $request->shipping_modes);
+        
+        $user->shippingService->sources_destinations = $request->src_dest;
+        $user->save();
         
         $user->shippingService()->update([
             // 'shipping_methods'     => implode(' ', $request->shipping_methods),

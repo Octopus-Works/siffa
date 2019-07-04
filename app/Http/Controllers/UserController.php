@@ -50,4 +50,11 @@ class UserController extends Controller
             return view('user.index')->withuser($user);
         }
     }
+
+    public function imageUpload(){
+        foreach($request->files as $file)
+        ImageUploadService::imageUpload($file, $user->id, "App\ApplicationDetail");
+
+        return response("Success", 200);
+    }
 }
