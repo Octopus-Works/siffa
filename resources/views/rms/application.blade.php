@@ -12,6 +12,12 @@
             }
         }
 
+        @media only screen and (max-width: 993px) {
+            #horizontal-stepper{
+                height:600px!important;
+            }
+        }
+
         .mt-5 {
             margin-top: 6rem !important;
         }
@@ -56,6 +62,14 @@
             width: 100% !important;
         }
 
+        .card-img-top {
+        width: 50%;
+        height: 50%;
+        padding: 10px;
+        object-fit: cover;
+    }
+    
+
     </style>
 </head>
 
@@ -83,11 +97,12 @@
                         <div class="card p-5 mt-3 mb-3 shadow-lg custom-primary">
                             <h1 class="text-center mb-5 font-weight-bolder">Application<i
                                     class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
-                            <ul class="stepper horizontal" id="horizontal-stepper" style="height:1300px;">
+                            <ul class="stepper horizontal" id="horizontal-stepper" style="height:1200px;">
                                 <li class="step active">
-                                    <div id="step1" class="step-title waves-effect waves-dark">Step 1</div>
+                                    <div id="step1" class="step-title waves-effect waves-dark">Basic Information</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Personal Information <i class="fas fa-user m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">Basic Information <i
+                                                class="fas fa-user m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="fullname" name="fullname" type="text" value="{{ $user->userdetail->fullname }}" disabled>
@@ -99,7 +114,7 @@
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="mother" name="mother" type="text" value="{{ $user->userdetail->mother_name }}" disabled>
-                                                <label for="mother">{{ __("Father's Name") }}</label>
+                                                <label for="mother">{{ __("Mother's Name") }}</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
@@ -111,6 +126,7 @@
                                                 <input name="date_of_birth" type="text" value="{{ $user->userdetail->date_of_birth }}" disabled>
                                                 <label for="date_of_birth">{{ __("Date of Birth") }}</label>
                                             </div>
+
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="place-of-birth" name="place_of_birth" type="text" value="{{ $user->userdetail->place_of_birth }}" disabled>
                                                 <label for="place-of-birth">Place of Birth</label>
@@ -122,6 +138,10 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="nationality" name="nationality" type="text" value="{{ $user->userdetail->nationality }}" disabled>
                                                 <label for="nationality">Nationality</label>
+                                            </div>
+                                            <div class="md-form col-12 ml-auto">
+                                                <input id="city" name="city" type="text" value="{{$user->shippingOffice->city}}" disabled>
+                                                <label for="city">City</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="address" name="address" type="text" value="{{ $user->userdetail->address }}" disabled>
@@ -141,27 +161,18 @@
                                             </div>
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
-                                            <button type="submit"
-                                                class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
+                                            <button class="waves-effect waves-dark btn btn-amber next-step">NEXT</button>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="step">
-                                    <div id="step2" class="step-title waves-effect waves-dark">Step 2</div>
+                                    <div id="step2" class="step-title waves-effect waves-dark">Shipping Info</div>
                                     <div class="step-new-content">
                                         <h5 class="text-center font-weight-bolder">Shipping Company Information <i class="fas fa-briefcase m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="company-name" name="company_name" type="text" value="{{$user->shippingOffice->name}}" disabled>
                                                 <label for="company-name">Shipping Company Name</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <textarea id="branches-address" name="branches_address" class="md-textarea form-control" rows="3" disabled> {{$user->shippingOffice->addresses}}</textarea>
-                                                <label for="branches-address">Addresses of Branches</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="type" name="shipping_services" type="text" value="{{$user->shippingOffice->shipping_services}}" disabled>
-                                                <label for="type">Type of Shipping Service Provided</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="position" name="position_title" type="text" value="{{$user->shippingOffice->position_title}}" disabled>
@@ -175,180 +186,109 @@
                                                 <input id="regist-num" name="commercial_registry" type="text" value="{{$user->shippingOffice->commercial_registry}}" disabled>
                                                 <label for="regist-num">Commercial Registration Number</label>
                                             </div>
-                                        </div>
-                                        <div class="step-actions d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="step">
-                                    <div id="step3" class="step-title waves-effect waves-dark">Step 3</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Services Information <i class="fas fa-info-circle m-1"></i></h5>
-                                        <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <h6 class="font-weight-bold">Available Shipping Methods:</h6>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <?php $chk = "" ?>
-                                                    <?php $chk = explode(" ",$user->shippingService->shipping_methods) ?>
-                                                    <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods[]" value="LTL" @if(in_array("LTL", $chk)) checked @endif disabled>
-                                                    <label class="custom-control-label" for="method1">Less Than Track Load(LTL)</label>
-                                                </div>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="method2" name="shipping_methods[]" value="FTL" @if(in_array("FTL", $chk)) checked @endif disabled>
-                                                    <label class="custom-control-label" for="method2">Full Track Load(FTL)</label>
+                                                @php $chk1 = "" @endphp
+                                                @php
+                                                
+                                                $chk1 = explode(" ",$user->shippingService->shipping_modes) @endphp
+                                                <ul>
+                                                    <div class="custom-control custom-checkbox p-2">
+                                                        <input type="checkbox" name="shipping_modes[]" value="International" class="custom-control-input" id="method1"  data-toggle="collapse" data-target="#international"
+                                                        aria-expanded="false" aria-controls="international"
+                                                        @if(in_array("International", $chk1)) checked @endif disabled>
+                                                        <label class="custom-control-label" for="method1">International
+                                                            Shipping</label>
+                                                    </div>
+                                                    <ul class="collapse" id="international">
+                                                        <div class="custom-control custom-checkbox p-2">
+                                                            <input type="checkbox" class="custom-control-input"  name="shipping_modes[]" value="LandTransport" 
+                                                                id="method11" data-toggle="collapse" data-target="#land"
+                                                                aria-expanded="false" aria-controls="land"  @if(in_array("LandTransport", $chk1)) checked @endif disabled>
+                                                                <label class="custom-control-label"
+                                                                for="method11">LandTransport</label>
+                                                        </div>
+                                                            <ul class="collapse" id="land">
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" name="shipping_modes[]" value="ETL" class="custom-control-input"
+                                                                    id="method111" @if(in_array("ETL", $chk1)) checked @endif disabled>
+                                                                    <label class="custom-control-label"
+                                                                        for="method111">ETL</label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" name="shipping_modes[]" value="LTL" class="custom-control-input"
+                                                                    id="method112" @if(in_array("LTL", $chk1)) checked @endif disabled>
+                                                                    <label class="custom-control-label"
+                                                                        for="method112">LTL</label>
+                                                                </div>
+                                                            </ul>
+    
+    
+                                                        <div class="custom-control custom-checkbox p-2">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="method12" data-toggle="collapse" data-target="#water"
+                                                                aria-expanded="false" aria-controls="water" name="shipping_modes[]" value="WaterTransport"
+                                                                @if(in_array("WaterTransport", $chk1)) checked @endif disabled>
+                                                                <label class="custom-control-label"
+                                                                for="method12">WaterTransport</label>
+                                                        </div>
+                                                            <ul class="collapse" id="water">
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" name="shipping_modes[]" value="ECL" class="custom-control-input"
+                                                                    id="method121" @if(in_array("ECL", $chk1)) checked @endif disabled>
+                                                                    <label class="custom-control-label"
+                                                                        for="method121">ECL</label>
+                                                                </div>
+                                                                <div class="custom-control custom-checkbox p-2">
+                                                                    <input type="checkbox" name="shipping_modes[]" value="LCL" class="custom-control-input"
+                                                                    id="method122" @if(in_array("LCL", $chk1)) checked @endif disabled>
+                                                                    <label class="custom-control-label"
+                                                                    for="method122">LCL</label>
+                                                                </div>
+                                                            </ul>
+    
+                                                            <div class="custom-control custom-checkbox p-2">
+                                                                <input type="checkbox" name="shipping_modes[]" value="AirTransport" class="custom-control-input"
+                                                                id="method13" @if(in_array("AirTransport", $chk1)) checked @endif disabled>
+                                                                <label class="custom-control-label"
+                                                                    for="method13">AirTransport</label>
+                                                            </div>
+                                                        </ul>
+    
+                                                        <div class="custom-control custom-checkbox p-2">
+                                                            <input type="checkbox" name="shipping_modes[]" value="National" class="custom-control-input" id="method2"
+                                                            @if(in_array("National", $chk1)) checked @endif disabled>
+                                                            <label class="custom-control-label" for="method2">National
+                                                                Shipping</label>
+                                                        </div>
+                                                    </ul>
                                                 </div>
                                             </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <h6 class="font-weight-bold">External Shipping Modes:</h6>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <?php $chk1 = "" ?>
-                                                    <?php $chk1 = explode(" ",$user->shippingService->shipping_modes) ?>
-                                                    <input type="checkbox" class="custom-control-input" id="mode1" name="shipping_modes[]" value="Wild" @if(in_array("Wild", $chk1)) checked @endif disabled>
-                                                    <label class="custom-control-label" for="mode1">Land Transport</label>
-                                                </div>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode2" name="shipping_modes[]" value="Aerial" @if(in_array("Aerial", $chk1)) checked @endif disabled>
-                                                    <label class="custom-control-label" for="mode2">Air Transport</label>
-                                                </div>
-                                                <div class="custom-control custom-checkbox ml-4">
-                                                    <input type="checkbox" class="custom-control-input" id="mode3" name="shipping_modes[]" value="Nautical" @if(in_array("Nautical", $chk1)) checked @endif disabled>
-                                                    <label class="custom-control-label" for="mode3">Water Transport</label>
-                                                </div>
+                                            <div class="step-actions d-flex justify-content-center">
+                                                <button class="waves-effect waves-dark btn btn-amber next-step">NEXT</button>
                                             </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="src-dest" name="src_dest" type="text" value="{{$user->shippingService->sources_destinations}}" disabled>
-                                                <label for="src-dest">Sources and Destinations Served By the Shipping Company</label>
-                                            </div>
+                                    </div>
+                                </li>
+                                <li class="step">
+                                    <div id="step3" class="step-title waves-effect waves-dark">Hard Copy</div>
+                    
+                                    <div class="step-new-content">
+                                        <h5 class="text-center font-weight-bolder">Hard Copy <i
+                                                class="far fa-clipboard m-1"></i>
+                                        </h5>
+                                        <h6>Hard Copy of the Application Form:</h6>
+                                        <div class="col-md-12 text-center mb-5">
+                                            {{ $temp = ''}}
+                                            @if ( isset($user->applicationdetail->images[0]->url))
+                                            @php $temp = $user->applicationdetail->images[0]->url @endphp
+                                            @endif
+                                            <img id="application" src="{{ url($temp)}}" class="text-center card-img-top" alt=""/>
                                         </div>
                                         <div class="step-actions d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
+                                            <button class="waves-effect waves-dark btn btn-amber next-step">NEXT</button>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="step">
-                                    <div id="step4" class="step-title waves-effect waves-dark">Step 4</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Financial Information <i class="fas fa-money-check-alt m-1"></i></h5>
-                                        <div class="row">
-                                            <div class="md-form col-12 ml-auto">
-                                                <input id="financial-status" name="financial_status" type="text" value="{{$user->applicationDetail->financial_assignment_status}}" disabled>
-                                                <label for="financial-status">Financial Assignment Status</label>
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-
-                                                <div class="file-field">
-                                                    <h6>Photo of the Financial Assignment:</h6>
-                                                    <div class="btn btn-elegant btn-sm float-left">
-                                                        <span>Choose file</span>
-                                                        <input type="file" name="financial_photo">
-                                                    </div>
-                                                    <div class="file-path-wrapper">
-                                                        <input id="financial-photo" class="file-path validate" type="text" placeholder="Upload your file">
-                                                    </div>
-
-                                                    <br>
-                                                    @if (isset($user->applicationdetail->images[0]->url))
-                                                        <img src="{{ url($user->applicationdetail->images[0]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt="" 
-                                                        style="min-height:200px; max-height:400px; min-width:200px; max-width:400px">
-                                                    @endif
-
-                                                    <div class="step-actions d-flex justify-content-center">
-                                                        <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="step">
-                                    <div id="step5" class="step-title waves-effect waves-dark">Step 5</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Application Information <i class="fas fa-edit ml-1"></i></h5>
-                                        <div class="row">
-
-                                            <div class="md-form col-12 ml-auto">
-
-                                                <div class="file-field">
-                                                    <h6>Photo of Signature and Fingerprint:</h6>
-                                                    <div class="btn btn-elegant btn-sm float-left">
-                                                        <span>Choose file</span>
-                                                        <input type="file" name="signature_photo">
-                                                    </div>
-                                                    <div class="file-path-wrapper">
-                                                        <input id="signature-photo" class="file-path validate" type="text" placeholder="Upload your file">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="md-form col-12 ml-auto">
-                                                <input name="date_of_application" type="text" id="date-picker-example2" value="{{$user->applicationDetail->date_of_application}}" disabled>
-                                                <label for="date_of_application">Financial Assignment Status</label>
-                                            </div>
-                                            <div>
-                                                @if (isset($user->applicationdetail->images[1]->url))
-                                                    <img src="{{ url($user->applicationdetail->images[1]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt=""
-                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px" >
-                                                @endif
-                                            </div>
-                                            <div class="step-actions d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </li>
-                                <li class="step">
-                                    <div id="step6" class="step-title waves-effect waves-dark">Step 6</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Resume Information <i class="fas fa-user-edit ml-1"></i></h5>
-                                        <div class="row">
-                                            <div class="md-form col-12 ml-auto">
-                                                <textarea id="resume-info" name="resume_info" class="md-textarea form-control" rows="3" disabled>{{$user->applicationDetail->resume_information}}</textarea>
-                                                <label for="resume-info">Resume Information (As Mentioned in the Application Document)</label>
-                                            </div>
-                                            <div class="step-actions d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn btn-large btn-amber next-step" data-feedback="someFunction21">NEXT</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </li>
-                                <li class="step">
-                                    <div id="step7" class="step-title waves-effect waves-dark">Step 7</div>
-                                    <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Hard Copy <i class="far fa-clipboard m-1"></i>
-                                        </h5>
-                                        <div class="row">
-                                            <div class="md-form col-12 ml-auto">
-                                                <div class="file-field">
-                                                    <h6>Hard Copy of the Application Form:</h6>
-                                                    <div class="btn btn-elegant btn-sm float-left">
-                                                        <span>Choose file</span>
-                                                        <input type="file" name="hard_copy">
-                                                    </div>
-                                                    <div class="file-path-wrapper">
-                                                        <input id="hard-copy" class="file-path validate" type="text" placeholder="Upload your file">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                @if (isset($user->applicationdetail->images[2]->url))
-                                                    <img src="{{ url($user->applicationdetail->images[2]->url)}}" class="img-fluid z-depth-1 shadow-lg" alt="" 
-                                                    style="min-height:200px; max-height:400px; min-width:200px; max-width:400px">
-                                                @endif
-                                            </div>
-                                            <div class="d-flex justify-content-center col-md-12">
-                                                <button id='state' type="button" class="btn btn-success btn-rounded px-2">Approve Application </a></button>
-                                                <button id ='state2' type="button" class="btn btn-danger btn-rounded  px-2">Decline Application </button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </li>
-
                             </ul>
                         </div>
                     </div>
@@ -414,14 +354,6 @@
             $('.stepper').mdbStepper();
         })
 
-        function someFunction21() {
-            setTimeout(function () {
-                $('#horizontal-stepper').nextStep();
-            }, 2000);
-        }
-
-        // Data Picker Initialization
-        $('.datepicker').pickadate();
 
         //ajax 
 
@@ -478,20 +410,6 @@
     </script>
 
 
-    <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#financial')
-                        .attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-    </script>
 
 
 </body>
