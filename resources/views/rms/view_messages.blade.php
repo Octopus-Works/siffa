@@ -5,7 +5,7 @@
   <head>
     <!-- Required meta tags always come first -->
     @include('partials.head')
-    <title>Account Information</title>
+    <title>Messages</title>
 
     <style>
 
@@ -202,7 +202,6 @@
       opacity: .9 !important;
       }
 
-  
     
     </style>
   </head>
@@ -244,7 +243,7 @@
             <!-- Grid column -->
             <div class="col-md-12 mb-12">
 
-
+                <div class="card card-cascade narrower custom-primary mb-5">
               <!--Card header-->
                 <div class="view view-cascade py-3 custom-primary gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
 
@@ -294,6 +293,8 @@
               <!--/.Card-->
 
             </div>
+
+            </div>
             <!-- Grid column -->
 
           </div>
@@ -307,7 +308,7 @@
     <!--Main layout-->
 
     <!-- Footer -->
-    @include('partials.footer')
+    @include('partials.footer_dashboard')
     @include('modal_partials.new_message_modal')
     @include('modal_partials.view_message_modal')
     <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>

@@ -30,8 +30,52 @@
             background-color: #ffc107 !important;
         }
 
-        ul.stepper.horizontal .step-actions {
-            position: relative !important;
+        ul.stepper .step.done:before,
+        ul.stepper .step.wrong:before {
+            font-family: 'Font Awesome 5 free';
+            font-weight: 900;
+        }
+
+        ul.stepper .step.done:before {
+            font-family: 'Font Awesome 5 Free' !important;
+            font-weight: 900!important;
+            font-size: 1rem;
+            background-color: #00c851;
+        }
+
+        ul.stepper .step.wrong:before {
+            font-family: 'Font Awesome 5 Free' !important;
+            font-weight: 900!important;
+            font-size: 1rem;
+            background-color: #ff3547!important;
+        }
+
+        @media only screen and (min-width: 993px) {
+            ul.stepper.horizontal .step.done .step-title:before {
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                font-size: 1rem;
+                background-color: #00c851 !important;
+            }
+        }
+
+        @media only screen and (min-width: 993px) {
+            ul.stepper.horizontal .step .step-title:before {
+                background-color: #868788 
+            }
+        }
+        
+
+        @media only screen and (min-width: 993px) {
+            ul.stepper.horizontal .step.wrong .step-title:before {
+                font-family: 'Font Awesome 5 Free' !important;
+                font-weight: 900!important;
+                background-color: #ff3547!important;
+            }
+        }
+
+        ul.stepper .step:before {
+            background-color: #868788 
         }
 
 
@@ -49,10 +93,6 @@
             background-color:#ffffff00!important;
         }
 
-        ul.stepper.horizontal .step .step-title:before {
-            background-color: #868788 !important;
-        }
-
         .md-form input[type=text]:focus:not([readonly])+label,
         .md-form textarea.md-textarea:focus:not([readonly])+label {
             color: #3d5e9e !important;
@@ -62,12 +102,19 @@
             width: 100% !important;
         }
 
-        .card-img-top {
-        width: 50%;
-        height: 50%;
-        padding: 10px;
-        object-fit: cover;
-    }
+        img {
+            max-width: 200px;
+            max-height: 200px;
+            margin-left: -50px;
+        }
+
+        @media only screen and (min-width: 993px) {
+            img {
+                max-width: 50%;
+                max-height: 50%;
+                margin-left: 0;
+            }
+        }
     
 
     </style>
@@ -95,8 +142,8 @@
                 <div class="col-md-12">
                     <div id="app_form">
                         <div class="card p-5 mt-3 mb-3 shadow-lg custom-primary">
-                            <h1 class="text-center mb-5 font-weight-bolder">Application<i
-                                    class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
+                            <h2 class="text-center mb-5 font-weight-bolder">Application<i
+                                    class="fas fa-clipboard custom-secondary-text ml-3"></i></h2>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1200px;">
                                 <li class="step active">
                                     <div id="step1" class="step-title waves-effect waves-dark">Basic Information</div>
@@ -160,7 +207,7 @@
                                                 <label for="website">Website</label>
                                             </div>
                                         </div>
-                                        <div class="step-actions d-flex justify-content-center">
+                                        <div class="d-flex justify-content-center">
                                             <button class="waves-effect waves-dark btn btn-amber next-step">NEXT</button>
                                         </div>
                                     </div>
@@ -264,7 +311,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="step-actions d-flex justify-content-center">
+                                            <div class=" d-flex justify-content-center">
                                                 <button class="waves-effect waves-dark btn btn-amber next-step">NEXT</button>
                                             </div>
                                     </div>
@@ -282,10 +329,15 @@
                                             @if ( isset($user->applicationdetail->images[0]->url))
                                             @php $temp = $user->applicationdetail->images[0]->url @endphp
                                             @endif
-                                            <img id="application" src="{{ url($temp)}}" class="text-center card-img-top" alt=""/>
+                                            <img id="application" src="{{ url($temp)}}" class="text-center" alt=""/>
                                         </div>
-                                        <div class="step-actions d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn btn-amber next-step">NEXT</button>
+                                        <div class="d-flex justify-content-center col-md-12">
+                                            <div>
+                                                <button id='state' type="button" class="btn btn-success btn-rounded px-2">Approve Application </a></button>
+                                            </div>
+                                            <div>
+                                                <button id ='state2' type="button" class="btn btn-danger btn-rounded  px-2">Decline Application </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>

@@ -19,14 +19,16 @@
             background-color: #ffc107 !important;
         }
 
-        ul.stepper .step.done:before,
         ul.stepper .step.wrong:before {
             font-family: 'Font Awesome 5 free';
             font-weight: 900;
             background-color: #ff3547!important;
         }
+        
 
         ul.stepper .step.done:before {
+            font-family: 'Font Awesome 5 free';
+            font-weight: 900;
             font-size: 1rem;
             background-color: #00c851;
         }
@@ -160,12 +162,23 @@
             background-color: #868788 
         }
         
-        .card-img-top {
-        width: 50%;
-        height: 50%;
-        padding: 10px;
-        object-fit: cover;
-    }
+        img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        @media only screen and (min-width: 993px) {
+            img {
+                max-width: 50%;
+                max-height: 50%;
+            }
+        }
+    
+        @media only screen and (max-width: 993px) {
+            #horizontal-stepper{
+                height:600px!important;
+            }
+        }
     
 
     </style>
@@ -194,7 +207,7 @@
                     <div class="card p-4  mt-3 mb-3 shadow-lg custom-primary">
                         <form id="app_form1" enctype="multipart/form-data" method="POST">
                             @csrf
-                            <h1 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h1>
+                            <h2 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h2>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
                                 <li class="step active">
 
@@ -346,21 +359,19 @@
                                                 $chk1 = explode(" ",$user->shippingService->shipping_modes) @endphp
                                                 <ul>
                                                     <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" name="shipping_modes[]" value="International" class="custom-control-input" id="method1"  data-toggle="collapse" data-target="#international"
-                                                        aria-expanded="false" aria-controls="international"
+                                                        <input type="checkbox" name="shipping_modes[]" value="International" class="custom-control-input" id="method1"
                                                         @if(in_array("International", $chk1)) checked @endif>
                                                         <label class="custom-control-label" for="method1">International
                                                             Shipping</label>
                                                     </div>
-                                                    <ul class="collapse" id="international">
+                                                    <ul  id="international">
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"  name="shipping_modes[]" value="LandTransport" 
-                                                                id="method11" data-toggle="collapse" data-target="#land"
-                                                                aria-expanded="false" aria-controls="land"  @if(in_array("LandTransport", $chk1)) checked @endif>
+                                                                id="method11" @if(in_array("LandTransport", $chk1)) checked @endif>
                                                             <label class="custom-control-label"
                                                                 for="method11">LandTransport</label>
                                                         </div>
-                                                            <ul class="collapse" id="land">
+                                                            <ul  id="land">
                                                                 <div class="custom-control custom-checkbox p-2">
                                                                     <input type="checkbox" name="shipping_modes[]" value="ETL" class="custom-control-input"
                                                                     id="method111" @if(in_array("ETL", $chk1)) checked @endif>
@@ -379,13 +390,12 @@
     
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"
-                                                                id="method12" data-toggle="collapse" data-target="#water"
-                                                                aria-expanded="false" aria-controls="water" name="shipping_modes[]" value="WaterTransport"
+                                                                id="method12" name="shipping_modes[]" value="WaterTransport"
                                                                 @if(in_array("WaterTransport", $chk1)) checked @endif>
                                                             <label class="custom-control-label"
                                                                 for="method12">WaterTransport</label>
                                                         </div>
-                                                            <ul class="collapse" id="water">
+                                                            <ul id="water">
                                                                 <div class="custom-control custom-checkbox p-2">
                                                                     <input type="checkbox" name="shipping_modes[]" value="ECL" class="custom-control-input"
                                                                     id="method121" @if(in_array("ECL", $chk1)) checked @endif>
@@ -455,14 +465,13 @@
                                             @if ( isset($image))
                                             @php $temp = $image->url @endphp
                                             @endif
-                                            <img id="application" src="{{ url($temp)}}" class="text-center card-img-top" alt=""/>
+                                            <img id="application" src="{{ url($temp)}}" class="text-center" alt=""/>
                                         </div>
                                         <div class="mt-2 text-center">
                                             <button
                                                 class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
                                             <button type="submit" class="waves-effect waves-dark btn btn-sm btn-amber" style="font-size: 11.96px">Save Changes</button>
                                         </div>
-
                                     </div>
                                 </li>
 
@@ -487,8 +496,6 @@
     <script src={{url("js/intlTelInput.js")}}></script>
 
     <script>
-        var input1 = document.querySelector("#phone");
-        var input2 = document.querySelector("#mobile");
 
     </script>
 
@@ -501,7 +508,6 @@
                 $('.select-dropdown').addClass('white-text');
             })
         });
-
     </script>
 
     <script>
@@ -709,22 +715,9 @@
                 output.src = reader.result;
             };
             reader.readAsDataURL(event.target.files[0]);
-            $('#application').addClass('card-img-top');
         };
 
-        $('.collapse').collapse();
 
-        $('.panel-heading h4 a input[type=checkbox]').on('click', function(e) {
-            e.stopPropagation();
-            $(this).parent().trigger('click');   // <---  HERE
-        });
-
-        $('#collapseOne').on('show.bs.collapse', function(e) {
-            if(!$('.panel-heading h4 a input[type=checkbox]').is(':checked'))
-            {
-                return false;
-            }
-        });
 
     </script>
 

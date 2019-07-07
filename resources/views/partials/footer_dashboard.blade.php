@@ -39,7 +39,7 @@
 
         <!-- Copyright -->    
             <div class="footer-copyright text-center py-3"><b>© 2019 Powered By</b>
-              <img width="104px" height="31.2px" src={{url('/img/octopusworks_logo.png')}}>
+              <img style="width:104px!important; height:31.2px!important; display:inline!important" src={{url('/img/octopusworks_logo.png')}}>
               <a href="#"> </a>
             </div>
         <!-- Copyright -->
