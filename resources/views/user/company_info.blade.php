@@ -138,6 +138,32 @@
 
     <!-- SCRIPTS -->
     <script>
+        $('#md-form').submit(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                
+                type: 'POST',
+                url: '{{ route('application_edit')}}',
+                dataType: 'json', // data type
+                data: new FormData($('#app_form1')[0]),
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    toastr.success('Registered!');
+                },
+
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+        
+    </script>
+    <script>
         $(".button-collapse").sideNav();
 
         var container = document.querySelector('.custom-scrollbar');

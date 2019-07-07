@@ -521,7 +521,7 @@
                 },
                 
                 type: 'POST',
-                url: '{{ route('application_edit')}}',
+                url: '{{ route('photo_upload1')}}',
                 dataType: 'json', // data type
                 data: new FormData($('#app_form1')[0]),
                 processData: false,

@@ -90,6 +90,7 @@ Route::group(['prefix' => 'user' , 'middleware' => ['auth', 'user'] ] , function
     Route::post('/', 'ApplicationController@miniUpdate')->name('mini_edit');
     Route::post('/application_info', 'ApplicationController@update')->name('application_edit');
     Route::post('/photo_upload', 'UserController@photoUpload')->name('photo_upload');
+    Route::post('/photo_upload1', 'UserController@photoUpload1')->name('photo_upload1');
 
     Route::post('/payment_notification', 'UserController@paymentNotification')->name('paymentNotification');
 });

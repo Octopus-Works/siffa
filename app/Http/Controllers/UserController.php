@@ -62,4 +62,12 @@ class UserController extends Controller
 
         return response("Success", 200);
     }
+
+    public function photoUpload1(Request $request){
+        $user = User::find(auth::user()->id); 
+        foreach($request->files as $file)
+        ImageUploadService::imageUpload($file, $user->id, "App\ShippingOffice");
+
+        return response("Success", 200);
+    }
 }
