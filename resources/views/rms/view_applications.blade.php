@@ -49,6 +49,8 @@
             color: #fff !important;
         }
 
+ 
+
     </style>
 </head>
 
@@ -174,16 +176,16 @@
                 ];
 
                 var columnDefs = [{
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Full name</h5>"
+                        responsivePriority: 1, title: "<h6 class='font-weight-bold custom-secondary-text'>Full name</h6>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Office name</h5>"
+                        responsivePriority: 4, title: "<h6 class='font-weight-bold custom-secondary-text'>Office name</h6>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Status</h5>"
+                        responsivePriority: 3, title: "<h6 class='font-weight-bold custom-secondary-text'>Status</h6>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Actions</h5>"
+                        responsivePriority: 2, title: "<h6 class='font-weight-bold custom-secondary-text'>Actions</h6>"
                     },
                 ];
 
