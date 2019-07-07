@@ -22,6 +22,10 @@
             font-size: 17px !important;
         }
 
+        .file-path-wrapper {
+            display: none;
+        }
+
     </style>
 
 
@@ -53,22 +57,45 @@
                     <div class="row my-xl-5 py-xl-4 mt-5">
 
                         <!--Grid column-->
-                        <div class="col-sm-12 col-md-5 col-xl-5 mb-4">
+                        <div class="ml-auto mr-auto col-sm-12 col-md-5 col-xl-5">
+                            <div class="card card-cascade narrower custom-primary mb-4">
 
-                            <!--Image-->
-                            <div class="view overlay">
-                                {{ $temp = ""}}
-                                @if ( $image )
-                                    @php $temp = $image->url @endphp
-                                @endif
-                                <img src="{{url($temp)}}"
-                                    style="min-height:383px; min-width:400px" class="img-fluid z-depth-1" alt="">
-                                <div class="mask rgba-white-slight"></div>
+                                <!-- Card image -->
+                                <div class="view view-cascade gradient-card-header custom-tertiary">
+                                    <h5 class="mb-0 font-weight-bold">Edit Photo</h5>
+                                </div>
+                                <!-- Card image -->
+
+                                <!-- Card content -->
+                                <div class="card-body card-body-cascade text-center">
+                                    <div class="view overlay">
+                                        @if (isset($image))
+                                            <img src= "{{$image->url}}" class="img-fluid z-depth-1 shadow-lg" alt="">
+                                        @endif
+                                        <div class="mask rgba-white-slight"></div>
+                                    </div>
+
+                                    <p class="text-muted"><small>Profile photo will be changed automatically</small> </p>
+                                    <div class="row flex-center">
+                                            <form class="md-form">
+                                                <div class="file-field">
+                                                    <div class="btn custom-secondary btn-rounded float-left">
+                                                    <span>Upload Photo</span>
+                                                    <input type="file">
+                                                    </div>
+                                                    <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text" placeholder="Upload your file">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        <button class="btn btn-danger btn-rounded">Delete</button>
+                                    </div>
+                                </div>
+                                <!-- Card content -->
+
                             </div>
-                            <!--/.Image-->
 
                         </div>
-                        <!--Grid column-->
 
                         <!--Grid column-->
                         <div class="col-sm-12 col-md-6 col-xl-6">
