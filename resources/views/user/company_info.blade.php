@@ -22,10 +22,6 @@
             font-size: 17px !important;
         }
 
-        .file-path-wrapper {
-            display: none;
-        }
-
     </style>
 
 
@@ -68,30 +64,22 @@
 
                                 <!-- Card content -->
                                 <div class="card-body card-body-cascade text-center">
-                                    <div class="view overlay">
-                                        @if (isset($image))
-                                            <img src= "{{$image->url}}" class="img-fluid z-depth-1 shadow-lg" alt="">
-                                        @endif
-                                        <div class="mask rgba-white-slight"></div>
-                                    </div>
+                                        <div class="view overlay">
+                                            @if (isset($image))
+                                                <img src= "{{$image->url}}" class="img-fluid z-depth-1 shadow-lg" alt="">
+                                            @endif
+                                            <div class="mask rgba-white-slight"></div>
+                                        </div>
 
-                                    <p class="text-muted"><small>Profile photo will be changed automatically</small> </p>
-                                    <div class="row flex-center">
-                                            <form class="md-form">
-                                                <div class="file-field">
-                                                    <div class="btn custom-secondary btn-rounded float-left">
-                                                    <span>Upload Photo</span>
-                                                    <input type="file">
-                                                    </div>
-                                                    <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text" placeholder="Upload your file">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        <button class="btn btn-danger btn-rounded">Delete</button>
+                                        <p class="text-muted"><small>Profile photo will be changed automatically</small> </p>
+                                        <div class="row flex-center">
+                                            <button class="btn custom-secondary black-text btn-rounded" data-toggle="modal" data-target="#company_photo_modal">Upload New Photo</button><br>
+                                            <button class="btn btn-danger btn-rounded">Delete</button>
+                                        </div>
+                                        @include('modal_partials.company_photo_modal')
                                     </div>
-                                </div>
                                 <!-- Card content -->
+                                
 
                             </div>
 
