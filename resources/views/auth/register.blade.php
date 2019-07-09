@@ -256,7 +256,8 @@
                         commercial_registry: {
                             required: true,
                             digits: true,
-                            minlength: 4
+                            minlength: 4,
+                            maxlength:10
                         }
                     },
 

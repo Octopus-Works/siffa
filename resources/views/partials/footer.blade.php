@@ -30,13 +30,13 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">News & Updates</h6>
               <p>
-                <a href="#!">Events</a>
+                <a href={{route('events')}}>Events</a>
               </p>
               <p>
-                <a href="#!">Calender</a>
+                <a href={{route('calendar')}}>Calender</a>
               </p>
               <p>
-                <a href="#!">Gallery</a>
+                <a href={{route('latest')}}>Gallery</a>
               </p>
 
             </div>
@@ -48,16 +48,13 @@
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
               <p>
-                <a href="#!">Members List</a>
+                <a href={{route('members_list')}}>Members List</a>
               </p>
               <p>
-                <a href="#!">Become a Member</a>
+                <a href={{route('register')}}>Become a Member</a>
               </p>
               <p>
-                <a href="#!">Account Info</a>
-              </p>
-              <p>
-                <a href="#!">Contact us</a>
+                <a href={{route('contact')}}>Contact us</a>
               </p>
             </div>
             <!-- Third column -->
