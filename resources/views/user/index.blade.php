@@ -266,13 +266,17 @@
                     data: new FormData($('#photo_upload')[0]),
                     processData: false,
                     contentType: false,
-                    success: function (data) {
-                        toastr.success('Registered!');
+                    statusCode: {
+                        401: function () {
+                            window.location = '/login';
+                        },
+                        500: function () {
+                            alert('500 status code! server error');
+                        },
+                        200: function (msg) {
+                            window.location = '/user';
+                        },
                     },
-
-                    error: function (xhr, textStatus, errorThrown) {
-                        console.log(xhr.responseText);
-                    }
                 });
             });
         </script>

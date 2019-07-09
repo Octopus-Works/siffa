@@ -496,11 +496,6 @@
     <script src={{url("js/intlTelInput.js")}}></script>
 
     <script>
-
-    </script>
-
-
-    <script>
         // Material Select Initialization
         $(document).ready(function () {
             $('.mdb-select').materialSelect();
@@ -521,7 +516,7 @@
                 },
                 
                 type: 'POST',
-                url: '{{ route('photo_upload1')}}',
+                url: '{{ route('application_edit')}}',
                 dataType: 'json', // data type
                 data: new FormData($('#app_form1')[0]),
                 processData: false,

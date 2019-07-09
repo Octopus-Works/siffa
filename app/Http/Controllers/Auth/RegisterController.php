@@ -94,8 +94,8 @@ class RegisterController extends Controller
             'user_id'       => $user->id,
             'fullname'      => $request->fullname,
             'nationality'   => $request->nationality,
-            'mobile_number' => "+963" . $request->mobile,
-            'phone_number'  => "+963" . $request->phone,
+            'mobile_number' => $request->mobile,
+            'phone_number'  => $request->phone,
         ]);
 
         $shippingOffice = ShippingOffice::Create([
@@ -118,7 +118,7 @@ class RegisterController extends Controller
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
         
-        return response('success', 200);
+        return redirect()->route('index');
 
         // $application = new ApplicationDetail; 
         // $application->user_id = $user->id;

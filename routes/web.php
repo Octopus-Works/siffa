@@ -11,7 +11,7 @@ Use App\User;
 */
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/redirect', 'HomeController@redirect')->name('redirect');
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('index');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/reports', 'PagesController@reports')->name('reports');
