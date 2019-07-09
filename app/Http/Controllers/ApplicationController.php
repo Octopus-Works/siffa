@@ -59,25 +59,21 @@ class ApplicationController extends Controller
 
         $user->shippingOffice()->update([
             'name'      => $request->company_name,
-            'city'      => $request->city,
-            'addresses' => preg_replace( "/\r|\n/", "", $request->branches_address ),
             'shipping_services'   => $request->shipping_services,
             'position_title'      => $request->position_title,
             'chamber_of_commerce' => $request->chamber_of_commerce,
             'commercial_registry' => $request->commercial_registry,
         ]);
 
+        if ( isset($request->city))
+            $user->shippingOffice->city = $request->city;
+        $user->shippingOffice->save();
+        
         if ( isset($request->shipping_modes))
             $user->shippingService->shipping_modes = implode(' ', $request->shipping_modes);
         
         $user->shippingService->sources_destinations = $request->src_dest;
-        $user->save();
-        
-        $user->shippingService()->update([
-            // 'shipping_methods'     => implode(' ', $request->shipping_methods),
-            'shipping_modes'       => implode(' ', $request->shipping_modes),
-            'sources_destinations' => $request->src_dest,
-        ]);
+        $user->shippingService->save();
         
         $user->applicationDetail()->update([
             'Financial_assignment_status' => $request->financial_status,

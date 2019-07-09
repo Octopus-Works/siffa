@@ -108,8 +108,7 @@
                             <p>Office Owner Name: {{ $user->userdetail->fullname }} </p>
                             <p>Phone Number: {{ $user->userdetail->phone_number}}</p>
                             <p>Mobile Number: {{$user->userdetail->mobile_number }}</p>
-                            <p>Main Branch Address: {{ $user->shippingoffice->addresses}}</p>
-                            <p>Services: {{ $user->shippingoffice->shipping_services}} </p>
+                            <p>Main Branch Address: {{ $user->shippingoffice->city}}</p>
                             <p>E-mail: {{ $user->email }}</p>
                             <p>Website: {{ $user->userdetail->website }}</p>
                         </div>
@@ -147,7 +146,7 @@
                 },
                 
                 type: 'POST',
-                url: '{{ route('application_edit')}}',
+                url: '{{ route('photo_upload1')}}',
                 dataType: 'json', // data type
                 data: new FormData($('#app_form1')[0]),
                 processData: false,
