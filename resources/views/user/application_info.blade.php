@@ -136,7 +136,7 @@
             }
 
             .btn.btn-sm{
-                font-size:.57rem!important;
+                font-size:.48rem!important;
             }
 
             .intl-tel-input.allow-dropdown input, .intl-tel-input.allow-dropdown input[type=text]{

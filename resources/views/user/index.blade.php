@@ -39,6 +39,13 @@
             color: #5f96ce !important;
         }
 
+        .card-img-top {
+            width: 100%;
+            height: 12vw;
+            padding: 10px;
+            object-fit: cover;
+        }
+
 
     </style>
 
@@ -86,7 +93,7 @@
                                     <div class="card-body card-body-cascade text-center">
                                         <div class="view overlay">
                                             @if (isset($image))
-                                                <img src= "{{$image->url}}" class="img-fluid z-depth-1 shadow-lg" alt="">
+                                                <img id="photo" src= "{{$image->url}}" class="img-fluid z-depth-1 shadow-lg card-img-top" alt="">
                                             @endif
                                             <div class="mask rgba-white-slight"></div>
                                         </div>
