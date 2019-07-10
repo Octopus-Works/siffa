@@ -162,13 +162,13 @@
             background-color: #868788 
         }
         
-        img {
+        #application {
             max-width: 200px;
             max-height: 200px;
         }
 
         @media only screen and (min-width: 993px) {
-            img {
+            #application {
                 max-width: 50%;
                 max-height: 50%;
             }
