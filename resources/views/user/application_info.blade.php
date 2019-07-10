@@ -333,14 +333,14 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="position" name="position_title"
                                                     value="{{$user->shippingOffice->position_title}}" type="text"
-                                                    class="validate form-control" required>
+                                                    class="validate form-control">
                                                 <label for="position">Workplace Position</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="chamber" name="chamber_of_commerce"
                                                     value="{{$user->shippingOffice->chamber_of_commerce}}" type="text"
-                                                    class="validate form-control" required>
+                                                    class="validate form-control">
                                                 <label for="chamber">Chamber of Commerce</label>
                                             </div>
 
@@ -569,7 +569,6 @@
                         // on the right side
 
                         chamber_of_commerce: {
-                            required: true,
                             digits: true,
                             minlength: 4
                         },
