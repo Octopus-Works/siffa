@@ -118,6 +118,7 @@ class RegisterController extends Controller
         $data = array('username' => $username, 'password' => $password); 
         Mail::to($request->email)->send(new GenerateCredentials($data));
         
+        Session::flash('message', 'Account Details has been sent to your email!!');
         return redirect()->route('index');
 
         // $application = new ApplicationDetail; 
