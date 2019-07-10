@@ -313,7 +313,7 @@
 
 
                             `{{ $user->shippingoffice->name }}`,
-                            `{{ $user->shippingoffice->addresses }}`,
+                            `{{ $user->shippingoffice->city }}`,
                             `<a href='{{url('company_info').'/'.$user->id}}' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
                         ],
                         @endforeach

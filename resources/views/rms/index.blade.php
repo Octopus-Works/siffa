@@ -120,7 +120,8 @@
                                 <div class="card-body card-body-cascade text-center">
 
                                     <!-- Edit Form -->
-                                    <form>
+                                    <form action="{{ route('mini_edit')}}" method="POST">
+                                        @csrf
                                         <!-- First row -->
 
                                         <div class="row">
@@ -184,14 +185,12 @@
                                                     <input type="submit" value="Update Account" class="btn custom-secondary black-text btn-rounded">
                                                 </div>
                                             </div>
-                                            <!-- Fourth row -->
+                                        </div>
+                                        <!-- Third row -->
 
+                                    </form>
+                                    <!-- Edit Form -->
                                 </div>
-
-
-
-                                </form>
-                                <!-- Edit Form -->
 
                             </div>
                             <!-- Card content -->

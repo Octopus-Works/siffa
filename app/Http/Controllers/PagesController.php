@@ -41,7 +41,7 @@ class PagesController extends Controller
     }
 
     public function members_list(){
-        $users = User::all();
+        $users = User::where('role_id', '2')->get();
         return view('pages.members.member_list')->withusers($users);;
     }
 

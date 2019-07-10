@@ -29,7 +29,7 @@ class ApplicationController extends Controller
         {
             $user = User::find(Auth::user()->id); 
             
-            $image = Image::where('imageable_type', 'App\ApplicationDetail')->orderBy('id', 'desc')->first();
+            $image = Image::where('imageable_type', 'App\ApplicationDetail')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
 
             return view('user.application_info')->withuser($user)->withimage($image);
         }

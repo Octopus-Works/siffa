@@ -125,7 +125,7 @@
 
     <!-- SCRIPTS -->
     <script>
-        $('#md-form').submit(function (e) {
+        $('#photo_upload').submit(function (e) {
             e.preventDefault();
 
             $.ajax({
@@ -136,20 +136,25 @@
                 type: 'POST',
                 url: '{{ route('photo_upload1')}}',
                 dataType: 'json', // data type
-                data: new FormData($('#app_form1')[0]),
+                data: new FormData($('#photo_upload')[0]),
                 processData: false,
                 contentType: false,
-                success: function (data) {
-                    toastr.success('Registered!');
+                statusCode: {
+                    401: function () {
+                        window.location = '/login';
+                    },
+                    500: function () {
+                        alert('500 status code! server error');
+                    },
+                    200: function (msg) {
+                        window.location = '/user/company_info/' + '{{ $user->id }}';
+                    },
                 },
-
-                error: function (xhr, textStatus, errorThrown) {
-                    console.log(xhr.responseText);
-                }
             });
         });
         
     </script>
+
     <script>
         $(".button-collapse").sideNav();
 

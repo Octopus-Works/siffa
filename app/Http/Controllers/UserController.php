@@ -36,7 +36,7 @@ class UserController extends Controller
 
     public function userCompanyInfo($id){
         $user = User::find($id); 
-        $image = Image::where('imageable_type', 'App\ShippingOffice')->orderBy('id', 'desc')->first();
+        $image = Image::where('imageable_type', 'App\ShippingOffice')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
         return view('user/company_info')->withuser($user)->withimage($image);
     }
 
@@ -48,7 +48,7 @@ class UserController extends Controller
     public function accountInfo(){
         if ( auth::check()){
             $user = User::find(auth::user()->id); 
-            $image = Image::where('imageable_type', 'App\UserDetail')->orderBy('id', 'desc')->first();
+            $image = Image::where('imageable_type', 'App\UserDetail')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
 
             return view('user.index')->withuser($user)->withimage($image);
 
