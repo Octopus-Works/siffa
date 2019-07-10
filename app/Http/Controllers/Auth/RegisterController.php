@@ -78,47 +78,73 @@ class RegisterController extends Controller
         // Returns the Role record of user so I can specify the user role on register
         $role = Role::where('name', 'user')->firstOrFail(); 
 
-
         // Validation call from app\Requests\UserStoreRequest.php
         // $validated = $request->validated(); 
-        $username = str_random(10); 
-        $password = str_random(10);
-        $user = User::Create([
-            'username' => $username,
-            'password' => Hash::make($password),
-            'email'    => $request->email,
-            'role_id'  => $role->id,
-        ]);
-
-        UserDetail::Create([
-            'user_id'       => $user->id,
-            'fullname'      => $request->fullname,
-            'nationality'   => $request->nationality,
-            'mobile_number' => $request->mobile,
-            'phone_number'  => $request->phone,
-        ]);
-
-        $shippingOffice = ShippingOffice::Create([
-            'user_id'   => $user->id,
-            'name'      => $request->company_name,
-            'commercial_registry' => $request->commercial_registry,
-            'city'      => $request->city, 
-        ]);
         
-        $shippingService = ShippingService::Create([
-            'user_id' => $user->id,
-        ]);
+        try{
+            $username = str_random(10); 
+            $password = str_random(10);
+            $user = User::Create([
+                'username' => $username,
+                'password' => Hash::make($password),
+                'email'    => $request->email,
+                'role_id'  => $role->id,
+            ]);
+        } catch(Exception $e){
+            $user->delete();
+            return redirect()->route('register');
+        }
 
-        ApplicationDetail::Create([
-            'user_id' => $user->id,
-            'status'  => 1,
-        ]);
-
-        $shippingOffice->officeservices()->attach($shippingService);
-        $data = array('username' => $username, 'password' => $password); 
-        Mail::to($request->email)->send(new GenerateCredentials($data));
         
-        Session::flash('message', 'Account Details has been sent to your email!!');
+        try{
+            UserDetail::Create([
+                'user_id'       => $user->id,
+                'fullname'      => $request->fullname,
+                'nationality'   => $request->nationality,
+                'mobile_number' => $request->mobile,
+                'phone_number'  => $request->phone,
+            ]);
+        } catch(Exception $e){
+            $user->delete();
+            return redirect()->route('register');
+        }
+        
+        try{
+            $shippingOffice = ShippingOffice::Create([
+                'user_id'   => $user->id,
+                'name'      => $request->company_name,
+                'commercial_registry' => $request->commercial_registry,
+                'city'      => $request->city, 
+            ]);
+        } catch(Exception $e){
+            $user->delete();
+            return redirect()->route('register');
+        }
+        
+        try{
+            $shippingService = ShippingService::Create([
+                'user_id' => $user->id,
+            ]);
+        } catch(Exception $e){
+            $user->delete();
+            return redirect()->route('register');
+        }
+
+        try{
+            ApplicationDetail::Create([
+                'user_id' => $user->id,
+                'status'  => 1,
+            ]);
+            $shippingOffice->officeservices()->attach($shippingService);
+            $data = array('username' => $username, 'password' => $password); 
+            Mail::to($request->email)->send(new GenerateCredentials($data));
+            
+            Session::flash('message', 'Account Details has been sent to your email!!');
+        } catch( Exception $e){
+            $user->delete();
+            return redirect()->route('register');
+        }
+
         return redirect()->route('index');
 
         // $application = new ApplicationDetail; 
