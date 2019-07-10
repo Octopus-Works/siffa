@@ -167,8 +167,8 @@
                     @if(isset($user))
                         @foreach ($user as $user)[
                             "{{$user->userdetail->fullname}}","{{$user->shippingoffice->name}}",
-                            "<h5><span class='badge badge-pill badge-danger'>{{$user->applicationdetail->status}}</span></h5>",
-                            "<a href='{{url("/rms/application/" . $user->id)}}'><button class='btn btn-sm btn-rounded amber waves-effect black-text' style='margin-top:-10px'>Handle</button></a>"
+                            "<h5> @if( isset(auth::user()->applicationdetail->status)) @php $temp = auth::user()->applicationdetail->status @endphp @endif <span class='rounded-pill ml-3 @if(isset($temp) && $temp == 'In progress') badge badge-primary @endif @if(isset($temp) && $temp == 'Rejected') badge badge-danger @endif @if(isset($temp) && $temp == 'Approved under Payment') badge badge-primary @endif @if(isset($temp) && $temp === 'Paid under Registration') badge badge-primary @endif @if(isset($temp) && $temp == 'Registered') badge badge-success @endif '> @if(isset($temp)) {{ auth::user()->applicationdetail->status}} @endif</span></h5>",
+                            "<a href='{{url('/rms/application/' . $user->id)}}'><button class='btn btn-sm btn-rounded amber waves-effect black-text' style='margin-top:-10px'>Handle</button></a>"
                         ],
                         @endforeach
                     @endif

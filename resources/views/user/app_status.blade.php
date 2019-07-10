@@ -251,7 +251,7 @@
                                         <img class="mb-5" src="{{url('img/folder.png')}}" alt="file" height="200px" width="200px">
                                         <h3 class="h3-responsive">Application Status: <!-- Change the badges --> 
                                             @if( isset(auth::user()->applicationdetail->status))
-                                                {{$temp = auth::user()->applicationdetail->status}}
+                                                @php $temp = auth::user()->applicationdetail->status @endphp
                                             @endif
                                             <span class='rounded-pill ml-3 @if(isset($temp) && $temp == "In progress") badge badge-primary @endif
 
