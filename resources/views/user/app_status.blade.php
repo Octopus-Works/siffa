@@ -264,11 +264,9 @@
                                         </h3>
                                     
                                     <div>
-                                        <div class="m-5">
-                                            <i class="fas fa-angle-double-down fa-2x custom-tertiary-text"></i>
-                                        </div>
                                         <div>
                                             @if(isset($temp) && $temp == "Approved under Payment")
+                                            <i class="fas fa-angle-double-down fa-2x custom-tertiary-text m-5"></i>
                                                 <button type="button" id="new" class="btn custom-secondary btn-rounded  p-3" data-toggle='modal' data-target='#payment_details'>Send Payment Details<i class="fas fa-paper-plane ml-2"></i>
                                                 </button>
                                             @endif
