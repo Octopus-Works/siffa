@@ -218,6 +218,24 @@
                         // of an input field. Validation rules are defined
                         // on the right side
 
+                        fullname:
+                        {
+                            required:true,
+                            lettersonly:true
+                        },
+
+                        nationality:
+                        {
+                            required:true,
+                            lettersonly:true
+                        },
+
+                        company_name:
+                        {
+                            required:true,
+                            lettersonly:true
+                        },
+
                         commercial_registry: {
                             required: true,
                             digits: true,
@@ -255,9 +273,16 @@
                 return this.optional(element) || /[0-9]+/.test(value);
             }, "Must have at least one number");
 
+            $.validator.addMethod("lettersonly", function(value, element) {
+                return this.optional(element) || /^[a-z]+$/i.test(value);
+            }, "Please enter letters only"); 
+
             /**
              * Custom validator for contains at least one symbol.
              */
+            $.validator.addClassRules({
+                lettersonly : { lettersonly : true }    
+            });
         });
 
     </script>
