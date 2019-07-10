@@ -93,9 +93,10 @@
                                     <p class="text-muted"><small>Profile photo will be changed automatically</small>
                                     </p>
                                     <div class="row flex-center">
-                                        <button class="btn custom-secondary black-text btn-rounded">Upload New Photo</button><br>
-                                        <button class="btn btn-danger btn-rounded">Delete</button>
+                                        <button class="btn custom-secondary black-text btn-rounded" data-toggle="modal" data-target="#rms_photo_modal">Upload New Photo</button>
                                     </div>
+
+                                    @include('modal_partials.rms_photo_modal')
                                 </div>
                                 <!-- Card content -->
 
@@ -134,16 +135,15 @@
                                             </div>
                                             <!-- Second column -->
                                             <div class="col-md-6">
-                                                <div class="md-form mb-0">
-                                                    <input id="username" name="username" type="text" value="{{ $user->shippingoffice->name }}" class="validate form-control">
-                                                    <label for="username">{{ __('Username') }}</label>
-
-                                                </div>
+                                                    <div class="md-form mb-0">
+                                                        <input id="password" name="password" value="" type="text" class="validate form-control">
+                                                        <label for="password">Password</label>
+                                                    </div>
                                             </div>
                                         </div>
                                         <!-- First row -->
 
-                                        <!-- First row -->
+                                        <!-- Second row -->
                                         <div class="row">
                                             <!-- First column -->
                                             <div class="col-md-6">
@@ -163,45 +163,30 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- First row -->
-
                                         <!-- Second row -->
+
+                                        <!-- Third row -->
                                         <div class="row">
 
                                             <!-- First column -->
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="md-form mb-0">
                                                     <input id="email" name="email" type="email" value="{{$user->email}}" class="validate form-control">
                                                     <label for="email">{{ __('E-mail') }}</label>
                                                 </div>
                                             </div>
-                                            <!-- Second column -->
 
-                                            <div class="col-md-6">
-                                                <div class="md-form mb-0">
-                                                    <input id="password" name="password" value="" type="text" class="validate form-control">
-                                                    <label for="password">Password</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Second row -->
-
-                                        <!-- First column -->
-                                        <div class="col-md-12">
-                                            <div class="md-form mb-0">
-                                                <input id="website" name="website" value="{{ $user->userdetail->website }}" type="text" class="validate form-control">
-                                                <label for="website">Website Address</label>
-                                            </div>
                                         </div>
                                         <!-- Third row -->
 
                                         <!-- Fourth row -->
                                         <div class="row">
-                                            <div class="col-md-12 text-center my-4">
-                                                <input type="submit" value="Update Account" class="btn custom-secondary black-text btn-rounded">
+                                                <div class="col-md-12 text-center my-4">
+                                                    <input type="submit" value="Update Account" class="btn custom-secondary black-text btn-rounded">
+                                                </div>
                                             </div>
                                         </div>
-                                        <!-- Fourth row -->
+                                        <!-- Third row -->
 
                                     </form>
                                     <!-- Edit Form -->
