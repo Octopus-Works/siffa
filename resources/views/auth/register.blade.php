@@ -220,7 +220,7 @@
 
                         fullname:
                         {
-                            required:true,
+                            required: true,
                             lettersonly:true
                         },
 
@@ -274,14 +274,14 @@
             }, "Must have at least one number");
 
             $.validator.addMethod("lettersonly", function(value, element) {
-                return this.optional(element) || /^[a-z]+$/i.test(value);
+                return this.optional(element) || /^[a-zA-Z\s]+$/.test(value);
             }, "Please enter letters only"); 
 
             /**
              * Custom validator for contains at least one symbol.
              */
             $.validator.addClassRules({
-                lettersonly : { lettersonly : true }    
+                lettersonly : { lettersonly : true }
             });
         });
 
