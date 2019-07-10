@@ -59,7 +59,6 @@ class ApplicationController extends Controller
 
         $user->shippingOffice()->update([
             'name'      => $request->company_name,
-            'shipping_services'   => $request->shipping_services,
             'position_title'      => $request->position_title,
             'chamber_of_commerce' => $request->chamber_of_commerce,
             'commercial_registry' => $request->commercial_registry,
@@ -78,7 +77,6 @@ class ApplicationController extends Controller
         $user->applicationDetail()->update([
             'Financial_assignment_status' => $request->financial_status,
             'Date_of_application'         => $request->date_of_application,
-            'Resume_information'          => $request->resume_info,
         ]);
 
         if( isset($request->email))

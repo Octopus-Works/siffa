@@ -69,6 +69,8 @@
 
     <!--Main Layout-->
     <main>
+
+            
         <div class="view jarallax shadow-lg" style="height: 65vh;">
             <img class="jarallax-img" src={{url('img/3.jpg')}} alt="">
             <div class="mask rgba-black-slight">
@@ -240,7 +242,7 @@
                             required: true,
                             digits: true,
                             minlength: 4,
-                            maxlength:10
+                            maxlength:8
                         }
                     },
 
@@ -274,7 +276,7 @@
             }, "Must have at least one number");
 
             $.validator.addMethod("lettersonly", function(value, element) {
-                return this.optional(element) || /^[a-zA-Z\s]+$/.test(value);
+                return this.optional(element) || /^[a-zA-Z\s\'-]+$/.test(value);
             }, "Please enter letters only"); 
 
             /**
