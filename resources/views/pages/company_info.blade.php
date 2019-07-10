@@ -109,8 +109,7 @@
                                             <p class="text-muted text-center" align="justify">Office Owner Name: {{ $user->userdetail->fullname }} </p>
                                             <p class="text-muted text-center" align="justify">Phone Number: {{ $user->userdetail->phone_number}}</p>
                                             <p class="text-muted text-center" align="justify">Mobile Number: {{$user->userdetail->mobile_number }}</p>
-                                            <p class="text-muted text-center" align="justify">Main Branch Address: {{ $user->shippingoffice->addresses}}</p>
-                                            <p class="text-muted text-center" align="justify">Services: {{ $user->shippingoffice->shipping_services}} </p>
+                                            <p class="text-muted text-center" align="justify">Main Branch Address: {{ $user->shippingoffice->city}}</p>
                                             <p class="text-muted text-center" align="justify">E-mail: {{ $user->email }}</p>
                                             <p class="text-muted text-center" align="justify">Website: {{ $user->userdetail->website }}</p>
                                   </div>

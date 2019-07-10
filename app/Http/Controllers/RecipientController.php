@@ -17,7 +17,7 @@ class RecipientController extends Controller
     }
 
     public function applications_view(){
-        $user = User::all();
+        $user = User::where('role_id', '2')->get();
         return view('rms/view_applications')->withuser($user);
     }
 
@@ -46,7 +46,7 @@ class RecipientController extends Controller
     }
 
     public function recipients_management(){
-        $user = User::all(); 
+        $user = User::where('role_id', '2')->get();
         return view('rms.user_management')->withuser($user);
     }
 
