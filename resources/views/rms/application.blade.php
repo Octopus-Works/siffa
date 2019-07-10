@@ -241,21 +241,19 @@
                                                 $chk1 = explode(" ",$user->shippingService->shipping_modes) @endphp
                                                 <ul>
                                                     <div class="custom-control custom-checkbox p-2">
-                                                        <input type="checkbox" name="shipping_modes[]" value="International" class="custom-control-input" id="method1"  data-toggle="collapse" data-target="#international"
-                                                        aria-expanded="false" aria-controls="international"
+                                                        <input type="checkbox" name="shipping_modes[]" value="International" class="custom-control-input" id="method1" 
                                                         @if(in_array("International", $chk1)) checked @endif disabled>
                                                         <label class="custom-control-label" for="method1">International
                                                             Shipping</label>
                                                     </div>
-                                                    <ul class="collapse" id="international">
+                                                    <ul id="international">
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"  name="shipping_modes[]" value="LandTransport" 
-                                                                id="method11" data-toggle="collapse" data-target="#land"
-                                                                aria-expanded="false" aria-controls="land"  @if(in_array("LandTransport", $chk1)) checked @endif disabled>
+                                                                id="method11"  @if(in_array("LandTransport", $chk1)) checked @endif disabled>
                                                                 <label class="custom-control-label"
                                                                 for="method11">LandTransport</label>
                                                         </div>
-                                                            <ul class="collapse" id="land">
+                                                            <ul id="land">
                                                                 <div class="custom-control custom-checkbox p-2">
                                                                     <input type="checkbox" name="shipping_modes[]" value="ETL" class="custom-control-input"
                                                                     id="method111" @if(in_array("ETL", $chk1)) checked @endif disabled>
@@ -273,13 +271,12 @@
     
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"
-                                                                id="method12" data-toggle="collapse" data-target="#water"
-                                                                aria-expanded="false" aria-controls="water" name="shipping_modes[]" value="WaterTransport"
+                                                                id="method12"  name="shipping_modes[]" value="WaterTransport"
                                                                 @if(in_array("WaterTransport", $chk1)) checked @endif disabled>
                                                                 <label class="custom-control-label"
                                                                 for="method12">WaterTransport</label>
                                                         </div>
-                                                            <ul class="collapse" id="water">
+                                                            <ul id="water">
                                                                 <div class="custom-control custom-checkbox p-2">
                                                                     <input type="checkbox" name="shipping_modes[]" value="ECL" class="custom-control-input"
                                                                     id="method121" @if(in_array("ECL", $chk1)) checked @endif disabled>
