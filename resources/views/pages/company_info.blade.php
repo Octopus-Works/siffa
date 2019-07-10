@@ -27,7 +27,7 @@
 
 </head>
 
-<body class="fixed-sn ">
+<body>
 
     <!-- Navigation -->
 
@@ -58,7 +58,7 @@
 
     <main style="">
 
-            <div class="container mb-5 ">
+            <div class="container mt-5 mb-5 ">
 
 
 
@@ -98,11 +98,12 @@
         
                                             <!--Image-->
                                             <div class="view overlay">
-                                                    <img src="{{ $user->applicationdetail->images[0]->url}}"
-                                                        style="min-height:383px; min-width:400px" class="img-fluid z-depth-1" alt="">
-                                                    <div class="mask rgba-white-slight"></div>
-                                                </div>
-                                                <!--/.Image-->
+                                                @if (isset($image))
+                                                    <img src="{{ $image->url}}"  style="min-height:383px; min-width:400px" class="img-fluid z-depth-1" alt="">
+                                                @endif
+                                                <div class="mask rgba-white-slight"></div>
+                                            </div>
+                                            <!--/.Image-->
         
                                     <h4 class="text-uppercase font-weight-bold my-4 text-center">Details</h4>
         

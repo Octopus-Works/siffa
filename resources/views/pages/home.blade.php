@@ -471,7 +471,7 @@
     </style>
 </head>
 
-<body class="fixed-sn homepage-v5">
+<body class="homepage-v5">
 
 
     <header>
@@ -499,7 +499,7 @@
     <!-- Main layout --->
     <main>
 
-        <div class="container-fluid">
+        <div class="container mt-5 mb-5">
 
             <!-- Magazine --->
             <div class="row mt-2">
