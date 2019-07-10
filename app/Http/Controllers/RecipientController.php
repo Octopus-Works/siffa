@@ -5,15 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use App\Image;
 use App\Notification;
 use App\InternalMessaging;
-
+use App\Services\ImageUploadService;
 
 class RecipientController extends Controller
 {
     public function index(){
         $user = User::find(auth::user()->id);
-        return view('rms.index')->withuser($user); 
+
+        $image = Image::where('imageable_type', 'App\UserDetail')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
+        return view('rms.index')->withuser($user)->withimage($image);
     }
 
     public function applications_view(){
@@ -32,17 +35,36 @@ class RecipientController extends Controller
         return view('rms/view_messages');
     }
 
+    public function rmsMiniUpdate(Request $request){
+        
+        // $validated = $request->validated(); 
+        $user = User::find(Auth::user()->id); 
+        $user->userdetail()->update([
+            'fullname'      => $request->fullname,
+            'father_name'   => $request->father, 
+            'mother_name'   => $request->mother,
+        ]);
+
+        if( isset($request->email))
+            $user->email = $request->email;
+        if( isset($request->password))
+            $user->password  = Hash::make($request->password);
+        $user->save();
+
+        return redirect()->back()->with('Success'); 
+    }
+
+    public function rmsPhotoUpload(Request $request){
+        $user = User::find(auth::user()->id); 
+        foreach($request->files as $file)
+        ImageUploadService::imageUpload($file, $user->id, "App\UserDetail");
+
+        return response("Success", 200);
+    }
+
     public function application($id){
         $user = User::find($id);
         return view('rms/application')->withuser($user)->withid($id);  
-    }
-
-    public function account_info(){
-
-        if ( auth::check()){
-            $user = User::find(auth::user()->id); 
-            return view('rms.index')->withuser($user);
-        }
     }
 
     public function recipients_management(){

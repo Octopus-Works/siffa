@@ -82,8 +82,8 @@
                                 <!-- Card content -->
                                 <div class="card-body card-body-cascade text-center">
                                     <div class="view overlay">
-                                        @if (isset($user->applicationdetail->images[0]->url))
-                                            <img src="{{ $user->applicationdetail->images[0]->url}}" class="img-fluid z-depth-1 shadow-lg" alt="">
+                                        @if (isset($image))
+                                            <img src="{{ $image->url}}" class="img-fluid z-depth-1 shadow-lg" alt="">
                                         @endif
                                         <div class="mask rgba-white-slight"></div>
                                     </div>
@@ -118,7 +118,7 @@
                                 <div class="card-body card-body-cascade text-center">
 
                                     <!-- Edit Form -->
-                                    <form action="{{ route('mini_edit')}}" method="POST">
+                                    <form action="{{ route('rms.mini_edit')}}" method="POST">
                                         @csrf
                                         <!-- First row -->
 
@@ -218,6 +218,37 @@
     <!-- Footer -->
 
     <!-- SCRIPTS -->
+
+    <script>
+        $('#photo_upload').submit(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                
+                type: 'POST',
+                url: '{{ route('rms.photo_upload')}}',
+                dataType: 'json', // data type
+                data: new FormData($('#photo_upload')[0]),
+                processData: false,
+                contentType: false,
+                statusCode: {
+                    401: function () {
+                        window.location = '/login';
+                    },
+                    500: function () {
+                        alert('500 status code! server error');
+                    },
+                    200: function (msg) {
+                        window.location = '/rms';
+                    },
+                },
+            });
+        });
+    </script>
+
     <script>
         $(".button-collapse").sideNav();
 

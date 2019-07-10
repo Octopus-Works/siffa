@@ -54,7 +54,7 @@
                 <li class="pt-2 pb-2"><a class=" waves-effect " href={{url('/rms/view_messages')}}><i
                             class="fas fa-envelope custom-secondary-text mr-3"></i>Messages</a>
                 </li>
-                <li class="pt-2 pb-2"><a class="waves-effect " href={{url('/rms/account_info')}}><i
+                <li class="pt-2 pb-2"><a class="waves-effect " href={{url('/rms')}}><i
                             class="fas custom-secondary-text fa-user mr-3"></i>Account Information</a>
                 </li>
                 <li class="pt-2 pb-2"><a class="waves-effect " href={{url('home')}}><i class="fas custom-secondary-text mr-3 fa-sign-out-alt"></i>Home</a>

@@ -81,10 +81,11 @@ class ApplicationController extends Controller
             'Resume_information'          => $request->resume_info,
         ]);
 
-        $user->update([
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        if( isset($request->email))
+            $user->email = $request->email;
+        if( isset($request->password))
+            $user->password  = Hash::make($request->password);
+        $user->save();
         
         foreach($request->files as $file)
         ImageUploadService::imageUpload($file, $user->id, "App\ApplicationDetail");
@@ -107,13 +108,10 @@ class ApplicationController extends Controller
             'name'      => $request->company_name,
         ]);
 
-        $user->update([
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        
-        foreach($request->files as $file)
-        ImageUploadService::imageUpload($file, $user->id, "App\ApplicationDetail");
+        $user->email = $request->email;
+        if( isset($request->password))
+            $user->password  = Hash::make($request->password);
+        $user->save();
 
         return redirect()->back()->with('Success'); 
     }

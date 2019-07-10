@@ -62,12 +62,14 @@ Route::group(['prefix' => 'rms' , 'middleware' => ['auth', 'rms'] ], function()
     Route::get('/view_applications', 'RecipientController@applications_view');
     Route::get('/view_messages', 'RecipientController@messages_view');
     Route::get('/application/{id}', 'RecipientController@application');
-    Route::get('/account_info', 'RecipientController@account_info');
     Route::get('/user_management', 'RecipientController@recipients_management');
     Route::post('/user_management/block/{id}', 'RecipientController@block')->name('blocking');
     Route::post('/user_management/unblock/{id}', 'RecipientController@unblock')->name('unblocking');
     Route::post('/application/{id}/approved', 'RecipientController@approved');
     Route::post('/application/{id}/rejected', 'RecipientController@rejected');
+    Route::post('/', 'RecipientController@rmsMiniUpdate')->name('rms.mini_edit');
+    Route::post('/photo_upload', 'RecipientController@rmsPhotoUpload')->name('rms.photo_upload');
+
 
 });
 
