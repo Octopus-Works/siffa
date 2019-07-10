@@ -93,8 +93,7 @@
 
                                         <p class="text-muted"><small>Profile photo will be changed automatically</small> </p>
                                         <div class="row flex-center">
-                                            <button class="btn custom-secondary black-text btn-rounded" data-toggle="modal" data-target="#modal_upload_photo">Upload New Photo</button><br>
-                                            <button class="btn btn-danger btn-rounded">Delete</button>
+                                            <button class="btn custom-secondary black-text btn-rounded" data-toggle="modal" data-target="#modal_upload_photo">Upload New Photo</button>
                                         </div>
                                     </div>
                                     <!-- Card content -->
