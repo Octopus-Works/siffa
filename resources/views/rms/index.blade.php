@@ -61,9 +61,7 @@
 
     <main>
 
-
-        <div class="container-fluid" style="height:100%">
-            <div class="container">
+            <div class="container" style="min-height:1000px;">
                 <h1 class="text-center  font-weight-bolder custom-secondary-text mt-3">Account Information<i
                         class="fas fa-user custom-secondary-text ml-3"></i></h1>
                 <div class="section extra-margins  py-5 text-center text-lg-left">
@@ -210,7 +208,6 @@
 
         </div>
 
-        </div>
 
 
 
