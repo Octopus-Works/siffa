@@ -60,7 +60,7 @@
     <!--Main Navigation-->
 
     <main>
-
+        <div class="container-fluid">
             <div class="container" style="min-height:1000px;">
                 <h1 class="text-center  font-weight-bolder custom-secondary-text mt-3">Account Information<i
                         class="fas fa-user custom-secondary-text ml-3"></i></h1>
@@ -206,10 +206,7 @@
 
             </div>
 
-        </div>
-
-
-
+ 
 
 
     </main>
