@@ -41,11 +41,18 @@
 
         .card-img-top {
             width: 100%;
-            height: 12vw;
+            height: 16vw;
             padding: 10px;
             object-fit: cover;
         }
 
+        @media (max-width: 767px) {
+
+            .card-img-top {
+                width: 100% !important;
+                height: 300px !important;
+            }
+        }
 
     </style>
 
