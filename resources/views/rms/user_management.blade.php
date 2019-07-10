@@ -430,7 +430,7 @@
                             "{{$user->userdetail->fullname}}",
                             "{{$user->userdetail->father_name}}",
                             "{{$user->userdetail->mother_name}}",
-                            "{{$user->userdetail->address}}",
+                            "{{$user->shippingoffice->city}}",
                             "{{$user->shippingoffice->name}}",
             
                         ],
