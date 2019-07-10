@@ -43,7 +43,7 @@
     </header>
     <!--Main Navigation-->
 
-    <main style="height: 1000px">
+    <main style="height: 900px">
         <div class="container-fluid">
             <div class="container ">
 
@@ -92,12 +92,12 @@
                             <h1 class="custom-tertiary-text">{{ $user->shippingoffice->name }}</h1>
                             <hr class="custom-secondary-text">
                             <!-- Text -->
-                            <p>Office Owner Name: {{ $user->userdetail->fullname }} </p>
-                            <p>Phone Number: {{ $user->userdetail->phone_number}}</p>
-                            <p>Mobile Number: {{$user->userdetail->mobile_number }}</p>
-                            <p>Main Branch Address: {{ $user->shippingoffice->city}}</p>
-                            <p>E-mail: {{ $user->email }}</p>
-                            <p>Website: {{ $user->userdetail->website }}</p>
+                            <p><span class="custom-secondary-text mr-2">Office Owner Name:</span>{{ $user->userdetail->fullname }} </p>
+                            <p><span class="custom-secondary-text mr-2">Phone Number:</span> {{ $user->userdetail->phone_number}}</p>
+                            <p><span class="custom-secondary-text mr-2">Mobile Number: </span>{{$user->userdetail->mobile_number }}</p>
+                            <p><span class="custom-secondary-text mr-2">Main Branch Address: </span>{{ $user->shippingoffice->city}}</p>
+                            <p><span class="custom-secondary-text mr-2">E-mail: </span>{{ $user->email }}</p>
+                            <p><span class="custom-secondary-text mr-2">Website: </span>{{ $user->userdetail->website }}</p>
                         </div>
                         <!--Grid column-->
 
