@@ -60,7 +60,7 @@ class MessageController extends Controller
         $mail->save();
 
         foreach($request->files as $file)
-        ImageUploadService::imageUpload($file, Auth::user()->id, "App\InternalMessaging" );
+        ImageUploadService::imageUpload($file, $mail->id , "App\InternalMessaging" );
 
         return redirect()->back()->with('Success'); 
     }
