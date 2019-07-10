@@ -102,14 +102,14 @@
             width: 100% !important;
         }
 
-        img {
+        #application {
             max-width: 200px;
             max-height: 200px;
             margin-left: -50px;
         }
 
         @media only screen and (min-width: 993px) {
-            img {
+            #application {
                 max-width: 50%;
                 max-height: 50%;
                 margin-left: 0;
