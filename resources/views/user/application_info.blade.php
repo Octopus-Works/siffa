@@ -506,6 +506,44 @@
     </script>
 
     <script>
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "md-toast-bottom-right",
+            "preventDuplica tes": false,
+            "onclick": null,
+            "showDuration": 300,
+            "hideDuration": 600,
+            "timeOut": 4000,
+            "extendedTimeOut": 600,
+            "showEasing": "easeOutQuad",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "md-toast-bottom-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": 300,
+            "hideDuration": 1000,
+            "timeOut": 4000,
+            "extendedTimeOut": 1000,
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+            };
+    </script>
+
+    <script>
 
         $('#app_form1').submit(function (e) {
             e.preventDefault();
@@ -521,13 +559,15 @@
                 data: new FormData($('#app_form1')[0]),
                 processData: false,
                 contentType: false,
-                success: function (data) {
-                    toastr.success('Registered!');
+                statusCode: {
+                    200: function (data) {
+                        toastr["success"]("Changes Saved");
+                    },
+                    500: function () {
+                        toastr["error"]("Error");
+                    },
                 },
 
-                error: function (xhr, textStatus, errorThrown) {
-                    console.log(xhr.responseText);
-                }
             });
         });
     
