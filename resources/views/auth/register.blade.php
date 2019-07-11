@@ -7,8 +7,6 @@
     <title>Register</title>
     <link rel="stylesheet" href={{url("css/intlTelInput.css")}}>
     <style>
-
-
         .custom-control-label::after {
             cursor: pointer;
         }
@@ -25,36 +23,38 @@
 
         form .error {
             color: red;
-            text-align:left;
-            margin-top:-1rem;
+            text-align: left;
+            margin-top: -1rem;
 
         }
 
-        #mobile-error, #phone-error, .initialized{
-            margin-top:0!important
+        #mobile-error,
+        #phone-error,
+        .initialized {
+            margin-top: 0 !important
         }
 
-        .intl-tel-input .flag-container{
-            top:-15px!important;
+        .intl-tel-input .flag-container {
+            top: -15px !important;
         }
 
         .intl-tel-input {
             position: relative;
-            width:91%;
+            width: 91%;
         }
 
-        .select-dropdown, .select-wrapper span.caret{
-            color:#757575;
+        .select-dropdown,
+        .select-wrapper span.caret {
+            color: #757575;
         }
 
         @media only screen and (max-width: 993px) {
             .intl-tel-input {
                 position: relative;
-                width:76%;
+                width: 76%;
             }
         }
 
-  
     </style>
 </head>
 
@@ -69,99 +69,96 @@
 
     <!--Main Layout-->
     <main>
-        @if(Session::has('message'))
-            <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-        @endif
-            
+
+
         <div class="view jarallax shadow-lg" style="height: 65vh;">
             <img class="jarallax-img" src={{url('img/3.jpg')}} alt="">
             <div class="mask rgba-black-slight">
             </div>
         </div>
         <div class="container">
-                <div class=" col-xl-9 col-lg-9  col-md-9 col-sm-12 mx-auto m-5">
-                        <div class="card mt-3 mb-3 shadow-lg text-center p-3">
+            <div class=" col-xl-9 col-lg-9  col-md-9 col-sm-12 mx-auto m-5">
+                <div class="card mt-3 mb-3 shadow-lg text-center p-3">
 
-                            <h1 class="text-center mb-5 font-weight-bolder mt-2">Register<i
-                                    class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
-                                    <div class="card-body px-lg-5 pt-0 ">
- 
-                                    <form id="app_form" class="text-center" action="{{route('register')}}" enctype="multipart/form-data" method="POST">
-                                        @csrf
-                                            <div class="md-form">
-                                                <input id="fullname" name="fullname" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="fullname">{{ __('Full name') }}</label>
-                                            </div>
+                    <h1 class="text-center mb-5 font-weight-bolder mt-2">Register<i
+                            class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
+                    <div class="card-body px-lg-5 pt-0 ">
 
-                                            <div class="md-form">
-                                                <input id="email" name="email" type="email"
-                                                    class="validate form-control" required>
-                                                <label for="email">{{ __('E-mail') }}</label>
-                                            </div>
+                        <form id="app_form" class="text-center" action="{{route('register')}}"
+                            enctype="multipart/form-data" method="POST">
+                            @csrf
+                            <div class="md-form">
+                                <input id="fullname" name="fullname" type="text" class="validate form-control" required>
+                                <label for="fullname">{{ __('Full name') }}</label>
+                            </div>
 
-                                            <div class="md-form">
-                                                <input id="nationality" name="nationality" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="nationality">{{ __('Nationality')}}</label>
-                                            </div>
+                            <div class="md-form">
+                                <input id="email" name="email" type="email" class="validate form-control" required>
+                                <label for="email">{{ __('E-mail') }}</label>
+                            </div>
 
-                                            <div class="md-form">
-                                                <select class="mdb-select" name="city" required>
-                                                    <option value="" disabled selected>City</option>
-                                                    <option value="Al Hasakah">Al Hasakah</option>
-                                                    <option value="Al Ladhiqiyah">Al Ladhiqiyah</option>
-                                                    <option value="Al Qunaytirah">Al Qunaytirah</option>
-                                                    <option value="Ar Raqqah">Ar Raqqah</option>
-                                                    <option value="As Suwayda'">As Suwayda'</option>
-                                                    <option value="Dar'a">Dar'a</option>
-                                                    <option value="Dayr az Zawr">Dayr az Zawr</option>
-                                                    <option value="Dimashq">Dimashq</option>
-                                                    <option value="Halab">Halab</option>
-                                                    <option value="Hamah">Hamah</option>
-                                                    <option value="Hims">Hims</option>
-                                                    <option value="Idlib">Idlib</option>
-                                                    <option value="Rif Dimashq">Rif Dimashq</option>
-                                                    <option value="Tartus">Tartus</option>
-                                                </select>
-                                            </div>
+                            <div class="md-form">
+                                <input id="nationality" name="nationality" type="text" class="validate form-control"
+                                    required>
+                                <label for="nationality">{{ __('Nationality')}}</label>
+                            </div>
 
-                                            <div class="md-form">
-                                                <input id="company-name" name="company_name" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="company-name">{{ __('Shipping Company Name') }}</label>
-                                            </div>
+                            <div class="md-form">
+                                <select class="mdb-select" name="city" required>
+                                    <option value="" disabled selected>City</option>
+                                    <option value="Al Hasakah">Al Hasakah</option>
+                                    <option value="Al Ladhiqiyah">Al Ladhiqiyah</option>
+                                    <option value="Al Qunaytirah">Al Qunaytirah</option>
+                                    <option value="Ar Raqqah">Ar Raqqah</option>
+                                    <option value="As Suwayda'">As Suwayda'</option>
+                                    <option value="Dar'a">Dar'a</option>
+                                    <option value="Dayr az Zawr">Dayr az Zawr</option>
+                                    <option value="Dimashq">Dimashq</option>
+                                    <option value="Halab">Halab</option>
+                                    <option value="Hamah">Hamah</option>
+                                    <option value="Hims">Hims</option>
+                                    <option value="Idlib">Idlib</option>
+                                    <option value="Rif Dimashq">Rif Dimashq</option>
+                                    <option value="Tartus">Tartus</option>
+                                </select>
+                            </div>
 
-                                            <div class="md-form">
-                                                <input id="regist-num" name="commercial_registry" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="regist-num">{{ __('Commercial Registration Number') }}</label>
-                                            </div>
+                            <div class="md-form">
+                                <input id="company-name" name="company_name" type="text" class="validate form-control"
+                                    required>
+                                <label for="company-name">{{ __('Shipping Company Name') }}</label>
+                            </div>
 
-                                            <div class="md-form text-left">
-                                                <input id="mobile" type="tel" class="validate form-control" name="mobile" placeholder="Mobile: (201) 555-0123"
-                                                    required>
-                                                <span id="valid-msg2" class="hide">✓</span>
-                                                <span id="error-msg2" class="hide"></span>
-                                            </div>
-        
-                                            <div class="md-form text-left">
-                                                <input id="phone" type="tel" class="validate form-control" placeholder="Phone: (201) 555-0123"
-                                                    name="phone" required>
-                                                <span id="valid-msg1" class="hide">✓</span>
-                                                <span id="error-msg1" class="hide"></span>
-                                            </div>
+                            <div class="md-form">
+                                <input id="regist-num" name="commercial_registry" type="text"
+                                    class="validate form-control" required>
+                                <label for="regist-num">{{ __('Commercial Registration Number') }}</label>
+                            </div>
 
-                                            <div class="d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
-                                                    type="submit">{{ __('SUBMIT') }}</button>
-                                            </div>
-                                    </form>
+                            <div class="md-form text-left">
+                                <input id="mobile" type="tel" class="validate form-control" name="mobile"
+                                    placeholder="Mobile: (201) 555-0123" required>
+                                <span id="valid-msg2" class="hide">✓</span>
+                                <span id="error-msg2" class="hide"></span>
+                            </div>
 
-  
-                        </div>
-                        </div>
+                            <div class="md-form text-left">
+                                <input id="phone" type="tel" class="validate form-control"
+                                    placeholder="Phone: (201) 555-0123" name="phone" required>
+                                <span id="valid-msg1" class="hide">✓</span>
+                                <span id="error-msg1" class="hide"></span>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
+                                    type="submit">{{ __('SUBMIT') }}</button>
+                            </div>
+                        </form>
+
+
+                    </div>
                 </div>
+            </div>
 
         </div>
         <div class="view jarallax">
@@ -185,13 +182,41 @@
     <script src={{url("js/validate.js")}}></script>
     <script src={{url("js/intlTelInput.js")}}></script>
 
+    @if(Session::has('message'))
+
+    <script>
+    $(document).ready(function() {
+        toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "md-toast-bottom-right",
+        "preventDuplica tes": false,
+        "onclick": null,
+        "showDuration": 300,
+        "hideDuration": 600,
+        "timeOut": 6000,
+        "extendedTimeOut": 600,
+        "showEasing": "easeOutQuad",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+        toastr["error"]('{{ Session::get('message') }}')
+
+        });
+
+    </script>
+
+    @endif
 
     <script>
         // Material Select Initialization
         $(document).ready(function () {
             $('.mdb-select').materialSelect();
-            $('.select-dropdown').click(function(){
-                $('.select-dropdown').css('color','#495057');
+            $('.select-dropdown').click(function () {
+                $('.select-dropdown').css('color', '#495057');
             })
         });
 
@@ -222,29 +247,26 @@
                         // of an input field. Validation rules are defined
                         // on the right side
 
-                        fullname:
-                        {
+                        fullname: {
                             required: true,
-                            lettersonly:true
+                            lettersonly: true
                         },
 
-                        nationality:
-                        {
-                            required:true,
-                            lettersonly:true
+                        nationality: {
+                            required: true,
+                            lettersonly: true
                         },
 
-                        company_name:
-                        {
-                            required:true,
-                            lettersonly:true
+                        company_name: {
+                            required: true,
+                            lettersonly: true
                         },
 
                         commercial_registry: {
                             required: true,
                             digits: true,
                             minlength: 4,
-                            maxlength:8
+                            maxlength: 8
                         }
                     },
 
@@ -277,15 +299,17 @@
                 return this.optional(element) || /[0-9]+/.test(value);
             }, "Must have at least one number");
 
-            $.validator.addMethod("lettersonly", function(value, element) {
+            $.validator.addMethod("lettersonly", function (value, element) {
                 return this.optional(element) || /^[a-zA-Z\s\'-]+$/.test(value);
-            }, "Please enter letters only"); 
+            }, "Please enter letters only");
 
             /**
              * Custom validator for contains at least one symbol.
              */
             $.validator.addClassRules({
-                lettersonly : { lettersonly : true }
+                lettersonly: {
+                    lettersonly: true
+                }
             });
         });
 
