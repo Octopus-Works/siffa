@@ -474,6 +474,7 @@
 <body class="homepage-v5">
 
 
+
     <header>
 
         @include('partials.nav')
@@ -499,9 +500,7 @@
     <!-- Main layout --->
     <main>
 
-            @if(Session::has('message'))
-                <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-            @endif
+
         <div class="container mt-5 mb-5">
 
             <!-- Magazine --->
@@ -2190,6 +2189,33 @@
 
 
     @include('partials.footer')
+    
+    @if(Session::has('message'))
+    <script>
+            $(document).ready(function() {
+                toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "md-toast-bottom-right",
+                "preventDuplica tes": false,
+                "onclick": null,
+                "showDuration": 300,
+                "hideDuration": 600,
+                "timeOut": 7000,
+                "extendedTimeOut": 600,
+                "showEasing": "easeOutQuad",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+                toastr["success"]('{{ Session::get('message') }}')
+        
+                });
+        
+            </script>
+    @endif
 
 </body>
 
