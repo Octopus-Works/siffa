@@ -44,14 +44,14 @@
                 @endif
 
               @foreach($notifications as $notes)
-                @if ( $notes->checked == 0 && $notes->type == "rms" && Auth::getUser()->role->name == "rms")
+                @if ( $notes->checked == 0 && $notes->type == "rms" && Auth::getUser()->role->name == "RMS")
                   <a class="dropdown-item" href="{{ url('rms/application')}}/{{$notes->user->id}}">
                     <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
                     <span>{{ $notes->body }}</span>
                     <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> {{$notes->created_at}}</span>
                   </a>
                 @elseif ( $notes->checked == 0 && $notes->type == "user" && Auth::getUser()->role->name == "user")
-
+                 <p> here </p>
                   <a class="dropdown-item" href="{{ url('user/app_status')}}">
                     <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
                     <span>{{ $notes->body }}</span>
@@ -74,7 +74,7 @@
             {{--TODO --}}
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 
-                <a class="dropdown-item" href="">
+                <a class="dropdown-item" href="{{ route('logout') }}">
                     <i class="fas custom-secondary-text fa-sign-out-alt mr-2" aria-hidden="true"></i>
                     <span>Log out</span>
                 </a>

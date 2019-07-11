@@ -64,7 +64,8 @@ class RecipientController extends Controller
 
     public function application($id){
         $user = User::find($id);
-        return view('rms/application')->withuser($user)->withid($id);  
+        $image = Image::where('imageable_type', 'App\ApplicationDetail')->where('imageable_id', $id)->orderBy('id', 'desc')->first();
+        return view('rms/application')->withuser($user)->withid($id)->withimage($image);  
     }
 
     public function recipients_management(){
@@ -76,12 +77,14 @@ class RecipientController extends Controller
         $user = User::find($id); 
         $user->blocked = true; 
         $user->save(); 
+        return response("Success", 200);
     }
 
     public function unblock($id){
         $user = User::find($id); 
         $user->blocked = false; 
         $user->save(); 
+        return response("Success", 200);
     }
  
     public function approved($id){
@@ -106,14 +109,14 @@ class RecipientController extends Controller
             $notify->save();
         }
         $user->applicationdetail->save(); 
-        return response('Success'); 
+        return response("Success", 200);
     }
 
     public function rejected($id){
         $user = User::find($id); 
         $user->applicationdetail->status = 2;
         $user->applicationdetail->save(); 
-        return response('Success'); 
+        return response("Success", 200);
     }
 
 }

@@ -7,6 +7,7 @@ use App\Notification;
 use App\Image; 
 use app\User;
 use Auth;
+use Session; 
 use App\Services\ImageUploadService;
 
 class UserController extends Controller
@@ -60,6 +61,7 @@ class UserController extends Controller
         foreach($request->files as $file)
         ImageUploadService::imageUpload($file, $user->id, "App\UserDetail");
 
+        Session::Flash("message", "Application has been Approved!");
         return response("Success", 200);
     }
 
@@ -68,6 +70,7 @@ class UserController extends Controller
         foreach($request->files as $file)
         ImageUploadService::imageUpload($file, $user->id, "App\ShippingOffice");
 
+        Session::Flash("message", "Application has been Approved!");
         return response("Success", 200);
     }
 }

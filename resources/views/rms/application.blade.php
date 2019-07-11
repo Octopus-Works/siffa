@@ -326,11 +326,9 @@
                                         </h5>
                                         <h6>Hard Copy of the Application Form:</h6>
                                         <div class="col-md-12 text-center mb-5">
-                                            {{ $temp = ''}}
-                                            @if ( isset($user->applicationdetail->images[0]->url))
-                                            @php $temp = $user->applicationdetail->images[0]->url @endphp
+                                            @if ( isset($image))
+                                                <img id="application" src="{{ url($image->url)}}" class="text-center" alt=""/>
                                             @endif
-                                            <img id="application" src="{{ url($temp)}}" class="text-center" alt=""/>
                                         </div>
                                         <div class="d-flex justify-content-center col-md-12">
                                             <div>
@@ -368,6 +366,7 @@
                 statusCode: {
                     200: function (msg) {
                         console.log("Success");
+                        window.location = '/rms/application/' + '{{ $id }}';
                     },
                 },
             });
@@ -387,6 +386,7 @@
                 statusCode: {
                     200: function (msg) {
                         console.log("Success");
+                        window.location = '/rms/application/' + '{{ $id }}';
                     },
                 },
             });
@@ -454,8 +454,17 @@
                 data: new FormData(this),
                 processData: false,
                 contentType: false,
-                success: function (data) {
-                    window.location = "http://www.yoururl.com";
+                statusCode: {
+                    401: function () {
+                        window.location = '/login';
+                    },
+                    500: function () {
+                        alert('500 status code! server error');
+                    },
+                    200: function (msg) {
+                        console.log('heeere');
+                        window.location = '/rms/application' + '{{ $user->id }}';
+                    },
                 },
             });
         });

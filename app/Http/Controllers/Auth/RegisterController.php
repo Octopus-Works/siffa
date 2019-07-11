@@ -90,13 +90,7 @@ class RegisterController extends Controller
                 'email'    => $request->email,
                 'role_id'  => $role->id,
             ]);
-        } catch( \Exception $e){
-            Session::flash('message', "Error in Registration data!");
-            return back();
-        }
 
-        
-        try{
             UserDetail::Create([
                 'user_id'       => $user->id,
                 'fullname'      => $request->fullname,
@@ -104,46 +98,29 @@ class RegisterController extends Controller
                 'mobile_number' => $request->mobile,
                 'phone_number'  => $request->phone,
             ]);
-        } catch( \Exception $e){
-            $user->delete();
-            Session::flash('message', "Error in Registration data!");
-            return back();
-        }
-        
-        try{
+
             $shippingOffice = ShippingOffice::Create([
                 'user_id'   => $user->id,
                 'name'      => $request->company_name,
                 'commercial_registry' => $request->commercial_registry,
                 'city'      => $request->city, 
             ]);
-        } catch( \Exception $e){
-            $user->delete();
-            Session::flash('message', "Error in Registration data!");
-            return back();
-        }
-        
-        try{
+
             $shippingService = ShippingService::Create([
                 'user_id' => $user->id,
             ]);
-        } catch( \Exception $e){
-            $user->delete();
-            Session::flash('message', "Error in Registration data!");
-            return back();
-        }
 
-        try{
             ApplicationDetail::Create([
                 'user_id' => $user->id,
                 'status'  => 1,
             ]);
+
             Auth::login($user);
             $shippingOffice->officeservices()->attach($shippingService);
             $data = array('username' => $username, 'password' => $password); 
             Mail::to($request->email)->send(new GenerateCredentials($data));
 
-        } catch( \Exception $e){
+        } catch(\Exception $e){
             $user->delete();
             Session::flash('message', "Error in Registration data!");
             return back(); 
@@ -151,40 +128,6 @@ class RegisterController extends Controller
 
         Session::flash('message', 'Credentials has been sent to your email');
         return redirect()->route('index');
-
-        // $application = new ApplicationDetail; 
-        // $application->user_id = $user->id;
-        // $application->Financial_assignment_status = $request->financial_status;
-        // $application->Date_of_application = $request->date_of_application; 
-        // $application->Resume_information = $request->resume_info;
-        // $application->save();
-        // $request->file('financial_photo')
-
-
-        // $details->father_name = $request->father; 
-        // $details->mother_name = $request->mother;
-        // $details->date_of_birth = $request->date_of_birth; 
-        // $details->place_of_birth = $request->place_of_birth;
-        // $details->website = $request->website; 
-        // $details->record = $request->record; 
-        // $details->address = preg_replace( "/\r|\n/", "", $request->address ); 
-        // $details->save(); 
-
-        // $office = new ShippingOffice;
-        // $office->addresses = preg_replace( "/\r|\n/", "", $request->branches_address ); 
-        // $office->shipping_services = $request->shipping_services; 
-        // $office->position_title = $request->position_title;
-        // $office->chamber_of_commerce = $request->chamber_of_commerce; 
-        // $office->save();
-
-        // $services = new ShippingService; 
-        // $services->user_id = $user->id;
-        // $chk = implode(' ', $request->shipping_methods);
-        // $chk1 = implode(' ', $request->shipping_modes);
-        // $services->shipping_methods = $chk;
-        // $services->shipping_modes = $chk1;
-        // $services->sources_destinations = $request->src_dest;
-        // $services->save(); 
        
     }
 }
