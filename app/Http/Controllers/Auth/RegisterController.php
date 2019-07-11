@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use Session; 
 use App\User;
-use App\Image; 
 use App\UserDetail; 
 use App\OfficeService; 
 use App\ShippingOffice; 
@@ -17,7 +17,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\GenerateCredentials;
 use Illuminate\Support\Facades\Mail;
 use TCG\Voyager\Models\Role;
-
 use App\Http\Requests\UserStoreRequest;
 
 class RegisterController extends Controller
@@ -80,7 +79,7 @@ class RegisterController extends Controller
 
         // Validation call from app\Requests\UserStoreRequest.php
         // $validated = $request->validated(); 
-        
+
         try{
             $username = str_random(10); 
             $password = str_random(10);
@@ -90,8 +89,7 @@ class RegisterController extends Controller
                 'email'    => $request->email,
                 'role_id'  => $role->id,
             ]);
-        } catch(Exception $e){
-            $user->delete();
+        } catch( \Exception $e){
             return redirect()->route('register');
         }
 
@@ -104,7 +102,7 @@ class RegisterController extends Controller
                 'mobile_number' => $request->mobile,
                 'phone_number'  => $request->phone,
             ]);
-        } catch(Exception $e){
+        } catch( \Exception $e){
             $user->delete();
             return redirect()->route('register');
         }
@@ -116,7 +114,7 @@ class RegisterController extends Controller
                 'commercial_registry' => $request->commercial_registry,
                 'city'      => $request->city, 
             ]);
-        } catch(Exception $e){
+        } catch( \Exception $e){
             $user->delete();
             return redirect()->route('register');
         }
@@ -125,7 +123,7 @@ class RegisterController extends Controller
             $shippingService = ShippingService::Create([
                 'user_id' => $user->id,
             ]);
-        } catch(Exception $e){
+        } catch( \Exception $e){
             $user->delete();
             return redirect()->route('register');
         }
@@ -135,14 +133,16 @@ class RegisterController extends Controller
                 'user_id' => $user->id,
                 'status'  => 1,
             ]);
+            $e = 4/0;
             $shippingOffice->officeservices()->attach($shippingService);
             $data = array('username' => $username, 'password' => $password); 
             Mail::to($request->email)->send(new GenerateCredentials($data));
-            
-            Session::flash('message', 'Account Details has been sent to your email!!');
-        } catch( Exception $e){
+            Toastr::success('Changes saved', 'Success');
+
+        } catch( \Exception $e){
             $user->delete();
-            return redirect()->route('register');
+            Session::flash('message', 'errrrrrrror');
+            return back(); 
         }
 
         return redirect()->route('index');

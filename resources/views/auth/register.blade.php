@@ -1,6 +1,3 @@
-@if(Session::has('message'))
-<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-@endif
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,7 +69,9 @@
 
     <!--Main Layout-->
     <main>
-
+        @if(Session::has('message'))
+            <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+        @endif
             
         <div class="view jarallax shadow-lg" style="height: 65vh;">
             <img class="jarallax-img" src={{url('img/3.jpg')}} alt="">
