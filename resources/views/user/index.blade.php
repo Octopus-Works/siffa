@@ -153,7 +153,7 @@
                                                         <input id="company_name" name="company_name" type="text"
                                                             value="{{ $user->shippingoffice->name }}"
                                                             class="validate form-control">
-                                                        <label for="company_name">{{ __('company_name') }}</label>
+                                                        <label for="company_name">{{ __('Company Name') }}</label>
 
                                                     </div>
                                                 </div>

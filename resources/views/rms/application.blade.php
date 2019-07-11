@@ -115,7 +115,11 @@
                 margin-left: 0;
             }
         }
-    
+        @media only screen and (min-width: 993px) {
+            .card{
+                padding:3.5rem!important;
+            }
+        }
 
     </style>
 </head>
@@ -136,12 +140,12 @@
 
         <div class="container">
             <!--Grid row-->
-            <div class="row mb-4 p-3">
+            <div class="row mb-5">
 
                 <!--Grid column-->
                 <div class="col-md-12">
-                    <div id="app_form">
-                        <div class="card p-5 mt-3 mb-3 shadow-lg custom-primary">
+                    <div class="card p-4 mt-3 mb-3 shadow-lg custom-primary">
+                        <div id="app_form">
                             <h2 class="text-center mb-5 font-weight-bolder">Application<i
                                     class="fas fa-clipboard custom-secondary-text ml-3"></i></h2>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1200px;">
