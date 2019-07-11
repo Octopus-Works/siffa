@@ -439,22 +439,22 @@
                 ];
 
                 var columnDefs = [{
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Id</h5>"
+                        responsivePriority: 6, title: "<h5 class='font-weight-bold custom-secondary-text'>Id</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Full name</h5>"
+                        responsivePriority: 1, title: "<h5 class='font-weight-bold custom-secondary-text'>Full name</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Father name</h5>"
+                        responsivePriority: 4, title: "<h5 class='font-weight-bold custom-secondary-text'>Father name</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Mother name</h5>"
+                        responsivePriority: 5, title: "<h5 class='font-weight-bold custom-secondary-text'>Mother name</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Address</h5>"
+                        responsivePriority: 3, title: "<h5 class='font-weight-bold custom-secondary-text'>Address</h5>"
                     },
                     {
-                        title: "<h5 class='font-weight-bold custom-secondary-text'>Office name</h5>"
+                        responsivePriority: 2, title: "<h5 class='font-weight-bold custom-secondary-text'>Office name</h5>"
                     }
                 ];
 
