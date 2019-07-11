@@ -176,7 +176,7 @@
                     <a id="MY ACCOUNT" class="dropdown-item waves-effect  custom-secondary-text"
                        href={{url("/redirect")}}>
                         MY ACCOUNT</a>
-                    <a class="dropdown-item waves-effect  custom-secondary-text" href="{{ url('/logout') }}">LOGOUT</a>
+                    <a class="dropdown-item waves-effect  custom-secondary-text" href="">LOGOUT</a>
                 </div>
 
             </li>

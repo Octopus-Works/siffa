@@ -292,8 +292,8 @@
         }
 
         .badge-danger {
-    background-color: #ffc107!important;
-}
+        background-color: #ffc107!important;
+        }
         .grey-text {
             color: #9e9e9e !important;
         }
@@ -311,7 +311,7 @@
 
         .blue-text {
          color: #ffc107!important;
-}
+        }
 
         a {
             cursor: pointer;
@@ -499,6 +499,9 @@
     <!-- Main layout --->
     <main>
 
+            @if(Session::has('message'))
+                <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+            @endif
         <div class="container mt-5 mb-5">
 
             <!-- Magazine --->

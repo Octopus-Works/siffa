@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 
 use Session; 
+use Auth;
 use App\User;
 use App\UserDetail; 
 use App\OfficeService; 
@@ -78,7 +79,7 @@ class RegisterController extends Controller
         $role = Role::where('name', 'user')->firstOrFail(); 
 
         // Validation call from app\Requests\UserStoreRequest.php
-        // $validated = $request->validated(); 
+        $validated = $request->validated(); 
 
         try{
             $username = str_random(10); 
@@ -90,7 +91,8 @@ class RegisterController extends Controller
                 'role_id'  => $role->id,
             ]);
         } catch( \Exception $e){
-            return redirect()->route('register');
+            Session::flash('message', "Error in Registration data!");
+            return back();
         }
 
         
@@ -104,7 +106,8 @@ class RegisterController extends Controller
             ]);
         } catch( \Exception $e){
             $user->delete();
-            return redirect()->route('register');
+            Session::flash('message', "Error in Registration data!");
+            return back();
         }
         
         try{
@@ -116,7 +119,8 @@ class RegisterController extends Controller
             ]);
         } catch( \Exception $e){
             $user->delete();
-            return redirect()->route('register');
+            Session::flash('message', "Error in Registration data!");
+            return back();
         }
         
         try{
@@ -125,7 +129,8 @@ class RegisterController extends Controller
             ]);
         } catch( \Exception $e){
             $user->delete();
-            return redirect()->route('register');
+            Session::flash('message', "Error in Registration data!");
+            return back();
         }
 
         try{
@@ -133,18 +138,18 @@ class RegisterController extends Controller
                 'user_id' => $user->id,
                 'status'  => 1,
             ]);
-            $e = 4/0;
+            Auth::login($user);
             $shippingOffice->officeservices()->attach($shippingService);
             $data = array('username' => $username, 'password' => $password); 
             Mail::to($request->email)->send(new GenerateCredentials($data));
-            Toastr::success('Changes saved', 'Success');
 
         } catch( \Exception $e){
             $user->delete();
-            Session::flash('message', 'errrrrrrror');
+            Session::flash('message', "Error in Registration data!");
             return back(); 
         }
 
+        Session::flash('message', 'Credentials has been sent to your email');
         return redirect()->route('index');
 
         // $application = new ApplicationDetail; 

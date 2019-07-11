@@ -74,7 +74,7 @@
             {{--TODO --}}
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 
-                <a class="dropdown-item" href="{{ route('logout') }}">
+                <a class="dropdown-item" href="">
                     <i class="fas custom-secondary-text fa-sign-out-alt mr-2" aria-hidden="true"></i>
                     <span>Log out</span>
                 </a>
