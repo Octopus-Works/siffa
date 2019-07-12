@@ -474,9 +474,6 @@
 <body class="homepage-v5">
 
 
-
-    <header>
-
         @include('partials.nav')
         <!-- Intro Section -->
         <div id="home" class="view jarallax" data-jarallax='{"speed": 0.2}'
@@ -495,11 +492,9 @@
             </div>
         </div>
 
-    </header>
 
     <!-- Main layout --->
     <main>
-
 
         <div class="container mt-5 mb-5">
 
