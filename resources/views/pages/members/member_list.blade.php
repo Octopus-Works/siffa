@@ -13,16 +13,10 @@
     <!-- DataTables Select CSS -->
 
     <style>
-        .mt-5 {
-            margin-top: 6rem !important;
+        
+        .mt-5{
+            margin-top:7rem!important;
         }
-
-
-        .btn.btn-sm {
-            padding: .7rem !important;
-            font-size: .7rem !important;
-        }
-
         table.dataTable thead .sorting:after,
         table.dataTable thead .sorting:before,
         table.dataTable thead .sorting_asc:after,
@@ -44,53 +38,102 @@
         }
 
 
- 
 
 
 
 
 
-.md-form input[type=date], .md-form input[type=datetime-local], .md-form input[type=email], .md-form input[type=number], .md-form input[type=password], .md-form input[type=search-md], .md-form input[type=search], .md-form input[type=tel], .md-form input[type=text], .md-form input[type=time], .md-form input[type=url], .md-form textarea.md-textarea {
-    color: snow !important
-}
+
+        .md-form input[type=date],
+        .md-form input[type=datetime-local],
+        .md-form input[type=email],
+        .md-form input[type=number],
+        .md-form input[type=password],
+        .md-form input[type=search-md],
+        .md-form input[type=search],
+        .md-form input[type=tel],
+        .md-form input[type=text],
+        .md-form input[type=time],
+        .md-form input[type=url],
+        .md-form textarea.md-textarea {
+            color: snow !important
+        }
 
 
-.md-form .prefix.active, .md-form textarea~label.active, .md-form.md-outline .prefix:focus, .md-form.md-outline input[type=date]:focus:not([readonly])+label, .md-form.md-outline input[type=datetime-local]:focus:not([readonly])+label, .md-form.md-outline input[type=email]:focus:not([readonly])+label, .md-form.md-outline input[type=number]:focus:not([readonly])+label, .md-form.md-outline input[type=password]:focus:not([readonly])+label, .md-form.md-outline input[type=search-md]:focus:not([readonly])+label, .md-form.md-outline input[type=search]:focus:not([readonly])+label, .md-form.md-outline input[type=tel]:focus:not([readonly])+label, .md-form.md-outline input[type=text]:focus:not([readonly])+label, .md-form.md-outline input[type=time]:focus:not([readonly])+label, .md-form.md-outline input[type=url]:focus:not([readonly])+label, .md-form.md-outline textarea.md-textarea:focus:not([readonly])+label {
-    color: #ffc107!important;
-}
+        .md-form .prefix.active,
+        .md-form textarea~label.active,
+        .md-form.md-outline .prefix:focus,
+        .md-form.md-outline input[type=date]:focus:not([readonly])+label,
+        .md-form.md-outline input[type=datetime-local]:focus:not([readonly])+label,
+        .md-form.md-outline input[type=email]:focus:not([readonly])+label,
+        .md-form.md-outline input[type=number]:focus:not([readonly])+label,
+        .md-form.md-outline input[type=password]:focus:not([readonly])+label,
+        .md-form.md-outline input[type=search-md]:focus:not([readonly])+label,
+        .md-form.md-outline input[type=search]:focus:not([readonly])+label,
+        .md-form.md-outline input[type=tel]:focus:not([readonly])+label,
+        .md-form.md-outline input[type=text]:focus:not([readonly])+label,
+        .md-form.md-outline input[type=time]:focus:not([readonly])+label,
+        .md-form.md-outline input[type=url]:focus:not([readonly])+label,
+        .md-form.md-outline textarea.md-textarea:focus:not([readonly])+label {
+            color: #ffc107 !important;
+        }
 
 
-.md-form input[type=date]:focus:not([readonly]), .md-form input[type=datetime-local]:focus:not([readonly]), .md-form input[type=email]:focus:not([readonly]), .md-form input[type=number]:focus:not([readonly]), .md-form input[type=password]:focus:not([readonly]), .md-form input[type=search-md]:focus:not([readonly]), .md-form input[type=search]:focus:not([readonly]), .md-form input[type=tel]:focus:not([readonly]), .md-form input[type=text]:focus:not([readonly]), .md-form input[type=time]:focus:not([readonly]), .md-form input[type=url]:focus:not([readonly]), .md-form textarea.md-textarea:focus:not([readonly]) {
-    -webkit-box-shadow: 0 1px 0 0 #ffc107;
-    box-shadow: 0 1px 0 0 #ffc107;
-    border-bottom: 1px solid #ffc107;
-    color: whitesmoke !important;
-}
+        .md-form input[type=date]:focus:not([readonly]),
+        .md-form input[type=datetime-local]:focus:not([readonly]),
+        .md-form input[type=email]:focus:not([readonly]),
+        .md-form input[type=number]:focus:not([readonly]),
+        .md-form input[type=password]:focus:not([readonly]),
+        .md-form input[type=search-md]:focus:not([readonly]),
+        .md-form input[type=search]:focus:not([readonly]),
+        .md-form input[type=tel]:focus:not([readonly]),
+        .md-form input[type=text]:focus:not([readonly]),
+        .md-form input[type=time]:focus:not([readonly]),
+        .md-form input[type=url]:focus:not([readonly]),
+        .md-form textarea.md-textarea:focus:not([readonly]) {
+            -webkit-box-shadow: 0 1px 0 0 #ffc107;
+            box-shadow: 0 1px 0 0 #ffc107;
+            border-bottom: 1px solid #ffc107;
+            color: whitesmoke !important;
+        }
 
-.md-form input[type=date]:focus:not([readonly])+label, .md-form input[type=datetime-local]:focus:not([readonly])+label, .md-form input[type=email]:focus:not([readonly])+label, .md-form input[type=number]:focus:not([readonly])+label, .md-form input[type=password]:focus:not([readonly])+label, .md-form input[type=search-md]:focus:not([readonly])+label, .md-form input[type=search]:focus:not([readonly])+label, .md-form input[type=tel]:focus:not([readonly])+label, .md-form input[type=text]:focus:not([readonly])+label, .md-form input[type=time]:focus:not([readonly])+label, .md-form input[type=url]:focus:not([readonly])+label, .md-form textarea.md-textarea:focus:not([readonly])+label {
-    color: #ffc107!important;
-}
+        .md-form input[type=date]:focus:not([readonly])+label,
+        .md-form input[type=datetime-local]:focus:not([readonly])+label,
+        .md-form input[type=email]:focus:not([readonly])+label,
+        .md-form input[type=number]:focus:not([readonly])+label,
+        .md-form input[type=password]:focus:not([readonly])+label,
+        .md-form input[type=search-md]:focus:not([readonly])+label,
+        .md-form input[type=search]:focus:not([readonly])+label,
+        .md-form input[type=tel]:focus:not([readonly])+label,
+        .md-form input[type=text]:focus:not([readonly])+label,
+        .md-form input[type=time]:focus:not([readonly])+label,
+        .md-form input[type=url]:focus:not([readonly])+label,
+        .md-form textarea.md-textarea:focus:not([readonly])+label {
+            color: #ffc107 !important;
+        }
 
-.form-control{
-    color:whitesmoke !important;
-}
+        .form-control {
+            color: whitesmoke !important;
+        }
 
-.custom-control-label::before {
-    background-color: #ffffff00!important;
-}
-.md-form label{
-    color:#dedede!important;
-}
+        .custom-control-label::before {
+            background-color: #ffffff00 !important;
+        }
 
-.custom-control-label::after{
-    cursor:initial;
-}
+        .md-form label {
+            color: #dedede !important;
+        }
+
+        .custom-control-label::after {
+            cursor: initial;
+        }
+
     </style>
 
 
 </head>
 
-<body class="">
+<body>
 
     <!-- Navigation -->
     <header>
@@ -106,7 +149,7 @@
         <main>
             <div class="view"
                 style="background-image:url('img/7.jpg'); background-repeat:no-repeat;background-size: cover; background-position: center center;">
-                <div class="container p-5" style="height:900px">
+                <div class="container mt-5 p-5" style="height:900px">
                     <div class="mask flex-center rgba-black-slight">
                         <div class="container mb-5 mt-5 ">
 
@@ -121,13 +164,15 @@
                                     <a href="" class="custom-secondary-text mx-3 h3-responsive">Shipping Offices</a>
 
                                     <div>
-                                            <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_filter">
-                                              <span>filter</span>
-                                              <i class="fas fa-sliders-h mt-0"></i>
-                                            </button>
-                      
-                        
-                                          </div>
+                                        <button type="button" id="new"
+                                            class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal"
+                                            data-target="#modal_filter">
+                                            <span>filter</span>
+                                            <i class="fas fa-sliders-h mt-0"></i>
+                                        </button>
+
+
+                                    </div>
                                 </div>
                                 <!--/Card header-->
 
@@ -167,136 +212,190 @@
 
 
         <style>
+            .close {
+                float: right;
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 1;
+                color: #ffc107;
+                text-shadow: 0 1px 0 #ffc107;
+                opacity: .5;
+            }
+
+            .md-form input[type=date],
+            .md-form input[type=datetime-local],
+            .md-form input[type=email],
+            .md-form input[type=number],
+            .md-form input[type=password],
+            .md-form input[type=search-md],
+            .md-form input[type=search],
+            .md-form input[type=tel],
+            .md-form input[type=text],
+            .md-form input[type=time],
+            .md-form input[type=url],
+            .md-form textarea.md-textarea {
+                color: snow !important
+            }
+
+
+            .md-form .prefix.active,
+            .md-form textarea~label.active,
+            .md-form.md-outline .prefix:focus,
+            .md-form.md-outline input[type=date]:focus:not([readonly])+label,
+            .md-form.md-outline input[type=datetime-local]:focus:not([readonly])+label,
+            .md-form.md-outline input[type=email]:focus:not([readonly])+label,
+            .md-form.md-outline input[type=number]:focus:not([readonly])+label,
+            .md-form.md-outline input[type=password]:focus:not([readonly])+label,
+            .md-form.md-outline input[type=search-md]:focus:not([readonly])+label,
+            .md-form.md-outline input[type=search]:focus:not([readonly])+label,
+            .md-form.md-outline input[type=tel]:focus:not([readonly])+label,
+            .md-form.md-outline input[type=text]:focus:not([readonly])+label,
+            .md-form.md-outline input[type=time]:focus:not([readonly])+label,
+            .md-form.md-outline input[type=url]:focus:not([readonly])+label,
+            .md-form.md-outline textarea.md-textarea:focus:not([readonly])+label {
+                color: #ffc107 !important;
+            }
+
+
+            .md-form input[type=date]:focus:not([readonly]),
+            .md-form input[type=datetime-local]:focus:not([readonly]),
+            .md-form input[type=email]:focus:not([readonly]),
+            .md-form input[type=number]:focus:not([readonly]),
+            .md-form input[type=password]:focus:not([readonly]),
+            .md-form input[type=search-md]:focus:not([readonly]),
+            .md-form input[type=search]:focus:not([readonly]),
+            .md-form input[type=tel]:focus:not([readonly]),
+            .md-form input[type=text]:focus:not([readonly]),
+            .md-form input[type=time]:focus:not([readonly]),
+            .md-form input[type=url]:focus:not([readonly]),
+            .md-form textarea.md-textarea:focus:not([readonly]) {
+                -webkit-box-shadow: 0 1px 0 0 #ffc107;
+                box-shadow: 0 1px 0 0 #ffc107;
+                border-bottom: 1px solid #ffc107;
+                color: whitesmoke !important;
+            }
+
+            .md-form input[type=date]:focus:not([readonly])+label,
+            .md-form input[type=datetime-local]:focus:not([readonly])+label,
+            .md-form input[type=email]:focus:not([readonly])+label,
+            .md-form input[type=number]:focus:not([readonly])+label,
+            .md-form input[type=password]:focus:not([readonly])+label,
+            .md-form input[type=search-md]:focus:not([readonly])+label,
+            .md-form input[type=search]:focus:not([readonly])+label,
+            .md-form input[type=tel]:focus:not([readonly])+label,
+            .md-form input[type=text]:focus:not([readonly])+label,
+            .md-form input[type=time]:focus:not([readonly])+label,
+            .md-form input[type=url]:focus:not([readonly])+label,
+            .md-form textarea.md-textarea:focus:not([readonly])+label {
+                color: #ffc107 !important;
+            }
+
+            .form-control {
+                color: whitesmoke !important;
+            }
 
 
 
-.close {
-    float: right;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-    color: #ffc107;
-    text-shadow: 0 1px 0 #ffc107;
-    opacity: .5;
-}
-                .md-form input[type=date], .md-form input[type=datetime-local], .md-form input[type=email], .md-form input[type=number], .md-form input[type=password], .md-form input[type=search-md], .md-form input[type=search], .md-form input[type=tel], .md-form input[type=text], .md-form input[type=time], .md-form input[type=url], .md-form textarea.md-textarea {
-                    color: snow !important
-                }
-                
-                
-                .md-form .prefix.active, .md-form textarea~label.active, .md-form.md-outline .prefix:focus, .md-form.md-outline input[type=date]:focus:not([readonly])+label, .md-form.md-outline input[type=datetime-local]:focus:not([readonly])+label, .md-form.md-outline input[type=email]:focus:not([readonly])+label, .md-form.md-outline input[type=number]:focus:not([readonly])+label, .md-form.md-outline input[type=password]:focus:not([readonly])+label, .md-form.md-outline input[type=search-md]:focus:not([readonly])+label, .md-form.md-outline input[type=search]:focus:not([readonly])+label, .md-form.md-outline input[type=tel]:focus:not([readonly])+label, .md-form.md-outline input[type=text]:focus:not([readonly])+label, .md-form.md-outline input[type=time]:focus:not([readonly])+label, .md-form.md-outline input[type=url]:focus:not([readonly])+label, .md-form.md-outline textarea.md-textarea:focus:not([readonly])+label {
-                    color: #ffc107!important;
-                }
-                
-                
-                .md-form input[type=date]:focus:not([readonly]), .md-form input[type=datetime-local]:focus:not([readonly]), .md-form input[type=email]:focus:not([readonly]), .md-form input[type=number]:focus:not([readonly]), .md-form input[type=password]:focus:not([readonly]), .md-form input[type=search-md]:focus:not([readonly]), .md-form input[type=search]:focus:not([readonly]), .md-form input[type=tel]:focus:not([readonly]), .md-form input[type=text]:focus:not([readonly]), .md-form input[type=time]:focus:not([readonly]), .md-form input[type=url]:focus:not([readonly]), .md-form textarea.md-textarea:focus:not([readonly]) {
-                    -webkit-box-shadow: 0 1px 0 0 #ffc107;
-                    box-shadow: 0 1px 0 0 #ffc107;
-                    border-bottom: 1px solid #ffc107;
-                    color: whitesmoke !important;
-                }
-                
-                .md-form input[type=date]:focus:not([readonly])+label, .md-form input[type=datetime-local]:focus:not([readonly])+label, .md-form input[type=email]:focus:not([readonly])+label, .md-form input[type=number]:focus:not([readonly])+label, .md-form input[type=password]:focus:not([readonly])+label, .md-form input[type=search-md]:focus:not([readonly])+label, .md-form input[type=search]:focus:not([readonly])+label, .md-form input[type=tel]:focus:not([readonly])+label, .md-form input[type=text]:focus:not([readonly])+label, .md-form input[type=time]:focus:not([readonly])+label, .md-form input[type=url]:focus:not([readonly])+label, .md-form textarea.md-textarea:focus:not([readonly])+label {
-                    color: #ffc107!important;
-                }
-                
-                .form-control{
-                    color:whitesmoke !important;
-                }
+
+            .modal-content {
+                position: relative;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                width: 100%;
+                pointer-events: auto;
+                background-color: unset !important;
+                background-clip: padding-box;
+                border: 1px solid rgba(0, 0, 0, .2);
+                border-radius: .3rem;
+                outline: 0;
+            }
+
+        </style>
+        <div class="modal fade mt-5" id="modal_filter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
 
 
 
-
-                .modal-content {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 100%;
-    pointer-events: auto;
-    background-color: unset !important;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: .3rem;
-    outline: 0;
-}
-                    </style>
-                <div class="modal fade mt-5" id="modal_filter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                
-                
-                
-                  <div class="modal-dialog modal-lg  custom-primary" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header text-center">
+            <div class="modal-dialog modal-lg  custom-primary" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
                         <h4 class="modal-title w-100 font-weight-bold custom-secondary-text">Filter</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">&times;</span>
                         </button>
-                      </div>
-                
-                
-                
-     <!--Body-->
-     <div class="modal-body container text-center " >
-           
-
-
-            <div class="row   ">
-                    <div class="md-form col-12 ml-auto ">
-                        <h6 class="font-weight-bold custom-secondary-text">Available Shipping Methods:</h6>
-                        <div class="custom-control custom-checkbox ml-4">
-                            <input type="checkbox" class="custom-control-input" id="method1" name="shipping_methods[]" value="LTL">
-                            <label class="custom-control-label" for="method1">Less Than Track Load(LTL)</label>
-                        </div>
-                        <div class="custom-control custom-checkbox ml-4">
-                            <input type="checkbox" class="custom-control-input" id="method2" name="shipping_methods[]" value="FTL">
-                            <label class="custom-control-label" for="method2">Full Track Load(FTL)</label>
-                        </div>
-                    </div>
-                    <div class="md-form col-12 ml-auto">
-                        <h6 class="font-weight-bold custom-secondary-text">External Shipping Modes:</h6>
-                        <div class="custom-control custom-checkbox ml-4">
-
-                            <input type="checkbox" class="custom-control-input" id="mode1" name="shipping_modes[]" value="Wild">
-                            <label class="custom-control-label" for="mode1">Land Transport</label>
-                        </div>
-                        <div class="custom-control custom-checkbox ml-4">
-                            <input type="checkbox" class="custom-control-input" id="mode2" name="shipping_modes[]" value="Aerial">
-                            <label class="custom-control-label" for="mode2">Air Transport</label>
-                        </div>
-                        <div class="custom-control custom-checkbox ml-4">
-                            <input type="checkbox" class="custom-control-input" id="mode3" name="shipping_modes[]" value="Nautical">
-                            <label class="custom-control-label" for="mode3">Water Transport</label>
-                        </div>
                     </div>
 
-                </div>
 
 
-    </div>
+                    <!--Body-->
+                    <div class="modal-body container text-center ">
 
 
 
-                      <div class="modal-footer d-flex justify-content-center">
-                        <button  type="" class="btn btn-rounded custom-secondary black-text" data-dismiss="modal">close </button>
-                        <button  type="" id="replay" class="btn btn-rounded custom-secondary black-text" data-dismiss="modal">filter </button>
-                
-                      </div>
+                        <div class="row   ">
+                            <div class="md-form col-12 ml-auto ">
+                                <h6 class="font-weight-bold custom-secondary-text">Available Shipping Methods:</h6>
+                                <div class="custom-control custom-checkbox ml-4">
+                                    <input type="checkbox" class="custom-control-input" id="method1"
+                                        name="shipping_methods[]" value="LTL">
+                                    <label class="custom-control-label" for="method1">Less Than Track Load(LTL)</label>
+                                </div>
+                                <div class="custom-control custom-checkbox ml-4">
+                                    <input type="checkbox" class="custom-control-input" id="method2"
+                                        name="shipping_methods[]" value="FTL">
+                                    <label class="custom-control-label" for="method2">Full Track Load(FTL)</label>
+                                </div>
+                            </div>
+                            <div class="md-form col-12 ml-auto">
+                                <h6 class="font-weight-bold custom-secondary-text">External Shipping Modes:</h6>
+                                <div class="custom-control custom-checkbox ml-4">
+
+                                    <input type="checkbox" class="custom-control-input" id="mode1"
+                                        name="shipping_modes[]" value="Wild">
+                                    <label class="custom-control-label" for="mode1">Land Transport</label>
+                                </div>
+                                <div class="custom-control custom-checkbox ml-4">
+                                    <input type="checkbox" class="custom-control-input" id="mode2"
+                                        name="shipping_modes[]" value="Aerial">
+                                    <label class="custom-control-label" for="mode2">Air Transport</label>
+                                </div>
+                                <div class="custom-control custom-checkbox ml-4">
+                                    <input type="checkbox" class="custom-control-input" id="mode3"
+                                        name="shipping_modes[]" value="Nautical">
+                                    <label class="custom-control-label" for="mode3">Water Transport</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="" class="btn btn-rounded custom-secondary black-text" data-dismiss="modal">close
+                        </button>
+                        <button type="" id="replay" class="btn btn-rounded custom-secondary black-text"
+                            data-dismiss="modal">filter </button>
+
+                    </div>
                     </form>
-                    </div>
-                  </div>
                 </div>
-                    
-                    
-                
-                    
-                    
-                    
-                    
+            </div>
+        </div>
 
 
-    
+
+
+
+
+
+
+
+
 
 
         <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>
@@ -308,15 +407,15 @@
 
 
                 var dataSet = [
-                    @if ( @isset($users))
-                        @foreach($users as $user)[
+                    @if(@isset($users))
+                    @foreach($users as $user)[
 
 
-                            `{{ $user->shippingoffice->name }}`,
-                            `{{ $user->shippingoffice->city }}`,
-                            `<a href='{{url('company_info').'/'.$user->id}}' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
-                        ],
-                        @endforeach
+                        `{{ $user->shippingoffice->name }}`,
+                        `{{ $user->shippingoffice->city }}`,
+                        `<a href='{{url('company_info').'/'.$user->id}}' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
+                    ],
+                    @endforeach
                     @endif
 
                 ];

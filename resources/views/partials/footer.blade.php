@@ -15,7 +15,7 @@
               <h6 class="text-uppercase mb-4 font-weight-bold">About
                 <img style="
 				height: auto !important;
-				width: 60px !important;
+				width: 84px !important;
 			" src="{{url('/img/Logos/logo_xs_1.png')}}" />
               </h6>
               <p style="font-size: 18px !important;">

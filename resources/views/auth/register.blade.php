@@ -150,7 +150,7 @@
                             </div>
 
                             <div class="d-flex justify-content-center">
-                                <button class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
+                                <button class="waves-effect waves-dark btn-large btn custom-secondary m-0 mt-4"
                                     type="submit">{{ __('SUBMIT') }}</button>
                             </div>
                         </form>

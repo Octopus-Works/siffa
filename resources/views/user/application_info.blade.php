@@ -207,7 +207,7 @@
                     <div class="card p-4  mt-3 mb-3 shadow-lg custom-primary">
                         <form id="app_form1" enctype="multipart/form-data" method="POST">
                             @csrf
-                            <h2 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard amber-text ml-3"></i></h2>
+                            <h2 class="text-center mb-5 font-weight-bolder">Register<i class="fas fa-clipboard custom-secondary-text ml-3"></i></h2>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1550px;">
                                 <li class="step active">
 
@@ -311,7 +311,7 @@
                                             </div>
                                         </div>
                                         <div class="mt-3 text-center">
-                                            <button type="submit" class="waves-effect waves-dark btn btn-sm btn-amber"  style="font-size: 11.96px" >Save Changes</button>
+                                            <button type="submit" class="waves-effect waves-dark btn btn-sm custom-secondary"  style="font-size: 11.96px" >Save Changes</button>
                                             <button class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
                                     </div>
@@ -430,7 +430,7 @@
                                         <div class="mt-4 text-center">
                                             <button
                                                 class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button type="submit" class="waves-effect waves-dark btn btn-sm btn-amber" style="font-size: 11.96px">Save Changes</button>
+                                            <button type="submit" class="waves-effect waves-dark btn btn-sm custom-secondary" style="font-size: 11.96px">Save Changes</button>
                                             <button
                                                 class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
                                         </div>
@@ -470,7 +470,7 @@
                                         <div class="mt-2 text-center">
                                             <button
                                                 class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
-                                            <button type="submit" class="waves-effect waves-dark btn btn-sm btn-amber" style="font-size: 11.96px">Save Changes</button>
+                                            <button type="submit" class="waves-effect waves-dark btn btn-sm custom-secondary" style="font-size: 11.96px">Save Changes</button>
                                         </div>
                                     </div>
                                 </li>

@@ -104,18 +104,19 @@
 
 </style>
 
-<nav class="navbar navbar-expand-lg custom-secondary d-flex justify-content-center fixed-top">
+<nav id="banner" class="navbar navbar-expand-lg custom-secondary d-flex justify-content-center fixed-top">
     <form class="form-inline">
-        <h6 class="font-weight-bold mt-2 mr-3">70% Off Our Services!</h6>
-        <a href="" class="btn btn-sm align-middle animated pulse infinite custom-tertiary white-text" type="button">See Offer</a>
+        <h6 class="font-weight-bold mt-2 mr-3 black-text">70% Off Our Services!</h6>
+        <a href="" class="btn btn-sm align-middle animated pulse infinite custom-tertiary white-text" type="button">See
+            Offer</a>
     </form>
 </nav>
-<nav class="navbar navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar fixed-top p-4" style="margin-top:59px">
+<nav id="navbar" class="navbar navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar fixed-top" style="margin-top:59px">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img style="
 				height: auto !important;
-				width: 150px !important;
+				width: 210px !important;
 			" src="{{url('/img/Logos/logo_xs_1.png')}}" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -217,3 +218,13 @@
         </div>
     </div>
 </nav>
+
+{{-- <script type="text/javascript" src={{url("js/jquery-3.3.1.min.js")}}></script>
+
+<script>
+    $(document).ready(function () {
+        if ($("#banner").hasClass("visible"))
+            $("#navbar").css('margin-top','59px');
+    });
+
+</script> --}}

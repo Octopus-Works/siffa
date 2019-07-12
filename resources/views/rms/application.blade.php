@@ -212,7 +212,7 @@
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn btn-amber next-step">NEXT</button>
+                                            <button class="waves-effect waves-dark btn custom-secondary next-step">NEXT</button>
                                         </div>
                                     </div>
                                 </li>
@@ -313,7 +313,7 @@
                                                 </div>
                                             </div>
                                             <div class=" d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn btn-amber next-step">NEXT</button>
+                                                <button class="waves-effect waves-dark btn custom-secondary next-step">NEXT</button>
                                             </div>
                                     </div>
                                 </li>
