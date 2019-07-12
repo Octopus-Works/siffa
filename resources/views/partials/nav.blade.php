@@ -10,6 +10,7 @@
         font-size: 14px !important;
     }
 
+
     .nav-item .dropdown-item {
         letter-spacing: 1.1px !important;
         text-transform: uppercase !important;
@@ -102,6 +103,40 @@
         }
     }
 
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1260px;
+        }
+    }
+
+
+    .close {
+        float: right;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #ffc107;
+        text-shadow: 0 1px 0 #ffc107;
+        opacity: .5;
+    }
+
+
+
+    .modal-content {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: unset !important;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: .3rem;
+        outline: 0;
+    }
+
 </style>
 
 <nav id="banner" class="navbar navbar-expand-lg custom-secondary d-flex justify-content-center fixed-top">
@@ -111,7 +146,8 @@
             Offer</a>
     </form>
 </nav>
-<nav id="navbar" class="navbar navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar fixed-top" style="margin-top:59px">
+<nav id="navbar" class="navbar navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar fixed-top"
+    style="margin-top:59px">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img style="
@@ -169,6 +205,15 @@
                 <li class="nav-item padding-sides">
                     <a class="nav-link" href={{route('contact')}}>Contact Us</a>
                 </li>
+                <li class="nav-item dropdown padding-sides">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Tools & Info</a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" data-toggle="modal" data-target="#modal_freight">Freight Volume
+                            Calculator</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#modal_cbm">CBM</a>
+                    </div>
+                </li>
             </ul>
             {{-- <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item">
@@ -224,7 +269,78 @@
 <script>
     $(document).ready(function () {
         if ($("#banner").hasClass("visible"))
-            $("#navbar").css('margin-top','59px');
+            $("#navbar").css('margin-top', '59px');
     });
 
 </script> --}}
+
+<div class="modal fade mt-5" id="modal_freight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+
+
+
+    <div class="modal-dialog modal-lg " role="document" style="background-color: #1c2331">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold custom-secondary-text">Freight Volume Calculator</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+
+            <!--Body-->
+            <div class="modal-body container text-center ">
+
+
+
+            </div>
+
+
+
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="" class="btn btn-rounded custom-secondary black-text" data-dismiss="modal">close
+                </button>
+
+
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade mt-5" id="modal_cbm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+
+
+
+    <div class="modal-dialog modal-lg  custom-primary" role="document"  style="background-color: #1c2331">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold custom-secondary-text">CBM</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+
+            <!--Body-->
+            <div class="modal-body container text-center ">
+
+
+
+            </div>
+
+
+
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="" class="btn btn-rounded custom-secondary black-text" data-dismiss="modal">close
+                </button>
+
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
