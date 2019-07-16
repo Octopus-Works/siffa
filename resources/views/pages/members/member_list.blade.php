@@ -225,136 +225,127 @@
 
 
         <div class="modal-dialog modal-md  custom-primary" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold custom-secondary-text">Filter</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+            <form method="POST" action="{{route('test')}}">
+                @csrf
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold custom-secondary-text">Filter</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
 
 
-                <!--Body-->
-                <div class="modal-body">
+                    <!--Body-->
+                    <div class="modal-body">
 
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class=" md-form col-md-12">
-                                <h6 class="font-weight-bold">City:</h6>
-                                <select class="mdb-select" name="city">
-                                    <option disabled selected>Choose City</option>
-                                    <option value="Al Hasakah">Al Hasakah</option>
-                                    <option value="Al Ladhiqiyah">Al Ladhiqiyah</option>
-                                    <option value="Al Qunaytirah">Al Qunaytirah</option>
-                                    <option value="Ar Raqqah">Ar Raqqah</option>
-                                    <option value="As Suwayda'">As Suwayda'</option>
-                                    <option value="Dar'a">Dar'a</option>
-                                    <option value="Dayr az Zawr">Dayr az Zawr</option>
-                                    <option value="Dimashq">Dimashq</option>
-                                    <option value="Halab">Halab</option>
-                                    <option value="Hamah">Hamah</option>
-                                    <option value="Hims">Hims</option>
-                                    <option value="Idlib">Idlib</option>
-                                    <option value="Rif Dimashq">Rif Dimashq</option>
-                                    <option value="Tartus">Tartus</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="md-form col-md-12">
-                                <h6 class="font-weight-bold">Available Shipping Methods:</h6>
-                                <ul>
-                                    <div class="custom-control custom-checkbox p-2">
-                                        <input type="checkbox" name="shipping_modes[]" value="International"
-                                            class="custom-control-input" id="method1">
-                                        <label class="custom-control-label" for="method1">International
-                                            Shipping</label>
+                        <div class="container-fluid">
+                                <div class="row">
+                                    <div class=" md-form col-md-12">
+                                        <h6 class="font-weight-bold">City:</h6>
+                                        <select class="mdb-select" name="city">
+                                            <option disabled selected>Choose City</option>
+                                            <option value="Al Hasakah">Al Hasakah</option>
+                                            <option value="Al Ladhiqiyah">Al Ladhiqiyah</option>
+                                            <option value="Al Qunaytirah">Al Qunaytirah</option>
+                                            <option value="Ar Raqqah">Ar Raqqah</option>
+                                            <option value="As Suwayda'">As Suwayda'</option>
+                                            <option value="Dar'a">Dar'a</option>
+                                            <option value="Dayr az Zawr">Dayr az Zawr</option>
+                                            <option value="Dimashq">Dimashq</option>
+                                            <option value="Halab">Halab</option>
+                                            <option value="Hamah">Hamah</option>
+                                            <option value="Hims">Hims</option>
+                                            <option value="Idlib">Idlib</option>
+                                            <option value="Rif Dimashq">Rif Dimashq</option>
+                                            <option value="Tartus">Tartus</option>
+                                        </select>
                                     </div>
-                                    <ul id="international">
-                                        <div class="custom-control custom-checkbox p-2">
-                                            <input type="checkbox" class="custom-control-input" name="shipping_modes[]"
-                                                value="LandTransport" id="method11">
-                                            <label class="custom-control-label" for="method11">LandTransport</label>
-                                        </div>
-                                        <ul id="land">
+                                </div>
+                                <div class="row">
+                                    <div class="md-form col-md-12">
+                                        <h6 class="font-weight-bold">Available Shipping Methods:</h6>
+                                        <ul>
                                             <div class="custom-control custom-checkbox p-2">
-                                                <input type="checkbox" name="shipping_modes[]" value="ETL"
-                                                    class="custom-control-input" id="method111">
-                                                <label class="custom-control-label" for="method111">ETL</label>
+                                                <input type="checkbox" name="shipping_modes[]" value="International"
+                                                    class="custom-control-input" id="method1">
+                                                <label class="custom-control-label" for="method1">International
+                                                    Shipping</label>
                                             </div>
+                                            <ul id="international">
+                                                <div class="custom-control custom-checkbox p-2">
+                                                    <input type="checkbox" class="custom-control-input" name="shipping_modes[]"
+                                                        value="LandTransport" id="method11">
+                                                    <label class="custom-control-label" for="method11">LandTransport</label>
+                                                </div>
+                                                <ul id="land">
+                                                    <div class="custom-control custom-checkbox p-2">
+                                                        <input type="checkbox" name="shipping_modes[]" value="ETL"
+                                                            class="custom-control-input" id="method111">
+                                                        <label class="custom-control-label" for="method111">ETL</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox p-2">
+                                                        <input type="checkbox" name="shipping_modes[]" value="LTL"
+                                                            class="custom-control-input" id="method112">
+                                                        <label class="custom-control-label" for="method112">LTL</label>
+                                                    </div>
+                                                </ul>
+
+
+
+                                                <div class="custom-control custom-checkbox p-2">
+                                                    <input type="checkbox" class="custom-control-input" id="method12"
+                                                        name="shipping_modes[]" value="WaterTransport">
+                                                    <label class="custom-control-label" for="method12">WaterTransport</label>
+                                                </div>
+                                                <ul id="water">
+                                                    <div class="custom-control custom-checkbox p-2">
+                                                        <input type="checkbox" name="shipping_modes[]" value="ECL"
+                                                            class="custom-control-input" id="method121">
+                                                        <label class="custom-control-label" for="method121">ECL</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox p-2">
+                                                        <input type="checkbox" name="shipping_modes[]" value="LCL"
+                                                            class="custom-control-input" id="method122">
+                                                        <label class="custom-control-label" for="method122">LCL</label>
+                                                    </div>
+                                                </ul>
+
+                                                <div class="custom-control custom-checkbox p-2">
+                                                    <input type="checkbox" name="shipping_modes[]" value="AirTransport"
+                                                        class="custom-control-input" id="method13">
+                                                    <label class="custom-control-label" for="method13">AirTransport</label>
+                                                </div>
+                                            </ul>
+
                                             <div class="custom-control custom-checkbox p-2">
-                                                <input type="checkbox" name="shipping_modes[]" value="LTL"
-                                                    class="custom-control-input" id="method112">
-                                                <label class="custom-control-label" for="method112">LTL</label>
+                                                <input type="checkbox" name="shipping_modes[]" value="National"
+                                                    class="custom-control-input" id="method2">
+                                                <label class="custom-control-label" for="method2">National
+                                                    Shipping</label>
                                             </div>
                                         </ul>
-
-
-
-                                        <div class="custom-control custom-checkbox p-2">
-                                            <input type="checkbox" class="custom-control-input" id="method12"
-                                                name="shipping_modes[]" value="WaterTransport">
-                                            <label class="custom-control-label" for="method12">WaterTransport</label>
-                                        </div>
-                                        <ul id="water">
-                                            <div class="custom-control custom-checkbox p-2">
-                                                <input type="checkbox" name="shipping_modes[]" value="ECL"
-                                                    class="custom-control-input" id="method121">
-                                                <label class="custom-control-label" for="method121">ECL</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox p-2">
-                                                <input type="checkbox" name="shipping_modes[]" value="LCL"
-                                                    class="custom-control-input" id="method122">
-                                                <label class="custom-control-label" for="method122">LCL</label>
-                                            </div>
-                                        </ul>
-
-                                        <div class="custom-control custom-checkbox p-2">
-                                            <input type="checkbox" name="shipping_modes[]" value="AirTransport"
-                                                class="custom-control-input" id="method13">
-                                            <label class="custom-control-label" for="method13">AirTransport</label>
-                                        </div>
-                                    </ul>
-
-                                    <div class="custom-control custom-checkbox p-2">
-                                        <input type="checkbox" name="shipping_modes[]" value="National"
-                                            class="custom-control-input" id="method2">
-                                        <label class="custom-control-label" for="method2">National
-                                            Shipping</label>
                                     </div>
-                                </ul>
-                            </div>
 
+                                </div>
                         </div>
+
 
                     </div>
 
 
-                </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="" class="btn btn-rounded custom-secondary black-text" data-dismiss="modal">close
+                        </button>
+                        <button type="submit" id="replay" class="btn btn-rounded custom-secondary black-text">filter </button>
 
-
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="" class="btn btn-rounded custom-secondary black-text" data-dismiss="modal">close
-                    </button>
-                    <button type="" id="replay" class="btn btn-rounded custom-secondary black-text"
-                        data-dismiss="modal">filter </button>
+                    </div>
 
                 </div>
-
-            </div>
+            </form>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
 
 
     <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>
@@ -372,14 +363,14 @@
 
 
             var dataSet = [
-                @if(@isset($users))
-                @foreach($users as $user)[
+                @if(@isset($query))
+                @foreach($query as $q)[
 
 
-                    `{{ $user->shippingoffice->name }}`,
-                    `{{ $user->shippingoffice->city }}`,
-                    `{{ $user->userdetail->phone_number }}`,
-                    `<a href='{{url('company_info').'/'.$user->id}}' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
+                    `{{ $q->name }}`,
+                    `{{ $q->city }}`,
+                    `{{ $q->phone_number }}`,
+                    `<a href='{{url('company_info').'/'.$q->id}}' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
                 ],
                 @endforeach
                 @endif

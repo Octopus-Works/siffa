@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\ShippingOffice;
+use App\ShippingService; 
+use DB;
 
 class PagesController extends Controller
 {
@@ -40,9 +43,39 @@ class PagesController extends Controller
         return view('pages.members.become_member');
     }
 
-    public function members_list(){
+    public function members_list(Request $request){
         $users = User::where('role_id', '2')->get();
-        return view('pages.members.member_list')->withusers($users);;
+
+        $query = DB::table('shipping_offices')
+        ->join('shipping_services', 'shipping_services.id', 'shipping_offices.id')
+        ->get(); 
+
+        return view('pages.members.member_list')->withusers($users)->withquery($query);
+
+    }
+    
+    public function test(Request $request){
+        $users = User::where('role_id', '2')->get();
+  
+        $s = implode(' ', $request->shipping_modes);
+
+        $temp = ShippingService::all(); 
+        $arr = array(); 
+        foreach($temp as $t){
+            if (count(array_intersect($request->shipping_modes, explode(" ", $t->shipping_modes))) == count($request->shipping_modes))
+            {
+                array_push($arr,$t->id); 
+            }
+        }
+
+        $query = DB::table('shipping_offices')
+        ->join('shipping_services', 'shipping_services.id', 'shipping_offices.id')
+        ->join('user_details', 'user_details.id', 'shipping_offices.id')
+        ->where('city', $request->city)
+        ->whereIn('shipping_offices.id', $arr)
+        ->get(); 
+        return view('pages.members.member_list')->withusers($users)->withquery($query);
+
     }
 
     public function calendar(){

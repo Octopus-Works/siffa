@@ -29,6 +29,8 @@ Route::get('president_message', 'PagesController@president_message')->name('pres
 Route::get('board_members',     'PagesController@board_members')->name('board_members');
 Route::get('/company_info/{id}','UserController@companyInfo');
 Route::post('/contact',         'ContactMessageController@send');
+Route::post('/members_list',    'PagesController@test')->name('test');
+
 
 /*
 |--------------------------------------------------------------------------
