@@ -139,13 +139,16 @@
 
 </style>
 
-<nav id="banner" class="navbar navbar-expand-lg custom-secondary d-flex justify-content-center fixed-top">
-    <form class="form-inline">
-        <h6 class="font-weight-bold mt-2 mr-3 black-text">70% Off Our Services!</h6>
-        <a href="" class="btn btn-sm align-middle animated pulse infinite custom-tertiary white-text" type="button">See
-            Offer</a>
-    </form>
-</nav>
+@if ( isset($offer) && $offer->visible)
+    <nav id="banner" class="navbar navbar-expand-lg custom-secondary d-flex justify-content-center fixed-top">
+        <form class="form-inline">
+            <h6 class="font-weight-bold mt-2 mr-3 black-text">{{ $offer->text}}</h6>
+            <a href="{{$offer->href}}" class="btn btn-sm align-middle animated pulse infinite custom-tertiary white-text" type="button">See
+                Offer</a>
+        </form>
+    </nav>
+@endif
+
 <nav id="navbar" class="navbar navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar fixed-top"
     style="margin-top:59px">
     <div class="container">
