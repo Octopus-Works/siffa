@@ -139,15 +139,17 @@
 
 </style>
 
-<nav id="banner" class="navbar navbar-expand-lg custom-secondary d-flex justify-content-center fixed-top">
+<nav id="banner" class="alert navbar navbar-expand-lg custom-secondary alert-dismissible d-flex justify-content-center fixed-top" role="alert">
     <form class="form-inline">
         <h6 class="font-weight-bold mt-2 mr-3 black-text">70% Off Our Services!</h6>
         <a href="" class="btn btn-sm align-middle animated pulse infinite custom-tertiary white-text" type="button">See
             Offer</a>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="close">
+                <span aria-hidden="true">&times;</span>
+        </button>
     </form>
 </nav>
-<nav id="navbar" class="navbar navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar fixed-top"
-    style="margin-top:59px">
+<nav id="navbar" class="navbar navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img style="
@@ -264,15 +266,22 @@
     </div>
 </nav>
 
-{{-- <script type="text/javascript" src={{url("js/jquery-3.3.1.min.js")}}></script>
+<script type="text/javascript" src={{url("js/jquery-3.3.1.min.js")}}></script>
 
 <script>
     $(document).ready(function () {
-        if ($("#banner").hasClass("visible"))
-            $("#navbar").css('margin-top', '59px');
+        if ($("#banner").hasClass("alert"))
+            $("#navbar").css('margin-top', '69px');
+
     });
 
-</script> --}}
+</script>
+
+<script>
+    $('#close').on('click' ,function() {
+            $("#navbar").css('margin-top', '0px');
+    });
+</script>
 
 <div class="modal fade mt-5" id="modal_freight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -315,7 +324,7 @@
 
 
 
-    <div class="modal-dialog modal-lg  custom-primary" role="document"  style="background-color: #1c2331">
+    <div class="modal-dialog modal-lg  custom-primary" role="document" style="background-color: #1c2331">
         <div class="modal-content">
             <div class="modal-header text-center">
                 <h4 class="modal-title w-100 font-weight-bold custom-secondary-text">CBM</h4>
