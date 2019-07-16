@@ -137,10 +137,29 @@
         outline: 0;
     }
 
+    .alert-dismissible .close {
+    top: 9px;
+}
+
+#logo{
+    height:auto!important;
+    width:210px!important;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #logo {
+        width: 130px!important;
+    }
+    .nav-item a{
+    font-size:.7rem!important;
+    }
+}
+
+
 </style>
 
 @if ( isset($offer) && $offer->visibility)
-    <nav id="banner" class="alert navbar navbar-expand-lg custom-secondary d-flex justify-content-center fixed-top"
+    <nav id="banner" class="alert alert-dismissible navbar navbar-expand-lg custom-secondary d-flex justify-content-center fixed-top"
         role="alert">
         <form class="form-inline">
             <h6 class="font-weight-bold mt-2 mr-3 black-text">{{ $offer->text}}</h6>
@@ -157,10 +176,7 @@
 <nav id="navbar" class="navbar navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img style="
-				height: auto !important;
-				width: 210px !important;
-			" src="{{url('/img/Logos/logo_xs_1.png')}}" />
+            <img id="logo" src="{{url('/img/Logos/logo_xs_1.png')}}" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
