@@ -139,16 +139,21 @@
 
 </style>
 
-<nav id="banner" class="alert navbar navbar-expand-lg custom-secondary alert-dismissible d-flex justify-content-center fixed-top" role="alert">
+@if ( isset($offer) && $offer->visible)
+<nav id="banner" class="alert navbar navbar-expand-lg custom-secondary d-flex justify-content-center fixed-top"
+    role="alert">
     <form class="form-inline">
-        <h6 class="font-weight-bold mt-2 mr-3 black-text">70% Off Our Services!</h6>
-        <a href="" class="btn btn-sm align-middle animated pulse infinite custom-tertiary white-text" type="button">See
+        <h6 class="font-weight-bold mt-2 mr-3 black-text">{{ $offer->text}}</h6>
+        <a href="{{$offer->href}}" class="btn btn-sm align-middle animated pulse infinite custom-tertiary white-text"
+            type="button">See
             Offer</a>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="close">
-                <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="close">
+            <span aria-hidden="true">&times;</span>
         </button>
     </form>
 </nav>
+@endif
+
 <nav id="navbar" class="navbar navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
@@ -278,9 +283,10 @@
 </script>
 
 <script>
-    $('#close').on('click' ,function() {
-            $("#navbar").css('margin-top', '0px');
+    $('#close').on('click', function () {
+        $("#navbar").css('margin-top', '0px');
     });
+
 </script>
 
 <div class="modal fade mt-5" id="modal_freight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
