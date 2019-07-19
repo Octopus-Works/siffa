@@ -86,7 +86,7 @@
                                             <div class="mask rgba-white-slight"></div>
                                         </div>
 
-                                        <p class="text-muted"><small>Profile photo will be changed automatically</small> </p>
+                                        <p class="text-muted"><small>الصورة الشخصية سوف تتغير تلقائيا</small> </p>
                                         <div class="row flex-center">
                                             <button class="btn custom-secondary black-text btn-rounded" data-toggle="modal" data-target="#company_photo_modal">Upload New Photo</button>
                                         </div>
@@ -107,12 +107,12 @@
                             <h1 class="custom-tertiary-text">{{ $user->shippingoffice->name }}</h1>
                             <hr class="custom-secondary-text">
                             <!-- Text -->
-                            <p><span class="custom-secondary-text mr-2">Office Owner Name:</span>{{ $user->userdetail->fullname }} </p>
-                            <p><span class="custom-secondary-text mr-2">Phone Number:</span> {{ $user->userdetail->phone_number}}</p>
-                            <p><span class="custom-secondary-text mr-2">Mobile Number: </span>{{$user->userdetail->mobile_number }}</p>
-                            <p><span class="custom-secondary-text mr-2">Main Branch Address: </span>{{ $user->shippingoffice->city}}</p>
+                            <p><span class="custom-secondary-text mr-2">اسم صاحب المكتب:</span>{{ $user->userdetail->fullname }} </p>
+                            <p><span class="custom-secondary-text mr-2">رقم الهاتف:</span> {{ $user->userdetail->phone_number}}</p>
+                            <p><span class="custom-secondary-text mr-2">رقم الموبايل: </span>{{$user->userdetail->mobile_number }}</p>
+                            <p><span class="custom-secondary-text mr-2">عنوان المكتب الرئيسي: </span>{{ $user->shippingoffice->city}}</p>
                             <p><span class="custom-secondary-text mr-2">عنوان البريد الإلكتروني: </span>{{ $user->email }}</p>
-                            <p><span class="custom-secondary-text mr-2">Website: </span>{{ $user->userdetail->website }}</p>
+                            <p><span class="custom-secondary-text mr-2">الموقع الإلكتروني: </span>{{ $user->userdetail->website }}</p>
                         </div>
                         <!--Grid column-->
 
