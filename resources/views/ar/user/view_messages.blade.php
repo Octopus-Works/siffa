@@ -309,7 +309,7 @@
     <!--Main layout-->
 
     <!-- Footer -->
-    @include('partials.footer_dashboard')
+    @include('partials.footer_dashboard_ar')
     @include('modal_partials.new_message_modal')
     @include('modal_partials.view_message_modal')
     <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>

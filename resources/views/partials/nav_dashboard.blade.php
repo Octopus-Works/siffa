@@ -38,7 +38,7 @@
 
 <nav class="navbar navbar-expand-lg scrolling-navbar custom-primary double-nav " style="margin-top:59px">
     <!-- SideNav slide-out button -->
-    <div class="float-left">
+    <div class="float-right">
         <a href="#" data-activates="slide-out" class="button-collapse "><i class="fas fa-bars"></i></a>
     </div>
 

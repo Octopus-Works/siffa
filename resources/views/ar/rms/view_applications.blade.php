@@ -140,7 +140,7 @@
         <!-- Main layout -->
 
         <!-- Footer -->
-        @include('partials.footer_dashboard')
+        @include('partials.footer_dashboard_ar')
         <script type="text/javascript" src={{url("../data_table/datatables.js")}}></script>
         <script type="text/javascript" src={{url("../js/addons/datatables-select.min.js")}}></script>
         <!-- Footer -->

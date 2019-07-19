@@ -397,7 +397,7 @@
         <!--Main layout-->
 
         <!-- Footer -->
-        @include('partials.footer_dashboard')
+        @include('partials.footer_dashboard_ar')
         @include('modal_partials.change_role_modal')
         @include('modal_partials.confirm_ban_modal')
         @include('modal_partials.confirm_unblock_modal')

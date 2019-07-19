@@ -133,7 +133,7 @@
     <!-- Main layout -->
 
     <!-- Footer -->
-    @include('partials.footer_dashboard')
+    @include('partials.footer_dashboard_ar')
 
     <!-- Footer -->
 

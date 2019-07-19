@@ -312,7 +312,7 @@
                                         </div>
                                         <div class="mt-3 text-center">
                                             <button type="submit" class="waves-effect waves-dark btn btn-sm custom-secondary"  style="font-size: 11.96px" >حفظ التعديلات</button>
-                                            <button class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
+                                            <button class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey next-step"><i class="fas fa-arrow-left"></i></button>
                                         </div>
                                     </div>
 
@@ -429,10 +429,10 @@
                                             </div>
                                         <div class="mt-4 text-center">
                                             <button
-                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
+                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-right"></i></button>
                                             <button type="submit" class="waves-effect waves-dark btn btn-sm custom-secondary" style="font-size: 11.96px">حفظ التعديلات</button>
                                             <button
-                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey next-step"><i class="fas fa-arrow-right"></i></button>
+                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey next-step"><i class="fas fa-arrow-left"></i></button>
                                         </div>
                                     
                                     </div>
@@ -469,7 +469,7 @@
                                         </div>
                                         <div class="mt-2 text-center">
                                             <button
-                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-left"></i></button>
+                                                class="waves-effect waves-dark btn btn-sm btn-rounded btn-grey previous-step"><i class="fas fa-arrow-right"></i></button>
                                             <button type="submit" class="waves-effect waves-dark btn btn-sm custom-secondary" style="font-size: 11.96px">حفظ التعديلات</button>
                                         </div>
                                     </div>
@@ -486,7 +486,7 @@
     </main>
     <!--Main Layout-->
 
-    @include('partials.footer_dashboard')
+    @include('partials.footer_dashboard_ar')
 
     <script type="text/javascript"
         src={{url("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js")}}></script>
