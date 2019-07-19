@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App;
 use Illuminate\Http\Request;
 use Auth; 
 
@@ -32,12 +32,12 @@ class HomeController extends Controller
         } 
      
         else
-        return view('pages/home');
+        return view(App::getLocale().'/pages/home');
     }
 
     public function index()
     {
-        return view('pages/home');
+        return view(App::getLocale().'/pages/home');
     }
 }
 

@@ -1,0 +1,87 @@
+
+    body {direction:rtl;}
+    .md-form label {
+        right: 0 !important;
+      }
+      .md-form .prefix~label {
+        margin-right: 2.5rem;
+    }
+    .md-form .prefix~input, .md-form .prefix~textarea {
+        margin-right: 2.5rem;
+        width: calc(100% - 2.5rem);
+    }
+
+    .intl-tel-input.allow-dropdown .flag-container, .intl-tel-input.separate-dial-code .flag-container {
+        /* left: auto; */
+
+        left: auto !important;
+    }
+    .intl-tel-input .country-list {
+        position: absolute;
+        z-index: 2;
+        list-style: none;
+         text-align: -webkit-match-parent !important;
+        padding: 0;
+        margin: 0 0 0 -1px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        background-color: white;
+        border: 1px solid #CCC;
+        white-space: nowrap;
+        max-height: 200px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .intl-tel-input.allow-dropdown input, .intl-tel-input.allow-dropdown input[type=text], .intl-tel-input.allow-dropdown input[type=tel], .intl-tel-input.separate-dial-code input, .intl-tel-input.separate-dial-code input[type=text], .intl-tel-input.separate-dial-code input[type=tel] {
+        padding-right: 52px !important;
+        padding-left: 12px !important;
+        margin-right: 0 !important;
+    }
+
+    .form-check-input[type=radio]+label:after, .form-check-input[type=radio]+label:before, label.btn input[type=radio]+label:after, label.btn input[type=radio]+label:before {
+        content: '';
+        position: absolute;
+        right: 0 !important;
+        top: 0;
+        margin: 4px;
+        width: 16px;
+        height: 16px;
+        z-index: 0;
+        -webkit-transition: .28s ease;
+        -o-transition: .28s ease;
+        transition: .28s ease;
+    } 
+
+
+
+
+
+    .form-check-input[type=radio]:checked+label, .form-check-input[type=radio]:not(:checked)+label, label.btn input[type=radio]:checked+label, label.btn input[type=radio]:not(:checked)+label {
+    position: relative;
+    padding-right: 35px !important;
+    cursor: pointer;
+    display: inline-block;
+    height: 1.5625rem;
+    line-height: 1.5625rem;
+    -webkit-transition: .28s ease;
+    -o-transition: .28s ease;
+    transition: .28s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+
+    @import url('https://fonts.googleapis.com/css?family=Amiri:400,400i,700,700i&subset=arabic');
+    body{
+
+        	
+font-family: 'Amiri', serif !important;
+    }
+
+ 
+    
+    

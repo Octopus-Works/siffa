@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\EventsService;
+use App;
 
 class AdminController extends Controller
 {
@@ -13,7 +14,7 @@ class AdminController extends Controller
     } 
 
     public function getCalendarPage(Request $request){
-        return view('admin.calendar.index');
+        return view(App::getLocale().'/admin.calendar.index');
     }
 
     public function getEventsData(Request $request)

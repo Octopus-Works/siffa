@@ -172,7 +172,7 @@
         </form>
     </nav>
 @endif
-
+    <a href={{url('/lang/ar')}} class="btn-floating btn-primary" style="bottom: 45px; right: 24px; position:fixed; z-index: 90"><i class="fa fa-language"></i></a>
 <nav id="navbar" class="navbar navbar-expand-lg custom-primary-transparent navbar-dark scrolling-navbar fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">

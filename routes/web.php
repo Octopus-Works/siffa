@@ -116,8 +116,8 @@ Route::resource('messages', 'MessageController');
 |
 */
 Auth::routes(['verify' => true]);
-Route::get('/logout',       'Auth\LoginController@logout')->name('logout');
-Route::post('/register',    'Auth\RegisterController@mail')->name('register');
+Route::get('/logout','Auth\LoginController@logout')->name('logout');
+Route::post('/register','Auth\RegisterController@mail')->name('register');
 /*
 |--------------------------------------------------------------------------
 | Voyager Routes
@@ -126,6 +126,13 @@ Route::post('/register',    'Auth\RegisterController@mail')->name('register');
 |
 |
 */
+
+
+
+Route::get('lang/{locale}', 'LocalizationController@index');
+
+
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 

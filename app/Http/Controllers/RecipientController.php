@@ -9,6 +9,7 @@ use App\Image;
 use App\Notification;
 use App\InternalMessaging;
 use App\Services\ImageUploadService;
+use App;
 
 class RecipientController extends Controller
 {
@@ -16,12 +17,12 @@ class RecipientController extends Controller
         $user = User::find(auth::user()->id);
 
         $image = Image::where('imageable_type', 'App\UserDetail')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
-        return view('rms.index')->withuser($user)->withimage($image);
+        return view(App::getLocale().'/rms.index')->withuser($user)->withimage($image);
     }
 
     public function applications_view(){
         $user = User::where('role_id', '2')->get();
-        return view('rms/view_applications')->withuser($user);
+        return view(App::getLocale().'/rms/view_applications')->withuser($user);
     }
 
     public function messages_view(){
@@ -30,9 +31,9 @@ class RecipientController extends Controller
             $mail = InternalMessaging::where('sender_id', auth::user()->id)
             ->orWhere('receiver_id', 0)
             ->get();
-            return view('rms/view_messages')->withmail($mail);                             
+            return view(App::getLocale().'/rms/view_messages')->withmail($mail);                             
         }
-        return view('rms/view_messages');
+        return view(App::getLocale().'/rms/view_messages');
     }
 
     public function rmsMiniUpdate(Request $request){
@@ -65,12 +66,12 @@ class RecipientController extends Controller
     public function application($id){
         $user = User::find($id);
         $image = Image::where('imageable_type', 'App\ApplicationDetail')->where('imageable_id', $id)->orderBy('id', 'desc')->first();
-        return view('rms/application')->withuser($user)->withid($id)->withimage($image);  
+        return view(App::getLocale().'/rms/application')->withuser($user)->withid($id)->withimage($image);  
     }
 
     public function recipients_management(){
         $user = User::where('role_id', '2')->get();
-        return view('rms.user_management')->withuser($user);
+        return view(App::getLocale().'/rms.user_management')->withuser($user);
     }
 
     public function block($id){

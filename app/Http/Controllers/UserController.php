@@ -7,13 +7,14 @@ use App\Notification;
 use App\Image; 
 use app\User;
 use Auth;
+use App;
 use Session; 
 use App\Services\ImageUploadService;
 
 class UserController extends Controller
 {
 	public function appStatus(){
-        return view('user/app_status'); 
+        return view(App::getLocale().'/user/app_status'); 
     }
     
     public function paymentNotification(Request $request){
@@ -38,12 +39,12 @@ class UserController extends Controller
     public function userCompanyInfo($id){
         $user = User::find($id); 
         $image = Image::where('imageable_type', 'App\ShippingOffice')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
-        return view('user/company_info')->withuser($user)->withimage($image);
+        return view(App::getLocale().'/user/company_info')->withuser($user)->withimage($image);
     }
 
     public function companyInfo($id){
         $user = User::find($id); 
-        return view('pages.company_info')->withuser($user);
+        return view(App::getLocale().'/pages.company_info')->withuser($user);
     }
 
     public function accountInfo(){
@@ -51,7 +52,7 @@ class UserController extends Controller
             $user = User::find(auth::user()->id); 
             $image = Image::where('imageable_type', 'App\UserDetail')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
 
-            return view('user.index')->withuser($user)->withimage($image);
+            return view(App::getLocale().'/user.index')->withuser($user)->withimage($image);
 
         }
     }

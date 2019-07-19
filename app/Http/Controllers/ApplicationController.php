@@ -15,6 +15,7 @@ use App\ShippingOffice;
 use App\ShippingService;
 use App\ApplicationDetail;
 use App\Services\ImageUploadService;
+use App;
 
 class ApplicationController extends Controller
 {
@@ -31,10 +32,10 @@ class ApplicationController extends Controller
             
             $image = Image::where('imageable_type', 'App\ApplicationDetail')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
 
-            return view('user.application_info')->withuser($user)->withimage($image);
+            return view(App::getLocale().'/user.application_info')->withuser($user)->withimage($image);
         }
 
-        return view('user.application_info');
+        return view(App::getLocale().'/user.application_info');
         
     }
 
