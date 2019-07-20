@@ -8,6 +8,11 @@ use App\ShippingOffice;
 use App\ShippingService; 
 use DB;
 use App;
+use App\Event;
+use App\News;
+use App\Gallery;
+
+
 
 class PagesController extends Controller
 {
@@ -80,19 +85,24 @@ class PagesController extends Controller
     }
 
     public function calendar(){
-        return view(App::getLocale().'/pages.news.calendar');
+        $event = Event::all();
+
+        return view(App::getLocale().'/pages.news.calendar')->withevent($event);
     }
     
     public function events(){
-        return view(App::getLocale().'/pages.news.events');
+        $event = Event::all();
+        return view(App::getLocale().'/pages.news.events')->withevent($event);
     }
 
     public function latest(){
-        return view(App::getLocale().'/pages.gallery.latest');
+        $gallery = Gallery::all();
+        return view(App::getLocale().'/pages.gallery.latest')->withgallery($gallery);
     }
 
     public function archive(){
-        return view(App::getLocale().'/pages.gallery.archive');
+        $gallery = Gallery::all();
+        return view(App::getLocale().'/pages.gallery.archive')->withgallery($gallery);
     }
 
     public function president_message(){
@@ -103,6 +113,9 @@ class PagesController extends Controller
         return view(App::getLocale().'/pages.directors.board_members');
     }
 
-
+    public function news_post($id){
+        $news = News::find($id); 
+        return view(App::getLocale().'/pages/news_post')->withnews($news);
+    }
     
 }

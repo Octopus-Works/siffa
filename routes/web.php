@@ -30,6 +30,7 @@ Route::get('board_members',     'PagesController@board_members')->name('board_me
 Route::get('/company_info/{id}','UserController@companyInfo');
 Route::post('/contact',         'ContactMessageController@send');
 Route::post('/members_list',    'PagesController@test')->name('test');
+Route::get('news/{id}',            'PagesController@news_post')->name('news_post');
 
 
 /*

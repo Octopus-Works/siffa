@@ -100,59 +100,22 @@ border-radius: 2px; }
               
                   <div class="mdb-lightbox">
               
-                    <figure class="col-md-4">
-                      <a href="https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(145).jpg" data-size="1600x1067">
-                        <img alt="picture" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(145).jpg" class="img-fluid">
-                      </a>
-                    </figure>
-              
-                    <figure class="col-md-4">
-                      <a href="https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(150).jpg" data-size="1600x1067">
-                        <img alt="picture" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(150).jpg" class="img-fluid" />
-                      </a>
-                    </figure>
-              
-                    <figure class="col-md-4">
-                      <a href="https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(152).jpg" data-size="1600x1067">
-                        <img alt="picture" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(152).jpg" class="img-fluid" />
-                      </a>
-                    </figure>
-              
-                    <figure class="col-md-4">
-                      <a href="https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(42).jpg" data-size="1600x1067">
-                        <img alt="picture" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(42).jpg" class="img-fluid" />
-                      </a>
-                    </figure>
-              
-                    <figure class="col-md-4">
-                      <a href="https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(151).jpg" data-size="1600x1067">
-                        <img alt="picture" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(151).jpg" class="img-fluid" />
-                      </a>
-                    </figure>
-              
-                    <figure class="col-md-4">
-                      <a href="https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(40).jpg" data-size="1600x1067">
-                        <img alt="picture" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(40).jpg" class="img-fluid" />
-                      </a>
-                    </figure>
-              
-                    <figure class="col-md-4">
-                      <a href="https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(148).jpg" data-size="1600x1067">
-                        <img alt="picture" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(148).jpg" class="img-fluid" />
-                      </a>
-                    </figure>
-              
-                    <figure class="col-md-4">
-                      <a href="https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(147).jpg" data-size="1600x1067">
-                        <img alt="picture" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="img-fluid" />
-                      </a>
-                    </figure>
-              
-                    <figure class="col-md-4">
-                      <a href="https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(149).jpg" data-size="1600x1067">
-                        <img alt="picture" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(149).jpg" class="img-fluid" />
-                      </a>
-                    </figure>
+                      @foreach ($gallery as $item)
+                                        
+                                
+                      <figure class="col-md-4 px-1 py-1">
+
+                      <a href="{{Voyager::image($item->img_src)}}"
+                              data-size="1600x1067">
+
+                              <img style="width:450px; height: 450px" src="{{Voyager::image($item->img_src)}}"
+                                  class="img-fluid" alt="sample image">
+
+                          </a>
+
+                      </figure>
+
+                      @endforeach
               
                   </div>
               
@@ -163,127 +126,7 @@ border-radius: 2px; }
 
 </div>
  
-<hr class="w-25 mt-5 mb-5">
-<!--Carousel Wrapper-->
-<div id="multi-item-example" class="carousel slide carousel-multi-item carousel-multi-item-2" data-ride="carousel">
 
-        <!--Controls-->
-        <div class="controls-top">
-          <a class="black-text" href="#multi-item-example" data-slide="prev"><i class="fas fa-angle-left fa-3x pr-3"></i></a>
-          <a class="black-text" href="#multi-item-example" data-slide="next"><i class="fas fa-angle-right fa-3x pl-3"></i></a>
-        </div>
-        <!--/.Controls-->
-      
-        <!--Slides-->
-        <div class="carousel-inner" role="listbox">
-      
-          <!--First slide-->
-          <div class="carousel-item active">
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(38).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(19).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(42).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(8).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-          </div>
-          <!--/.First slide-->
-      
-          <!--Second slide-->
-          <div class="carousel-item">
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(53).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(25).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(47).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(26).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-          </div>
-          <!--/.Second slide-->
-      
-          <!--Third slide-->
-          <div class="carousel-item">
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(64).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(51).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(59).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(63).jpg"
-                  alt="Card image cap">
-              </div>
-            </div>
-      
-          </div>
-          <!--/.Third slide-->
-      
-        </div>
-        <!--/.Slides-->
-      
-      </div>
-      <!--/.Carousel Wrapper-->
     </main>
 
 
