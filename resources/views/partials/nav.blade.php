@@ -139,21 +139,21 @@
 
     .alert-dismissible .close {
     top: 9px;
-}
-
-#logo{
-    height:auto!important;
-    width:210px!important;
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    #logo {
-        width: 130px!important;
     }
-    .nav-item a{
-    font-size:.7rem!important;
+
+    #logo{
+        height:auto!important;
+        width:210px!important;
     }
-}
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        #logo {
+            width: 130px!important;
+        }
+        .nav-item a{
+        font-size:.7rem!important;
+        }
+    }
 
 
 </style>

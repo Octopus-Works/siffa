@@ -80,9 +80,10 @@ class RegisterController extends Controller
 
         // Validation call from app\Requests\UserStoreRequest.php
         $validated = $request->validated(); 
-
+        $userId = 1; 
         try{
-            $username = str_random(10); 
+            $email    = $request->email; 
+            $username = str_random(10);
             $password = str_random(10);
             $user = User::Create([
                 'username' => $username,
@@ -116,12 +117,15 @@ class RegisterController extends Controller
             ]);
 
             Auth::login($user);
+            $userId = $user->id; 
             $shippingOffice->officeservices()->attach($shippingService);
-            $data = array('username' => $username, 'password' => $password); 
+            $data = array('email' => $email, 'password' => $password); 
             Mail::to($request->email)->send(new GenerateCredentials($data));
 
         } catch(\Exception $e){
-            $user->delete();
+            $userObject = User::find($userId);
+            if ($userObject != null)
+            $userObject->delete();
             Session::flash('message', "Error in Registration data!");
             return back(); 
         }
