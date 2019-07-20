@@ -53,11 +53,13 @@ class Relations extends Migration
             
             $table->foreign('shipping_office_id')
                     ->references('id')
-                    ->on('shipping_offices');
+                    ->on('shipping_offices')
+                    ->onDelete('cascade');
 
             $table->foreign('shipping_service_id')
                     ->references('id')
-                    ->on('shipping_services'); 
+                    ->on('shipping_services')
+                    ->onDelete('cascade'); 
 
         });
 

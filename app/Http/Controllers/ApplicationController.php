@@ -6,16 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\UserStoreRequest;
-use App\Mail\GenerateCredentials;
+use App;
 use Auth; 
-use Session; 
 use App\User;
 use App\Image; 
-use App\ShippingOffice; 
-use App\ShippingService;
-use App\ApplicationDetail;
 use App\Services\ImageUploadService;
-use App;
 
 class ApplicationController extends Controller
 {
@@ -109,7 +104,7 @@ class ApplicationController extends Controller
 
         $user->email = $request->email;
         if( isset($request->password))
-            $user->password  = Hash::make($request->password);
+            $user->password = Hash::make($request->password);
         $user->save();
 
         return redirect()->back()->with('Success'); 

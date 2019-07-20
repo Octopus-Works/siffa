@@ -33,7 +33,7 @@ class GenerateCredentials extends Mailable
     {
         return $this->view('vendor.notifications.verificationemail')
                     ->with([
-                        'username' => $this->credentials['username'],
+                        'email'    => $this->credentials['email'],
                         'password' => $this->credentials['password'],
                     ]);
     }
