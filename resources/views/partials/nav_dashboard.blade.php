@@ -28,17 +28,8 @@
 
 </style>
 
-@if ( isset($offer) && $offer->visibility)
-    <nav class="navbar navbar-expand-lg custom-secondary d-flex justify-content-center fixed-top">
-        <form class="form-inline">
-            <h6 class="font-weight-bold mt-2 mr-3 black-text">{{ $offer->text}}</h6>
-            <a href="{{$offer->href}}" class="btn btn-sm align-middle animated pulse infinite custom-tertiary white-text" type="button">See
-                Offer</a>
-        </form>
-    </nav>
-@endif
 
-<nav class="navbar navbar-expand-lg scrolling-navbar custom-primary double-nav " style="margin-top:59px">
+<nav class="navbar navbar-expand-lg scrolling-navbar custom-primary double-nav ">
     <!-- SideNav slide-out button -->
     <div class="float-right">
         <a href="#" data-activates="slide-out" class="button-collapse "><i class="fas fa-bars"></i></a>

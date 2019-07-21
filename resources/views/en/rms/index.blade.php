@@ -147,7 +147,7 @@
                                             <!-- Second column -->
                                             <div class="col-md-6">
                                                     <div class="md-form mb-0">
-                                                        <input id="password" name="password" value="" type="text" class="validate form-control">
+                                                        <input id="password" name="password" value="" type="password" class="validate form-control">
                                                         <label for="password">Password</label>
                                                     </div>
                                             </div>
