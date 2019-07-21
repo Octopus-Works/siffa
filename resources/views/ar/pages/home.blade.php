@@ -46,9 +46,9 @@
         }
 
 
-            .navbar {
-                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12) !important;
-            }
+        .navbar {
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12) !important;
+        }
         }
 
 
@@ -288,8 +288,9 @@
         }
 
         .badge-danger {
-        background-color: #ffc107!important;
+            background-color: #ffc107 !important;
         }
+
         .grey-text {
             color: #9e9e9e !important;
         }
@@ -306,7 +307,7 @@
 
 
         .blue-text {
-         color: #ffc107!important;
+            color: #ffc107 !important;
         }
 
         a {
@@ -461,33 +462,30 @@
             src: url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.eot);
             src: url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.eot#iefix) format("embedded-opentype"), url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.woff2) format("woff2"), url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.woff) format("woff"), url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.ttf) format("truetype"), url(https://use.fontawesome.com/releases/v5.8.1/webfonts/fa-solid-900.svg#fontawesome) format("svg");
         }
-
-
-        
     </style>
 </head>
 
 <body class="homepage-v5">
 
 
-        @include('partials.nav_ar')
-        <!-- Intro Section -->
-        <div id="home" class="view jarallax" data-jarallax='{"speed": 0.2}'
-            style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%2821%29.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-            <div class="mask rgba-black-light">
-                <div class="container h-100 d-flex justify-content-center align-items-center">
-                    <div class="row smooth-scroll">
-                        <div class="col-md-12 white-text text-center">
-                            <div class="wow fadeInDown" data-wow-delay="0.2s">
-                                <h6 class="display-4 rgba-black-light px-3 py-2">
-
-                                    <strong class="font-weight-bold"> الجمعية الوطنية السورية  <br>شحن البضائع والخدمات اللوجستية  <br> </strong></h6>
-                            </div>
+    @include('partials.nav_ar')
+    <!-- Intro Section -->
+    <div id="home" class="view jarallax" data-jarallax='{"speed": 0.2}'
+        style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%2821%29.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <div class="mask rgba-black-light">
+            <div class="container h-100 d-flex justify-content-center align-items-center">
+                <div class="row smooth-scroll">
+                    <div class="col-md-12 white-text text-center">
+                        <div class="wow fadeInDown" data-wow-delay="0.2s">
+                            <h6 class="display-4 rgba-black-light px-3 py-2">
+                                <strong class="font-weight-bold">Syrian National <br> Freight Forwarding & Logistics
+                                    <br> Association</strong></h6>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
     <!-- Main layout --->
@@ -504,7 +502,7 @@
                     <!-- Section: Magazine posts --->
                     <section class="section extra-margins mt-2">
 
-                        <h4 class="font-weight-bold"><strong>أخر الأخبار</strong></h4>
+                        <h4 class="font-weight-bold"><strong>Ads</strong></h4>
 
                         <hr class="red title-hr">
 
@@ -514,86 +512,49 @@
 
                             <!-- Indicators --->
                             <ol class="carousel-indicators">
+                                @php
+                                $counter = 0 ;
+                                @endphp
+                                @foreach ($ads as $item)
 
-                                <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
 
-                                <li data-target="#carousel-example-2" data-slide-to="1"></li>
-
-                                <li data-target="#carousel-example-2" data-slide-to="2"></li>
-
+                                <li data-target="#carousel-example-2" data-slide-to="{{$counter}}"
+                                    class="{{$counter == 0 ? "active" : " "  }}"></li>
+                                @php
+                                $counter = $counter + 1 ;
+                                @endphp
+                                @endforeach
                             </ol>
                             <!-- Indicators --->
-
+                            @php
+                            $counter1 = 0 ;
+                            @endphp
                             <!-- Slides --->
                             <div class="carousel-inner" role="listbox">
+                                @foreach ($ads as $item)
 
-                                <div class="carousel-item active">
 
+                                <div class="carousel-item {{$counter1 == 0 ? "active" : " "  }}">
+                                        @php
+                                        $counter1 = $counter1 + 1 ;
+                                        @endphp
                                     <div class="view">
 
-                                        <img class="d-block w-100 rounded"
-                                            src="https://mdbootstrap.com/img/Photos/Slides/img%20(140).jpg"
-                                            alt="First slide">
 
+
+
+                                        <a href="{{$item->link}}">
+                                            <img class="d-block w-100 rounded " style="max-height: 500px "  src="{{ Voyager::image( $item->img_src ) }}"
+                                                alt="First slide">
+                                        </a>
                                         <div class="mask rgba-black-light"></div>
 
                                     </div>
 
-                                    <div class="carousel-caption">
 
-                                        <h3 class="h3-responsive font-weight-bold">عنوان الخبر</h3>
-
-                                        <p>شرح وهمي</p>
-
-                                    </div>
 
                                 </div>
-
-                                <div class="carousel-item">
-
-                                    <!-- Mask color --->
-                                    <div class="view">
-
-                                        <img class="d-block w-100 rounded"
-                                            src="https://mdbootstrap.com/img/Photos/Slides/img%20(112).jpg"
-                                            alt="Second slide">
-
-                                        <div class="mask rgba-black-light"></div>
-
-                                    </div>
-
-                                    <div class="carousel-caption">
-
-                                        <h3 class="h3-responsive font-weight-bold">عنوان الخبر</h3>
-
-                                        <p>شرح وهمي</p>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="carousel-item">
-
-                                    <!-- Mask color --->
-                                    <div class="view rgba-black-slight">
-
-                                        <img class="d-block w-100 rounded"
-                                            src="https://mdbootstrap.com/img/Photos/Slides/img%20(79).jpg"
-                                            alt="Third slide">
-
-                                        <div class="mask rgba-black-light"></div>
-
-                                    </div>
-
-                                    <div class="carousel-caption">
-
-                                        <h3 class="h3-responsive font-weight-bold">عنوان الخبر</h3>
-
-                                        <p>شرح وهمي</p>
-
-                                    </div>
-
-                                </div>
+                                @endforeach
 
                             </div>
                             <!-- Slides --->
@@ -603,7 +564,7 @@
 
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 
-                                <span class="sr-only">السابق</span>
+                                <span class="sr-only">Previous</span>
 
                             </a>
 
@@ -611,7 +572,7 @@
 
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
 
-                                <span class="sr-only">التالي</span>
+                                <span class="sr-only">Next</span>
 
                             </a>
                             <!-- Controls --->
@@ -622,13 +583,15 @@
                         <!-- Section: Top news --->
                         <section>
 
-                            <h4 class="font-weight-bold mt-5"><strong>الاخبار المهمة</strong></h4>
+                            <h4 class="font-weight-bold mt-5"><strong>TOP NEWS</strong></h4>
 
                             <hr class="red title-hr">
 
                             <!-- Grid row --->
                             <div class="row mb-4">
-
+                                @foreach ($news as $item)
+                                    
+                             
                                 <!-- Grid column --->
                                 <div class="col-md-6 text-left mt-3">
 
@@ -638,10 +601,10 @@
                                         <!-- Card image --->
                                         <div class="view overlay">
 
-                                            <img src="https://mdbootstrap.com/img/Photos/Others/images/10.jpg"
+                                        <img src="{{Voyager::image($item->img_src)}}"
                                                 class="card-img-top" alt="Sample image">
 
-                                            <a>
+                                        <a href="{{url('news/'.$item->id)}}">
 
                                                 <div class="mask rgba-white-slight"></div>
 
@@ -654,77 +617,23 @@
                                         <div class="card-body">
 
                                             <!-- Title --->
-                                            <h4 class="card-title"><strong>عنوان الخبر</strong></h4>
+                                        <h4 class="card-title"><strong>{{$item->title_ar}}</strong></h4>
 
                                             <hr>
 
                                             <!-- Text --->
-                                            <p class="card-text mb-3">
-                                                محتوى وهمي
+                                            <p class="card-text mb-3">{{$item->description_ar}}
+
                                             </p>
 
                                             <p class="font-small font-weight-bold dark-grey-text mb-1"><i
                                                     class="far fa-clock-o"></i>
 
-                                                27/08/2017</p>
-
-                                             
-
-                                            <p class="text-right mb-0 font-small font-weight-bold"><a> اقراء المزيد <i
-                                                        class="fas fa-angle-right"></i></a></p>
-
-                                        </div>
-                                        <!-- Card content --->
-
-                                    </div>
-                                    <!-- Card --->
-
-                                </div>
-                                <!-- Grid column --->
-
-                                <!-- Grid column --->
-                                <div class="col-md-6 text-left mt-3">
-
-                                    <!-- Card --->
-                                    <div class="card">
-
-                                        <!-- Card image --->
-                                        <div class="view overlay">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Others/images/11.jpg"
-                                                class="card-img-top" alt="Sample image">
-
-                                            <a>
-
-                                                <div class="mask rgba-white-slight"></div>
-
-                                            </a>
-
-                                        </div>
-                                        <!-- Card image --->
-
-                                        <!-- Card content --->
-                                        <div class="card-body">
-
-                                            <!-- Title --->
-                                            <h4 class="card-title"><strong>عنوان الخبر</strong></h4>
-
-                                            <hr>
-
-                                            <!-- Text --->
-                                            <p class="card-text mb-3">
-                                                    محتوى وهمي
+                                             {{$item->created_at}}
                                                 </p>
-    
 
-                                            <p class="font-small font-weight-bold dark-grey-text mb-1"><i
-                                                    class="far fa-clock-o"></i>
 
-                                                27/08/2017</p>
-
-                                             
-
-                                            <p class="text-right mb-0 font-small font-weight-bold"><a> اقراء المزيد <i
+                                            <p class="text-right mb-0 font-small font-weight-bold"><a href="{{url('news/'.$item->id)}}">read more <i
                                                         class="fas fa-angle-right"></i></a></p>
 
                                         </div>
@@ -735,10 +644,12 @@
 
                                 </div>
                                 <!-- Grid column --->
+
+                                @endforeach
 
                             </div>
                             <!-- Grid row --->
-
+{{-- 
                             <!-- Grid row --->
                             <div class="row mb-4">
 
@@ -767,24 +678,28 @@
                                         <div class="card-body">
 
                                             <!-- Title --->
-                                            <h4 class="card-title"><strong>عنوان الخبر</strong></h4>
+                                            <h4 class="card-title"><strong>Card title</strong></h4>
 
                                             <hr>
 
                                             <!-- Text --->
-                                            <p class="card-text mb-3">
-                                                    محتوى وهمي
-                                                </p>
-    
+                                            <p class="card-text mb-3">Some quick example text to build on the card title
+                                                and make up the bulk
+
+                                                of the
+
+                                                card's content.
+
+                                            </p>
 
                                             <p class="font-small font-weight-bold dark-grey-text mb-1"><i
                                                     class="far fa-clock-o"></i>
 
                                                 27/08/2017</p>
 
-                                             
+                                            <p class="font-small grey-text mb-0">Anna Smith</p>
 
-                                            <p class="text-right mb-0 font-small font-weight-bold"><a> اقراء المزيد <i
+                                            <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i
                                                         class="fas fa-angle-right"></i></a></p>
 
                                         </div>
@@ -821,23 +736,28 @@
                                         <div class="card-body">
 
                                             <!-- Title --->
-                                            <h4 class="card-title"><strong>عنوان الخبر</strong></h4>
+                                            <h4 class="card-title"><strong>Card title</strong></h4>
 
                                             <hr>
 
-                                            <p class="card-text mb-3">
-                                                    محتوى وهمي
-                                                </p>
-    
+                                            <!-- Text --->
+                                            <p class="card-text mb-3">Some quick example text to build on the card title
+                                                and make up the bulk
+
+                                                of the
+
+                                                card's content.
+
+                                            </p>
 
                                             <p class="font-small font-weight-bold dark-grey-text mb-1"><i
                                                     class="far fa-clock-o"></i>
 
                                                 27/08/2017</p>
 
-                                             
+                                            <p class="font-small grey-text mb-0">Anna Smith</p>
 
-                                            <p class="text-right mb-0 font-small font-weight-bold"><a> اقراء المزيد <i
+                                            <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i
                                                         class="fas fa-angle-right"></i></a></p>
 
                                         </div>
@@ -850,300 +770,132 @@
                                 <!-- Grid column --->
 
                             </div>
-                            <!-- Grid row --->
+                            <!-- Grid row ---> --}}
 
                         </section>
 
-                     
-                    <!-- Section: Magazine posts --->
+
+                        <!-- Section: Magazine posts --->
 
 
                         <!-- Section: Top news --->
                         <section>
 
-                                <h4 class="font-weight-bold mt-5"><strong>أخر الاخبار</strong></h4>
-    
-                                <hr class="red title-hr">
-    
-                                <!-- Grid row --->
-                                <div class="row mb-4">
-    
-                                    <!-- Grid column --->
-                                    <div class="col-md-6 text-left mt-3">
-    
-                                        <!-- Card --->
-                                        <div class="card">
-    
-                                            <!-- Card image --->
-                                            <div class="view overlay">
-    
-                                                <img src="https://mdbootstrap.com/img/Photos/Others/images/10.jpg"
-                                                    class="card-img-top" alt="Sample image">
-    
-                                                <a>
-    
-                                                    <div class="mask rgba-white-slight"></div>
-    
-                                                </a>
-    
-                                            </div>
-                                            <!-- Card image --->
-    
-                                            <!-- Card content --->
-                                            <div class="card-body">
-    
-                                                <!-- Title --->
-                                                <h4 class="card-title"><strong>عنوان الخبر</strong></h4>
-    
-                                                <hr>
-    
-                                                <!-- Text --->
-                                                <p class="card-text mb-3">
-                                                        محتوى وهمي
-                                                    </p>
-        
-    
-                                                <p class="font-small font-weight-bold dark-grey-text mb-1"><i
-                                                        class="far fa-clock-o"></i>
-    
-                                                    27/08/2017</p>
-    
-                                                 
-    
-                                                <p class="text-right mb-0 font-small font-weight-bold"><a> اقراء المزيد <i
-                                                            class="fas fa-angle-right"></i></a></p>
-    
-                                            </div>
-                                            <!-- Card content --->
-    
+                            <h4 class="font-weight-bold mt-5"><strong>TOP Events</strong></h4>
+
+                            <hr class="red title-hr">
+
+                            <!-- Grid row --->
+                            <div class="row mb-4">
+                                @foreach ($events as $item)
+                                    
+                                <!-- Grid column --->
+                                <div class="col-md-6 text-left mt-3">
+
+                                    <!-- Card --->
+                                    <div class="card">
+
+                                        <!-- Card image --->
+                                        <div class="view overlay">
+
+                                           <img src="{{Voyager::image($item->img_src)}}" class="card-img-top"
+                                                alt="Sample image">
+
+                                            <a href="">
+
+                                                <div class="mask rgba-white-slight"></div>
+
+                                            </a> 
+
                                         </div>
-                                        <!-- Card --->
-    
-                                    </div>
-                                    <!-- Grid column --->
-    
-                                    <!-- Grid column --->
-                                    <div class="col-md-6 text-left mt-3">
-    
-                                        <!-- Card --->
-                                        <div class="card">
-    
-                                            <!-- Card image --->
-                                            <div class="view overlay">
-    
-                                                <img src="https://mdbootstrap.com/img/Photos/Others/images/11.jpg"
-                                                    class="card-img-top" alt="Sample image">
-    
-                                                <a>
-    
-                                                    <div class="mask rgba-white-slight"></div>
-    
-                                                </a>
-    
-                                            </div>
-                                            <!-- Card image --->
-    
-                                            <!-- Card content --->
-                                            <div class="card-body">
-    
-                                                <!-- Title --->
-                                                <h4 class="card-title"><strong>عنوان الخبر</strong></h4>
-    
-                                                <hr>
-    
-                                                <!-- Text --->
-                                                <p class="card-text mb-3">
-                                                        محتوى وهمي
-                                                    </p>
-        
-    
-                                                <p class="font-small font-weight-bold dark-grey-text mb-1"><i
-                                                        class="far fa-clock-o"></i>
-    
-                                                    27/08/2017</p>
-    
-                                                 
-    
-                                                <p class="text-right mb-0 font-small font-weight-bold"><a> اقراء المزيد <i
-                                                            class="fas fa-angle-right"></i></a></p>
-    
-                                            </div>
-                                            <!-- Card content --->
-    
+                                        <!-- Card image --->
+
+                                        <!-- Card content --->
+                                        <div class="card-body">
+
+                                            <!-- Title --->
+                                            <h4 class="card-title"><strong>{{$item->title_ar}}</strong></h4>
+
+                                            <hr>
+
+                                            <!-- Text --->
+                                            <p class="card-text mb-3">
+                                                {{$item->description_ar}}
+
+                                            </p>
+
+                                            <p class="font-small font-weight-bold dark-grey-text mb-1"><i
+                                                    class="far fa-clock-o"></i>
+
+                                             {{$item->created_at}}</p>
+
+
+
                                         </div>
-                                        <!-- Card --->
-    
+                                        <!-- Card content --->
+
                                     </div>
-                                    <!-- Grid column --->
-    
+                                    <!-- Card --->
+
                                 </div>
-                                <!-- Grid row --->
-    
-                                <!-- Grid row --->
-                                <div class="row mb-4">
-    
-                                    <!-- Grid column --->
-                                    <div class="col-md-6 text-left mt-3">
-    
-                                        <!-- Card --->
-                                        <div class="card">
-    
-                                            <!-- Card image --->
-                                            <div class="view overlay">
-    
-                                                <img src="https://mdbootstrap.com/img/Photos/Others/images/3.jpg"
-                                                    class="card-img-top" alt="Sample image">
-    
-                                                <a>
-    
-                                                    <div class="mask rgba-white-slight"></div>
-    
-                                                </a>
-    
-                                            </div>
-                                            <!-- Card image --->
-    
-                                            <!-- Card content --->
-                                            <div class="card-body">
-    
-                                                <!-- Title --->
-                                                <h4 class="card-title"><strong>عنوان الخبر</strong></h4>
-    
-                                                <hr>
-    
-                                                <!-- Text --->
-                                                <p class="card-text mb-3">
-                                                        محتوى وهمي
-                                                    </p>
-        
-    
-                                                <p class="font-small font-weight-bold dark-grey-text mb-1"><i
-                                                        class="far fa-clock-o"></i>
-    
-                                                    27/08/2017</p>
-    
-                                                 
-    
-                                                <p class="text-right mb-0 font-small font-weight-bold"><a> اقراء المزيد <i
-                                                            class="fas fa-angle-right"></i></a></p>
-    
-                                            </div>
-                                            <!-- Card content --->
-    
-                                        </div>
-                                        <!-- Card --->
-    
-                                    </div>
-                                    <!-- Grid column --->
-    
-                                    <!-- Grid column --->
-                                    <div class="col-md-6 text-left mt-3">
-    
-                                        <!-- Card --->
-                                        <div class="card">
-    
-                                            <!-- Card image --->
-                                            <div class="view overlay">
-    
-                                                <img src="https://mdbootstrap.com/img/Photos/Others/images/12.jpg"
-                                                    class="card-img-top" alt="Sample image">
-    
-                                                <a>
-    
-                                                    <div class="mask rgba-white-slight"></div>
-    
-                                                </a>
-    
-                                            </div>
-                                            <!-- Card image --->
-    
-                                            <!-- Card content --->
-                                            <div class="card-body">
-    
-                                                <!-- Title --->
-                                                <h4 class="card-title"><strong>عنوان الخبر</strong></h4>
-    
-                                                <hr>
-    
-                                                <!-- Text --->
-                                                <p class="card-text mb-3">
-                                                        محتوى وهمي
-                                                    </p>
-        
-    
-                                                <p class="font-small font-weight-bold dark-grey-text mb-1"><i
-                                                        class="far fa-clock-o"></i>
-    
-                                                    27/08/2017</p>
-    
-                                                 
-    
-                                                <p class="text-right mb-0 font-small font-weight-bold"><a> اقراء المزيد <i
-                                                            class="fas fa-angle-right"></i></a></p>
-    
-                                            </div>
-                                            <!-- Card content --->
-    
-                                        </div>
-                                        <!-- Card --->
-    
-                                    </div>
-                                    <!-- Grid column --->
-    
-                                </div>
-                                <!-- Grid row --->
-    
-                            </section>
-    
-                         
+                                <!-- Grid column --->
+                                @endforeach
+
+
+                            </div>
+                            <!-- Grid row --->
+
+                        </section>
+
+
                         <!-- Section: Magazine posts --->
 
-                    <!-- Pagination dark --->
-                    <nav>
+                        <!-- Pagination dark --->
+                        <nav>
 
-                        <ul class="pagination pg-dark flex-center pt-4">
+                            <ul class="pagination pg-dark flex-center pt-4">
 
-                            <!-- Arrow left --->
-                            <li class="page-item">
+                                <!-- Arrow left --->
+                                <li class="page-item">
 
-                                <a class="page-link" aria-label="Previous">
+                                    <a class="page-link" aria-label="Previous">
 
-                                    <span aria-hidden="true">&laquo;</span>
+                                        <span aria-hidden="true">&laquo;</span>
 
-                                    <span class="sr-only">السابق</span>
+                                        <span class="sr-only">Previous</span>
 
-                                </a>
+                                    </a>
 
-                            </li>
+                                </li>
 
-                            <!-- Numbers --->
-                            <li class="page-item active"><a class="page-link">1</a></li>
+                                <!-- Numbers --->
+                                <li class="page-item active"><a class="page-link">1</a></li>
 
-                            <li class="page-item"><a class="page-link">2</a></li>
+                                <li class="page-item"><a class="page-link">2</a></li>
 
-                            <li class="page-item"><a class="page-link">3</a></li>
+                                <li class="page-item"><a class="page-link">3</a></li>
 
-                            <li class="page-item"><a class="page-link">4</a></li>
+                                <li class="page-item"><a class="page-link">4</a></li>
 
-                            <li class="page-item"><a class="page-link">5</a></li>
+                                <li class="page-item"><a class="page-link">5</a></li>
 
-                            <!-- Arrow right --->
-                            <li class="page-item">
+                                <!-- Arrow right --->
+                                <li class="page-item">
 
-                                <a class="page-link" aria-label="Next">
+                                    <a class="page-link" aria-label="Next">
 
-                                    <span aria-hidden="true">&raquo;</span>
+                                        <span aria-hidden="true">&raquo;</span>
 
-                                    <span class="sr-only">التالي</span>
+                                        <span class="sr-only">Next</span>
 
-                                </a>
+                                    </a>
 
-                            </li>
+                                </li>
 
-                        </ul>
+                            </ul>
 
-                    </nav>
-                    <!-- Pagination dark grey --->
+                        </nav>
+                        <!-- Pagination dark grey --->
 
                 </div>
                 <!-- Main news --->
@@ -1152,578 +904,54 @@
                 <div class="col-xl-4 col-md-12 widget-column mt-0">
 
                     <!-- Section: Categories --->
-                    <section class="section mb-5">
 
-                        <h4 class="font-weight-bold mt-2"><strong>التصنيفات</strong></h4>
 
-                        <hr class="red title-hr">
-
-                        <ul class="list-group z-depth-1 mt-4">
-
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-
-                                <a>Business</a>
-
-                                <span class="badge badge-danger badge-pill">4</span>
-
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-
-                                <a>Entertainment</a>
-
-                                <span class="badge badge-danger badge-pill">2</span>
-
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-
-                                <a>Health</a>
-
-                                <span class="badge badge-danger badge-pill">1</span>
-
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-
-                                <a>Lifestyle</a>
-
-                                <span class="badge badge-danger badge-pill">2</span>
-
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-
-                                <a>Photography</a>
-
-                                <span class="badge badge-danger badge-pill">1</span>
-
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-
-                                <a>Technology</a>
-
-                                <span class="badge badge-danger badge-pill">2</span>
-
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-
-                                <a>Sport</a>
-
-                                <span class="badge badge-danger badge-pill">5</span>
-
-                            </li>
-
-                        </ul>
-
-                    </section>
-
-                    <!-- Section: Categories --->
-                    <h4 class="font-weight-bold"><strong>RECOMMEND POSTS</strong></h4>
-
-                    <hr class="red title-hr mb-4">
-
-                    <!-- Section: News widget --->
-                    <section class="section widget-content mt-5">
-
-                        <!-- Nav tabs --->
-                        <ul class="nav md-tabs tabs-3 nav-justified mb-5 widget-tabs mx-0 mdb-color lighten-3"
-                            role="tablist">
-
-                            <li class="nav-item">
-
-                                <a class="nav-link active px-0" data-toggle="tab" href="#panel1"
-                                    role="tab">RECOMMEND</a>
-
-                            </li>
-
-                            <li class="nav-item">
-
-                                <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">RECENT</a>
-
-                            </li>
-
-                            <li class="nav-item">
-
-                                <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">TOP REVIEWS</a>
-
-                            </li>
-
-                        </ul>
-
-                        <!-- Tab panels --->
-                        <div class="tab-content p-0 ml-2">
-
-                            <!-- Panel 1 --->
-                            <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
-
-                                <div class="single-post">
-
-                                    <!-- First row --->
-                                    <div class="row">
-
-                                        <!-- Image --->
-                                        <div class="col-4">
-
-                                            <div class="view overlay z-depth-1">
-
-                                                <img src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg"
-                                                    class="img-fluid" alt="sample image">
-
-                                                <a>
-
-                                                    <div class="mask rgba-white-slight"></div>
-
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Image --->
-
-                                        <!-- Excerpt --->
-                                        <div class="col-8">
-
-                                            <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                            <div class="post-data">
-
-                                                <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                    15/09/2017</p>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Excerpt --->
-
-                                    </div>
-                                    <!-- First row --->
-
-                                </div>
-
-                                <div class="single-post">
-
-                                    <!-- Second row --->
-                                    <div class="row">
-
-                                        <!-- Image --->
-                                        <div class="col-4">
-
-                                            <div class="view overlay z-depth-1">
-
-                                                <img src="https://mdbootstrap.com/img/Photos/Others/img%20(43).jpg"
-                                                    class="img-fluid" alt="sample image">
-
-                                                <a>
-
-                                                    <div class="mask rgba-white-slight"></div>
-
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Image --->
-
-                                        <!-- Excerpt --->
-                                        <div class="col-8">
-
-                                            <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                            <div class="post-data">
-
-                                                <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                    15/09/2017</p>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Excerpt --->
-
-                                    </div>
-                                    <!-- Second row --->
-
-                                </div>
-
-                                <div class="single-post">
-
-                                    <!-- Third row --->
-                                    <div class="row">
-
-                                        <!-- Image --->
-                                        <div class="col-4">
-
-                                            <div class="view overlay z-depth-1">
-
-                                                <img src="https://mdbootstrap.com/img/Photos/Others/img%20(39).jpg"
-                                                    class="img-fluid" alt="sample image">
-
-                                                <a>
-
-                                                    <div class="mask rgba-white-slight"></div>
-
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Image --->
-
-                                        <!-- Excerpt --->
-                                        <div class="col-8">
-
-                                            <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                            <div class="post-data">
-
-                                                <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                    15/09/2017</p>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Excerpt --->
-
-                                    </div>
-                                    <!-- Third row --->
-
-                                </div>
-
-                            </div>
-                            <!-- Panel 1 --->
-
-                            <!-- Panel 2 --->
-                            <div class="tab-pane fade" id="panel2" role="tabpanel">
-
-                                <div class="single-post">
-
-                                    <!-- First row --->
-                                    <div class="row">
-
-                                        <!-- Image --->
-                                        <div class="col-4">
-
-                                            <div class="view overlay z-depth-1">
-
-                                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(85).jpg"
-                                                    class="img-fluid" alt="sample image">
-
-                                                <a>
-
-                                                    <div class="mask rgba-white-slight"></div>
-
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Image --->
-
-                                        <!-- Excerpt --->
-                                        <div class="col-8">
-
-                                            <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                            <div class="post-data">
-
-                                                <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                    15/09/2017</p>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Excerpt --->
-
-                                    </div>
-                                    <!-- First row --->
-
-                                </div>
-
-                                <div class="single-post">
-
-                                    <!-- Second row --->
-                                    <div class="row">
-
-                                        <!-- Image --->
-                                        <div class="col-4">
-
-                                            <div class="view overlay z-depth-1">
-
-                                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(43).jpg"
-                                                    class="img-fluid" alt="sample image">
-
-                                                <a>
-
-                                                    <div class="mask rgba-white-slight"></div>
-
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Image --->
-
-                                        <!-- Excerpt --->
-                                        <div class="col-8">
-
-                                            <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                            <div class="post-data">
-
-                                                <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                    15/09/2017</p>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Excerpt --->
-
-                                    </div>
-                                    <!-- Second row --->
-
-                                </div>
-
-                                <div class="single-post">
-
-                                    <!-- Third row --->
-                                    <div class="row">
-
-                                        <!-- Image --->
-                                        <div class="col-4">
-
-                                            <div class="view overlay z-depth-1">
-
-                                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(30).jpg"
-                                                    class="img-fluid" alt="sample image">
-
-                                                <a>
-
-                                                    <div class="mask rgba-white-slight"></div>
-
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Image --->
-
-                                        <!-- Excerpt --->
-                                        <div class="col-8">
-
-                                            <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                            <div class="post-data">
-
-                                                <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                    15/09/2017</p>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Excerpt --->
-
-                                    </div>
-                                    <!-- Third row --->
-
-                                </div>
-
-                            </div>
-                            <!-- Panel 2 --->
-
-                            <!-- Panel 3 --->
-                            <div class="tab-pane fade" id="panel3" role="tabpanel">
-
-                                <div class="single-post">
-
-                                    <!-- First row --->
-                                    <div class="row">
-
-                                        <!-- Image --->
-                                        <div class="col-4">
-
-                                            <div class="view overlay z-depth-1">
-
-                                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(64).jpg"
-                                                    class="img-fluid" alt="sample image">
-
-                                                <a>
-
-                                                    <div class="mask rgba-white-slight"></div>
-
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Image --->
-
-                                        <!-- Excerpt --->
-                                        <div class="col-8">
-
-                                            <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                            <div class="post-data">
-
-                                                <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                    15/09/2017</p>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Excerpt --->
-
-                                    </div>
-                                    <!-- First row --->
-
-                                </div>
-
-                                <div class="single-post">
-
-                                    <!-- Second row --->
-                                    <div class="row">
-
-                                        <!-- Image --->
-                                        <div class="col-4">
-
-                                            <div class="view overlay z-depth-1">
-
-                                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(76).jpg"
-                                                    class="img-fluid" alt="sample image">
-
-                                                <a>
-
-                                                    <div class="mask rgba-white-slight"></div>
-
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Image --->
-
-                                        <!-- Excerpt --->
-                                        <div class="col-8">
-
-                                            <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                            <div class="post-data">
-
-                                                <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                    15/09/2017</p>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Excerpt --->
-
-                                    </div>
-                                    <!-- Second row --->
-
-                                </div>
-
-                                <div class="single-post">
-
-                                    <!-- Third row --->
-                                    <div class="row">
-
-                                        <!-- Image --->
-                                        <div class="col-4">
-
-                                            <div class="view overlay z-depth-1">
-
-                                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(75).jpg"
-                                                    class="img-fluid" alt="sample image">
-
-                                                <a>
-
-                                                    <div class="mask rgba-white-slight"></div>
-
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Image --->
-
-                                        <!-- Excerpt --->
-                                        <div class="col-8">
-
-                                            <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                            <div class="post-data">
-
-                                                <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                    15/09/2017</p>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- Excerpt --->
-
-                                    </div>
-                                    <!-- Third row --->
-
-                                </div>
-
-                            </div>
-                            <!-- Panel 3 --->
-
-                        </div>
-                        <!-- Tab panels --->
-
-                    </section>
-                    <!-- Section: News widget --->
-
-                    <!-- Section: Advertisment --->
+                    @foreach ($ads as $item)
                     <section class="section mt-5">
 
-                        <h6 class="grey-text text-center mb-3"><strong>- Advertisment -</strong></h6>
-
-                        <!-- Jumbotron --->
-                        <div class="jumbotron text-center">
-
-                            <!-- Title --->
-                            <h1 class="card-title h2-responsive mt-2"><strong>Advertisment</strong>
-                            </h1>
-
-                            <!-- Subtitle --->
-                            <p class="blue-text mb-4 mt-5 font-weight-bold">Advertisment</p>
-
-                            <!-- Text --->
-                            <div class="d-flex justify-content-center">
-
-                                <p class="card-text mb-1" style="max-width: 43rem;">Advertisment
-                                        Advertisment
-                                        Advertisment
-
-                                    totam rem aperiam.
-
-                                </p>
-
+                            <h6 class="grey-text text-center mb-3"><strong>- اعلانات -</strong></h6>
+    
+                            <!-- Jumbotron --->
+                            <div class="jumbotron text-center">
+    
+                                <!-- Title --->
+                                <h1 class="card-title h2-responsive mt-2"><strong>{{$item->title_ar}}</strong>
+                                </h1>
+                                
+                                <!-- Subtitle --->
+                                <p class="blue-text mb-4 mt-5 font-weight-bold">{{$item->title_ar}}</p>
+    
+                                <!-- Text --->
+                                <div class="d-flex justify-content-center">
+    
+                                    <p class="card-text mb-1" style="max-width: 43rem;">
+                                            {{$item->description_ar}}
+    
+                                    </p>
+                    
+                                </div>
+    
+                                <hr class="my-4">
+    
+                                @if(!empty($item->link) )
+    
+                                <a class="btn btn-rounded custom-primary " href="{{$item->link}}"> اذهب بالرابط</a>
+                                @endif
                             </div>
+                            <!-- Jumbotron --->
+    
+                        </section>
+                    @endforeach
+                    <!-- Section: اعلانات --->
 
-                            <hr class="my-4">
+                    <!-- Section: اعلانات --->
 
-                            <button type="button" class="btn btn-primary btn-sm waves-effect">Advertisment<span
-                                    class="far fa-gem ml-1"></span></button>
 
-                            <button type="button" class="btn btn-outline-primary btn-sm waves-effect">Advertisment <i
-                                    class="fas fa-download ml-1"></i></button>
-
-                        </div>
-                        <!-- Jumbotron --->
-
-                    </section>
-                    <!-- Section: Advertisment --->
-
-         
 
                     <!-- Section: Gallery --->
                     <section class="section sidebar-imgs mb-5">
 
-                        <h4 class="font-weight-bold"><strong>GALLERY</strong></h4>
+                        <h4 class="font-weight-bold"><strong>معرض الصور</strong></h4>
 
                         <hr class="red title-hr">
 
@@ -1735,114 +963,22 @@
                                 <div id="mdb-lightbox-ui"></div>
 
                                 <div class="mdb-lightbox">
-
+                                    @foreach ($gallery as $item)
+                                        
+                                
                                     <figure class="col-md-4 px-1 py-1">
 
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(10).jpg"
+                                    <a href="{{Voyager::image($item->img_src)}}"
                                             data-size="1600x1067">
 
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(10).jpg"
+                                            <img src="{{Voyager::image($item->img_src)}}"
                                                 class="img-fluid" alt="sample image">
 
                                         </a>
 
                                     </figure>
 
-                                    <figure class="col-md-4 px-1 py-1">
-
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg"
-                                            data-size="1600x1067">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(98).jpg"
-                                                class="img-fluid" alt="sample image" />
-
-                                        </a>
-
-                                    </figure>
-
-                                    <figure class="col-md-4 px-1 py-1">
-
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg"
-                                            data-size="1600x1067">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(131).jpg"
-                                                class="img-fluid" alt="sample image" />
-
-                                        </a>
-
-                                    </figure>
-
-                                    <figure class="col-md-4 px-1 py-1">
-
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20(4).jpg"
-                                            data-size="1600x1067">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(4).jpg"
-                                                class="img-fluid" alt="sample image" />
-
-                                        </a>
-
-                                    </figure>
-
-                                    <figure class="col-md-4 px-1 py-1">
-
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20(51).jpg"
-                                            data-size="1600x1067">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(51).jpg"
-                                                class="img-fluid" alt="sample image" />
-
-                                        </a>
-
-                                    </figure>
-
-                                    <figure class="col-md-4 px-1 py-1">
-
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(128).jpg"
-                                            data-size="1600x1067">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(128).jpg"
-                                                class="img-fluid" alt="sample image" />
-
-                                        </a>
-
-                                    </figure>
-
-                                    <figure class="col-md-4 px-1 py-1">
-
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(49).jpg"
-                                            data-size="1600x1067">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(49).jpg"
-                                                class="img-fluid" alt="sample image" />
-
-                                        </a>
-
-                                    </figure>
-
-                                    <figure class="col-md-4 px-1 py-1">
-
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(115).jpg"
-                                            data-size="1600x1067">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(115).jpg"
-                                                class="img-fluid" alt="sample image" />
-
-                                        </a>
-
-                                    </figure>
-
-                                    <figure class="col-md-4 px-1 py-1">
-
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(15).jpg"
-                                            data-size="1600x1067">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(15).jpg"
-                                                class="img-fluid" alt="sample image" />
-
-                                        </a>
-
-                                    </figure>
+                                    @endforeach
 
                                 </div>
 
@@ -1854,284 +990,7 @@
                     </section>
                     <!-- Section: Gallery --->
 
-                    <!-- Section: Featured posts --->
-                    <section class="section widget-content">
 
-                        <!-- Heading --->
-                        <h4 class="font-weight-bold pt-2"><strong>FEATURED POSTS</strong></h4>
-
-                        <hr class="red title-hr mb-4">
-
-                        <!-- Card --->
-                        <div class="card card-body pb-0">
-
-                            <div class="single-post">
-
-                                <!-- Grid row --->
-                                <div class="row">
-
-                                    <div class="col-4">
-
-                                        <!-- Image --->
-                                        <div class="view overlay">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(121).jpg"
-                                                class="img-fluid z-depth-1 rounded-0" alt="sample image">
-
-                                            <a>
-
-                                                <div class="mask rgba-white-slight"></div>
-
-                                            </a>
-
-                                        </div>
-
-                                    </div>
-
-                                    <!-- Excerpt --->
-                                    <div class="col-8">
-
-                                        <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                        <div class="post-data">
-
-                                            <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                18/08/2017</p>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Excerpt --->
-
-                                </div>
-                                <!-- Grid row --->
-
-                            </div>
-
-                            <div class="single-post">
-
-                                <!-- Grid row --->
-                                <div class="row">
-
-                                    <!-- Image --->
-                                    <div class="col-4">
-
-                                        <div class="view overlay">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(30).jpg"
-                                                class="img-fluid z-depth-1 rounded-0" alt="sample image">
-
-                                            <a>
-
-                                                <div class="mask rgba-white-slight"></div>
-
-                                            </a>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Image --->
-
-                                    <!-- Excerpt --->
-                                    <div class="col-8">
-
-                                        <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                        <div class="post-data">
-
-                                            <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                21/08/2017</p>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Excerpt --->
-
-                                </div>
-                                <!-- Grid row --->
-
-                            </div>
-
-                            <div class="single-post">
-
-                                <!-- Grid row --->
-                                <div class="row">
-
-                                    <!-- Image --->
-                                    <div class="col-4">
-
-                                        <div class="view overlay">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(118).jpg"
-                                                class="img-fluid z-depth-1 rounded-0" alt="sample image">
-
-                                            <a>
-
-                                                <div class="mask rgba-white-slight"></div>
-
-                                            </a>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Image --->
-
-                                    <!-- Excerpt --->
-                                    <div class="col-8">
-
-                                        <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                        <div class="post-data">
-
-                                            <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                27/08/2017</p>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Excerpt --->
-
-                                </div>
-                                <!-- Grid row --->
-
-                            </div>
-
-                            <div class="single-post">
-
-                                <!-- Grid row --->
-                                <div class="row">
-
-                                    <!-- Image --->
-                                    <div class="col-4">
-
-                                        <div class="view overlay">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(116).jpg"
-                                                class="img-fluid z-depth-1 rounded-0" alt="sample image">
-
-                                            <a>
-
-                                                <div class="mask rgba-white-slight"></div>
-
-                                            </a>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Image --->
-
-                                    <!-- Excerpt --->
-                                    <div class="col-8">
-
-                                        <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                        <div class="post-data">
-
-                                            <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                27/08/2017</p>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Excerpt --->
-
-                                </div>
-                                <!-- Grid row --->
-
-                            </div>
-
-                            <div class="single-post">
-
-                                <!-- Grid row --->
-                                <div class="row">
-
-                                    <!-- Image --->
-                                    <div class="col-4">
-
-                                        <div class="view overlay">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(124).jpg"
-                                                class="img-fluid z-depth-1 rounded-0" alt="sample image">
-
-                                            <a>
-
-                                                <div class="mask rgba-white-slight"></div>
-
-                                            </a>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Image --->
-
-                                    <!-- Excerpt --->
-                                    <div class="col-8">
-
-                                        <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                        <div class="post-data">
-
-                                            <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                15/09/2017</p>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Excerpt --->
-
-                                </div>
-                                <!-- Grid row --->
-
-                            </div>
-
-                            <div class="single-post mb-0">
-
-                                <!-- Grid row --->
-                                <div class="row">
-
-                                    <!-- Image --->
-                                    <div class="col-4">
-
-                                        <div class="view overlay">
-
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(85).jpg"
-                                                class="img-fluid z-depth-1 rounded-0" alt="sample image">
-
-                                            <a>
-
-                                                <div class="mask rgba-white-slight"></div>
-
-                                            </a>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Image --->
-
-                                    <!-- Excerpt --->
-                                    <div class="col-8">
-
-                                        <h6 class="mt-0 mb-3"><a><strong>This is عنوان الخبر</strong></a></h6>
-
-                                        <div class="post-data">
-
-                                            <p class="font-small grey-text mb-0"><i class="far fa-clock-o"></i>
-                                                21/08/2018</p>
-
-                                        </div>
-
-                                    </div>
-                                    <!-- Excerpt --->
-
-                                </div>
-                                <!-- Grid row --->
-
-                            </div>
-
-                        </div>
-
-                    </section>
-                    <!-- Section: Featured posts --->
 
                 </div>
                 <!-- Sidebar --->
@@ -2147,11 +1006,11 @@
 
 
     @include('partials.footer_ar')
-    
+
     @if(Session::has('message'))
     <script>
-            $(document).ready(function() {
-                toastr.options = {
+        $(document).ready(function () {
+            toastr.options = {
                 "closeButton": false,
                 "debug": false,
                 "newestOnTop": false,
@@ -2168,11 +1027,11 @@
                 "showMethod": "fadeIn",
                 "hideMethod": "fadeOut"
             };
-                toastr["success"]('{{ Session::get('message') }}')
-        
-                });
-        
-            </script>
+            toastr["success"]('{{ Session::get('
+                message ') }}')
+
+        });
+    </script>
     @endif
 
 </body>
