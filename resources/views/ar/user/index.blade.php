@@ -79,7 +79,7 @@
 
             <div class="container-fluid" style="height:100%">
                 <div class="container ">
-                    <h1 class="text-center  font-weight-bolder custom-secondary-text mt-3">Account Information<i
+                    <h1 class="text-center  font-weight-bolder custom-secondary-text mt-3">معلومات الحساب<i
                             class="fas fa-user custom-secondary-text ml-3"></i></h1>
                     <div class="section extra-margins  py-5 text-center text-lg-left">
 
@@ -92,7 +92,7 @@
 
                                     <!-- Card image -->
                                     <div class="view view-cascade gradient-card-header custom-tertiary">
-                                        <h5 class="mb-0 font-weight-bold">Edit Photo</h5>
+                                        <h5 class="mb-0 font-weight-bold">تغيير الصورة</h5>
                                     </div>
                                     <!-- Card image -->
 
@@ -105,7 +105,7 @@
                                             <div class="mask rgba-white-slight"></div>
                                         </div>
 
-                                        <p class="text-muted"><small>Profile photo will be changed automatically</small> </p>
+                                        <p class="text-muted"><small>الصورة الشخصية سوف تتغير تلقائياً</small> </p>
                                         <div class="row flex-center">
                                             <button class="btn custom-secondary black-text btn-rounded" data-toggle="modal" data-target="#modal_upload_photo">Upload New Photo</button>
                                         </div>
@@ -124,7 +124,7 @@
 
                                     <!-- Card image -->
                                     <div class="view view-cascade gradient-card-header custom-tertiary">
-                                        <h5 class="mb-0 font-weight-bold">Edit Account</h5>
+                                        <h5 class="mb-0 font-weight-bold">تعديل الحساب</h5>
                                     </div>
                                     <!-- Card image -->
 
@@ -153,7 +153,7 @@
                                                         <input id="company_name" name="company_name" type="text"
                                                             value="{{ $user->shippingoffice->name }}"
                                                             class="validate form-control">
-                                                        <label for="company_name">{{ __('Company Name') }}</label>
+                                                        <label for="company_name">اسم الشركة</label>
 
                                                     </div>
                                                 </div>
@@ -203,7 +203,7 @@
                                                     <div class="md-form mb-0">
                                                         <input id="password" name="password" value="" type="password"
                                                             class="validate form-control">
-                                                        <label for="password">{{__('Password')}}</label>
+                                                        <label for="password">كلمة السر</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -214,7 +214,7 @@
                                                 <div class="md-form mb-0">
                                                     <input id="website" name="website" value="{{$user->userdetail->website}}"
                                                         type="text" class="validate form-control">
-                                                    <label for="website">{{ __('Website Address')}}</label>
+                                                    <label for="website">الموقع الإلكتروني</label>
                                                 </div>
                                             </div>
                                             <!-- Third row -->
@@ -222,7 +222,7 @@
                                             <!-- Fourth row -->
                                             <div class="row">
                                                 <div class="col-md-12 text-center my-4">
-                                                    <input type="submit" value="Update Account" class="btn custom-secondary black-text btn-rounded">
+                                                    <input type="submit" value="تعديل الساب" class="btn custom-secondary black-text btn-rounded">
                                                 </div>
                                             </div>
                                             <!-- Fourth row -->

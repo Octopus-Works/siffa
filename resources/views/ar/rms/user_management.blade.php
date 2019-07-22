@@ -345,19 +345,19 @@
                                     class="view view-cascade py-3 custom-primary gradient-card-header elegant-color-dark mx-4 d-flex justify-content-between align-items-center ">
 
 
-                                    <a href="" class="white-text mx-3">Messages</a>
+                                    <a href="" class="white-text mx-3">الرسائل</a>
 
                                     <div>
                                         <button type="button" id="edit" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modalConfirmBlock">
-                                            <span>block</span>
+                                            <span>حظر</span>
                                             <i class="fas fa-ban mt-0"></i>
                                         </button>
                                         <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modalConfirmUnblock">
-                                            <span>unblock</span>
+                                            <span>فك الحظر</span>
                                             <i class="fas fa-unlock-alt "></i>
                                         </button>
                                         <button id="editrole" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modaleditrole">
-                                            <span>change role</span>
+                                            <span>تغيير الدور</span>
                                             <i class="fas fa-unlock-alt mt-0"></i>
                                         </button>
                                     </div>
@@ -451,10 +451,10 @@
                         responsivePriority: 5, title: "<h5 class='font-weight-bold custom-secondary-text'>اسم الأم</h5>"
                     },
                     {
-                        responsivePriority: 3, title: "<h5 class='font-weight-bold custom-secondary-text'>Address</h5>"
+                        responsivePriority: 3, title: "<h5 class='font-weight-bold custom-secondary-text'>العنوان</h5>"
                     },
                     {
-                        responsivePriority: 2, title: "<h5 class='font-weight-bold custom-secondary-text'>Office name</h5>"
+                        responsivePriority: 2, title: "<h5 class='font-weight-bold custom-secondary-text'>اسم الشركة</h5>"
                     }
                 ];
 

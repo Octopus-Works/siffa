@@ -256,7 +256,7 @@
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="record" name="record" value="{{$user->userdetail->record}}"
                                                     type="text" class="validate form-control">
-                                                <label for="record">{{ __('Individual Civil Registry Record') }}</label>
+                                                <label for="record">إخراج القيد</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="nationality" name="nationality"
@@ -319,40 +319,40 @@
                                 </li>
                                 <li class="step">
                             
-                                    <div id="step2" class="step-title waves-effect waves-dark">Shipping Info</div>
+                                    <div id="step2" class="step-title waves-effect waves-dark">معلومات شركة الشحن</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Company Information <i class="fas fa-briefcase m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">معلومات شركة الشحن<i class="fas fa-briefcase m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="company-name" name="company_name"
                                                     value="{{$user->shippingOffice->name}}" type="text"
                                                     class="validate form-control" required>
-                                                <label for="company-name">Shipping Company Name</label>
+                                                <label for="company-name">اسم شركة الشحن</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="position" name="position_title"
                                                     value="{{$user->shippingOffice->position_title}}" type="text"
                                                     class="validate form-control">
-                                                <label for="position">Workplace Position</label>
+                                                <label for="position">المنصب</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="chamber" name="chamber_of_commerce"
                                                     value="{{$user->shippingOffice->chamber_of_commerce}}" type="text"
                                                     class="validate form-control">
-                                                <label for="chamber">Chamber of Commerce</label>
+                                                <label for="chamber">غرفة التجارة</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="regist-num" name="commercial_registry"
                                                     value="{{$user->shippingOffice->commercial_registry}}" type="text"
                                                     class="validate form-control" required>
-                                                <label for="regist-num">Commercial Registration Number</label>
+                                                <label for="regist-num">رقم السجل التجاري</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
-                                                <h6 class="font-weight-bold">Available Shipping Methods:</h6>
+                                                <h6 class="font-weight-bold">طرق الشحن المتوفرة</h6>
                                                 @php $chk1 = "" @endphp
                                                 @php
                                                 
@@ -361,15 +361,14 @@
                                                     <div class="custom-control custom-checkbox p-2">
                                                         <input type="checkbox" name="shipping_modes[]" value="International" class="custom-control-input" id="method1"
                                                         @if(in_array("International", $chk1)) checked @endif>
-                                                        <label class="custom-control-label" for="method1">International
-                                                            Shipping</label>
+                                                        <label class="custom-control-label" for="method1">دولي</label>
                                                     </div>
                                                     <ul  id="international">
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"  name="shipping_modes[]" value="LandTransport" 
                                                                 id="method11" @if(in_array("LandTransport", $chk1)) checked @endif>
                                                             <label class="custom-control-label"
-                                                                for="method11">LandTransport</label>
+                                                                for="method11">بري</label>
                                                         </div>
                                                             <ul  id="land">
                                                                 <div class="custom-control custom-checkbox p-2">
@@ -393,7 +392,7 @@
                                                                 id="method12" name="shipping_modes[]" value="WaterTransport"
                                                                 @if(in_array("WaterTransport", $chk1)) checked @endif>
                                                             <label class="custom-control-label"
-                                                                for="method12">WaterTransport</label>
+                                                                for="method12">بحري</label>
                                                         </div>
                                                             <ul id="water">
                                                                 <div class="custom-control custom-checkbox p-2">
@@ -414,15 +413,14 @@
                                                                 <input type="checkbox" name="shipping_modes[]" value="AirTransport" class="custom-control-input"
                                                                 id="method13" @if(in_array("AirTransport", $chk1)) checked @endif>
                                                                 <label class="custom-control-label"
-                                                                    for="method13">AirTransport</label>
+                                                                    for="method13">جوي</label>
                                                             </div>
                                                         </ul>
     
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" name="shipping_modes[]" value="National" class="custom-control-input" id="method2"
                                                             @if(in_array("National", $chk1)) checked @endif>
-                                                            <label class="custom-control-label" for="method2">National
-                                                                Shipping</label>
+                                                            <label class="custom-control-label" for="method2">محلي</label>
                                                         </div>
                                                     </ul>
                                                 </div>
@@ -438,24 +436,24 @@
                                     </div>
                                 </li>
                                 <li class="step">
-                                    <div id="step3" class="step-title waves-effect waves-dark">Hard Copy</div>
+                                    <div id="step3" class="step-title waves-effect waves-dark">النسخة الورقية</div>
                     
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Hard Copy <i
+                                        <h5 class="text-center font-weight-bolder">النسخة الورقية <i
                                                 class="far fa-clipboard m-1"></i>
                                         </h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <div class="file-field">
-                                                    <h6>Hard Copy of the Application Form:</h6>
+                                                    <h6>النسخة الورقية لطلب التسجيل</h6>
                                                     <div class="btn btn-elegant btn-sm float-left">
-                                                        <span>Choose file</span>
+                                                        <span>اختر ملف</span>
                                                         <input id="application_photo" type="file" name="hard_copy"
                                                         onchange="loadFile(event)">
                                                     </div>
                                                     <div class="file-path-wrapper">
                                                         <input id="hard-copy" class="file-path validate" type="text"
-                                                            placeholder="Upload your file" style="color:white">
+                                                            placeholder="رفع الملف" style="color:white">
                                                     </div>
                                                 </div>
                                             </div>

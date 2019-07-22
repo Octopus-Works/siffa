@@ -146,26 +146,26 @@
                 <div class="col-md-12">
                     <div class="card p-4 mt-3 mb-3 shadow-lg custom-primary">
                         <div id="app_form">
-                            <h2 class="text-center mb-5 font-weight-bolder">Application<i
+                            <h2 class="text-center mb-5 font-weight-bolder">طلب التسجيل<i
                                     class="fas fa-clipboard custom-secondary-text ml-3"></i></h2>
                             <ul class="stepper horizontal" id="horizontal-stepper" style="height:1200px;">
                                 <li class="step active">
-                                    <div id="step1" class="step-title waves-effect waves-dark">Basic Information</div>
+                                    <div id="step1" class="step-title waves-effect waves-dark">المعلومات الأساسية</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Basic Information <i
+                                        <h5 class="text-center font-weight-bolder">المعلومات الأساسية<i
                                                 class="fas fa-user m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="fullname" name="fullname" type="text" value="{{ $user->userdetail->fullname }}" disabled>
-                                                <label for="fullname">{{ __('Full Name') }}</label>
+                                                <label for="fullname">الاسم الكامل</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="father" name="father" type="text" value="{{ $user->userdetail->father_name }}" disabled>
-                                                <label for="father">{{ __("Father's Name") }}</label>
+                                                <label for="father">اسم الأب</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="mother" name="mother" type="text" value="{{ $user->userdetail->mother_name }}" disabled>
-                                                <label for="mother">{{ __("Mother's Name") }}</label>
+                                                <label for="mother">اسم الأم</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
@@ -175,7 +175,7 @@
 
                                             <div class="md-form col-12 ml-auto">
                                                 <input name="date_of_birth" type="text" value="{{ $user->userdetail->date_of_birth }}" disabled>
-                                                <label for="date_of_birth">{{ __("تاريخ الميلاد") }}</label>
+                                                <label for="date_of_birth">تاريخ الميلاد</label>
                                             </div>
 
                                             <div class="md-form col-12 ml-auto">
@@ -184,7 +184,7 @@
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="record" name="record" type="text" value="{{ $user->userdetail->record }}" disabled>
-                                                <label for="record">Individual Civil Registry Record</label>
+                                                <label for="record">إخراج القيد</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="nationality" name="nationality" type="text" value="{{ $user->userdetail->nationality }}" disabled>
@@ -192,19 +192,19 @@
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="city" name="city" type="text" value="{{$user->shippingOffice->city}}" disabled>
-                                                <label for="city">City</label>
+                                                <label for="city">المدينة</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="address" name="address" type="text" value="{{ $user->userdetail->address }}" disabled>
-                                                <label for="address">Address</label>
+                                                <label for="address">العنوان</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="phonenumber" name="phone_number" type="text" value="{{ $user->userdetail->phone_number }}" disabled>
-                                                <label for="phonenumber">Phone Number</label>
+                                                <label for="phonenumber">الهاتف</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="mobilenumber" name="mobile_number" type="text" value="{{ $user->userdetail->mobile_number }}" disabled>
-                                                <label for="mobilenumber">Mobile Number</label>
+                                                <label for="mobilenumber">الجوال</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="website" name="website" type="text" value="{{ $user->userdetail->website }}" disabled>
@@ -212,33 +212,33 @@
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center">
-                                            <button class="waves-effect waves-dark btn custom-secondary next-step">NEXT</button>
+                                            <button class="waves-effect waves-dark btn custom-secondary next-step">التالي</button>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="step">
-                                    <div id="step2" class="step-title waves-effect waves-dark">Shipping Info</div>
+                                    <div id="step2" class="step-title waves-effect waves-dark">معلومات شركة الشحن</div>
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Shipping Company Information <i class="fas fa-briefcase m-1"></i></h5>
+                                        <h5 class="text-center font-weight-bolder">معلومات شركة الشحن <i class="fas fa-briefcase m-1"></i></h5>
                                         <div class="row">
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="company-name" name="company_name" type="text" value="{{$user->shippingOffice->name}}" disabled>
-                                                <label for="company-name">Shipping Company Name</label>
+                                                <label for="company-name">اسم شركة الشحن</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="position" name="position_title" type="text" value="{{$user->shippingOffice->position_title}}" disabled>
-                                                <label for="position">Workplace Position</label>
+                                                <label for="position">المنصب</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="chamber" name="chamber_of_commerce" type="text" value="{{$user->shippingOffice->chamber_of_commerce}}" disabled>
-                                                <label for="chamber">Chamber of Commerce</label>
+                                                <label for="chamber">غرفة التجارة</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
                                                 <input id="regist-num" name="commercial_registry" type="text" value="{{$user->shippingOffice->commercial_registry}}" disabled>
-                                                <label for="regist-num">Commercial Registration Number</label>
+                                                <label for="regist-num">رقم السجل التجاري</label>
                                             </div>
                                             <div class="md-form col-12 ml-auto">
-                                                <h6 class="font-weight-bold">Available Shipping Methods:</h6>
+                                                <h6 class="font-weight-bold">طرق الشحن المتوفرة</h6>
                                                 @php $chk1 = "" @endphp
                                                 @php
                                                 
@@ -247,15 +247,14 @@
                                                     <div class="custom-control custom-checkbox p-2">
                                                         <input type="checkbox" name="shipping_modes[]" value="International" class="custom-control-input" id="method1" 
                                                         @if(in_array("International", $chk1)) checked @endif disabled>
-                                                        <label class="custom-control-label" for="method1">International
-                                                            Shipping</label>
+                                                        <label class="custom-control-label" for="method1">دولي</label>
                                                     </div>
                                                     <ul id="international">
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" class="custom-control-input"  name="shipping_modes[]" value="LandTransport" 
                                                                 id="method11"  @if(in_array("LandTransport", $chk1)) checked @endif disabled>
                                                                 <label class="custom-control-label"
-                                                                for="method11">LandTransport</label>
+                                                                for="method11">بري</label>
                                                         </div>
                                                             <ul id="land">
                                                                 <div class="custom-control custom-checkbox p-2">
@@ -278,7 +277,7 @@
                                                                 id="method12"  name="shipping_modes[]" value="WaterTransport"
                                                                 @if(in_array("WaterTransport", $chk1)) checked @endif disabled>
                                                                 <label class="custom-control-label"
-                                                                for="method12">WaterTransport</label>
+                                                                for="method12">بحري</label>
                                                         </div>
                                                             <ul id="water">
                                                                 <div class="custom-control custom-checkbox p-2">
@@ -299,32 +298,31 @@
                                                                 <input type="checkbox" name="shipping_modes[]" value="AirTransport" class="custom-control-input"
                                                                 id="method13" @if(in_array("AirTransport", $chk1)) checked @endif disabled>
                                                                 <label class="custom-control-label"
-                                                                    for="method13">AirTransport</label>
+                                                                    for="method13">جوي</label>
                                                             </div>
                                                         </ul>
     
                                                         <div class="custom-control custom-checkbox p-2">
                                                             <input type="checkbox" name="shipping_modes[]" value="National" class="custom-control-input" id="method2"
                                                             @if(in_array("National", $chk1)) checked @endif disabled>
-                                                            <label class="custom-control-label" for="method2">National
-                                                                Shipping</label>
+                                                            <label class="custom-control-label" for="method2">محلي</label>
                                                         </div>
                                                     </ul>
                                                 </div>
                                             </div>
                                             <div class=" d-flex justify-content-center">
-                                                <button class="waves-effect waves-dark btn custom-secondary next-step">NEXT</button>
+                                                <button class="waves-effect waves-dark btn custom-secondary next-step">التالي</button>
                                             </div>
                                     </div>
                                 </li>
                                 <li class="step">
-                                    <div id="step3" class="step-title waves-effect waves-dark">Hard Copy</div>
+                                    <div id="step3" class="step-title waves-effect waves-dark">النسخة الورقية</div>
                     
                                     <div class="step-new-content">
-                                        <h5 class="text-center font-weight-bolder">Hard Copy <i
+                                        <h5 class="text-center font-weight-bolder">النسخة الورقية<i
                                                 class="far fa-clipboard m-1"></i>
                                         </h5>
-                                        <h6>Hard Copy of the Application Form:</h6>
+                                        <h6>النسخة الورقية لطلب التسجيل</h6>
                                         <div class="col-md-12 text-center mb-5">
                                             @if ( isset($image))
                                                 <img id="application" src="{{ url($image->url)}}" class="text-center" alt=""/>
@@ -332,10 +330,10 @@
                                         </div>
                                         <div class="d-flex justify-content-center col-md-12">
                                             <div>
-                                                <button id='state' type="button" class="btn btn-success btn-rounded px-2">Approve Application </a></button>
+                                                <button id='state' type="button" class="btn btn-success btn-rounded px-2">قبول الطلب </a></button>
                                             </div>
                                             <div>
-                                                <button id ='state2' type="button" class="btn btn-danger btn-rounded  px-2">Decline Application </button>
+                                                <button id ='state2' type="button" class="btn btn-danger btn-rounded  px-2">رفض الطلب </button>
                                             </div>
                                         </div>
                                     </div>

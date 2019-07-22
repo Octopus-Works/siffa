@@ -261,14 +261,14 @@
                     </div>
  
 
-                  <a href="" class="white-text mx-3">Messages</a>
+                  <a href="" class="white-text mx-3">الرسائل</a>
                   <div>
                       <button type="button" id="new" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_new_message">
-                        <span>new</span>
+                        <span>إنشاء</span>
                         <i class="fas fa-plus mt-0"></i>
                       </button>
                       <button id="delete" type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#modal_edit_message">
-                        <span>edit</span>
+                        <span>تعديل</span>
                         <i class="fas fa-edit mt-0"></i>
                       </button>
   
@@ -342,7 +342,7 @@
             @foreach($mail as $message)[
                 "{{ $message->sender_id }}",
                 "{{ $message->subject }}",
-                `<a data-toggle='modal' data-target='#modal_view_message' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`,
+                `<a data-toggle='modal' data-target='#modal_view_message' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>عرض</a>`,
                 "{{ $message->body }}",
                 "{{ $message->images[0]->url }}",
                 "{{ $message->sender_id }}",
@@ -356,25 +356,25 @@
         ];
 
       var columnDefs = [{
-        title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
+        title: "<h5 class='font-weight-bold custom-secondary-text'>المرسل</h5>"
           },
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>العنوان</h5>"
           },
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>الفعل</h5>"
           },
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>العرض</h5>"
           },
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>الصورة</h5>"
           },
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>المرسل</h5>"
           },    
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>المرسل إليه</h5>"
           }
       ];
 

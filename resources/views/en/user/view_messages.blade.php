@@ -359,22 +359,22 @@
         title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
           },
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Subject</h5>"
           },
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Action</h5>"
           },
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Body</h5>"
           },
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>Image</h5>"
           },
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>From</h5>"
           },    
           {
-              title: "<h5 class='font-weight-bold custom-secondary-text'>Title</h5>"
+              title: "<h5 class='font-weight-bold custom-secondary-text'>To</h5>"
           }
       ];
 

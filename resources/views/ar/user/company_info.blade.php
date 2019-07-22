@@ -73,7 +73,7 @@
 
                                 <!-- Card image -->
                                 <div class="view view-cascade gradient-card-header custom-tertiary">
-                                    <h5 class="mb-0 font-weight-bold">Edit Photo</h5>
+                                    <h5 class="mb-0 font-weight-bold">تغيير الصورة</h5>
                                 </div>
                                 <!-- Card image -->
 
@@ -86,7 +86,7 @@
                                             <div class="mask rgba-white-slight"></div>
                                         </div>
 
-                                        <p class="text-muted"><small>الصورة الشخصية سوف تتغير تلقائيا</small> </p>
+                                        <p class="text-muted"><small>الصورة الشخصية سوف تتغير تلقائياً</small> </p>
                                         <div class="row flex-center">
                                             <button class="btn custom-secondary black-text btn-rounded" data-toggle="modal" data-target="#company_photo_modal">Upload New Photo</button>
                                         </div>

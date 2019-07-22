@@ -99,7 +99,7 @@
                                 <div
                                     class="view view-cascade py-3 gradient-card-header custom-tertiary mx-4  align-items-center">
 
-                                    <a href="" class="white-text mx-3 ">Applications</a>
+                                    <a href="" class="white-text mx-3 ">طلبات التسجيل</a>
 
 
 
@@ -168,7 +168,7 @@
                         @foreach ($user as $user)[
                             "{{$user->userdetail->fullname}}","{{$user->shippingoffice->name}}",
                             "<h5> @if( isset(auth::user()->applicationdetail->status)) @php $temp = auth::user()->applicationdetail->status @endphp @endif <span class='rounded-pill ml-3 @if(isset($temp) && $temp == 'In progress') badge badge-primary @endif @if(isset($temp) && $temp == 'Rejected') badge badge-danger @endif @if(isset($temp) && $temp == 'Approved under Payment') badge badge-primary @endif @if(isset($temp) && $temp === 'Paid under Registration') badge badge-primary @endif @if(isset($temp) && $temp == 'Registered') badge badge-success @endif '> @if(isset($temp)) {{ auth::user()->applicationdetail->status}} @endif</span></h5>",
-                            "<a href='{{url('/rms/application/' . $user->id)}}'><button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text' style='margin-top:-10px'>Handle</button></a>"
+                            "<a href='{{url('/rms/application/' . $user->id)}}'><button class='btn btn-sm btn-rounded custom-secondary waves-effect black-text' style='margin-top:-10px'>مراجعة</button></a>"
                         ],
                         @endforeach
                     @endif
@@ -179,13 +179,13 @@
                         responsivePriority: 1, title: "<h6 class='font-weight-bold custom-secondary-text'>الاسم الكامل</h6>"
                     },
                     {
-                        responsivePriority: 4, title: "<h6 class='font-weight-bold custom-secondary-text'>Office name</h6>"
+                        responsivePriority: 4, title: "<h6 class='font-weight-bold custom-secondary-text'>اسم الشركة</h6>"
                     },
                     {
-                        responsivePriority: 3, title: "<h6 class='font-weight-bold custom-secondary-text'>Status</h6>"
+                        responsivePriority: 3, title: "<h6 class='font-weight-bold custom-secondary-text'>الحالة</h6>"
                     },
                     {
-                        responsivePriority: 2, title: "<h6 class='font-weight-bold custom-secondary-text'>Actions</h6>"
+                        responsivePriority: 2, title: "<h6 class='font-weight-bold custom-secondary-text'>الفعل</h6>"
                     },
                 ];
 

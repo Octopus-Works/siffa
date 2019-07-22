@@ -185,7 +185,7 @@
                         responsivePriority: 3, title: "<h6 class='font-weight-bold custom-secondary-text'>Status</h6>"
                     },
                     {
-                        responsivePriority: 2, title: "<h6 class='font-weight-bold custom-secondary-text'>Actions</h6>"
+                        responsivePriority: 2, title: "<h6 class='font-weight-bold custom-secondary-text'>Action</h6>"
                     },
                 ];
 
