@@ -63,6 +63,8 @@ class PagesController extends Controller
     public function test(Request $request){
         $users = User::where('role_id', '2')->get();
   
+        if($request->has('shipping_modes'))
+        {
         $s = implode(' ', $request->shipping_modes);
 
         $temp = ShippingService::all(); 
@@ -74,12 +76,30 @@ class PagesController extends Controller
             }
         }
 
+    }
+
+    if($request->has('shipping_modes'))
+    {
+
         $query = DB::table('shipping_offices')
         ->join('shipping_services', 'shipping_services.id', 'shipping_offices.id')
         ->join('user_details', 'user_details.id', 'shipping_offices.id')
         ->where('city', $request->city)
+
         ->whereIn('shipping_offices.id', $arr)
         ->get(); 
+    }
+    else{
+
+
+        $query = DB::table('shipping_offices')
+        ->join('shipping_services', 'shipping_services.id', 'shipping_offices.id')
+        ->join('user_details', 'user_details.id', 'shipping_offices.id')
+        ->where('city', $request->city)
+        ->get(); 
+
+    }
+
         return view(App::getLocale().'/pages.members.member_list')->withusers($users)->withquery($query);
 
     }

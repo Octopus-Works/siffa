@@ -73,6 +73,8 @@
                           
                                   <div class="card-image" style="background-image: url({{url('img/3.jpg')}})">
                           
+
+                                    
                                     <!-- Content -->
                                     <a href="#!">
                                       <div class="text-white  text-center h-100 mask blue-gradient-rgba">

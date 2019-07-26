@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+@php
+ use App\User;   
+@endphp
 
 
 <head>
@@ -369,7 +371,7 @@
 
                     `{{ $q->name }}`,
                     `{{ $q->city }}`,
-                    `{{ $q->phone_number }}`,
+                    `{{ User::find($q->user_id)->userdetail->phone_number }}`,
                     `<a href='{{url('company_info').'/'.$q->id}}' class='btn btn-sm btn-rounded custom-secondary waves-effect black-text'>View</a>`
                 ],
                 @endforeach
