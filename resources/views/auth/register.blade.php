@@ -7,8 +7,6 @@
     <title>Register</title>
     <link rel="stylesheet" href={{url("css/intlTelInput.css")}}>
     <style>
-
-
         .custom-control-label::after {
             cursor: pointer;
         }
@@ -25,26 +23,38 @@
 
         form .error {
             color: red;
-            text-align:left;
-            margin-top:-1rem;
+            text-align: left;
+            margin-top: -1rem;
 
         }
 
-        #mobile-error, #phone-error, .initialized{
-            margin-top:0!important
+        #mobile-error,
+        #phone-error,
+        .initialized {
+            margin-top: 0 !important
         }
 
-        .intl-tel-input .flag-container{
-            top:-15px!important;
+        .intl-tel-input .flag-container {
+            top: -15px !important;
         }
 
         .intl-tel-input {
             position: relative;
-            display: block;
-            width:89%;
+            width: 91%;
         }
 
-  
+        .select-dropdown,
+        .select-wrapper span.caret {
+            color: #757575;
+        }
+
+        @media only screen and (max-width: 993px) {
+            .intl-tel-input {
+                position: relative;
+                width: 76%;
+            }
+        }
+
     </style>
 </head>
 
@@ -59,89 +69,96 @@
 
     <!--Main Layout-->
     <main>
+
+
         <div class="view jarallax shadow-lg" style="height: 65vh;">
             <img class="jarallax-img" src={{url('img/3.jpg')}} alt="">
             <div class="mask rgba-black-slight">
             </div>
         </div>
         <div class="container">
-                <div class=" col-xl-9 col-lg-9  col-md-9 col-sm-12 mx-auto m-5">
-                        <div class="card mt-3 mb-3 shadow-lg text-center p-3">
+            <div class=" col-xl-9 col-lg-9  col-md-9 col-sm-12 mx-auto m-5">
+                <div class="card mt-3 mb-3 shadow-lg text-center p-3">
 
-                            <h1 class="text-center mb-5 font-weight-bolder mt-2">Register<i
-                                    class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
-                                    <div class="card-body px-lg-5 pt-0 ">
- 
-                                    <form id="app_form" class="text-center" action="{{route('register')}}" enctype="multipart/form-data" method="POST">
-                                        @csrf
-                                            <div class="md-form">
-                                                <input id="fullname" name="fullname" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="fullname">{{ __('Full name') }}</label>
-                                            </div>
+                    <h1 class="text-center mb-5 font-weight-bolder mt-2">Register<i
+                            class="fas fa-clipboard custom-secondary-text ml-3"></i></h1>
+                    <div class="card-body px-lg-5 pt-0 ">
 
-                                            <div class="md-form">
-                                                <input id="email" name="email" type="email"
-                                                    class="validate form-control" required>
-                                                <label for="email">{{ __('E-mail') }}</label>
-                                            </div>
+                        <form id="app_form" class="text-center" action="{{route('register')}}"
+                            enctype="multipart/form-data" method="POST">
+                            @csrf
+                            <div class="md-form">
+                                <input id="fullname" name="fullname" type="text" class="validate form-control" required>
+                                <label for="fullname">{{ __('Full name') }}</label>
+                            </div>
 
-                                            <div class="md-form">
-                                                <input id="nationality" name="nationality" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="nationality">{{ __('Nationality')}}</label>
-                                            </div>
+                            <div class="md-form">
+                                <input id="email" name="email" type="email" class="validate form-control" required>
+                                <label for="email">{{ __('E-mail') }}</label>
+                            </div>
 
-                                            <select class="mdb-select md-form" name="city" required>
-                                                    <option value="" disabled selected>City</option>
-                                                    <option value="1">Al Hasakah</option>
-                                                    <option value="2">Al Ladhiqiyah</option>
-                                                    <option value="3">Al Qunaytirah</option>
-                                                    <option value="4">Ar Raqqah</option>
-                                                    <option value="5">As Suwayda'</option>
-                                                    <option value="6">Dar'a</option>
-                                                    <option value="7">Dayr az Zawr</option>
-                                                    <option value="8">Dimashq</option>
-                                                    <option value="9">Halab</option>
-                                                    <option value="10">Hamah</option>
-                                                    <option value="11">Hims</option>
-                                                    <option value="12">Idlib</option>
-                                                    <option value="13">Rif Dimashq</option>
-                                                    <option value="14">Tartus</option>
-                                            </select>
+                            <div class="md-form">
+                                <input id="nationality" name="nationality" type="text" class="validate form-control"
+                                    required>
+                                <label for="nationality">{{ __('Nationality')}}</label>
+                            </div>
 
-                                            <div class="md-form">
-                                                <input id="company-name" name="company_name" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="company-name">{{ __('Shipping Company Name') }}</label>
-                                            </div>
+                            <div class="md-form">
+                                <select class="mdb-select" name="city" required>
+                                    <option value="" disabled selected>City</option>
+                                    <option value="Al Hasakah">Al Hasakah</option>
+                                    <option value="Al Ladhiqiyah">Al Ladhiqiyah</option>
+                                    <option value="Al Qunaytirah">Al Qunaytirah</option>
+                                    <option value="Ar Raqqah">Ar Raqqah</option>
+                                    <option value="As Suwayda'">As Suwayda'</option>
+                                    <option value="Dar'a">Dar'a</option>
+                                    <option value="Dayr az Zawr">Dayr az Zawr</option>
+                                    <option value="Dimashq">Dimashq</option>
+                                    <option value="Halab">Halab</option>
+                                    <option value="Hamah">Hamah</option>
+                                    <option value="Hims">Hims</option>
+                                    <option value="Idlib">Idlib</option>
+                                    <option value="Rif Dimashq">Rif Dimashq</option>
+                                    <option value="Tartus">Tartus</option>
+                                </select>
+                            </div>
 
-                                            <div class="md-form">
-                                                <input id="regist-num" name="commercial_registry" type="text"
-                                                    class="validate form-control" required>
-                                                <label for="regist-num">{{ __('Commercial Registration Number') }}</label>
-                                            </div>
+                            <div class="md-form">
+                                <input id="company-name" name="company_name" type="text" class="validate form-control"
+                                    required>
+                                <label for="company-name">{{ __('Shipping Company Name') }}</label>
+                            </div>
 
-                                            <div class="md-form text-left">
-                                                <input id="mobile" type="tel" class="validate form-control" name="mobile" placeholder="Mobile: (201) 555-0123"
-                                                    required>
-                                            </div>
-    
-                                            <div class="md-form text-left">
-                                                <input id="phone" type="tel" class="validate form-control" placeholder="Phone: (201) 555-0123"
-                                                    name="phone" required>
-                                            </div>
+                            <div class="md-form">
+                                <input id="regist-num" name="commercial_registry" type="text"
+                                    class="validate form-control" required>
+                                <label for="regist-num">{{ __('Commercial Registration Number') }}</label>
+                            </div>
 
-                                            <div class="d-flex justify-content-center">
-                                                <button id="submitbtn" class="waves-effect waves-dark btn-large btn btn-amber m-0 mt-4"
-                                                    type="submit">{{ __('SUBMIT') }}</button>
-                                            </div>
-                                    </form>
+                            <div class="md-form text-left">
+                                <input id="mobile" type="tel" class="validate form-control" name="mobile"
+                                    placeholder="Mobile: (201) 555-0123" required>
+                                <span id="valid-msg2" class="hide">✓</span>
+                                <span id="error-msg2" class="hide"></span>
+                            </div>
 
-  
-                        </div>
-                        </div>
+                            <div class="md-form text-left">
+                                <input id="phone" type="tel" class="validate form-control"
+                                    placeholder="Phone: (201) 555-0123" name="phone" required>
+                                <span id="valid-msg1" class="hide">✓</span>
+                                <span id="error-msg1" class="hide"></span>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <button class="waves-effect waves-dark btn-large btn custom-secondary m-0 mt-4"
+                                    type="submit">{{ __('SUBMIT') }}</button>
+                            </div>
+                        </form>
+
+
+                    </div>
                 </div>
+            </div>
 
         </div>
         <div class="view jarallax">
@@ -165,49 +182,42 @@
     <script src={{url("js/validate.js")}}></script>
     <script src={{url("js/intlTelInput.js")}}></script>
 
-
+    @if(Session::has('message'))
 
     <script>
-
-        // $('#app_form').load(function(e){
-        //     e.preventDefault();
-        // });
-        $('#submitbtn').click(function (e) {
-            e.preventDefault();
-
-            var form = $('#app_form'); 
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type: 'POST',
-                url:'{{ route('register')}} ',
-                dataType: 'json', // data type
-                data: new FormData(form);,
-                processData: false,
-                contentType: false,
-                statusCode: {
-                    200: function () {
-                        toastr.success('Registered!');
-                        window.location.href = {{url('/')}};
-                    }
-
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    var string = xhr.responseText;
-                    var obj = JSON.parse(string);
-                    toastr.error(obj.message);
-                }
-            });
+    $(document).ready(function() {
+        toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "md-toast-bottom-right",
+        "preventDuplica tes": false,
+        "onclick": null,
+        "showDuration": 300,
+        "hideDuration": 600,
+        "timeOut": 6000,
+        "extendedTimeOut": 600,
+        "showEasing": "easeOutQuad",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+        toastr["error"]('{{ Session::get('message') }}')
 
         });
 
     </script>
-    
+
+    @endif
+
     <script>
         // Material Select Initialization
         $(document).ready(function () {
             $('.mdb-select').materialSelect();
+            $('.select-dropdown').click(function () {
+                $('.select-dropdown').css('color', '#495057');
+            })
         });
 
     </script>
@@ -237,10 +247,26 @@
                         // of an input field. Validation rules are defined
                         // on the right side
 
+                        fullname: {
+                            required: true,
+                            lettersonly: true
+                        },
+
+                        nationality: {
+                            required: true,
+                            lettersonly: true
+                        },
+
+                        company_name: {
+                            required: true,
+                            lettersonly: true
+                        },
+
                         commercial_registry: {
                             required: true,
                             digits: true,
-                            minlength: 4
+                            minlength: 4,
+                            maxlength: 8
                         }
                     },
 
@@ -273,9 +299,18 @@
                 return this.optional(element) || /[0-9]+/.test(value);
             }, "Must have at least one number");
 
+            $.validator.addMethod("lettersonly", function (value, element) {
+                return this.optional(element) || /^[a-zA-Z\s\'-]+$/.test(value);
+            }, "Please enter letters only");
+
             /**
              * Custom validator for contains at least one symbol.
              */
+            $.validator.addClassRules({
+                lettersonly: {
+                    lettersonly: true
+                }
+            });
         });
 
     </script>
@@ -283,91 +318,94 @@
     <script>
         $(document).ready(function () {
 
-            var input_selector = 'input[type=tel]';
-            $(input_selector).each(function (index, element) {
-                if (true) {
-                    $(this).siblings('label').addClass('active');
-                } else {
-                    $(this).siblings('label').removeClass('active');
+
+            var input1 = document.querySelector("#phone"),
+                input2 = document.querySelector("#mobile"),
+                errorMsg1 = document.querySelector("#error-msg1"),
+                errorMsg2 = document.querySelector("#error-msg2"),
+                validMsg1 = document.querySelector("#valid-msg1"),
+                validMsg2 = document.querySelector("#valid-msg2");
+            var flag = false;
+            // here, the index maps to the error code returned from getValidationError - see readme
+            var errorMap1 = ["Invalid number", "Invalid country code", "Too short", "Too long",
+                "Invalid number"
+            ];
+
+            var errorMap2 = ["Invalid number", "Invalid country code", "Too short", "Too long",
+                "Invalid number"
+            ];
+
+
+            // initialise plugin
+            var iti1 = window.intlTelInput(input1, {
+                utilsScript: '{{url("js/utils.js")}}',
+            });
+
+            var iti2 = window.intlTelInput(input2, {
+                utilsScript: '{{url("js/utils.js")}}',
+            });
+
+            var reset1 = function () {
+                input1.classList.remove("error");
+
+                errorMsg1.classList.add("hide");
+                validMsg1.classList.add("hide");
+
+            };
+
+            var reset2 = function () {
+                input2.classList.remove("error");
+
+                errorMsg2.classList.add("hide");
+                validMsg2.classList.add("hide");
+
+            };
+
+            // on blur: validate
+            input1.addEventListener('blur', function () {
+                reset1();
+                if (input1.value.trim()) {
+                    if (iti1.isValidNumber()) {
+                        validMsg1.classList.remove("hide");
+                    } else {
+                        input1.classList.add("error");
+                        var errorCode1 = iti1.getValidationError();
+                        $('#phone').val(errorMap1[errorCode1]);
+                        errorMsg1.classList.remove("hide");
+
+                    }
                 }
             });
-        });
-        var input1 = document.querySelector("#phone"),
-            input2 = document.querySelector("#mobile"),
-            errorMsg = document.querySelector("#error-msg"),
-            validMsg = document.querySelector("#valid-msg");
-        var flag = false;
-        // here, the index maps to the error code returned from getValidationError - see readme
-        var errorMap = ["Invalid number", "Too short", "Too long",
-            "Invalid number"
-        ];
 
-        // initialise plugin
-        var iti1 = window.intlTelInput(input1, {
-            utilsScript: '{{url("js/utils.js")}}',
-        });
+            // on blur: validate
+            input2.addEventListener('blur', function () {
+                reset2();
+                if (input2.value.trim()) {
+                    if (iti2.isValidNumber()) {
+                        validMsg2.classList.remove("hide");
+                    } else {
+                        input2.classList.add("error");
+                        var errorCode2 = iti2.getValidationError();
+                        $('#mobile').val(errorMap2[errorCode2]);
+                        errorMsg2.classList.remove("hide");
 
-        var iti2 = window.intlTelInput(input2, {
-            utilsScript: '{{url("js/utils.js")}}',
-        });
-
-
-        var reset = function () {
-            input1.classList.remove("error");
-
-            errorMsg.classList.add("hide");
-            validMsg.classList.add("hide");
-
-        };
-
-        var reset = function () {
-            input2.classList.remove("error");
-
-            errorMsg.classList.add("hide");
-            validMsg.classList.add("hide");
-
-        };
-
-        // on blur: validate
-        input1.addEventListener('blur', function () {
-            reset();
-            if (input1.value.trim()) {
-                if (iti1.isValidNumber()) {
-                    validMsg.classList.remove("hide");
-                } else {
-                    input1.classList.add("error");
-                    var errorCode = iti1.getValidationError();
-                    $('#phone').val(errorMap[errorCode]);
-                    errorMsg.classList.remove("hide");
-
+                    }
                 }
-            }
+            });
+
+
+            // // on keyup / change flag: reset
+            // input1.addEventListener('change', reset);
+            // input1.addEventListener('keyup', reset);
+            // new WOW().init();
+
+
+            // // on keyup / change flag: reset
+            // input2.addEventListener('change', reset);
+            // input2.addEventListener('keyup', reset);
+            // new WOW().init();
+
         });
-
-        input2.addEventListener('blur', function () {
-            reset();
-            if (input2.value.trim()) {
-                if (iti2.isValidNumber()) {
-                    validMsg.classList.remove("hide");
-                } else {
-                    input2.classList.add("error");
-                    var errorCode = iti2.getValidationError();
-                    $('#mobile').val(errorMap[errorCode]);
-                    errorMsg.classList.remove("hide");
-
-                }
-            }
-        });
-
-
-        // on keyup / change flag: reset
-        input1.addEventListener('change', reset);
-        input1.addEventListener('keyup', reset);
-        new WOW().init();
-
-        input2.addEventListener('change', reset);
-        input2.addEventListener('keyup', reset);
-        new WOW().init();
 
     </script>
 

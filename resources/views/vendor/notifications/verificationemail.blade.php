@@ -1,10 +1,15 @@
-<html>
-    <head>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
 
-    <body>
-        <h2> your login credentials are </h2>
-        <p> Username: {{$username }} <p>
-        <p> Password: {{$password }} </p>
-    </body>
+<head>
+
+</head>
+
+<body>
+    <img style="height: auto; width: 150px" src="{{url('img/Logos/logo_xs_1.png')}}" />
+    <h3> Your login credentials are: </h3>
+    <p>Email: {{$email }} </p>
+    <p>Password: {{$password }}</p>
+</body>
+
 </html>

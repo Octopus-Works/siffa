@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\view;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        View::composer(
+            ['partials.nav_dashboard', 'partials.nav'], 'App\Http\ViewComposers\NotificationViewComposer'
+            
+        );
         Schema::DefaultStringLength(191); 
     }
 }

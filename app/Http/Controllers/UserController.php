@@ -7,12 +7,14 @@ use App\Notification;
 use App\Image; 
 use app\User;
 use Auth;
+use App;
+use Session; 
 use App\Services\ImageUploadService;
 
 class UserController extends Controller
 {
 	public function appStatus(){
-        return view('user/app_status'); 
+        return view(App::getLocale().'/user/app_status'); 
     }
     
     public function paymentNotification(Request $request){
@@ -36,18 +38,40 @@ class UserController extends Controller
 
     public function userCompanyInfo($id){
         $user = User::find($id); 
-        return view('user/company_info')->withuser($user);
+        $image = Image::where('imageable_type', 'App\ShippingOffice')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
+        return view(App::getLocale().'/user/company_info')->withuser($user)->withimage($image);
     }
 
     public function companyInfo($id){
         $user = User::find($id); 
-        return view('pages.company_info')->withuser($user);
+        return view(App::getLocale().'/pages.company_info')->withuser($user);
     }
 
     public function accountInfo(){
         if ( auth::check()){
             $user = User::find(auth::user()->id); 
-            return view('user.index')->withuser($user);
+            $image = Image::where('imageable_type', 'App\UserDetail')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
+
+            return view(App::getLocale().'/user.index')->withuser($user)->withimage($image);
+
         }
+    }
+
+    public function photoUpload(Request $request){
+        $user = User::find(auth::user()->id); 
+        foreach($request->files as $file)
+        ImageUploadService::imageUpload($file, $user->id, "App\UserDetail");
+
+        Session::Flash("message", "Application has been Approved!");
+        return response("Success", 200);
+    }
+
+    public function photoUpload1(Request $request){
+        $user = User::find(auth::user()->id); 
+        foreach($request->files as $file)
+        ImageUploadService::imageUpload($file, $user->id, "App\ShippingOffice");
+
+        Session::Flash("message", "Application has been Approved!");
+        return response("Success", 200);
     }
 }

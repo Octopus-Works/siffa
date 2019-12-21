@@ -7,6 +7,7 @@ use App\Image;
 use App\InternalMessaging;
 use Illuminate\Http\Request;
 use App\Services\ImageUploadService;
+use App;
 
 
 class MessageController extends Controller
@@ -22,7 +23,7 @@ class MessageController extends Controller
             $mail = InternalMessaging::where('sender_id', auth::user()->id)
             ->orWhere('receiver_id', auth::user()->id)
             ->get();
-            return view('user/view_messages')->withmail($mail); 
+            return view(App::getLocale().'/user/view_messages')->withmail($mail); 
         }
     }
 
@@ -60,7 +61,7 @@ class MessageController extends Controller
         $mail->save();
 
         foreach($request->files as $file)
-        ImageUploadService::imageUpload($file, Auth::user()->id, "App\InternalMessaging" );
+        ImageUploadService::imageUpload($file, $mail->id , "App\InternalMessaging" );
 
         return redirect()->back()->with('Success'); 
     }

@@ -33,8 +33,6 @@ class CreateShippingOfficesTable extends Migration
             $table->string('name')->nullable();
             $table->string('country')->nullable();
             $table->string('city')->nullable();
-            $table->string('addresses')->nullable(); 
-            $table->string('shipping_services')->nullable();
             $table->string('position_title')->nullable(); 
             $table->integer('chamber_of_commerce')->nullable(); 
             $table->integer('commercial_registry')->nullable(); 

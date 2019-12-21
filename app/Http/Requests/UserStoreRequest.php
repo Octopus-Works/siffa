@@ -24,40 +24,15 @@ class UserStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'fullname'    => 'required',
-            'email'       => 'required|email',
-            'nationality' => 'required',
-            'mobile'      => 'required', 
-            'phone'       => 'required',
-            'company_name'        => 'required',
-            'commercial_registry' => 'required|min:4', 
+            // 'username'              => 'required',
+            // 'password'              => 'required',
+            'email'                 => 'required|email',
+            'nationality'           => 'required',
+            'mobile'                => 'required', 
+            'phone'                 => 'required',
+            'commercial_registry'   => 'required|min:4|max:8',
+            'city'                  => 'required', 
         ];
-
-        // return [
-        //     'father' => 'required',
-        //     'mother' => 'required', 
-        //     'date_of_birth' => 'required',
-        //     'place_of_birth' =>'required',
-        //     'record' => 'required',
-
-        //     'branches_address' => 'required', 
-        //     'shipping_services' => 'required', 
-        //     'position_title' => 'required', 
-        //     'chamber_of_commerce' => 'numeric|min:4|required', 
-
-        //     'shipping_methods' => 'required',
-        //     'shipping_modes' => 'required',
-        //     'src_dest' => 'required',
-
-        //     'financial_status' => 'required',
-        //     'financial_photo' => 'image|required', 
-
-        //     'date_of_application' => 'required', 
-        //     'signature_photo' => 'required',
-
-        //     'resume_info' => 'required',
-        //     'hard_copy' => 'required'
-        // ];
     }
 
      /**
@@ -68,41 +43,19 @@ class UserStoreRequest extends FormRequest
     // public function messages()
     // {
     //     return [
-    //         'fullname.required' =>'This field is required!',
-    //         'father.required' => 'This field is required!',
-    //         'mother.required' => 'This field is required!', 
+    //         'username.required' =>'This field is required!',
     //         'email.required' => 'This field is required!',
-    //         'email.mail' => 'This field should contain a valid email!',
-    //         'date_of_birth.required' => 'This field is required!',
-    //         'place_of_birth.required' => 'This field is required!',
-    //         'record.required' => 'This field is required!',
+    //         'email.email' => 'This field should contain a valid email!',
     //         'nationality.required' =>'This field is required!',
-    //         'address.required' => 'This field is required!',
+    //         'mobile.required' => 'This field is required!', 
+    //         'phone.required' => 'This field is required!', 
+    //         'city.required' => 'This field is required!', 
 
-    //         'company_name.required' => 'This field is required!',
-    //         'branches_address.required' => 'This field is required!', 
-    //         'shipping_services.required' => 'This field is required!', 
-    //         'position_title.required' => 'This field is required!', 
-            
-    //         'chamber_of_commerce.required' => 'This field is required!',
-    //         'chamber_of_commerce.numeric' => 'This field should be a number!',
-    //         'chamber_of_commerce.min' => 'This field should be at least 4 numbers!',
 
     //         'commercial_registry.required' => 'This field is required!',
-    //         'commercial_registry.numeric' => 'This field should be a number!', 
     //         'commercial_registry.min' => 'This field should be at least 4 numbers!', 
+    //         'commercial_registry.max' => 'This field should be at most 8 numbers!', 
 
-    //         'shipping_methods.required' => 'This field is required',
-    //         'shipping_modes.required' => 'This field is required',
-    //         'src_dest.required' => 'This field is required',
-
-    //         'financial_status.required' => 'This field is required',
-    //         'financial_photo' => 'image|required', 
-
-    //         'date_of_application.required' => 'This field is required', 
-    //         'signature_photo' => 'required',
-
-    //         'resume_info' => 'required',
     //     ];
     // }
 }

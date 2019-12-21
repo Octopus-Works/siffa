@@ -25,7 +25,8 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(
-            'partials.nav_dashboard', 'App\Http\ViewComposers\NotificationViewComposer'
+            ['partials.nav_dashboard', 'partials.nav'], 'App\Http\ViewComposers\NotificationViewComposer'
+            
         );
     }
 }

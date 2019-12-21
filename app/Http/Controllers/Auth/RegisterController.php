@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use Session; 
+use Auth;
 use App\User;
-use App\Image; 
 use App\UserDetail; 
 use App\OfficeService; 
 use App\ShippingOffice; 
@@ -17,7 +18,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\GenerateCredentials;
 use Illuminate\Support\Facades\Mail;
 use TCG\Voyager\Models\Role;
-
 use App\Http\Requests\UserStoreRequest;
 
 class RegisterController extends Controller
@@ -78,79 +78,60 @@ class RegisterController extends Controller
         // Returns the Role record of user so I can specify the user role on register
         $role = Role::where('name', 'user')->firstOrFail(); 
 
-
         // Validation call from app\Requests\UserStoreRequest.php
-        // $validated = $request->validated(); 
-        $username = str_random(10); 
-        $password = str_random(10);
-        $user = User::Create([
-            'username' => $username,
-            'password' => Hash::make($password),
-            'email'    => $request->email,
-            'role_id'  => $role->id,
-        ]);
+        $validated = $request->validated(); 
+        $userId = 1; 
+        try{
+            $email    = $request->email; 
+            $username = str_random(10);
+            $password = str_random(10);
+            $user = User::Create([
+                'username' => $username,
+                'password' => Hash::make($password),
+                'email'    => $request->email,
+                'role_id'  => $role->id,
+            ]);
 
-        UserDetail::Create([
-            'user_id'       => $user->id,
-            'fullname'      => $request->fullname,
-            'nationality'   => $request->nationality,
-            'mobile_number' => $request->mobile,
-            'phone_number'  => $request->phone,
-        ]);
+            UserDetail::Create([
+                'user_id'       => $user->id,
+                'fullname'      => $request->fullname,
+                'nationality'   => $request->nationality,
+                'mobile_number' => $request->mobile,
+                'phone_number'  => $request->phone,
+            ]);
 
-        $shippingOffice = ShippingOffice::Create([
-            'user_id'   => $user->id,
-            'name'      => $request->company_name,
-            'commercial_registry' => $request->commercial_registry,
-            'city'      => $request->city, 
-        ]);
-        
-        $shippingService = ShippingService::Create([
-            'user_id' => $user->id,
-        ]);
+            $shippingOffice = ShippingOffice::Create([
+                'user_id'   => $user->id,
+                'name'      => $request->company_name,
+                'commercial_registry' => $request->commercial_registry,
+                'city'      => $request->city, 
+            ]);
 
-        ApplicationDetail::Create([
-            'user_id' => $user->id,
-            'status'  => 1,
-        ]);
+            $shippingService = ShippingService::Create([
+                'user_id' => $user->id,
+            ]);
 
-        $shippingOffice->officeservices()->attach($shippingService);
-        $data = array('username' => $username, 'password' => $password); 
-        Mail::to($request->email)->send(new GenerateCredentials($data));
-        
-        // $application = new ApplicationDetail; 
-        // $application->user_id = $user->id;
-        // $application->Financial_assignment_status = $request->financial_status;
-        // $application->Date_of_application = $request->date_of_application; 
-        // $application->Resume_information = $request->resume_info;
-        // $application->save();
-        // $request->file('financial_photo')
+            ApplicationDetail::Create([
+                'user_id' => $user->id,
+                'status'  => 1,
+            ]);
 
+            Auth::login($user);
+            $userId = $user->id; 
+            $shippingOffice->officeservices()->attach($shippingService);
+            $data = array('email' => $email, 'password' => $password); 
+            Mail::to($request->email)->send(new GenerateCredentials($data));
 
-        // $details->father_name = $request->father; 
-        // $details->mother_name = $request->mother;
-        // $details->date_of_birth = $request->date_of_birth; 
-        // $details->place_of_birth = $request->place_of_birth;
-        // $details->website = $request->website; 
-        // $details->record = $request->record; 
-        // $details->address = preg_replace( "/\r|\n/", "", $request->address ); 
-        // $details->save(); 
+        } catch(\Exception $e){
+            $userObject = User::find($userId);
+            if ($userObject != null)
+            $userObject->delete();
+            Session::flash('message', "Error in Registration data!");
+            return back(); 
+        }
 
-        // $office = new ShippingOffice;
-        // $office->addresses = preg_replace( "/\r|\n/", "", $request->branches_address ); 
-        // $office->shipping_services = $request->shipping_services; 
-        // $office->position_title = $request->position_title;
-        // $office->chamber_of_commerce = $request->chamber_of_commerce; 
-        // $office->save();
-
-        // $services = new ShippingService; 
-        // $services->user_id = $user->id;
-        // $chk = implode(' ', $request->shipping_methods);
-        // $chk1 = implode(' ', $request->shipping_modes);
-        // $services->shipping_methods = $chk;
-        // $services->shipping_modes = $chk1;
-        // $services->sources_destinations = $request->src_dest;
-        // $services->save(); 
+        Session::flash('message', 'Credentials has been sent to your email');
+        return redirect()->route('index');
        
     }
 }

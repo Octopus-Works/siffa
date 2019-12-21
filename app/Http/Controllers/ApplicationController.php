@@ -6,14 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\UserStoreRequest;
-use App\Mail\GenerateCredentials;
+use App;
 use Auth; 
-use Session; 
 use App\User;
 use App\Image; 
-use App\ShippingOffice; 
-use App\ShippingService;
-use App\ApplicationDetail;
 use App\Services\ImageUploadService;
 
 class ApplicationController extends Controller
@@ -28,11 +24,13 @@ class ApplicationController extends Controller
         if ( Auth::check())
         {
             $user = User::find(Auth::user()->id); 
-     
-            return view('user.application_info')->withuser($user); 
+            
+            $image = Image::where('imageable_type', 'App\ApplicationDetail')->where('imageable_id', $user->id)->orderBy('id', 'desc')->first();
+
+            return view(App::getLocale().'/user.application_info')->withuser($user)->withimage($image);
         }
 
-        return view('user.application_info');
+        return view(App::getLocale().'/user.application_info');
         
     }
 
@@ -55,39 +53,38 @@ class ApplicationController extends Controller
             'address'       => preg_replace( "/\r|\n/", "", $request->address ),
         ]);
 
-        $user->shippingOffice()->updateOrCreate([
+        $user->shippingOffice()->update([
             'name'      => $request->company_name,
-            'city'      => $request->city,
-            'addresses' => preg_replace( "/\r|\n/", "", $request->branches_address ),
-            'shipping_services'   => $request->shipping_services,
             'position_title'      => $request->position_title,
             'chamber_of_commerce' => $request->chamber_of_commerce,
             'commercial_registry' => $request->commercial_registry,
         ]);
 
-        if ( $request->shipping_methods ){
-            $user->shippingService()->update([
-                'shipping_methods'     => implode(' ', $request->shipping_methods),
-                'shipping_modes'       => implode(' ', $request->shipping_modes),
-                'sources_destinations' => $request->src_dest,
-            ]);
-        }
-
+        if ( isset($request->city))
+            $user->shippingOffice->city = $request->city;
+        $user->shippingOffice->save();
+        
+        if ( isset($request->shipping_modes))
+            $user->shippingService->shipping_modes = implode(' ', $request->shipping_modes);
+        
+        $user->shippingService->sources_destinations = $request->src_dest;
+        $user->shippingService->save();
+        
         $user->applicationDetail()->update([
             'Financial_assignment_status' => $request->financial_status,
             'Date_of_application'         => $request->date_of_application,
-            'Resume_information'          => $request->resume_info,
         ]);
 
-        $user->update([
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        if( isset($request->email))
+            $user->email = $request->email;
+        if( isset($request->password))
+            $user->password  = Hash::make($request->password);
+        $user->save();
         
         foreach($request->files as $file)
         ImageUploadService::imageUpload($file, $user->id, "App\ApplicationDetail");
 
-        return redirect()->back()->with('Success'); 
+        return response('Success', 200); 
     }
 
     public function miniUpdate(Request $request){
@@ -105,13 +102,10 @@ class ApplicationController extends Controller
             'name'      => $request->company_name,
         ]);
 
-        $user->update([
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        
-        foreach($request->files as $file)
-        ImageUploadService::imageUpload($file, $user->id, "App\ApplicationDetail");
+        $user->email = $request->email;
+        if( isset($request->password))
+            $user->password = Hash::make($request->password);
+        $user->save();
 
         return redirect()->back()->with('Success'); 
     }
